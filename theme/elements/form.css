@@ -1,19 +1,29 @@
+/* ============================================
+   FORM VARIABLES
+   Customize form wrapper appearance
+   ============================================ */
+
 :root {
   /* Base form properties */
   --form-margin: 0 0 var(--space-3) 0;
   --form-padding: 0;
   --form-gap: var(--space-2);
 
-  /* Style 1: Standard (simple gap) */
-  --form-style-1-gap: var(--space-2);
+  /* zen: Minimal / Japanese - Simple gap, no decoration */
+  --form-zen-gap: var(--space-2);
+  --form-zen-padding: 0;
+  --form-zen-bg: transparent;
 
-  /* Style 2: Card (padded with background) */
-  --form-style-2-padding: var(--space-3);
-  --form-style-2-bg: var(--background-2);
-  --form-style-2-border: var(--border-1);
-  --form-style-2-radius: var(--border-radius);
-  --form-style-2-gap: var(--space-2);
+  /* soft: Subtle Contrasts - Background fill, comfortable spacing */
+  --form-soft-gap: var(--space-2);
+  --form-soft-padding: var(--space-3);
+  --form-soft-bg: var(--background-3);
+  --form-soft-radius: var(--border-radius);
 
-  /* Style 3: Compact (tight spacing) */
-  --form-style-3-gap: var(--space-1);
+  /* solid: All In - Border + background + shadow */
+  --form-solid-gap: var(--space-2);
+  --form-solid-padding: var(--space-3);
+  --form-solid-bg: var(--background-2);
+  --form-solid-border: var(--border-1);
+  --form-solid-radius: var(--border-radius);
 }

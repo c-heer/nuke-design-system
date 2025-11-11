@@ -21,13 +21,18 @@
   /* Row hover */
   --table-row-hover-bg: var(--background-3);
 
-  /* Style 1: Standard */
-  --table-style-1-border: var(--border-1);
-  --table-style-1-head-bg: var(--background-3);
+  /* zen: Minimal / Japanese - Border-bottom on rows only */
+  --table-zen-border: none;
+  --table-zen-row-border: 1px solid var(--border-1);
+  --table-zen-head-border: 2px solid var(--border-1);
 
-  /* Style 2: Striped */
-  --table-style-2-stripe-bg: var(--background-3);
+  /* soft: Subtle Contrasts - Alternating row backgrounds, no borders */
+  --table-soft-border: none;
+  --table-soft-stripe-bg: var(--background-3);
+  --table-soft-hover-bg: var(--background-4);
 
-  /* Style 3: Borderless */
-  --table-style-3-border: var(--border-1);
+  /* solid: All In - Full grid with borders on all cells */
+  --table-solid-border: 1px solid var(--border-1);
+  --table-solid-cell-border: 1px solid var(--border-1);
+  --table-solid-head-bg: var(--background-3);
 }

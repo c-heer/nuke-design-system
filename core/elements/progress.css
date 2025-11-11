@@ -34,41 +34,69 @@ progress::-moz-progress-bar {
   transition: width var(--progress-transition);
 }
 
-/* Style 1: Standard progress bar */
-progress.style-1::-webkit-progress-value {
-  background: var(--progress-style-1-fill);
+/* zen: Minimal / Japanese - Thin bar, subtle */
+progress[style="zen"],
+progress.zen {
+  height: var(--progress-zen-height);
+  background: var(--progress-zen-bg);
 }
 
-progress.style-1::-moz-progress-bar {
-  background: var(--progress-style-1-fill);
+progress[style="zen"]::-webkit-progress-bar,
+progress.zen::-webkit-progress-bar {
+  background: var(--progress-zen-bg);
 }
 
-/* Style 2: Success/green progress */
-progress.style-2::-webkit-progress-value {
-  background: var(--progress-style-2-fill);
+progress[style="zen"]::-webkit-progress-value,
+progress.zen::-webkit-progress-value {
+  background: var(--progress-zen-fill);
 }
 
-progress.style-2::-moz-progress-bar {
-  background: var(--progress-style-2-fill);
+progress[style="zen"]::-moz-progress-bar,
+progress.zen::-moz-progress-bar {
+  background: var(--progress-zen-fill);
 }
 
-/* Style 3: Striped animated progress */
-progress.style-3::-webkit-progress-value {
-  background: linear-gradient(
-    45deg,
-    var(--progress-style-3-fill) 25%,
-    transparent 25%,
-    transparent 50%,
-    var(--progress-style-3-fill) 50%,
-    var(--progress-style-3-fill) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: 20px 20px;
-  animation: progress-stripes 1s linear infinite;
+/* soft: Subtle Contrasts - Medium bar, soft background */
+progress[style="soft"],
+progress.soft {
+  height: var(--progress-soft-height);
+  background: var(--progress-soft-bg);
 }
 
-@keyframes progress-stripes {
-  from { background-position: 0 0; }
-  to { background-position: 20px 0; }
+progress[style="soft"]::-webkit-progress-bar,
+progress.soft::-webkit-progress-bar {
+  background: var(--progress-soft-bg);
+}
+
+progress[style="soft"]::-webkit-progress-value,
+progress.soft::-webkit-progress-value {
+  background: var(--progress-soft-fill);
+}
+
+progress[style="soft"]::-moz-progress-bar,
+progress.soft::-moz-progress-bar {
+  background: var(--progress-soft-fill);
+}
+
+/* solid: All In - Thick bar with border */
+progress[style="solid"],
+progress.solid {
+  height: var(--progress-solid-height);
+  background: var(--progress-solid-bg);
+  border: 1px solid var(--progress-solid-border);
+}
+
+progress[style="solid"]::-webkit-progress-bar,
+progress.solid::-webkit-progress-bar {
+  background: var(--progress-solid-bg);
+}
+
+progress[style="solid"]::-webkit-progress-value,
+progress.solid::-webkit-progress-value {
+  background: var(--progress-solid-fill);
+}
+
+progress[style="solid"]::-moz-progress-bar,
+progress.solid::-moz-progress-bar {
+  background: var(--progress-solid-fill);
 }

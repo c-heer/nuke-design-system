@@ -9,7 +9,6 @@ pre {
   font-size: var(--pre-font-size);
   line-height: var(--pre-line-height);
   border-radius: var(--pre-radius);
-  border: 1px solid var(--pre-border);
   overflow-x: auto;
 }
 
@@ -21,24 +20,26 @@ pre code {
   color: inherit;
 }
 
-/* Style 1: Standard (default) */
-pre.style-1 {
-  background: var(--pre-style-1-bg);
-  color: var(--pre-style-1-color);
-  border: 1px solid var(--pre-style-1-border);
+/* zen: Clean background, simple border */
+pre[style="zen"],
+pre.zen {
+  background: var(--pre-zen-bg);
+  color: var(--pre-zen-color);
+  border: var(--pre-zen-border);
 }
 
-/* Style 2: Dark (dark background) */
-pre.style-2 {
-  background: var(--pre-style-2-bg);
-  color: var(--pre-style-2-color);
-  border: 1px solid var(--pre-style-2-border);
+/* soft: Soft background, no border */
+pre[style="soft"],
+pre.soft {
+  background: var(--pre-soft-bg);
+  color: var(--pre-soft-color);
+  border: var(--pre-soft-border);
 }
 
-/* Style 3: Minimal (no border, shadow instead) */
-pre.style-3 {
-  background: var(--pre-style-3-bg);
-  color: var(--pre-style-3-color);
-  border: none;
-  box-shadow: var(--pre-style-3-shadow);
+/* solid: Full border + background */
+pre[style="solid"],
+pre.solid {
+  background: var(--pre-solid-bg);
+  color: var(--pre-solid-color);
+  border: var(--pre-solid-border);
 }

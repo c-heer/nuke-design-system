@@ -9,17 +9,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid var(--table-border);
-  border-radius: var(--table-radius);
   background: var(--table-bg);
 }
 
 /* Table header */
-thead {
-  background: var(--table-head-bg);
-  border-bottom: 2px solid var(--table-border);
-}
-
 th {
   padding: var(--table-cell-padding);
   text-align: left;
@@ -29,44 +22,85 @@ th {
 }
 
 /* Table body */
-tbody tr {
-  border-bottom: 1px solid var(--table-border);
-  transition: background-color var(--table-transition);
-}
-
-tbody tr:last-child {
-  border-bottom: none;
-}
-
-tbody tr:hover {
-  background: var(--table-row-hover-bg);
-}
-
 td {
   padding: var(--table-cell-padding);
   color: var(--table-color);
   font-size: var(--table-font-size);
 }
 
-/* Style 1: Standard table */
-table.style-1 {
-  border: 1px solid var(--table-style-1-border);
+tbody tr {
+  transition: background-color var(--table-transition);
 }
 
-table.style-1 thead {
-  background: var(--table-style-1-head-bg);
+tbody tr:hover {
+  background: var(--table-row-hover-bg);
 }
 
-/* Style 2: Striped rows */
-table.style-2 tbody tr:nth-child(even) {
-  background: var(--table-style-2-stripe-bg);
+/* zen: Minimal / Japanese - Border-bottom on rows only */
+table[style="zen"],
+table.zen {
+  border: var(--table-zen-border);
 }
 
-/* Style 3: Borderless */
-table.style-3 {
+table[style="zen"] thead,
+table.zen thead {
+  border-bottom: var(--table-zen-head-border);
+}
+
+table[style="zen"] tbody tr,
+table.zen tbody tr {
+  border-bottom: var(--table-zen-row-border);
+}
+
+table[style="zen"] tbody tr:last-child,
+table.zen tbody tr:last-child {
+  border-bottom: none;
+}
+
+/* soft: Subtle Contrasts - Alternating row backgrounds, no borders */
+table[style="soft"],
+table.soft {
+  border: var(--table-soft-border);
+}
+
+table[style="soft"] thead,
+table.soft thead {
   border: none;
 }
 
-table.style-3 tbody tr {
-  border-bottom: 1px solid var(--table-style-3-border);
+table[style="soft"] tbody tr,
+table.soft tbody tr {
+  border: none;
+}
+
+table[style="soft"] tbody tr:nth-child(even),
+table.soft tbody tr:nth-child(even) {
+  background: var(--table-soft-stripe-bg);
+}
+
+table[style="soft"] tbody tr:hover,
+table.soft tbody tr:hover {
+  background: var(--table-soft-hover-bg);
+}
+
+/* solid: All In - Full grid with borders on all cells */
+table[style="solid"],
+table.solid {
+  border: var(--table-solid-border);
+}
+
+table[style="solid"] thead,
+table.solid thead {
+  background: var(--table-solid-head-bg);
+  border-bottom: var(--table-solid-border);
+}
+
+table[style="solid"] th,
+table.solid th {
+  border: var(--table-solid-cell-border);
+}
+
+table[style="solid"] td,
+table.solid td {
+  border: var(--table-solid-cell-border);
 }

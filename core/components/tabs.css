@@ -47,62 +47,100 @@ nuke-tab-panel[aria-hidden="true"] {
 }
 
 /* ============================================
-   TABS VARIANTS - style="1|2|3"
+   TABS VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
    ============================================ */
 
-/* Style 1: Underline tabs */
+/* zen: Minimal / Japanese */
+nuke-tabs[style="zen"],
+nuke-tabs.zen,
 nuke-tabs[style="1"] {
-  border-bottom: var(--tabs-style-1-border-bottom);
+  border-bottom: var(--tabs-zen-border-bottom);
 }
 
+nuke-tabs[style="zen"] nuke-tab,
+nuke-tabs.zen nuke-tab,
 nuke-tabs[style="1"] nuke-tab {
-  background: var(--tab-style-1-background);
-  border-bottom: 2px solid transparent;
-  margin-bottom: -2px;
-}
-
-nuke-tabs[style="1"] nuke-tab:hover {
-  background: var(--tab-style-1-background-hover);
-}
-
-nuke-tabs[style="1"] nuke-tab[aria-selected="true"] {
-  border-bottom-color: var(--color-1);
-}
-
-/* Style 2: Pill tabs */
-nuke-tabs[style="2"] {
-  background: var(--tabs-style-2-background);
-}
-
-nuke-tabs[style="2"] nuke-tab {
-  background: var(--tab-style-2-background);
-  border-radius: var(--tab-style-2-radius);
-}
-
-nuke-tabs[style="2"] nuke-tab:hover {
-  background: var(--tab-style-2-background-hover);
-}
-
-nuke-tabs[style="2"] nuke-tab[aria-selected="true"] {
-  background: var(--tab-style-2-background-active);
-  color: var(--tab-style-2-color-active);
-}
-
-/* Style 3: Boxed tabs */
-nuke-tabs[style="3"] {
-  border: var(--tabs-style-3-border);
-  border-radius: var(--tab-style-3-radius);
-}
-
-nuke-tabs[style="3"] nuke-tab {
-  background: var(--tab-style-3-background);
-  border-radius: var(--tab-style-3-radius) var(--tab-style-3-radius) 0 0;
-  border: 1px solid transparent;
+  background: var(--tab-zen-background);
+  border-bottom: 1px solid transparent;
   margin-bottom: -1px;
 }
 
+nuke-tabs[style="zen"] nuke-tab:hover,
+nuke-tabs.zen nuke-tab:hover,
+nuke-tabs[style="1"] nuke-tab:hover {
+  background: var(--tab-zen-background-hover);
+}
+
+nuke-tabs[style="zen"] nuke-tab[aria-selected="true"],
+nuke-tabs.zen nuke-tab[aria-selected="true"],
+nuke-tabs[style="1"] nuke-tab[aria-selected="true"] {
+  border-bottom: var(--tab-zen-border-active);
+}
+
+/* soft: Subtle Contrasts */
+nuke-tabs[style="soft"],
+nuke-tabs.soft,
+nuke-tabs[style="2"] {
+  background: var(--tabs-soft-background);
+}
+
+nuke-tabs[style="soft"] nuke-tab,
+nuke-tabs.soft nuke-tab,
+nuke-tabs[style="2"] nuke-tab {
+  background: var(--tab-soft-background);
+  border-radius: var(--tab-soft-radius);
+}
+
+nuke-tabs[style="soft"] nuke-tab:hover,
+nuke-tabs.soft nuke-tab:hover,
+nuke-tabs[style="2"] nuke-tab:hover {
+  background: var(--tab-soft-background-hover);
+}
+
+nuke-tabs[style="soft"] nuke-tab[aria-selected="true"],
+nuke-tabs.soft nuke-tab[aria-selected="true"],
+nuke-tabs[style="2"] nuke-tab[aria-selected="true"] {
+  background: var(--tab-soft-background-active);
+  color: var(--tab-soft-color-active);
+}
+
+nuke-tabs[style="soft"] nuke-tab-panel,
+nuke-tabs.soft nuke-tab-panel,
+nuke-tabs[style="2"] nuke-tab-panel {
+  background: var(--tab-panel-soft-background);
+}
+
+/* solid: All In - Borders on tabs + content, NOT on wrapper */
+nuke-tabs[style="solid"],
+nuke-tabs.solid,
+nuke-tabs[style="3"] {
+  border: var(--tabs-solid-wrapper-border);
+}
+
+nuke-tabs[style="solid"] nuke-tab,
+nuke-tabs.solid nuke-tab,
+nuke-tabs[style="3"] nuke-tab {
+  background: var(--tab-solid-background);
+  border: var(--tab-solid-border);
+  border-radius: var(--tab-solid-radius) var(--tab-solid-radius) 0 0;
+  margin-right: var(--space-1);
+  margin-bottom: -2px;
+}
+
+nuke-tabs[style="solid"] nuke-tab[aria-selected="true"],
+nuke-tabs.solid nuke-tab[aria-selected="true"],
 nuke-tabs[style="3"] nuke-tab[aria-selected="true"] {
-  background: var(--tab-style-3-background-active);
-  border: var(--tab-style-3-border-active);
-  border-bottom-color: var(--tab-style-3-background-active);
+  background: var(--tab-solid-background-active);
+  border: var(--tab-solid-border-active);
+  border-bottom-color: var(--tab-solid-background-active);
+}
+
+nuke-tabs[style="solid"] nuke-tab-panel,
+nuke-tabs.solid nuke-tab-panel,
+nuke-tabs[style="3"] nuke-tab-panel {
+  background: var(--tab-panel-solid-background);
+  border-left: var(--tab-panel-solid-border);
+  border-bottom: var(--tab-panel-solid-border);
+  border-right: var(--tab-panel-solid-border);
+  box-shadow: var(--tab-panel-solid-shadow);
 }

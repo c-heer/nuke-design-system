@@ -4,18 +4,27 @@
   --ol-padding-left: var(--list-padding-left);
   --ol-item-margin: var(--list-item-margin-bottom);
 
-  /* Style 1: Decimal numbers (default) */
-  --ol-style-1-list-style: decimal;
-  --ol-style-1-padding-left: var(--list-padding-left);
+  /* zen: Minimal numbers, no extra spacing */
+  --ol-zen-list-style: decimal;
+  --ol-zen-padding-left: var(--space-3);
+  --ol-zen-item-margin: var(--space-1);
 
-  /* Style 2: Custom styled numbers (colored/bold) */
-  --ol-style-2-list-style: none;
-  --ol-style-2-padding-left: 0;
-  --ol-style-2-item-padding-left: var(--space-3);
-  --ol-style-2-number-color: var(--color-1);
-  --ol-style-2-number-weight: var(--font-weight-bold);
+  /* soft: Background highlights on items, no borders */
+  --ol-soft-list-style: none;
+  --ol-soft-padding-left: 0;
+  --ol-soft-item-bg: var(--background-3);
+  --ol-soft-item-padding: var(--space-1) var(--space-2);
+  --ol-soft-item-margin: var(--space-1);
+  --ol-soft-item-radius: var(--border-radius-small);
+  --ol-soft-number-padding-left: var(--space-4);
 
-  /* Style 3: Lowercase letters */
-  --ol-style-3-list-style: lower-alpha;
-  --ol-style-3-padding-left: var(--list-padding-left);
+  /* solid: Borders + backgrounds, strong definition */
+  --ol-solid-list-style: none;
+  --ol-solid-padding-left: 0;
+  --ol-solid-item-bg: var(--background-2);
+  --ol-solid-item-border: 1px solid var(--border-1);
+  --ol-solid-item-padding: var(--space-2);
+  --ol-solid-item-margin: var(--space-1);
+  --ol-solid-item-radius: var(--border-radius);
+  --ol-solid-number-padding-left: var(--space-4);
 }

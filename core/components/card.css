@@ -41,28 +41,34 @@ nuke-card-actions {
 }
 
 /* ============================================
-   CARD VARIANTS - style="1|2|3"
+   CARD VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
    ============================================ */
 
-/* Style 1: Standard card */
+/* zen: Minimal / Japanese */
+nuke-card[style="zen"],
+nuke-card.zen,
 nuke-card[style="1"] {
-  background: var(--card-style-1-background);
-  border: var(--card-style-1-border);
-  box-shadow: var(--card-style-1-shadow);
+  background: var(--card-zen-background);
+  border: var(--card-zen-border);
+  box-shadow: var(--card-zen-shadow);
 }
 
-/* Style 2: Elevated card */
+/* soft: Subtle Contrasts */
+nuke-card[style="soft"],
+nuke-card.soft,
 nuke-card[style="2"] {
-  background: var(--card-style-2-background);
-  border: var(--card-style-2-border);
-  box-shadow: var(--card-style-2-shadow);
+  background: var(--card-soft-background);
+  border: var(--card-soft-border);
+  box-shadow: var(--card-soft-shadow);
 }
 
-/* Style 3: Bordered card */
+/* solid: All In */
+nuke-card[style="solid"],
+nuke-card.solid,
 nuke-card[style="3"] {
-  background: var(--card-style-3-background);
-  border: var(--card-style-3-border);
-  box-shadow: var(--card-style-3-shadow);
+  background: var(--card-solid-background);
+  border: var(--card-solid-border);
+  box-shadow: var(--card-solid-shadow);
 }
 
 /* ============================================

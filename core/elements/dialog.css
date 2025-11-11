@@ -46,25 +46,35 @@ dialog[open] {
   }
 }
 
-/* Style 1: Standard modal dialog */
-dialog.style-1 {
-  max-width: var(--dialog-style-1-max-width);
-  padding: var(--dialog-style-1-padding);
-  border-radius: var(--dialog-style-1-radius);
+/* zen: Minimal / Japanese - Thin border, no shadow */
+dialog.zen,
+dialog[style="zen"] {
+  max-width: var(--dialog-zen-max-width);
+  padding: var(--dialog-zen-padding);
+  background: var(--dialog-zen-bg);
+  border: var(--dialog-zen-border-width) solid var(--dialog-zen-border);
+  border-radius: var(--dialog-zen-radius);
+  box-shadow: var(--dialog-zen-shadow);
 }
 
-/* Style 2: Large dialog */
-dialog.style-2 {
-  max-width: var(--dialog-style-2-max-width);
-  padding: var(--dialog-style-2-padding);
+/* soft: Subtle Contrasts - Subtle shadow for depth, no border */
+dialog.soft,
+dialog[style="soft"] {
+  max-width: var(--dialog-soft-max-width);
+  padding: var(--dialog-soft-padding);
+  background: var(--dialog-soft-bg);
+  border: 1px solid var(--dialog-soft-border);
+  border-radius: var(--dialog-soft-radius);
+  box-shadow: var(--dialog-soft-shadow);
 }
 
-/* Style 3: Full-screen dialog */
-dialog.style-3 {
-  max-width: var(--dialog-style-3-max-width);
-  max-height: var(--dialog-style-3-max-height);
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border-radius: 0;
+/* solid: All In - Border + shadow for strong definition */
+dialog.solid,
+dialog[style="solid"] {
+  max-width: var(--dialog-solid-max-width);
+  padding: var(--dialog-solid-padding);
+  background: var(--dialog-solid-bg);
+  border: var(--dialog-solid-border-width) solid var(--dialog-solid-border);
+  border-radius: var(--dialog-solid-radius);
+  box-shadow: var(--dialog-solid-shadow);
 }

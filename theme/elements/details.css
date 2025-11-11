@@ -21,14 +21,29 @@
   /* Content */
   --details-content-margin-top: var(--space-2);
 
-  /* Style 1: Standard accordion */
-  --details-style-1-border: var(--border-1);
-  --details-style-1-bg: var(--background-2);
+  /* zen: Minimal / Japanese - Simple disclosure, no background */
+  --details-zen-border: transparent;
+  --details-zen-bg: transparent;
+  --details-zen-padding: var(--space-2) 0;
+  --details-zen-summary-hover-bg: transparent;
+  --details-zen-summary-hover-color: var(--color-1);
+  --details-zen-open-border-bottom: var(--border-1);
 
-  /* Style 2: Minimal */
-  --details-style-2-border: var(--border-1);
+  /* soft: Subtle Contrasts - Background change on expand, no border */
+  --details-soft-border: transparent;
+  --details-soft-bg: transparent;
+  --details-soft-padding: var(--space-2);
+  --details-soft-radius: var(--border-radius);
+  --details-soft-summary-hover-bg: var(--background-2);
+  --details-soft-open-bg: var(--background-2);
 
-  /* Style 3: Card style */
-  --details-style-3-border: var(--border-1);
-  --details-style-3-bg: var(--background-2);
+  /* solid: All In - Border + background on expand */
+  --details-solid-border: var(--border-1);
+  --details-solid-border-width: 1px;
+  --details-solid-bg: transparent;
+  --details-solid-padding: var(--space-2);
+  --details-solid-radius: var(--border-radius);
+  --details-solid-summary-hover-bg: var(--background-2);
+  --details-solid-open-bg: var(--background-2);
+  --details-solid-open-border: var(--border-1);
 }

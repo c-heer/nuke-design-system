@@ -5,20 +5,32 @@ main {
   min-height: var(--main-min-height);
 }
 
-/* Style 1: Full width (default) */
-main.style-1 {
-  max-width: var(--main-style-1-max-width);
-  margin: var(--main-style-1-margin);
+/* zen: Minimal / Japanese - No background, minimal padding */
+main[style="zen"],
+main.zen {
+  max-width: var(--main-zen-max-width);
+  margin: var(--main-zen-margin);
+  padding: var(--main-zen-padding);
+  background: var(--main-zen-bg);
 }
 
-/* Style 2: Centered with max-width */
-main.style-2 {
-  max-width: var(--main-style-2-max-width);
-  margin: var(--main-style-2-margin);
+/* soft: Subtle Contrasts - Soft background different from page */
+main[style="soft"],
+main.soft {
+  max-width: var(--main-soft-max-width);
+  margin: var(--main-soft-margin);
+  padding: var(--main-soft-padding);
+  background: var(--main-soft-bg);
 }
 
-/* Style 3: Narrow (for articles/reading) */
-main.style-3 {
-  max-width: var(--main-style-3-max-width);
-  margin: var(--main-style-3-margin);
+/* solid: All In - Border + background for contained feel */
+main[style="solid"],
+main.solid {
+  max-width: var(--main-solid-max-width);
+  margin: var(--main-solid-margin);
+  padding: var(--main-solid-padding);
+  background: var(--main-solid-bg);
+  border: 1px solid var(--main-solid-border);
+  border-radius: var(--main-solid-radius);
+  box-shadow: var(--main-solid-shadow);
 }

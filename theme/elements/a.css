@@ -16,18 +16,22 @@
   /* Focus state */
   --link-focus-color: var(--color-1);
 
-  /* Style 1: Underlined link */
-  --link-style-1-color: var(--color-1);
-  --link-style-1-hover-color: hsl(210, 100%, 40%);
+  /* zen: Minimal / Japanese - Underline on hover only */
+  --link-zen-color: var(--color-1);
+  --link-zen-decoration: none;
+  --link-zen-hover-color: hsl(210, 100%, 40%);
+  --link-zen-hover-decoration: underline;
 
-  /* Style 2: Plain link */
-  --link-style-2-color: var(--color-1);
-  --link-style-2-hover-color: hsl(210, 100%, 40%);
+  /* soft: Subtle Contrasts - Color change only, no underline */
+  --link-soft-color: var(--color-1);
+  --link-soft-decoration: none;
+  --link-soft-hover-color: hsl(210, 100%, 40%);
+  --link-soft-hover-decoration: none;
 
-  /* Style 3: Button-like link */
-  --link-style-3-color: var(--color-1);
-  --link-style-3-bg: transparent;
-  --link-style-3-border: var(--color-1);
-  --link-style-3-hover-bg: var(--color-1);
-  --link-style-3-hover-color: var(--on-color);
+  /* solid: All In - Underline always visible */
+  --link-solid-color: var(--color-1);
+  --link-solid-decoration: underline;
+  --link-solid-decoration-thickness: 1px;
+  --link-solid-hover-color: hsl(210, 100%, 40%);
+  --link-solid-hover-decoration: underline;
 }

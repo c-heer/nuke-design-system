@@ -25,7 +25,6 @@ nuke-toast {
   padding: var(--toast-padding);
   font-size: var(--toast-font-size);
   border-radius: var(--toast-radius);
-  box-shadow: var(--toast-shadow);
   pointer-events: auto;
   opacity: 0;
   transform: translateX(100%);
@@ -42,6 +41,11 @@ nuke-toast.show {
 nuke-toast.hide {
   opacity: 0;
   transform: translateX(100%);
+}
+
+/* Toast message */
+.toast-message {
+  flex: 1;
 }
 
 /* Close button */
@@ -66,26 +70,35 @@ nuke-toast.hide {
 }
 
 /* ============================================
-   TOAST VARIANTS - style="1|2|3"
+   TOAST VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
    ============================================ */
 
-/* Style 1: Info toast */
+/* zen: Minimal / Japanese */
+nuke-toast[style="zen"],
+nuke-toast.zen,
 nuke-toast[style="1"] {
-  background: var(--toast-style-1-background);
-  color: var(--toast-style-1-color);
-  border: var(--toast-style-1-border);
+  background: var(--toast-zen-background);
+  color: var(--toast-zen-color);
+  border: var(--toast-zen-border);
+  box-shadow: var(--toast-zen-shadow);
 }
 
-/* Style 2: Success toast */
+/* soft: Subtle Contrasts */
+nuke-toast[style="soft"],
+nuke-toast.soft,
 nuke-toast[style="2"] {
-  background: var(--toast-style-2-background);
-  color: var(--toast-style-2-color);
-  border: var(--toast-style-2-border);
+  background: var(--toast-soft-background);
+  color: var(--toast-soft-color);
+  border: var(--toast-soft-border);
+  box-shadow: var(--toast-soft-shadow);
 }
 
-/* Style 3: Error toast */
+/* solid: All In */
+nuke-toast[style="solid"],
+nuke-toast.solid,
 nuke-toast[style="3"] {
-  background: var(--toast-style-3-background);
-  color: var(--toast-style-3-color);
-  border: var(--toast-style-3-border);
+  background: var(--toast-solid-background);
+  color: var(--toast-solid-color);
+  border: var(--toast-solid-border);
+  box-shadow: var(--toast-solid-shadow);
 }

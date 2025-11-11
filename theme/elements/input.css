@@ -12,25 +12,24 @@
   --input-transition: var(--transition-fast);
 
   /* Base colors */
-  --input-bg: var(--background-2);
   --input-color: var(--on-background);
-  --input-border: var(--border-1);
   --input-placeholder: var(--on-background-light);
 
   /* Focus state */
   --input-focus-border: var(--color-1);
-  --input-focus-ring: var(--color-1);
 
-  /* Style 1: Standard input with border */
-  --input-style-1-bg: var(--input-bg);
-  --input-style-1-border: var(--input-border);
+  /* zen: Minimal / Japanese - Bottom border only */
+  --input-zen-bg: transparent;
+  --input-zen-border: transparent;
+  --input-zen-border-bottom: var(--border-2);
+  --input-zen-focus-border-bottom: var(--color-1);
 
-  /* Style 2: Filled background */
-  --input-style-2-bg: var(--background-3);
-  --input-style-2-border: transparent;
+  /* soft: Subtle Contrasts - Background only, no borders */
+  --input-soft-bg: var(--background-3);
+  --input-soft-focus-bg: hsl(0, 0%, 94%);
 
-  /* Style 3: Underline only */
-  --input-style-3-bg: transparent;
-  --input-style-3-border: transparent;
-  --input-style-3-border-bottom: var(--input-border);
+  /* solid: All In - Full border + background */
+  --input-solid-bg: var(--background-3);
+  --input-solid-border: var(--border-1);
+  --input-solid-focus-border: var(--color-1);
 }

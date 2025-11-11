@@ -20,22 +20,27 @@ legend {
   font-size: var(--legend-font-size);
 }
 
-/* Style 1: Standard fieldset */
-fieldset.style-1 {
-  border: 1px solid var(--fieldset-style-1-border);
-  background: var(--fieldset-style-1-bg);
+/* zen: Minimal / Japanese - Border only, no background */
+fieldset[style="zen"],
+fieldset.zen {
+  border: 1px solid var(--fieldset-zen-border);
+  background: var(--fieldset-zen-bg);
+  padding: var(--fieldset-zen-padding);
 }
 
-/* Style 2: No border, just spacing */
-fieldset.style-2 {
+/* soft: Subtle Contrasts - Filled background, no borders */
+fieldset[style="soft"],
+fieldset.soft {
   border: none;
-  border-left: 3px solid var(--fieldset-style-2-border);
-  background: transparent;
+  background: var(--fieldset-soft-bg);
+  padding: var(--fieldset-soft-padding);
 }
 
-/* Style 3: Card style */
-fieldset.style-3 {
-  border: 1px solid var(--fieldset-style-3-border);
-  background: var(--fieldset-style-3-bg);
+/* solid: All In - Border + background */
+fieldset[style="solid"],
+fieldset.solid {
+  border: 2px solid var(--fieldset-solid-border);
+  background: var(--fieldset-solid-bg);
+  padding: var(--fieldset-solid-padding);
   box-shadow: var(--shadow-1);
 }

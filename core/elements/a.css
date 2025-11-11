@@ -15,7 +15,7 @@ a {
   color: var(--link-color);
   text-decoration: var(--link-decoration);
   cursor: pointer;
-  transition: color var(--link-transition);
+  transition: color var(--link-transition), text-decoration var(--link-transition);
 }
 
 a:hover {
@@ -29,48 +29,44 @@ a:focus-visible {
   border-radius: 2px;
 }
 
-/* Style 1: Underlined link */
-a.style-1 {
-  color: var(--link-style-1-color);
-  text-decoration: underline;
+/* zen: Minimal / Japanese - Underline on hover only */
+a.zen,
+a[style="zen"] {
+  color: var(--link-zen-color);
+  text-decoration: var(--link-zen-decoration);
   text-underline-offset: 3px;
 }
 
-a.style-1:hover {
-  color: var(--link-style-1-hover-color);
+a.zen:hover,
+a[style="zen"]:hover {
+  color: var(--link-zen-hover-color);
+  text-decoration: var(--link-zen-hover-decoration);
 }
 
-/* Style 2: Plain link (no underline) */
-a.style-2 {
-  color: var(--link-style-2-color);
-  text-decoration: none;
+/* soft: Subtle Contrasts - Color change only, no underline */
+a.soft,
+a[style="soft"] {
+  color: var(--link-soft-color);
+  text-decoration: var(--link-soft-decoration);
 }
 
-a.style-2:hover {
-  color: var(--link-style-2-hover-color);
-  text-decoration: underline;
+a.soft:hover,
+a[style="soft"]:hover {
+  color: var(--link-soft-hover-color);
+  text-decoration: var(--link-soft-hover-decoration);
+}
+
+/* solid: All In - Underline always visible */
+a.solid,
+a[style="solid"] {
+  color: var(--link-solid-color);
+  text-decoration: var(--link-solid-decoration);
+  text-decoration-thickness: var(--link-solid-decoration-thickness);
   text-underline-offset: 3px;
 }
 
-/* Style 3: Button-like link */
-a.style-3 {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-1);
-  padding: 0 var(--button-padding-x);
-  height: var(--button-height);
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
-  color: var(--link-style-3-color);
-  background: var(--link-style-3-bg);
-  border: 1px solid var(--link-style-3-border);
-  border-radius: var(--button-radius);
-  text-decoration: none;
-  transition: background-color var(--link-transition), color var(--link-transition);
-}
-
-a.style-3:hover {
-  background: var(--link-style-3-hover-bg);
-  color: var(--link-style-3-hover-color);
+a.solid:hover,
+a[style="solid"]:hover {
+  color: var(--link-solid-hover-color);
+  text-decoration: var(--link-solid-hover-decoration);
 }

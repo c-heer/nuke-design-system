@@ -12,18 +12,31 @@
   --badge-radius: var(--border-radius-small);   /* Rounded corners */
   --badge-line-height: 1;                       /* Tight line height */
 
-  /* Style 1: Solid badge (colored background) */
-  --badge-style-1-background: var(--color-1);
-  --badge-style-1-color: var(--on-color);
-  --badge-style-1-border: none;
+  /* zen: Minimal / Japanese - Outlined only, no background */
+  --badge-zen-background: transparent;
+  --badge-zen-color: var(--on-background);
+  --badge-zen-border: 1px solid var(--border-2);
 
-  /* Style 2: Subtle badge (light background) */
-  --badge-style-2-background: var(--background-3);
-  --badge-style-2-color: var(--on-background);
-  --badge-style-2-border: none;
+  /* soft: Subtle Contrasts - Filled background, no border */
+  --badge-soft-background: var(--background-3);
+  --badge-soft-color: var(--on-background);
+  --badge-soft-border: none;
 
-  /* Style 3: Outlined badge (border only) */
-  --badge-style-3-background: transparent;
-  --badge-style-3-color: var(--color-1);
-  --badge-style-3-border: 1px solid var(--color-1);
+  /* solid: All In - Border + background fill */
+  --badge-solid-background: var(--color-1);
+  --badge-solid-color: var(--on-color);
+  --badge-solid-border: 1px solid var(--color-1);
+
+  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
+  --badge-style-1-background: var(--badge-zen-background);
+  --badge-style-1-color: var(--badge-zen-color);
+  --badge-style-1-border: var(--badge-zen-border);
+
+  --badge-style-2-background: var(--badge-soft-background);
+  --badge-style-2-color: var(--badge-soft-color);
+  --badge-style-2-border: var(--badge-soft-border);
+
+  --badge-style-3-background: var(--badge-solid-background);
+  --badge-style-3-color: var(--badge-solid-color);
+  --badge-style-3-border: var(--badge-solid-border);
 }

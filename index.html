@@ -16,19 +16,13 @@
       padding: 0;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: var(--space-4) var(--space-2);
-    }
-
     /* Hero Section */
     .hero {
       text-align: center;
       padding: var(--space-4) var(--space-2);
       background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
       color: var(--on-color);
-      margin-bottom: 0;
+      margin-bottom: var(--space-4);
       position: relative;
     }
 
@@ -51,525 +45,728 @@
 
     .hero p {
       font-size: 1.25rem;
-      margin: 0 0 var(--space-3) 0;
+      margin: 0;
       opacity: 0.95;
     }
 
-    .hero code {
-      background: rgba(255,255,255,0.2);
-      padding: 0.25rem 0.5rem;
-      border-radius: var(--border-radius-small);
-      font-size: 1rem;
+    /* Theme toggle button */
+    #theme-toggle {
+      position: fixed;
+      top: var(--space-2);
+      right: var(--space-2);
+      z-index: 1001;
+      cursor: pointer;
     }
 
-    /* Sticky Navigation */
-    .sticky-nav-wrapper {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--background-2);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: var(--space-4);
-    }
-
-    .sticky-nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: var(--space-1) var(--space-2);
+    /* Demo container - wraps all section wrappers */
+    .demo-container {
       display: flex;
-      justify-content: center;
-      gap: var(--space-1);
-      flex-wrap: wrap;
+      flex-direction: column;
     }
 
-    /* Variant showcase */
-    .variants {
+    /* Section wrapper - ensures alignment across columns */
+    .section-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: var(--space-2);
-      margin: var(--space-2) 0;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-1); /* Creates visual separators */
     }
 
-    .variant-box {
-      padding: var(--space-2);
-      border: 1px solid var(--border-1);
-      border-radius: var(--border-radius);
-      background: var(--background-2);
+    .section {
+      background: var(--background-1);
+      padding: var(--space-3);
+      min-width: 0; /* Prevent grid blowout */
+      min-height: 100%; /* Ensures all sections same height */
     }
 
-    .variant-label {
+    /* Header section styling */
+    .header-section .section {
+      padding: var(--space-4) var(--space-3);
+    }
+
+    .header-section h1 {
+      font-size: 3rem;
+      margin: 0 0 var(--space-1) 0;
+      font-weight: 700;
+    }
+
+    .philosophy-description {
+      color: var(--on-background-light);
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    /* Section headers */
+    .section h2 {
+      font-size: 1.5rem;
+      margin: 0 0 var(--space-2) 0;
       font-weight: 600;
-      margin-bottom: var(--space-1);
-      display: block;
     }
 
-    .swatch {
-      display: inline-block;
-      width: 50px;
-      height: 50px;
-      border: 1px solid var(--border-1);
-      border-radius: var(--border-radius-small);
-      margin-right: var(--space-1);
+    /* Element spacing within categories */
+    .element-group {
+      display: grid;
+      gap: var(--space-2);
+      margin-bottom: var(--space-2);
+    }
+
+    .element-group > * {
+      margin: 0;
+    }
+
+    /* Element item with label */
+    .element-item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .element-label {
+      font-size: 0.75rem;
+      font-family: 'Courier New', monospace;
+      color: var(--on-background-light);
+      font-weight: 500;
+    }
+
+    /* HR dividers */
+    hr {
+      margin: var(--space-3) 0;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+    }
+
+    /* Code blocks */
+    .section pre {
+      overflow-x: auto;
     }
 
     /* Spacing utilities */
     .mt-2 { margin-top: var(--space-2); }
     .mb-2 { margin-bottom: var(--space-2); }
-    .mb-3 { margin-bottom: var(--space-3); }
-    .mb-4 { margin-bottom: var(--space-4); }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .section-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .header-section h1 {
+        font-size: 2.5rem;
+      }
+    }
 
     /* Mobile */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
       .hero p { font-size: 1rem; }
+
+      .header-section h1 {
+        font-size: 2rem;
+      }
+
+      .section h2 {
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Dark theme adjustments */
+    .dark-theme .hero {
+      background: linear-gradient(135deg, hsl(210, 70%, 45%) 0%, hsl(280, 50%, 50%) 100%);
     }
   </style>
 </head>
 <body>
 
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" style="zen">🌙 Dark</button>
+
+
   <!-- Hero Section -->
   <div class="hero">
-    <h1>Nuke Design System <nuke-badge style="2">v1.0</nuke-badge></h1>
-    <p>Element-first CSS with universal <code>.style-1/2/3</code> pattern</p>
-    <p>28 native elements + 6 web components. Zero build tools. Framework independent.</p>
+    <h1>Nuke Design System</h1>
+    <p>Three design philosophies in one framework</p>
   </div>
 
-  <!-- Sticky Navigation -->
-  <div class="sticky-nav-wrapper">
-    <div class="sticky-nav">
-      <button class="style-3" onclick="document.location.hash='#tokens'">Design Tokens</button>
-      <button class="style-3" onclick="document.location.hash='#elements'">Native Elements</button>
-      <button class="style-3" onclick="document.location.hash='#components'">Web Components</button>
-    </div>
-  </div>
+  <!-- Demo Container with Section Wrappers -->
+  <div class="demo-container">
 
-  <div class="container">
-
-    <!-- ==================== DESIGN TOKENS ==================== -->
-    <div id="tokens" class="mb-4">
-      <h2>Design Tokens</h2>
-
-      <nuke-card style="1">
-        <nuke-card-header>Colors</nuke-card-header>
-        <nuke-card-content>
-          <div style="display: flex; gap: var(--space-1); flex-wrap: wrap;">
-            <span class="swatch" style="background: var(--color-1);" title="--color-1"></span>
-            <span class="swatch" style="background: var(--color-2);" title="--color-2"></span>
-            <span class="swatch" style="background: var(--color-3);" title="--color-3"></span>
-            <span class="swatch" style="background: var(--background-1); border: 2px solid var(--border-1);" title="--background-1"></span>
-            <span class="swatch" style="background: var(--background-2); border: 2px solid var(--border-1);" title="--background-2"></span>
-            <span class="swatch" style="background: var(--background-3); border: 2px solid var(--border-1);" title="--background-3"></span>
-          </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <div class="variants mt-2">
-        <nuke-card style="2">
-          <nuke-card-header>Spacing</nuke-card-header>
-          <nuke-card-content>
-            <code>--space-1: 0.5rem</code><br>
-            <code>--space-2: 1rem</code><br>
-            <code>--space-3: 2rem</code><br>
-            <code>--space-4: 3rem</code>
-          </nuke-card-content>
-        </nuke-card>
-
-        <nuke-card style="2">
-          <nuke-card-header>Shadows</nuke-card-header>
-          <nuke-card-content>
-            <div style="padding: var(--space-1); box-shadow: var(--shadow-1); margin-bottom: var(--space-1);">shadow-1</div>
-            <div style="padding: var(--space-1); box-shadow: var(--shadow-2); margin-bottom: var(--space-1);">shadow-2</div>
-            <div style="padding: var(--space-1); box-shadow: var(--shadow-3);">shadow-3</div>
-          </nuke-card-content>
-        </nuke-card>
+    <!-- ==================== HEADER SECTION ==================== -->
+    <div class="section-wrapper header-section">
+      <div class="section">
+        <h1>zen</h1>
+        <p class="philosophy-description">Minimal / Japanese - Lean, understated, maximum whitespace</p>
+      </div>
+      <div class="section">
+        <h1>soft</h1>
+        <p class="philosophy-description">Subtle Contrasts - Modern, background-driven, no hard edges</p>
+      </div>
+      <div class="section">
+        <h1>solid</h1>
+        <p class="philosophy-description">All In - Traditional, clear boundaries, maximum definition</p>
       </div>
     </div>
 
-    <!-- ==================== NATIVE ELEMENTS ==================== -->
-    <div id="elements" class="mb-4">
-      <h2>Native Elements <nuke-badge style="1">28 Elements</nuke-badge></h2>
-
-      <!-- BUTTONS -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Buttons</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Solid</span>
-              <button class="style-1">Button</button>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Outlined</span>
-              <button class="style-2">Button</button>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Ghost</span>
-              <button class="style-3">Button</button>
-            </div>
+    <!-- ==================== FORMS SECTION ==================== -->
+    <div class="section-wrapper">
+      <div class="section">
+        <h2>Forms</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt;</span>
+            <button style="zen">Button</button>
           </div>
-          <pre class="mt-2"><code>&lt;button class="style-1"&gt;Button&lt;/button&gt;</code></pre>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- INPUTS -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Input</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Border</span>
-              <input type="text" class="style-1" placeholder="Border input">
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Filled</span>
-              <input type="text" class="style-2" placeholder="Filled input">
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Underline</span>
-              <input type="text" class="style-3" placeholder="Underline input">
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input&gt;</span>
+            <input type="text" style="zen" placeholder="Text input">
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- SELECT -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Select</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1</span>
-              <select class="style-1">
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </select>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2</span>
-              <select class="style-2">
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </select>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3</span>
-              <select class="style-3">
-                <option>Option 1</option>
-                <option>Option 2</option>
-              </select>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;select&gt;</span>
+            <select style="zen">
+              <option>Select option</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- TEXTAREA -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Textarea</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Border</span>
-              <textarea class="style-1" placeholder="Message..." rows="3"></textarea>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Filled</span>
-              <textarea class="style-2" placeholder="Message..." rows="3"></textarea>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Minimal</span>
-              <textarea class="style-3" placeholder="Message..." rows="3"></textarea>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;textarea&gt;</span>
+            <textarea style="zen" placeholder="Textarea..." rows="3"></textarea>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- CHECKBOXES -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Checkbox</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Square</span>
-              <label><input type="checkbox" class="style-1" checked> Checkbox 1</label><br>
-              <label><input type="checkbox" class="style-1"> Checkbox 2</label>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Rounded</span>
-              <label><input type="checkbox" class="style-2" checked> Checkbox 1</label><br>
-              <label><input type="checkbox" class="style-2"> Checkbox 2</label>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Circle</span>
-              <label><input type="checkbox" class="style-3" checked> Checkbox 1</label><br>
-              <label><input type="checkbox" class="style-3"> Checkbox 2</label>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="checkbox"&gt;</span>
+            <label><input type="checkbox" style="zen" checked> Checkbox</label>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- RADIO -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Radio</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Standard</span>
-              <label><input type="radio" name="r1" class="style-1" checked> Option 1</label><br>
-              <label><input type="radio" name="r1" class="style-1"> Option 2</label>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Filled</span>
-              <label><input type="radio" name="r2" class="style-2" checked> Option 1</label><br>
-              <label><input type="radio" name="r2" class="style-2"> Option 2</label>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Small</span>
-              <label><input type="radio" name="r3" class="style-3" checked> Option 1</label><br>
-              <label><input type="radio" name="r3" class="style-3"> Option 2</label>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="radio"&gt;</span>
+            <label><input type="radio" name="zen-radio" style="zen" checked> Radio</label>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- PROGRESS -->
-      <nuke-card style="1" class="mb-2">
-        <nuke-card-header>Progress</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Solid</span>
-              <progress value="70" max="100" class="style-1"></progress>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Striped</span>
-              <progress value="60" max="100" class="style-2"></progress>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Rounded</span>
-              <progress value="80" max="100" class="style-3"></progress>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;progress&gt;</span>
+            <progress value="70" max="100" style="zen"></progress>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <nuke-card style="2">
-        <nuke-card-content>
-          <p><strong>More elements available:</strong></p>
-          <p>label, fieldset, meter, range, form, a, dialog, details, nav, table, ul, ol, hr, code, pre, img, main, header, footer, section</p>
-        </nuke-card-content>
-      </nuke-card>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="range"&gt;</span>
+            <input type="range" style="zen" value="50">
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Forms</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt;</span>
+            <button style="soft">Button</button>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input&gt;</span>
+            <input type="text" style="soft" placeholder="Text input">
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;select&gt;</span>
+            <select style="soft">
+              <option>Select option</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;textarea&gt;</span>
+            <textarea style="soft" placeholder="Textarea..." rows="3"></textarea>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="checkbox"&gt;</span>
+            <label><input type="checkbox" style="soft" checked> Checkbox</label>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="radio"&gt;</span>
+            <label><input type="radio" name="soft-radio" style="soft" checked> Radio</label>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;progress&gt;</span>
+            <progress value="60" max="100" style="soft"></progress>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="range"&gt;</span>
+            <input type="range" style="soft" value="50">
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Forms</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt;</span>
+            <button style="solid">Button</button>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input&gt;</span>
+            <input type="text" style="solid" placeholder="Text input">
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;select&gt;</span>
+            <select style="solid">
+              <option>Select option</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;textarea&gt;</span>
+            <textarea style="solid" placeholder="Textarea..." rows="3"></textarea>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="checkbox"&gt;</span>
+            <label><input type="checkbox" style="solid" checked> Checkbox</label>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="radio"&gt;</span>
+            <label><input type="radio" name="solid-radio" style="solid" checked> Radio</label>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;progress&gt;</span>
+            <progress value="80" max="100" style="solid"></progress>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;input type="range"&gt;</span>
+            <input type="range" style="solid" value="50">
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- ==================== WEB COMPONENTS ==================== -->
-    <div id="components" class="mb-4">
-      <h2>Web Components <nuke-badge style="1">6 Components</nuke-badge></h2>
-
-      <!-- CARD -->
-      <nuke-card style="2" class="mb-2">
-        <nuke-card-header>nuke-card</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <nuke-card style="1">
-              <nuke-card-header>Style 1 - Standard</nuke-card-header>
-              <nuke-card-content>Card with border</nuke-card-content>
-            </nuke-card>
-            <nuke-card style="2">
-              <nuke-card-header>Style 2 - Elevated</nuke-card-header>
-              <nuke-card-content>Card with shadow</nuke-card-content>
-            </nuke-card>
-            <nuke-card style="3">
-              <nuke-card-header>Style 3 - Bordered</nuke-card-header>
-              <nuke-card-content>Strong border</nuke-card-content>
-            </nuke-card>
+    <!-- ==================== INTERACTIVE SECTION ==================== -->
+    <div class="section-wrapper">
+      <div class="section">
+        <h2>Interactive</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;a&gt;</span>
+            <a href="#" style="zen">Link example</a>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- TOOLBAR -->
-      <nuke-card style="2" class="mb-2">
-        <nuke-card-header>nuke-toolbar</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Minimal</span>
-              <nuke-toolbar style="1">
-                <button class="style-2">New</button>
-                <button class="style-2">Edit</button>
-                <button class="style-2">Delete</button>
-              </nuke-toolbar>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Bordered</span>
-              <nuke-toolbar style="2">
-                <button class="style-2">Bold</button>
-                <button class="style-2">Italic</button>
-                <button class="style-2">Underline</button>
-              </nuke-toolbar>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Sticky (see nav above)</span>
-              <p>The sticky navigation bar uses style="3"</p>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;details&gt;</span>
+            <details style="zen">
+              <summary>Details summary</summary>
+              <p>Hidden content revealed on click</p>
+            </details>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- BADGE -->
-      <nuke-card style="2" class="mb-2">
-        <nuke-card-header>nuke-badge</nuke-card-header>
-        <nuke-card-content>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Solid</span>
-              <nuke-badge style="1">New</nuke-badge>
-              <nuke-badge style="1">12</nuke-badge>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Subtle</span>
-              <nuke-badge style="2">Tag</nuke-badge>
-              <nuke-badge style="2">Label</nuke-badge>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Outlined</span>
-              <nuke-badge style="3">v1.0</nuke-badge>
-              <nuke-badge style="3">Beta</nuke-badge>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt; Sidebar</span>
+            <button style="zen" onclick="document.querySelector('#demo-sidebar-zen').toggle()">Open Sidebar</button>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- TABS -->
-      <nuke-card style="2" class="mb-2">
-        <nuke-card-header>nuke-tabs</nuke-card-header>
-        <nuke-card-content>
-          <div class="variant-box mb-2">
-            <span class="variant-label">Style 1 - Underline</span>
-            <nuke-tabs style="1">
-              <nuke-tab>Tab 1</nuke-tab>
-              <nuke-tab>Tab 2</nuke-tab>
-              <nuke-tab>Tab 3</nuke-tab>
-              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 3 content</nuke-tab-panel>
-            </nuke-tabs>
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt; Toast</span>
+            <button style="zen" onclick="window.showToast('Zen toast notification', 'zen')">Show Toast</button>
           </div>
-          <div class="variant-box mb-2">
-            <span class="variant-label">Style 2 - Pills</span>
-            <nuke-tabs style="2">
-              <nuke-tab>Tab 1</nuke-tab>
-              <nuke-tab>Tab 2</nuke-tab>
-              <nuke-tab>Tab 3</nuke-tab>
-              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 3 content</nuke-tab-panel>
-            </nuke-tabs>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Interactive</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;a&gt;</span>
+            <a href="#" style="soft">Link example</a>
           </div>
-          <div class="variant-box">
-            <span class="variant-label">Style 3 - Boxed</span>
-            <nuke-tabs style="3">
-              <nuke-tab>Tab 1</nuke-tab>
-              <nuke-tab>Tab 2</nuke-tab>
-              <nuke-tab>Tab 3</nuke-tab>
-              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 3 content</nuke-tab-panel>
-            </nuke-tabs>
+          <div class="element-item">
+            <span class="element-label">&lt;details&gt;</span>
+            <details style="soft">
+              <summary>Details summary</summary>
+              <p>Hidden content revealed on click</p>
+            </details>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- TOAST -->
-      <nuke-card style="2" class="mb-2">
-        <nuke-card-header>nuke-toast</nuke-card-header>
-        <nuke-card-content>
-          <p>Click buttons to show toast notifications (top-right corner)</p>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Style 1 - Info</span>
-              <button class="style-1" onclick="window.showToast('Info message', '1')">Show Info</button>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 2 - Success</span>
-              <button class="style-1" onclick="window.showToast('Success!', '2')">Show Success</button>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Style 3 - Error</span>
-              <button class="style-1" onclick="window.showToast('Error!', '3')">Show Error</button>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt; Sidebar</span>
+            <button style="soft" onclick="document.querySelector('#demo-sidebar-soft').toggle()">Open Sidebar</button>
           </div>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- SIDEBAR -->
-      <nuke-card style="2" class="mb-2">
-        <nuke-card-header>nuke-sidebar</nuke-card-header>
-        <nuke-card-content>
-          <p>Click buttons to toggle sidebars. Press Escape or click overlay to close.</p>
-          <div class="variants">
-            <div class="variant-box">
-              <span class="variant-label">Left Sidebar</span>
-              <button class="style-1" onclick="document.querySelector('#demo-sidebar-left').toggle()">Toggle Left</button>
-            </div>
-            <div class="variant-box">
-              <span class="variant-label">Right Sidebar</span>
-              <button class="style-1" onclick="document.querySelector('#demo-sidebar-right').toggle()">Toggle Right</button>
-            </div>
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt; Toast</span>
+            <button style="soft" onclick="window.showToast('Soft toast notification', 'soft')">Show Toast</button>
           </div>
-        </nuke-card-content>
-      </nuke-card>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Interactive</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;a&gt;</span>
+            <a href="#" style="solid">Link example</a>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;details&gt;</span>
+            <details style="solid">
+              <summary>Details summary</summary>
+              <p>Hidden content revealed on click</p>
+            </details>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt; Sidebar</span>
+            <button style="solid" onclick="document.querySelector('#demo-sidebar-solid').toggle()">Open Sidebar</button>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;button&gt; Toast</span>
+            <button style="solid" onclick="window.showToast('Solid toast notification', 'solid')">Show Toast</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- FOOTER -->
-    <nuke-card style="2">
-      <nuke-card-content>
-        <h3>Nuke Design System</h3>
-        <p>Production-ready with 28 native elements and 6 web components.</p>
-        <p><nuke-badge style="2">Zero build tools</nuke-badge> <nuke-badge style="2">Framework independent</nuke-badge> <nuke-badge style="2">Easy customization</nuke-badge></p>
-      </nuke-card-content>
-    </nuke-card>
+    <!-- ==================== CONTENT SECTION ==================== -->
+    <div class="section-wrapper">
+      <div class="section">
+        <h2>Content</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;table&gt;</span>
+            <table style="zen">
+              <thead>
+                <tr>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Data 1</td>
+                  <td>Data 2</td>
+                </tr>
+                <tr>
+                  <td>Data 3</td>
+                  <td>Data 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;ul&gt;</span>
+            <ul style="zen">
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;code&gt;</span>
+            <code style="zen">code.example()</code>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;pre&gt;</span>
+            <pre style="zen"><code>function example() {
+  return "zen";
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Content</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;table&gt;</span>
+            <table style="soft">
+              <thead>
+                <tr>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Data 1</td>
+                  <td>Data 2</td>
+                </tr>
+                <tr>
+                  <td>Data 3</td>
+                  <td>Data 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;ul&gt;</span>
+            <ul style="soft">
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;code&gt;</span>
+            <code style="soft">code.example()</code>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;pre&gt;</span>
+            <pre style="soft"><code>function example() {
+  return "soft";
+}</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Content</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;table&gt;</span>
+            <table style="solid">
+              <thead>
+                <tr>
+                  <th>Column 1</th>
+                  <th>Column 2</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Data 1</td>
+                  <td>Data 2</td>
+                </tr>
+                <tr>
+                  <td>Data 3</td>
+                  <td>Data 4</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;ul&gt;</span>
+            <ul style="solid">
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <li>List item 3</li>
+            </ul>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;code&gt;</span>
+            <code style="solid">code.example()</code>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;pre&gt;</span>
+            <pre style="solid"><code>function example() {
+  return "solid";
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== COMPONENTS SECTION ==================== -->
+    <div class="section-wrapper">
+      <div class="section">
+        <h2>Components</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-card&gt;</span>
+            <nuke-card style="zen">
+              <nuke-card-header>Card Header</nuke-card-header>
+              <nuke-card-content>Card content with minimal styling</nuke-card-content>
+            </nuke-card>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-toolbar&gt;</span>
+            <nuke-toolbar style="zen">
+              <button style="zen">Tool 1</button>
+              <button style="zen">Tool 2</button>
+            </nuke-toolbar>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-badge&gt;</span>
+            <div>
+              <nuke-badge style="zen">Badge</nuke-badge>
+              <nuke-badge style="zen">Label</nuke-badge>
+            </div>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-tabs&gt;</span>
+            <nuke-tabs style="zen">
+              <nuke-tab>Tab 1</nuke-tab>
+              <nuke-tab>Tab 2</nuke-tab>
+              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
+              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
+            </nuke-tabs>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Components</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-card&gt;</span>
+            <nuke-card style="soft">
+              <nuke-card-header>Card Header</nuke-card-header>
+              <nuke-card-content>Card content with gentle shadows</nuke-card-content>
+            </nuke-card>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-toolbar&gt;</span>
+            <nuke-toolbar style="soft">
+              <button style="soft">Tool 1</button>
+              <button style="soft">Tool 2</button>
+            </nuke-toolbar>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-badge&gt;</span>
+            <div>
+              <nuke-badge style="soft">Badge</nuke-badge>
+              <nuke-badge style="soft">Label</nuke-badge>
+            </div>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-tabs&gt;</span>
+            <nuke-tabs style="soft">
+              <nuke-tab>Tab 1</nuke-tab>
+              <nuke-tab>Tab 2</nuke-tab>
+              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
+              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
+            </nuke-tabs>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Components</h2>
+        <div class="element-group">
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-card&gt;</span>
+            <nuke-card style="solid">
+              <nuke-card-header>Card Header</nuke-card-header>
+              <nuke-card-content>Card content with bold borders</nuke-card-content>
+            </nuke-card>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-toolbar&gt;</span>
+            <nuke-toolbar style="solid">
+              <button style="solid">Tool 1</button>
+              <button style="solid">Tool 2</button>
+            </nuke-toolbar>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-badge&gt;</span>
+            <div>
+              <nuke-badge style="solid">Badge</nuke-badge>
+              <nuke-badge style="solid">Label</nuke-badge>
+            </div>
+          </div>
+          <div class="element-item">
+            <span class="element-label">&lt;nuke-tabs&gt;</span>
+            <nuke-tabs style="solid">
+              <nuke-tab>Tab 1</nuke-tab>
+              <nuke-tab>Tab 2</nuke-tab>
+              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
+              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
+            </nuke-tabs>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
   <!-- Demo Sidebars -->
-  <nuke-sidebar id="demo-sidebar-left" style="1" position="left">
-    <h3>Left Sidebar</h3>
-    <p>This sidebar slides in from the left with overlay backdrop.</p>
+  <nuke-sidebar id="demo-sidebar-zen" class="zen" position="left">
+    <h3>zen Sidebar</h3>
+    <p>Minimal border, no shadow. Background-1 (subtle gray) to avoid see-through.</p>
     <nav>
       <ul>
+        <li><a href="#philosophies">Design Philosophies</a></li>
         <li><a href="#tokens">Design Tokens</a></li>
         <li><a href="#elements">Native Elements</a></li>
-        <li><a href="#components">Web Components</a></li>
       </ul>
     </nav>
-    <button class="style-2 mt-2" onclick="document.querySelector('#demo-sidebar-left').close()">Close</button>
+    <button style="zen" class="mt-2" onclick="document.querySelector('#demo-sidebar-zen').close()">Close</button>
   </nuke-sidebar>
 
-  <nuke-sidebar id="demo-sidebar-right" style="1" position="right">
-    <h3>Right Sidebar</h3>
-    <p>This sidebar slides in from the right.</p>
+  <nuke-sidebar id="demo-sidebar-soft" class="soft" position="right">
+    <h3>soft Sidebar</h3>
+    <p>No border, shadow only. Clean white background.</p>
     <div class="mt-2">
-      <nuke-badge style="1">nuke-card</nuke-badge>
-      <nuke-badge style="1">nuke-toolbar</nuke-badge>
-      <nuke-badge style="1">nuke-badge</nuke-badge>
-      <nuke-badge style="1">nuke-tabs</nuke-badge>
-      <nuke-badge style="1">nuke-toast</nuke-badge>
-      <nuke-badge style="1">nuke-sidebar</nuke-badge>
+      <nuke-badge style="soft">Card</nuke-badge>
+      <nuke-badge style="soft">Toolbar</nuke-badge>
+      <nuke-badge style="soft">Badge</nuke-badge>
+      <nuke-badge style="soft">Tabs</nuke-badge>
     </div>
-    <button class="style-2 mt-2" onclick="document.querySelector('#demo-sidebar-right').close()">Close</button>
+    <button style="soft" class="mt-2" onclick="document.querySelector('#demo-sidebar-soft').close()">Close</button>
+  </nuke-sidebar>
+
+  <nuke-sidebar id="demo-sidebar-solid" class="solid" position="left">
+    <h3>solid Sidebar</h3>
+    <p>Thick border + large shadow. Maximum definition.</p>
+    <nav>
+      <ul>
+        <li><a href="#components">Web Components</a></li>
+        <li><a href="#elements">Native Elements</a></li>
+        <li><a href="#philosophies">Philosophies</a></li>
+      </ul>
+    </nav>
+    <button style="solid" class="mt-2" onclick="document.querySelector('#demo-sidebar-solid').close()">Close</button>
   </nuke-sidebar>
 
   <!-- Import web components FIRST -->
   <script type="module" src="components/all.js"></script>
 
   <!-- Toast helper function -->
+  <script type="module">
+    // Import the toast component directly
+    import './components/nuke-toast.js';
+
+    // Wait for custom element to be defined, then expose globally
+    customElements.whenDefined('nuke-toast').then(() => {
+      window.showToast = function(message, style) {
+        const toast = document.createElement('nuke-toast');
+
+        // Create message span
+        const messageSpan = document.createElement('span');
+        messageSpan.textContent = message;
+        messageSpan.className = 'toast-message';
+        toast.appendChild(messageSpan);
+
+        // Add style class
+        if (style) {
+          toast.classList.add(style);
+        }
+
+        // Set duration
+        toast.setAttribute('duration', '3000');
+
+        // Get or create container
+        let container = document.querySelector('.nuke-toast-container');
+        if (!container) {
+          container = document.createElement('div');
+          container.className = 'nuke-toast-container';
+          document.body.appendChild(container);
+        }
+
+        container.appendChild(toast);
+      };
+    });
+  </script>
+
+  <!-- Theme toggle functionality -->
   <script>
-    window.showToast = function(message, style) {
-      if (typeof NukeToast !== 'undefined') {
-        NukeToast.show(message, {style: style, duration: 3000});
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      html.classList.add('dark-theme');
+      themeToggle.textContent = '☀️ Light';
+    }
+
+    themeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark-theme');
+
+      if (html.classList.contains('dark-theme')) {
+        themeToggle.textContent = '☀️ Light';
+        localStorage.setItem('theme', 'dark');
       } else {
-        console.error('NukeToast not loaded yet');
+        themeToggle.textContent = '🌙 Dark';
+        localStorage.setItem('theme', 'light');
       }
-    };
+    });
   </script>
 </body>
 </html>
+
+    /* Dark theme hero adjustment */
+    .dark-theme .hero {
+      background: linear-gradient(135deg, hsl(210, 70%, 45%) 0%, hsl(280, 50%, 50%) 100%);
+    }

@@ -1,7 +1,8 @@
 /**
  * Nuke Toast Component
  * Notification messages with auto-dismiss
- * Usage: <nuke-toast style="1|2|3" duration="3000">Message</nuke-toast>
+ * Usage: <nuke-toast class="zen|soft|solid" duration="3000">Message</nuke-toast>
+ * Or programmatically: NukeToast.show('Message', {style: 'zen', duration: 3000})
  */
 
 class NukeToast extends HTMLElement {
@@ -10,9 +11,9 @@ class NukeToast extends HTMLElement {
     this.setAttribute('role', 'status');
     this.setAttribute('aria-live', 'polite');
 
-    // Default to style 1 if not set
-    if (!this.hasAttribute('style')) {
-      this.setAttribute('style', '1');
+    // Default to zen class if no variant class is set
+    if (!this.classList.contains('zen') && !this.classList.contains('soft') && !this.classList.contains('solid')) {
+      this.classList.add('zen');
     }
 
     // Add close button
@@ -63,10 +64,16 @@ class NukeToast extends HTMLElement {
 // Helper function to create toasts programmatically
 NukeToast.show = function(message, options = {}) {
   const toast = document.createElement('nuke-toast');
-  toast.textContent = message;
 
+  // Create message span to hold text (so close button doesn't interfere)
+  const messageSpan = document.createElement('span');
+  messageSpan.textContent = message;
+  messageSpan.className = 'toast-message';
+  toast.appendChild(messageSpan);
+
+  // Use class instead of style attribute to avoid conflict with inline styles
   if (options.style) {
-    toast.setAttribute('style', options.style);
+    toast.classList.add(options.style);
   }
 
   if (options.duration !== undefined) {

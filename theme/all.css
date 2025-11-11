@@ -17,6 +17,7 @@
 
 /* Base - Global design tokens */
 @import 'base/colors.css';         /* Theme colors, backgrounds, borders */
+@import 'base/dark-colors.css';    /* Dark theme colors (applied with .dark-theme class) */
 @import 'base/spacing.css';        /* Space tokens (margin, padding, gaps) */
 @import 'base/sizing.css';         /* Size tokens (heights for form elements) */
 @import 'base/transitions.css';    /* Motion/animation timing */

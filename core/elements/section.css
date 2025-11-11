@@ -5,22 +5,27 @@ section {
   margin: var(--section-margin);
 }
 
-/* Style 1: Standard (simple) */
-section.style-1 {
-  padding: var(--section-style-1-padding);
+/* zen: Minimal / Japanese - No visible container (whitespace only) */
+section[style="zen"],
+section.zen {
+  padding: var(--section-zen-padding);
+  background: var(--section-zen-bg);
 }
 
-/* Style 2: Card (with background and shadow) */
-section.style-2 {
-  padding: var(--section-style-2-padding);
-  background: var(--section-style-2-bg);
-  border-radius: var(--section-style-2-radius);
-  box-shadow: var(--section-style-2-shadow);
+/* soft: Subtle Contrasts - Subtle background difference creates zones */
+section[style="soft"],
+section.soft {
+  padding: var(--section-soft-padding);
+  background: var(--section-soft-bg);
+  border-radius: var(--section-soft-radius);
 }
 
-/* Style 3: Bordered */
-section.style-3 {
-  padding: var(--section-style-3-padding);
-  border: 1px solid var(--section-style-3-border);
-  border-radius: var(--section-style-3-radius);
+/* solid: All In - Border + optional background creates clear zones */
+section[style="solid"],
+section.solid {
+  padding: var(--section-solid-padding);
+  background: var(--section-solid-bg);
+  border: 1px solid var(--section-solid-border);
+  border-radius: var(--section-solid-radius);
+  box-shadow: var(--section-solid-shadow);
 }

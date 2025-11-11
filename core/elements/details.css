@@ -11,6 +11,7 @@ details {
   background: var(--details-bg);
   padding: var(--details-padding);
   margin-bottom: var(--details-margin-bottom);
+  transition: background-color var(--details-transition), border-color var(--details-transition);
 }
 
 /* Summary (the clickable header) */
@@ -22,7 +23,7 @@ summary {
   padding: var(--details-summary-padding);
   margin: calc(var(--details-padding) * -1);
   border-radius: var(--details-radius);
-  transition: background-color var(--details-transition);
+  transition: background-color var(--details-transition), color var(--details-transition);
   user-select: none;
 }
 
@@ -63,28 +64,67 @@ details > *:not(summary) {
   margin-top: var(--details-content-margin-top);
 }
 
-/* Style 1: Standard accordion */
-details.style-1 {
-  border: 1px solid var(--details-style-1-border);
-  background: var(--details-style-1-bg);
-}
-
-/* Style 2: Minimal (no border) */
-details.style-2 {
-  border: none;
-  border-bottom: 1px solid var(--details-style-2-border);
+/* zen: Minimal / Japanese - Simple disclosure, no background */
+details.zen,
+details[style="zen"] {
+  border: 1px solid var(--details-zen-border);
   border-radius: 0;
-  padding: var(--space-2) 0;
+  background: var(--details-zen-bg);
+  padding: var(--details-zen-padding);
 }
 
-details.style-2 summary {
+details.zen[open],
+details[style="zen"][open] {
+  border-bottom: 1px solid var(--details-zen-open-border-bottom);
+}
+
+details.zen summary,
+details[style="zen"] summary {
   padding: 0;
   margin: 0;
 }
 
-/* Style 3: Card style */
-details.style-3 {
-  border: 1px solid var(--details-style-3-border);
-  background: var(--details-style-3-bg);
-  box-shadow: var(--shadow-1);
+details.zen summary:hover,
+details[style="zen"] summary:hover {
+  background: var(--details-zen-summary-hover-bg);
+  color: var(--details-zen-summary-hover-color);
+}
+
+/* soft: Subtle Contrasts - Background change on expand, no border */
+details.soft,
+details[style="soft"] {
+  border: 1px solid var(--details-soft-border);
+  border-radius: var(--details-soft-radius);
+  background: var(--details-soft-bg);
+  padding: var(--details-soft-padding);
+}
+
+details.soft[open],
+details[style="soft"][open] {
+  background: var(--details-soft-open-bg);
+}
+
+details.soft summary:hover,
+details[style="soft"] summary:hover {
+  background: var(--details-soft-summary-hover-bg);
+}
+
+/* solid: All In - Border + background on expand */
+details.solid,
+details[style="solid"] {
+  border: var(--details-solid-border-width) solid var(--details-solid-border);
+  border-radius: var(--details-solid-radius);
+  background: var(--details-solid-bg);
+  padding: var(--details-solid-padding);
+}
+
+details.solid[open],
+details[style="solid"][open] {
+  background: var(--details-solid-open-bg);
+  border-color: var(--details-solid-open-border);
+}
+
+details.solid summary:hover,
+details[style="solid"] summary:hover {
+  background: var(--details-solid-summary-hover-bg);
 }

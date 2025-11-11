@@ -4,16 +4,16 @@
   --img-height: auto;
   --img-display: block;
 
-  /* Style 1: Rounded corners */
-  --img-style-1-radius: var(--border-radius);
+  /* zen: Minimal treatment, optional thin border */
+  --img-zen-border: 1px solid var(--border-1);
+  --img-zen-radius: var(--border-radius-small);
 
-  /* Style 2: Circle (for avatars) */
-  --img-style-2-radius: 50%;
-  --img-style-2-object-fit: cover;
+  /* soft: Subtle shadow, no border */
+  --img-soft-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --img-soft-radius: var(--border-radius);
 
-  /* Style 3: Bordered */
-  --img-style-3-border: var(--border-2);
-  --img-style-3-border-width: 2px;
-  --img-style-3-padding: var(--space-1);
-  --img-style-3-bg: var(--background-2);
+  /* solid: Border + shadow for strong presence */
+  --img-solid-border: 2px solid var(--border-1);
+  --img-solid-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --img-solid-radius: var(--border-radius);
 }

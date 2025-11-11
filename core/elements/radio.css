@@ -60,22 +60,69 @@ input[type="radio"]:hover:not(:disabled) {
   border-color: var(--radio-checked-border);
 }
 
-/* Style 1: Standard radio (outer ring) */
-input[type="radio"].style-1:checked::before {
-  width: var(--radio-style-1-dot-size);
-  height: var(--radio-style-1-dot-size);
+/* zen: Minimal / Japanese - Border only, minimal dot */
+input[type="radio"][style="zen"],
+input[type="radio"].zen {
+  background: var(--radio-zen-bg);
+  border: 1px solid var(--radio-zen-border);
 }
 
-/* Style 2: Filled radio (full circle) */
-input[type="radio"].style-2:checked::before {
-  width: var(--radio-style-2-dot-size);
-  height: var(--radio-style-2-dot-size);
+input[type="radio"][style="zen"]:checked,
+input[type="radio"].zen:checked {
+  background-color: var(--radio-zen-checked-bg);
+  border-color: var(--radio-zen-checked-border);
 }
 
-/* Style 3: Small dot radio */
-input[type="radio"].style-3:checked::before {
-  width: var(--radio-style-3-dot-size);
-  height: var(--radio-style-3-dot-size);
+input[type="radio"][style="zen"]:checked::before,
+input[type="radio"].zen:checked::before {
+  background: var(--radio-zen-dot);
+  width: var(--radio-zen-dot-size);
+  height: var(--radio-zen-dot-size);
+}
+
+/* soft: Subtle Contrasts - Filled background, no border */
+input[type="radio"][style="soft"],
+input[type="radio"].soft {
+  background: var(--radio-soft-bg);
+  border: none;
+}
+
+input[type="radio"][style="soft"]:checked,
+input[type="radio"].soft:checked {
+  background-color: var(--radio-soft-checked-bg);
+  border-color: var(--radio-soft-checked-border);
+}
+
+input[type="radio"][style="soft"]:checked::before,
+input[type="radio"].soft:checked::before {
+  background: var(--radio-soft-dot);
+  width: var(--radio-soft-dot-size);
+  height: var(--radio-soft-dot-size);
+}
+
+input[type="radio"][style="soft"]:hover:not(:disabled),
+input[type="radio"].soft:hover:not(:disabled) {
+  background: var(--background-4);
+}
+
+/* solid: All In - Border + background */
+input[type="radio"][style="solid"],
+input[type="radio"].solid {
+  background: var(--radio-solid-bg);
+  border: 2px solid var(--radio-solid-border);
+}
+
+input[type="radio"][style="solid"]:checked,
+input[type="radio"].solid:checked {
+  background-color: var(--radio-solid-checked-bg);
+  border-color: var(--radio-solid-checked-border);
+}
+
+input[type="radio"][style="solid"]:checked::before,
+input[type="radio"].solid:checked::before {
+  background: var(--radio-solid-dot);
+  width: var(--radio-solid-dot-size);
+  height: var(--radio-solid-dot-size);
 }
 
 /* Disabled state */

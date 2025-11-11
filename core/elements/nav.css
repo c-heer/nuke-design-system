@@ -9,31 +9,83 @@ nav {
 nav a {
   color: var(--nav-link-color);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  transition: color var(--nav-link-transition), background-color var(--nav-link-transition);
 }
 
 nav a:hover {
   color: var(--nav-link-hover-color);
 }
 
-/* Style 1: Horizontal (default) */
-nav.style-1 {
+/* zen: Minimal / Japanese - Minimal separators, text-focused */
+nav.zen,
+nav[style="zen"] {
+  display: flex;
   flex-direction: row;
-  background: var(--nav-style-1-bg);
-  gap: var(--nav-style-1-gap);
+  background: var(--nav-zen-bg);
+  gap: var(--nav-zen-gap);
+  padding: var(--nav-padding);
 }
 
-/* Style 2: Bar (background with border) */
-nav.style-2 {
-  flex-direction: row;
-  background: var(--nav-style-2-bg);
-  border-bottom: 1px solid var(--nav-style-2-border);
-  padding: var(--nav-style-2-padding);
-  gap: var(--nav-style-2-gap);
+nav.zen a,
+nav[style="zen"] a {
+  position: relative;
+  padding: 0;
 }
 
-/* Style 3: Vertical (stacked) */
-nav.style-3 {
-  flex-direction: column;
-  gap: var(--nav-style-3-gap);
+nav.zen a:not(:last-child)::after,
+nav[style="zen"] a:not(:last-child)::after {
+  content: '/';
+  color: var(--nav-zen-link-separator);
+  margin-left: var(--nav-zen-gap);
+  pointer-events: none;
+}
+
+nav.zen a:hover,
+nav[style="zen"] a:hover {
+  color: var(--nav-zen-link-hover-color);
+}
+
+/* soft: Subtle Contrasts - Background highlights for active state */
+nav.soft,
+nav[style="soft"] {
+  display: flex;
+  flex-direction: row;
+  background: var(--nav-soft-bg);
+  gap: var(--nav-soft-gap);
+  padding: var(--nav-padding);
+}
+
+nav.soft a,
+nav[style="soft"] a {
+  padding: var(--nav-soft-link-padding);
+  border-radius: var(--nav-soft-link-radius);
+}
+
+nav.soft a:hover,
+nav[style="soft"] a:hover {
+  background: var(--nav-soft-link-hover-bg);
+  color: var(--nav-soft-link-hover-color);
+}
+
+/* solid: All In - Borders + active background highlighting */
+nav.solid,
+nav[style="solid"] {
+  display: flex;
+  flex-direction: row;
+  background: var(--nav-solid-bg);
+  border-bottom: 1px solid var(--nav-solid-border);
+  gap: var(--nav-solid-gap);
+  padding: var(--nav-solid-padding);
+}
+
+nav.solid a,
+nav[style="solid"] a {
+  padding: var(--nav-solid-link-padding);
+  border-radius: var(--nav-solid-link-radius);
+}
+
+nav.solid a:hover,
+nav[style="solid"] a:hover {
+  background: var(--nav-solid-link-hover-bg);
+  color: var(--nav-solid-link-hover-color);
 }

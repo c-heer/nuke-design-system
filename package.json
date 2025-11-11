@@ -1,0 +1,43 @@
+{
+  "name": "@nuke.dev/design-system",
+  "version": "1.0.0",
+  "description": "Element-first CSS design system with web components. Universal .style-1/2/3 pattern for native HTML elements and custom components.",
+  "keywords": [
+    "css",
+    "design-system",
+    "web-components",
+    "custom-elements",
+    "theme",
+    "ui",
+    "nuke",
+    "element-first",
+    "native-elements"
+  ],
+  "author": "c-heer <github@heer.dev>",
+  "license": "MIT",
+  "homepage": "https://github.com/c-heer/nuke-design-system#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/c-heer/nuke-design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/c-heer/nuke-design-system/issues"
+  },
+  "main": "core/all.css",
+  "module": "components/all.js",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "files": [
+    "core/",
+    "theme/",
+    "components/",
+    "scripts/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

@@ -1,0 +1,31 @@
+# Development files
+.git/
+.gitignore
+.claude/
+.idea/
+.vscode/
+
+# Demo files (not needed in npm package)
+index.html
+style.css
+
+# Documentation (use README.md only)
+DEPLOYMENT.md
+
+# Build artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files (if added later)
+test/
+*.test.js
+*.spec.js
+
+# CI/CD
+.github/

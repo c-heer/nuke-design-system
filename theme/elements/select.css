@@ -19,15 +19,22 @@
   /* Focus state */
   --select-focus-border: var(--color-1);
 
-  /* Style 1: Standard select with border */
-  --select-style-1-bg: var(--select-bg);
-  --select-style-1-border: var(--select-border);
+  /* zen: Minimal / Japanese - Transparent background, border only, background on hover/focus */
+  --select-zen-bg: transparent;
+  --select-zen-color: var(--on-background);
+  --select-zen-border: var(--border-2);
+  --select-zen-focus-bg: var(--background-2);
+  --select-zen-focus-border: var(--color-1);
 
-  /* Style 2: Filled background */
-  --select-style-2-bg: var(--background-3);
-  --select-style-2-border: transparent;
+  /* soft: Subtle Contrasts - Filled background, no borders */
+  --select-soft-bg: var(--background-3);
+  --select-soft-color: var(--on-background);
+  --select-soft-focus-bg: var(--background-4);
 
-  /* Style 3: Minimal style */
-  --select-style-3-bg: transparent;
-  --select-style-3-border: var(--select-border);
+  /* solid: All In - Border + background */
+  --select-solid-bg: var(--background-3);
+  --select-solid-color: var(--on-background);
+  --select-solid-border: var(--border-1);
+  --select-solid-focus-bg: var(--background-3);
+  --select-solid-focus-border: var(--color-1);
 }

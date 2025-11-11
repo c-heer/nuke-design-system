@@ -11,12 +11,19 @@
   --progress-fill: var(--color-1);
   --progress-transition: var(--transition-fast);
 
-  /* Style 1: Primary color */
-  --progress-style-1-fill: var(--color-1);
+  /* zen: Minimal / Japanese - Thin bar, subtle colors */
+  --progress-zen-height: 4px;
+  --progress-zen-bg: var(--background-3);
+  --progress-zen-fill: var(--color-1);
 
-  /* Style 2: Success/green */
-  --progress-style-2-fill: hsl(120, 60%, 50%);
+  /* soft: Subtle Contrasts - Medium bar, soft background */
+  --progress-soft-height: 8px;
+  --progress-soft-bg: var(--background-3);
+  --progress-soft-fill: var(--color-1);
 
-  /* Style 3: Striped animated */
-  --progress-style-3-fill: var(--color-1);
+  /* solid: All In - Thick bar, strong presence */
+  --progress-solid-height: 12px;
+  --progress-solid-bg: var(--background-3);
+  --progress-solid-fill: var(--color-1);
+  --progress-solid-border: var(--border-1);
 }

@@ -13,4 +13,17 @@
   --meter-optimum: hsl(120, 60%, 50%);      /* Good - green */
   --meter-suboptimum: hsl(45, 100%, 50%);   /* OK - yellow */
   --meter-critical: hsl(0, 80%, 50%);       /* Bad - red */
+
+  /* zen: Minimal / Japanese - Thin bar */
+  --meter-zen-height: 4px;
+  --meter-zen-bg: var(--background-3);
+
+  /* soft: Subtle Contrasts - Medium bar */
+  --meter-soft-height: 8px;
+  --meter-soft-bg: var(--background-3);
+
+  /* solid: All In - Thick bar with border */
+  --meter-solid-height: 12px;
+  --meter-solid-bg: var(--background-3);
+  --meter-solid-border: var(--border-1);
 }

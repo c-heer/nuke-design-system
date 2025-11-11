@@ -4,18 +4,25 @@
   --ul-padding-left: var(--list-padding-left);
   --ul-item-margin: var(--list-item-margin-bottom);
 
-  /* Style 1: Disc bullets (default) */
-  --ul-style-1-list-style: disc;
-  --ul-style-1-padding-left: var(--list-padding-left);
+  /* zen: Minimal bullets, no extra spacing */
+  --ul-zen-list-style: disc;
+  --ul-zen-padding-left: var(--space-3);
+  --ul-zen-item-margin: var(--space-1);
 
-  /* Style 2: Custom styled bullets (colored) */
-  --ul-style-2-list-style: none;
-  --ul-style-2-padding-left: 0;
-  --ul-style-2-item-padding-left: var(--space-3);
-  --ul-style-2-bullet-color: var(--color-1);
+  /* soft: Background highlights on items, no borders */
+  --ul-soft-list-style: none;
+  --ul-soft-padding-left: 0;
+  --ul-soft-item-bg: var(--background-3);
+  --ul-soft-item-padding: var(--space-1) var(--space-2);
+  --ul-soft-item-margin: var(--space-1);
+  --ul-soft-item-radius: var(--border-radius-small);
 
-  /* Style 3: Minimal (no bullets, tight spacing) */
-  --ul-style-3-list-style: none;
-  --ul-style-3-padding-left: 0;
-  --ul-style-3-item-margin: var(--space-1);
+  /* solid: Borders + backgrounds, strong definition */
+  --ul-solid-list-style: none;
+  --ul-solid-padding-left: 0;
+  --ul-solid-item-bg: var(--background-2);
+  --ul-solid-item-border: 1px solid var(--border-1);
+  --ul-solid-item-padding: var(--space-2);
+  --ul-solid-item-margin: var(--space-1);
+  --ul-solid-item-radius: var(--border-radius);
 }

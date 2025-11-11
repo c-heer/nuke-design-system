@@ -10,21 +10,27 @@
   --checkbox-transition: var(--transition-fast);
 
   /* Base colors */
-  --checkbox-bg: var(--background-2);
-  --checkbox-border: var(--border-1);
-  --checkbox-checked-bg: var(--color-1);
-  --checkbox-checked-border: var(--color-1);
   --checkbox-checkmark: var(--on-color);
 
   /* Focus state */
   --checkbox-focus-ring: var(--color-1);
 
-  /* Style 1: Square checkbox (default) */
-  --checkbox-style-1-radius: 4px;
+  /* zen: Minimal / Japanese - 1px border, no background fill */
+  --checkbox-zen-bg: transparent;
+  --checkbox-zen-border: var(--border-2);
+  --checkbox-zen-checked-bg: transparent;
+  --checkbox-zen-checked-border: var(--color-1);
+  --checkbox-zen-checkmark: var(--color-1);
 
-  /* Style 2: Rounded checkbox */
-  --checkbox-style-2-radius: 8px;
+  /* soft: Subtle Contrasts - Soft background, no border */
+  --checkbox-soft-bg: var(--background-3);
+  --checkbox-soft-checked-bg: var(--color-1);
+  --checkbox-soft-checkmark: var(--on-color);
 
-  /* Style 3: Circle checkbox */
-  --checkbox-style-3-radius: 50%;
+  /* solid: All In - Border + background when checked */
+  --checkbox-solid-bg: var(--background-2);
+  --checkbox-solid-border: var(--border-1);
+  --checkbox-solid-checked-bg: var(--color-1);
+  --checkbox-solid-checked-border: var(--color-1);
+  --checkbox-solid-checkmark: var(--on-color);
 }

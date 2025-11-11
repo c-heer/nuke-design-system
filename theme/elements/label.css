@@ -11,16 +11,20 @@
   --label-color: var(--on-background);
   --label-margin-bottom: var(--space-1);
 
-  /* Style 1: Standard label */
-  --label-style-1-font-weight: var(--font-weight-medium);
-  --label-style-1-color: var(--on-background);
+  /* zen: Minimal / Japanese - Lightweight, subtle */
+  --label-zen-font-weight: var(--font-weight-normal);
+  --label-zen-color: var(--on-background-light);
+  --label-zen-font-size: var(--font-size-1);
 
-  /* Style 2: Bold label */
-  --label-style-2-font-weight: var(--font-weight-bold);
-  --label-style-2-color: var(--on-background);
-  --label-style-2-transform: uppercase;
+  /* soft: Subtle Contrasts - Medium weight, standard color */
+  --label-soft-font-weight: var(--font-weight-medium);
+  --label-soft-color: var(--on-background);
+  --label-soft-font-size: var(--font-size-1);
 
-  /* Style 3: Inline label */
-  --label-style-3-gap: var(--space-1);
-  --label-style-3-font-weight: var(--font-weight-normal);
+  /* solid: All In - Bold, strong presence */
+  --label-solid-font-weight: var(--font-weight-bold);
+  --label-solid-color: var(--on-background);
+  --label-solid-font-size: var(--font-size-1);
+  --label-solid-transform: uppercase;
+  --label-solid-letter-spacing: 0.5px;
 }

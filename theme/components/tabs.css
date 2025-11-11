@@ -20,24 +20,49 @@
   /* Tab panel */
   --tab-panel-padding: var(--space-2);
 
-  /* Style 1: Underline tabs */
-  --tabs-style-1-border-bottom: 2px solid var(--border-1);
-  --tab-style-1-border-active: 2px solid var(--color-1);
-  --tab-style-1-background: transparent;
-  --tab-style-1-background-hover: var(--background-3);
+  /* zen: Minimal / Japanese - Minimal underline on active, no background */
+  --tabs-zen-border-bottom: none;
+  --tab-zen-border-active: 1px solid var(--on-background);
+  --tab-zen-background: transparent;
+  --tab-zen-background-hover: transparent;
 
-  /* Style 2: Pill tabs */
-  --tabs-style-2-background: transparent;
-  --tab-style-2-background: transparent;
-  --tab-style-2-background-active: var(--color-1);
-  --tab-style-2-background-hover: var(--background-3);
-  --tab-style-2-color-active: var(--on-color);
-  --tab-style-2-radius: var(--border-radius);
+  /* soft: Subtle Contrasts - Background pills/highlights, rounded */
+  --tabs-soft-background: transparent;
+  --tab-soft-background: transparent;
+  --tab-soft-background-active: var(--background-3);
+  --tab-soft-background-hover: hsla(0, 0%, 0%, 0.03);
+  --tab-soft-color-active: var(--on-background);
+  --tab-soft-radius: var(--border-radius);
+  --tab-panel-soft-background: var(--background-2);
 
-  /* Style 3: Boxed tabs */
-  --tabs-style-3-border: 1px solid var(--border-1);
-  --tab-style-3-background: var(--background-3);
-  --tab-style-3-background-active: var(--background-2);
-  --tab-style-3-border-active: 1px solid var(--border-1);
-  --tab-style-3-radius: var(--border-radius);
+  /* solid: All In - Border + background for strong definition */
+  --tabs-solid-border: 2px solid var(--border-1);
+  --tabs-solid-wrapper-border: none;
+  --tab-solid-background: var(--background-3);
+  --tab-solid-background-active: var(--background-2);
+  --tab-solid-border: 2px solid var(--border-1);
+  --tab-solid-border-active: 2px solid var(--border-1);
+  --tab-solid-radius: var(--border-radius);
+  --tab-panel-solid-background: var(--background-2);
+  --tab-panel-solid-border: 2px solid var(--border-1);
+  --tab-panel-solid-shadow: var(--shadow-2);
+
+  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
+  --tabs-style-1-border-bottom: var(--tabs-zen-border-bottom);
+  --tab-style-1-border-active: var(--tab-zen-border-active);
+  --tab-style-1-background: var(--tab-zen-background);
+  --tab-style-1-background-hover: var(--tab-zen-background-hover);
+
+  --tabs-style-2-background: var(--tabs-soft-background);
+  --tab-style-2-background: var(--tab-soft-background);
+  --tab-style-2-background-active: var(--tab-soft-background-active);
+  --tab-style-2-background-hover: var(--tab-soft-background-hover);
+  --tab-style-2-color-active: var(--tab-soft-color-active);
+  --tab-style-2-radius: var(--tab-soft-radius);
+
+  --tabs-style-3-border: var(--tabs-solid-border);
+  --tab-style-3-background: var(--tab-solid-background);
+  --tab-style-3-background-active: var(--tab-solid-background-active);
+  --tab-style-3-border-active: var(--tab-solid-border-active);
+  --tab-style-3-radius: var(--tab-solid-radius);
 }

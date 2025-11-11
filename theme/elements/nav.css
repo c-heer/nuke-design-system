@@ -4,17 +4,29 @@
   --nav-gap: var(--space-2);
   --nav-link-color: var(--on-background);
   --nav-link-hover-color: var(--color-1);
+  --nav-link-transition: var(--transition-fast);
 
-  /* Style 1: Horizontal (default) */
-  --nav-style-1-bg: transparent;
-  --nav-style-1-gap: var(--space-2);
+  /* zen: Minimal / Japanese - Minimal separators, text-focused */
+  --nav-zen-bg: transparent;
+  --nav-zen-gap: var(--space-3);
+  --nav-zen-link-separator: hsl(var(--neutral-base), 20%);
+  --nav-zen-link-hover-color: var(--color-1);
 
-  /* Style 2: Bar (background with border) */
-  --nav-style-2-bg: var(--background-2);
-  --nav-style-2-border: var(--border-1);
-  --nav-style-2-padding: var(--space-2) var(--space-3);
-  --nav-style-2-gap: var(--space-3);
+  /* soft: Subtle Contrasts - Background highlights for active state */
+  --nav-soft-bg: transparent;
+  --nav-soft-gap: var(--space-2);
+  --nav-soft-link-hover-bg: var(--background-2);
+  --nav-soft-link-hover-color: var(--color-1);
+  --nav-soft-link-padding: var(--space-1) var(--space-2);
+  --nav-soft-link-radius: var(--border-radius);
 
-  /* Style 3: Vertical (stacked) */
-  --nav-style-3-gap: var(--space-1);
+  /* solid: All In - Borders + active background highlighting */
+  --nav-solid-bg: var(--background-2);
+  --nav-solid-border: var(--border-1);
+  --nav-solid-gap: var(--space-2);
+  --nav-solid-padding: var(--space-2) var(--space-3);
+  --nav-solid-link-hover-bg: var(--background-3);
+  --nav-solid-link-hover-color: var(--color-1);
+  --nav-solid-link-padding: var(--space-1) var(--space-2);
+  --nav-solid-link-radius: var(--border-radius);
 }

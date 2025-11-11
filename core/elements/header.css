@@ -5,23 +5,27 @@ header {
   background: var(--header-bg);
 }
 
-/* Style 1: Standard header */
-header.style-1 {
-  background: var(--header-style-1-bg);
+/* zen: Minimal / Japanese - Minimal 1px line separator */
+header[style="zen"],
+header.zen {
+  padding: var(--header-zen-padding);
+  background: var(--header-zen-bg);
+  border-bottom: 1px solid var(--header-zen-border);
 }
 
-/* Style 2: Toolbar (with border and shadow) */
-header.style-2 {
-  background: var(--header-style-2-bg);
-  border-bottom: 1px solid var(--header-style-2-border);
-  box-shadow: var(--header-style-2-shadow);
+/* soft: Subtle Contrasts - Background color creates separation */
+header[style="soft"],
+header.soft {
+  padding: var(--header-soft-padding);
+  background: var(--header-soft-bg);
+  box-shadow: var(--header-soft-shadow);
 }
 
-/* Style 3: Sticky header */
-header.style-3 {
-  position: sticky;
-  top: 0;
-  background: var(--header-style-3-bg);
-  box-shadow: var(--header-style-3-shadow);
-  z-index: var(--header-style-3-z-index);
+/* solid: All In - Border + background for strong definition */
+header[style="solid"],
+header.solid {
+  padding: var(--header-solid-padding);
+  background: var(--header-solid-bg);
+  border-bottom: 1px solid var(--header-solid-border);
+  box-shadow: var(--header-solid-shadow);
 }

@@ -73,3 +73,95 @@ input[type="range"]:focus::-webkit-slider-thumb {
 input[type="range"]:focus::-moz-range-thumb {
   box-shadow: 0 0 0 3px hsla(210, 100%, 50%, 0.2);
 }
+
+/* zen: Minimal / Japanese - Thin track, small thumb */
+input[type="range"][style="zen"]::-webkit-slider-runnable-track,
+input[type="range"].zen::-webkit-slider-runnable-track {
+  height: var(--range-zen-track-height);
+  background: var(--range-zen-track-bg);
+}
+
+input[type="range"][style="zen"]::-moz-range-track,
+input[type="range"].zen::-moz-range-track {
+  height: var(--range-zen-track-height);
+  background: var(--range-zen-track-bg);
+}
+
+input[type="range"][style="zen"]::-webkit-slider-thumb,
+input[type="range"].zen::-webkit-slider-thumb {
+  width: var(--range-zen-thumb-size);
+  height: var(--range-zen-thumb-size);
+  background: var(--range-zen-thumb-bg);
+  border: 1px solid var(--range-zen-thumb-border);
+  margin-top: calc((var(--range-zen-track-height) - var(--range-zen-thumb-size)) / 2);
+}
+
+input[type="range"][style="zen"]::-moz-range-thumb,
+input[type="range"].zen::-moz-range-thumb {
+  width: var(--range-zen-thumb-size);
+  height: var(--range-zen-thumb-size);
+  background: var(--range-zen-thumb-bg);
+  border: 1px solid var(--range-zen-thumb-border);
+}
+
+/* soft: Subtle Contrasts - Medium track, no thumb border */
+input[type="range"][style="soft"]::-webkit-slider-runnable-track,
+input[type="range"].soft::-webkit-slider-runnable-track {
+  height: var(--range-soft-track-height);
+  background: var(--range-soft-track-bg);
+}
+
+input[type="range"][style="soft"]::-moz-range-track,
+input[type="range"].soft::-moz-range-track {
+  height: var(--range-soft-track-height);
+  background: var(--range-soft-track-bg);
+}
+
+input[type="range"][style="soft"]::-webkit-slider-thumb,
+input[type="range"].soft::-webkit-slider-thumb {
+  width: var(--range-soft-thumb-size);
+  height: var(--range-soft-thumb-size);
+  background: var(--range-soft-thumb-bg);
+  border: none;
+  margin-top: calc((var(--range-soft-track-height) - var(--range-soft-thumb-size)) / 2);
+}
+
+input[type="range"][style="soft"]::-moz-range-thumb,
+input[type="range"].soft::-moz-range-thumb {
+  width: var(--range-soft-thumb-size);
+  height: var(--range-soft-thumb-size);
+  background: var(--range-soft-thumb-bg);
+  border: none;
+}
+
+/* solid: All In - Thick track with border, large thumb */
+input[type="range"][style="solid"]::-webkit-slider-runnable-track,
+input[type="range"].solid::-webkit-slider-runnable-track {
+  height: var(--range-solid-track-height);
+  background: var(--range-solid-track-bg);
+  border: 1px solid var(--range-solid-track-border);
+}
+
+input[type="range"][style="solid"]::-moz-range-track,
+input[type="range"].solid::-moz-range-track {
+  height: var(--range-solid-track-height);
+  background: var(--range-solid-track-bg);
+  border: 1px solid var(--range-solid-track-border);
+}
+
+input[type="range"][style="solid"]::-webkit-slider-thumb,
+input[type="range"].solid::-webkit-slider-thumb {
+  width: var(--range-solid-thumb-size);
+  height: var(--range-solid-thumb-size);
+  background: var(--range-solid-thumb-bg);
+  border: 2px solid var(--range-solid-thumb-border);
+  margin-top: calc((var(--range-solid-track-height) - var(--range-solid-thumb-size)) / 2);
+}
+
+input[type="range"][style="solid"]::-moz-range-thumb,
+input[type="range"].solid::-moz-range-thumb {
+  width: var(--range-solid-thumb-size);
+  height: var(--range-solid-thumb-size);
+  background: var(--range-solid-thumb-bg);
+  border: 2px solid var(--range-solid-thumb-border);
+}

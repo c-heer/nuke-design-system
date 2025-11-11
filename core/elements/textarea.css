@@ -31,6 +31,7 @@ textarea {
   border-radius: var(--textarea-radius);
   transition:
     border-color var(--textarea-transition),
+    background-color var(--textarea-transition),
     box-shadow var(--textarea-transition);
 }
 
@@ -45,22 +46,46 @@ textarea:focus {
   box-shadow: 0 0 0 3px hsla(210, 100%, 50%, 0.1);
 }
 
-/* Style 1: Standard textarea with border */
-textarea.style-1 {
-  background: var(--textarea-style-1-bg);
-  border: 1px solid var(--textarea-style-1-border);
+/* zen: Minimal / Japanese - Border only, background appears on focus */
+textarea[style="zen"],
+textarea.zen {
+  background: var(--textarea-zen-bg);
+  color: var(--textarea-zen-color);
+  border: 1px solid var(--textarea-zen-border);
 }
 
-/* Style 2: Filled background */
-textarea.style-2 {
-  background: var(--textarea-style-2-bg);
-  border: 1px solid var(--textarea-style-2-border);
+textarea[style="zen"]:focus,
+textarea.zen:focus {
+  background: var(--textarea-zen-focus-bg);
+  border-color: var(--textarea-zen-focus-border);
 }
 
-/* Style 3: Minimal border */
-textarea.style-3 {
-  background: var(--textarea-style-3-bg);
-  border: 1px solid var(--textarea-style-3-border);
+/* soft: Subtle Contrasts - Filled background, no borders */
+textarea[style="soft"],
+textarea.soft {
+  background: var(--textarea-soft-bg);
+  color: var(--textarea-soft-color);
+  border: none;
+}
+
+textarea[style="soft"]:focus,
+textarea.soft:focus {
+  background: var(--textarea-soft-focus-bg);
+  box-shadow: none;
+}
+
+/* solid: All In - Border + background */
+textarea[style="solid"],
+textarea.solid {
+  background: var(--textarea-solid-bg);
+  color: var(--textarea-solid-color);
+  border: 2px solid var(--textarea-solid-border);
+}
+
+textarea[style="solid"]:focus,
+textarea.solid:focus {
+  background: var(--textarea-solid-focus-bg);
+  border-color: var(--textarea-solid-focus-border);
 }
 
 /* Disabled state */

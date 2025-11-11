@@ -15,32 +15,34 @@ nuke-toolbar {
 }
 
 /* ============================================
-   TOOLBAR VARIANTS - style="1|2|3"
+   TOOLBAR VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
    ============================================ */
 
-/* Style 1: Standard toolbar (minimal) */
+/* zen: Minimal / Japanese */
+nuke-toolbar[style="zen"],
+nuke-toolbar.zen,
 nuke-toolbar[style="1"] {
-  background: var(--toolbar-style-1-background);
-  border: var(--toolbar-style-1-border);
-  padding: var(--toolbar-style-1-padding);
+  background: var(--toolbar-zen-background);
+  border: var(--toolbar-zen-border);
+  padding: var(--toolbar-zen-padding);
 }
 
-/* Style 2: Bordered toolbar */
+/* soft: Subtle Contrasts */
+nuke-toolbar[style="soft"],
+nuke-toolbar.soft,
 nuke-toolbar[style="2"] {
-  background: var(--toolbar-style-2-background);
-  border: var(--toolbar-style-2-border);
-  padding: var(--toolbar-style-2-padding);
+  background: var(--toolbar-soft-background);
+  border: var(--toolbar-soft-border);
+  padding: var(--toolbar-soft-padding);
 }
 
-/* Style 3: Sticky toolbar */
+/* solid: All In */
+nuke-toolbar[style="solid"],
+nuke-toolbar.solid,
 nuke-toolbar[style="3"] {
-  position: sticky;
-  top: 0;
-  background: var(--toolbar-style-3-background);
-  border-bottom: var(--toolbar-style-3-border-bottom);
-  box-shadow: var(--toolbar-style-3-shadow);
-  padding: var(--toolbar-style-3-padding);
-  z-index: var(--toolbar-style-3-z-index);
+  background: var(--toolbar-solid-background);
+  border: var(--toolbar-solid-border);
+  padding: var(--toolbar-solid-padding);
 }
 
 /* ============================================

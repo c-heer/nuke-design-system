@@ -1,4 +1,8 @@
-/* Form - Form wrapper with layout utilities */
+/* ============================================
+   FORM - Form wrapper with layout utilities
+   Pure logic, NO variables defined here
+   Variables come from theme/form.css
+   ============================================ */
 
 form {
   margin: var(--form-margin);
@@ -8,21 +12,30 @@ form {
   gap: var(--form-gap);
 }
 
-/* Style 1: Standard (simple gap) */
-form.style-1 {
-  gap: var(--form-style-1-gap);
+/* zen: Minimal / Japanese - Simple gap, no decoration */
+form[style="zen"],
+form.zen {
+  gap: var(--form-zen-gap);
+  padding: var(--form-zen-padding);
+  background: var(--form-zen-bg);
 }
 
-/* Style 2: Card (padded with background) */
-form.style-2 {
-  padding: var(--form-style-2-padding);
-  background: var(--form-style-2-bg);
-  border: 1px solid var(--form-style-2-border);
-  border-radius: var(--form-style-2-radius);
-  gap: var(--form-style-2-gap);
+/* soft: Subtle Contrasts - Background fill, comfortable spacing */
+form[style="soft"],
+form.soft {
+  gap: var(--form-soft-gap);
+  padding: var(--form-soft-padding);
+  background: var(--form-soft-bg);
+  border-radius: var(--form-soft-radius);
 }
 
-/* Style 3: Compact (tight spacing) */
-form.style-3 {
-  gap: var(--form-style-3-gap);
+/* solid: All In - Border + background + shadow */
+form[style="solid"],
+form.solid {
+  gap: var(--form-solid-gap);
+  padding: var(--form-solid-padding);
+  background: var(--form-solid-bg);
+  border: 2px solid var(--form-solid-border);
+  border-radius: var(--form-solid-radius);
+  box-shadow: var(--shadow-1);
 }

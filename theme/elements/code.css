@@ -7,18 +7,18 @@
   --code-font-size: 0.875rem;
   --code-radius: var(--border-radius-small);
 
-  /* Style 1: Subtle (default light background) */
-  --code-style-1-bg: var(--background-3);
-  --code-style-1-color: var(--on-background);
-  --code-style-1-border: var(--border-1);
+  /* zen: Subtle background, minimal border */
+  --code-zen-bg: var(--background-3);
+  --code-zen-color: var(--on-background);
+  --code-zen-border: 1px solid var(--border-1);
 
-  /* Style 2: Highlighted (accent background) */
-  --code-style-2-bg: hsl(210, 100%, 95%);
-  --code-style-2-color: hsl(210, 100%, 35%);
-  --code-style-2-border: hsl(210, 100%, 85%);
+  /* soft: Filled background, no border */
+  --code-soft-bg: var(--background-3);
+  --code-soft-color: var(--on-background);
+  --code-soft-border: none;
 
-  /* Style 3: Outlined (border only) */
-  --code-style-3-bg: transparent;
-  --code-style-3-color: var(--color-1);
-  --code-style-3-border: var(--color-1);
+  /* solid: Border + background fill */
+  --code-solid-bg: var(--background-2);
+  --code-solid-color: var(--on-background);
+  --code-solid-border: 1px solid var(--border-1);
 }

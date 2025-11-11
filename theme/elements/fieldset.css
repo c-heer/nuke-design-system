@@ -17,14 +17,18 @@
   --legend-color: var(--on-background);
   --legend-font-size: var(--font-size-2);
 
-  /* Style 1: Standard */
-  --fieldset-style-1-border: var(--border-1);
-  --fieldset-style-1-bg: transparent;
+  /* zen: Minimal / Japanese - Border only, no background */
+  --fieldset-zen-border: var(--border-2);
+  --fieldset-zen-bg: transparent;
+  --fieldset-zen-padding: var(--space-2);
 
-  /* Style 2: Left border accent */
-  --fieldset-style-2-border: var(--color-1);
+  /* soft: Subtle Contrasts - Filled background, no borders */
+  --fieldset-soft-border: transparent;
+  --fieldset-soft-bg: var(--background-3);
+  --fieldset-soft-padding: var(--space-3);
 
-  /* Style 3: Card style */
-  --fieldset-style-3-border: var(--border-1);
-  --fieldset-style-3-bg: var(--background-2);
+  /* solid: All In - Border + background */
+  --fieldset-solid-border: var(--border-1);
+  --fieldset-solid-bg: var(--background-2);
+  --fieldset-solid-padding: var(--space-3);
 }

@@ -16,26 +16,32 @@ nuke-badge {
 }
 
 /* ============================================
-   BADGE VARIANTS - style="1|2|3"
+   BADGE VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
    ============================================ */
 
-/* Style 1: Solid badge */
+/* zen: Minimal / Japanese */
+nuke-badge[style="zen"],
+nuke-badge.zen,
 nuke-badge[style="1"] {
-  background: var(--badge-style-1-background);
-  color: var(--badge-style-1-color);
-  border: var(--badge-style-1-border);
+  background: var(--badge-zen-background);
+  color: var(--badge-zen-color);
+  border: var(--badge-zen-border);
 }
 
-/* Style 2: Subtle badge */
+/* soft: Subtle Contrasts */
+nuke-badge[style="soft"],
+nuke-badge.soft,
 nuke-badge[style="2"] {
-  background: var(--badge-style-2-background);
-  color: var(--badge-style-2-color);
-  border: var(--badge-style-2-border);
+  background: var(--badge-soft-background);
+  color: var(--badge-soft-color);
+  border: var(--badge-soft-border);
 }
 
-/* Style 3: Outlined badge */
+/* solid: All In */
+nuke-badge[style="solid"],
+nuke-badge.solid,
 nuke-badge[style="3"] {
-  background: var(--badge-style-3-background);
-  color: var(--badge-style-3-color);
-  border: var(--badge-style-3-border);
+  background: var(--badge-solid-background);
+  color: var(--badge-solid-color);
+  border: var(--badge-solid-border);
 }

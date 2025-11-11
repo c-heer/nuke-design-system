@@ -49,3 +49,40 @@ meter:-moz-meter-sub-optimum::-moz-meter-bar {
 meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
   background: var(--meter-critical);
 }
+
+/* zen: Minimal / Japanese - Thin bar */
+meter[style="zen"],
+meter.zen {
+  height: var(--meter-zen-height);
+  background: var(--meter-zen-bg);
+}
+
+meter[style="zen"]::-webkit-meter-bar,
+meter.zen::-webkit-meter-bar {
+  background: var(--meter-zen-bg);
+}
+
+/* soft: Subtle Contrasts - Medium bar */
+meter[style="soft"],
+meter.soft {
+  height: var(--meter-soft-height);
+  background: var(--meter-soft-bg);
+}
+
+meter[style="soft"]::-webkit-meter-bar,
+meter.soft::-webkit-meter-bar {
+  background: var(--meter-soft-bg);
+}
+
+/* solid: All In - Thick bar with border */
+meter[style="solid"],
+meter.solid {
+  height: var(--meter-solid-height);
+  background: var(--meter-solid-bg);
+  border: 1px solid var(--meter-solid-border);
+}
+
+meter[style="solid"]::-webkit-meter-bar,
+meter.solid::-webkit-meter-bar {
+  background: var(--meter-solid-bg);
+}

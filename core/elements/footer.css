@@ -6,25 +6,29 @@ footer {
   color: var(--footer-color);
 }
 
-/* Style 1: Standard footer */
-footer.style-1 {
-  padding: var(--footer-style-1-padding);
-  background: var(--footer-style-1-bg);
+/* zen: Minimal / Japanese - Minimal 1px line separator */
+footer[style="zen"],
+footer.zen {
+  padding: var(--footer-zen-padding);
+  background: var(--footer-zen-bg);
+  color: var(--footer-zen-color);
+  border-top: 1px solid var(--footer-zen-border);
 }
 
-/* Style 2: Minimal (subdued) */
-footer.style-2 {
-  padding: var(--footer-style-2-padding);
-  background: var(--footer-style-2-bg);
-  color: var(--footer-style-2-color);
-  border-top: 1px solid var(--footer-style-2-border);
+/* soft: Subtle Contrasts - Background color creates separation */
+footer[style="soft"],
+footer.soft {
+  padding: var(--footer-soft-padding);
+  background: var(--footer-soft-bg);
+  color: var(--footer-soft-color);
 }
 
-/* Style 3: Sticky (stays at bottom) */
-footer.style-3 {
-  position: sticky;
-  bottom: 0;
-  padding: var(--footer-style-3-padding);
-  background: var(--footer-style-3-bg);
-  border-top: 1px solid var(--footer-style-3-border);
+/* solid: All In - Border + background for strong definition */
+footer[style="solid"],
+footer.solid {
+  padding: var(--footer-solid-padding);
+  background: var(--footer-solid-bg);
+  color: var(--footer-solid-color);
+  border-top: 1px solid var(--footer-solid-border);
+  box-shadow: var(--footer-solid-shadow);
 }

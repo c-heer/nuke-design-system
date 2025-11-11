@@ -4,18 +4,21 @@
   --footer-bg: var(--background-2);
   --footer-color: var(--on-background);
 
-  /* Style 1: Standard footer */
-  --footer-style-1-padding: var(--space-3);
-  --footer-style-1-bg: var(--background-2);
+  /* zen: Minimal / Japanese - Minimal 1px line separator */
+  --footer-zen-padding: var(--space-2);
+  --footer-zen-bg: transparent;
+  --footer-zen-color: var(--on-background-light);
+  --footer-zen-border: var(--border-1);
 
-  /* Style 2: Minimal (subdued) */
-  --footer-style-2-padding: var(--space-2);
-  --footer-style-2-bg: var(--background-3);
-  --footer-style-2-color: var(--on-background-light);
-  --footer-style-2-border: var(--border-1);
+  /* soft: Subtle Contrasts - Background color creates separation */
+  --footer-soft-padding: var(--space-2);
+  --footer-soft-bg: var(--background-3);
+  --footer-soft-color: var(--on-background-light);
 
-  /* Style 3: Sticky (stays at bottom) */
-  --footer-style-3-padding: var(--space-2);
-  --footer-style-3-bg: var(--background-2);
-  --footer-style-3-border: var(--border-1);
+  /* solid: All In - Border + background for strong definition */
+  --footer-solid-padding: var(--space-2);
+  --footer-solid-bg: var(--background-2);
+  --footer-solid-color: var(--on-background);
+  --footer-solid-border: var(--border-1);
+  --footer-solid-shadow: var(--shadow-1);
 }

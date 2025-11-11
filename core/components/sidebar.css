@@ -57,57 +57,102 @@ nuke-sidebar[position="right"][open] {
 }
 
 /* ============================================
-   SIDEBAR VARIANTS - style="1|2|3"
+   SIDEBAR VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
    ============================================ */
 
-/* Style 1: Overlay sidebar (slides over content) */
+/* zen: Minimal / Japanese - Border on closing edge only */
+nuke-sidebar[style="zen"],
+nuke-sidebar.zen,
 nuke-sidebar[style="1"] {
-  background: var(--sidebar-style-1-background);
-  border: var(--sidebar-style-1-border);
-  box-shadow: var(--sidebar-style-1-shadow);
+  background: var(--sidebar-zen-background);
+  box-shadow: var(--sidebar-zen-shadow);
 }
 
-/* Style 2: Push sidebar (pushes content aside) */
+nuke-sidebar[style="zen"][position="left"],
+nuke-sidebar.zen[position="left"],
+nuke-sidebar[style="1"][position="left"] {
+  border-left: var(--sidebar-zen-border-left);
+  border-right: var(--sidebar-zen-border-right);
+}
+
+nuke-sidebar[style="zen"][position="right"],
+nuke-sidebar.zen[position="right"],
+nuke-sidebar[style="1"][position="right"] {
+  border-right: none;
+  border-left: var(--sidebar-zen-border-right);
+}
+
+/* soft: Subtle Contrasts - No borders, shadow only */
+nuke-sidebar[style="soft"],
+nuke-sidebar.soft,
 nuke-sidebar[style="2"] {
-  background: var(--sidebar-style-2-background);
-  border: var(--sidebar-style-2-border);
-  box-shadow: var(--sidebar-style-2-shadow);
-  position: relative;
-  transform: none;
+  background: var(--sidebar-soft-background);
+  box-shadow: var(--sidebar-soft-shadow);
 }
 
-nuke-sidebar[style="2"]:not([open]) {
-  display: none;
+nuke-sidebar[style="soft"][position="left"],
+nuke-sidebar.soft[position="left"],
+nuke-sidebar[style="2"][position="left"] {
+  border-left: var(--sidebar-soft-border-left);
+  border-right: var(--sidebar-soft-border-right);
 }
 
-/* Style 3: Persistent sidebar (always visible) */
+nuke-sidebar[style="soft"][position="right"],
+nuke-sidebar.soft[position="right"],
+nuke-sidebar[style="2"][position="right"] {
+  border-right: none;
+  border-left: var(--sidebar-soft-border-left);
+}
+
+/* solid: All In - Border on closing edge + shadow */
+nuke-sidebar[style="solid"],
+nuke-sidebar.solid,
 nuke-sidebar[style="3"] {
-  background: var(--sidebar-style-3-background);
-  border: var(--sidebar-style-3-border);
-  box-shadow: var(--sidebar-style-3-shadow);
-  position: relative;
-  transform: none;
+  background: var(--sidebar-solid-background);
+  box-shadow: var(--sidebar-solid-shadow);
+}
+
+nuke-sidebar[style="solid"][position="left"],
+nuke-sidebar.solid[position="left"],
+nuke-sidebar[style="3"][position="left"] {
+  border-left: var(--sidebar-solid-border-left);
+  border-right: var(--sidebar-solid-border-right);
+}
+
+nuke-sidebar[style="solid"][position="right"],
+nuke-sidebar.solid[position="right"],
+nuke-sidebar[style="3"][position="right"] {
+  border-right: none;
+  border-left: var(--sidebar-solid-border-right);
 }
 
 /* ============================================
    RESPONSIVE BEHAVIOR
    ============================================ */
 
-/* On mobile, style 3 becomes overlay */
+/* On mobile, solid becomes overlay */
 @media (max-width: 768px) {
+  nuke-sidebar[style="solid"],
+  nuke-sidebar.solid,
   nuke-sidebar[style="3"] {
     position: fixed;
     transform: translateX(-100%);
   }
 
+  nuke-sidebar[style="solid"][open],
+  nuke-sidebar.solid[open],
   nuke-sidebar[style="3"][open] {
     transform: translateX(0);
   }
 
+  nuke-sidebar[style="solid"][position="right"],
+  nuke-sidebar.solid[position="right"],
   nuke-sidebar[style="3"][position="right"] {
     transform: translateX(100%);
   }
 
+  nuke-sidebar[style="solid"][position="right"][open],
+  nuke-sidebar.solid[position="right"][open],
   nuke-sidebar[style="3"][position="right"][open] {
     transform: translateX(0);
   }

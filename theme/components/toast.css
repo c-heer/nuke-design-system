@@ -22,18 +22,37 @@
   --toast-close-size: 24px;
   --toast-close-color: currentColor;
 
-  /* Style 1: Info toast (neutral/blue) */
-  --toast-style-1-background: var(--color-1);
-  --toast-style-1-color: var(--on-color);
-  --toast-style-1-border: none;
+  /* zen: Minimal / Japanese - Thin border, no shadow */
+  --toast-zen-background: var(--background-2);
+  --toast-zen-color: var(--on-background);
+  --toast-zen-border: 1px solid var(--border-2);
+  --toast-zen-shadow: none;
 
-  /* Style 2: Success toast (green) */
-  --toast-style-2-background: hsl(160, 70%, 45%);
-  --toast-style-2-color: var(--on-color);
-  --toast-style-2-border: none;
+  /* soft: Subtle Contrasts - Subtle shadow, background-driven */
+  --toast-soft-background: var(--background-2);
+  --toast-soft-color: var(--on-background);
+  --toast-soft-border: none;
+  --toast-soft-shadow: var(--shadow-2);
 
-  /* Style 3: Error toast (red/warning) */
-  --toast-style-3-background: hsl(0, 70%, 55%);
-  --toast-style-3-color: var(--on-color);
-  --toast-style-3-border: none;
+  /* solid: All In - Border + shadow + strong presence */
+  --toast-solid-background: var(--background-2);
+  --toast-solid-color: var(--on-background);
+  --toast-solid-border: 2px solid var(--border-1);
+  --toast-solid-shadow: var(--shadow-3);
+
+  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
+  --toast-style-1-background: var(--toast-zen-background);
+  --toast-style-1-color: var(--toast-zen-color);
+  --toast-style-1-border: var(--toast-zen-border);
+  --toast-style-1-shadow: var(--toast-zen-shadow);
+
+  --toast-style-2-background: var(--toast-soft-background);
+  --toast-style-2-color: var(--toast-soft-color);
+  --toast-style-2-border: var(--toast-soft-border);
+  --toast-style-2-shadow: var(--toast-soft-shadow);
+
+  --toast-style-3-background: var(--toast-solid-background);
+  --toast-style-3-color: var(--toast-solid-color);
+  --toast-style-3-border: var(--toast-solid-border);
+  --toast-style-3-shadow: var(--toast-solid-shadow);
 }

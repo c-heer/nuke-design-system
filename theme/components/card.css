@@ -25,18 +25,31 @@
   --card-actions-gap: var(--space-1);           /* Gap between buttons */
   --card-actions-border-color: var(--border-1);
 
-  /* Style 1: Standard card */
-  --card-style-1-background: var(--background-2);
-  --card-style-1-border: 1px solid var(--border-1);
-  --card-style-1-shadow: none;
+  /* zen: Minimal / Japanese - Transparent background, 1px light border, no shadow */
+  --card-zen-background: transparent;
+  --card-zen-border: 1px solid var(--border-1);
+  --card-zen-shadow: none;
 
-  /* Style 2: Elevated card (with shadow) */
-  --card-style-2-background: var(--background-2);
-  --card-style-2-border: none;
-  --card-style-2-shadow: var(--shadow-2);
+  /* soft: Subtle Contrasts - White background, 1px subtle border, small shadow */
+  --card-soft-background: var(--background-2);
+  --card-soft-border: 1px solid var(--border-1);
+  --card-soft-shadow: var(--shadow-1);
 
-  /* Style 3: Bordered card (stronger border) */
-  --card-style-3-background: var(--background-2);
-  --card-style-3-border: 2px solid var(--border-2);
-  --card-style-3-shadow: none;
+  /* solid: All In - White background, 2px border, larger shadow */
+  --card-solid-background: var(--background-2);
+  --card-solid-border: 2px solid var(--border-1);
+  --card-solid-shadow: var(--shadow-2);
+
+  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
+  --card-style-1-background: var(--card-zen-background);
+  --card-style-1-border: var(--card-zen-border);
+  --card-style-1-shadow: var(--card-zen-shadow);
+
+  --card-style-2-background: var(--card-soft-background);
+  --card-style-2-border: var(--card-soft-border);
+  --card-style-2-shadow: var(--card-soft-shadow);
+
+  --card-style-3-background: var(--card-solid-background);
+  --card-style-3-border: var(--card-solid-border);
+  --card-style-3-shadow: var(--card-solid-shadow);
 }

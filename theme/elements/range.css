@@ -13,4 +13,26 @@
   --range-thumb-bg: var(--color-1);
   --range-thumb-border: var(--color-1);
   --range-transition: var(--transition-fast);
+
+  /* zen: Minimal / Japanese - Thin track, small thumb */
+  --range-zen-track-height: 2px;
+  --range-zen-track-bg: var(--background-3);
+  --range-zen-thumb-size: 16px;
+  --range-zen-thumb-bg: var(--color-1);
+  --range-zen-thumb-border: var(--color-1);
+
+  /* soft: Subtle Contrasts - Medium track, medium thumb, no border */
+  --range-soft-track-height: 6px;
+  --range-soft-track-bg: var(--background-3);
+  --range-soft-thumb-size: 20px;
+  --range-soft-thumb-bg: var(--color-1);
+  --range-soft-thumb-border: transparent;
+
+  /* solid: All In - Thick track, large thumb with border */
+  --range-solid-track-height: 8px;
+  --range-solid-track-bg: var(--background-3);
+  --range-solid-track-border: var(--border-1);
+  --range-solid-thumb-size: 24px;
+  --range-solid-thumb-bg: var(--color-1);
+  --range-solid-thumb-border: var(--border-1);
 }

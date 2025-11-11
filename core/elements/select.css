@@ -30,6 +30,7 @@ select {
   border-radius: var(--select-radius);
   transition:
     border-color var(--select-transition),
+    background-color var(--select-transition),
     box-shadow var(--select-transition);
 
   /* Custom dropdown arrow using background */
@@ -45,31 +46,55 @@ select:focus {
   box-shadow: 0 0 0 3px hsla(210, 100%, 50%, 0.1);
 }
 
-/* Style 1: Standard select with border */
-select.style-1 {
-  background-color: var(--select-style-1-bg);
-  border: 1px solid var(--select-style-1-border);
+/* zen: Minimal / Japanese - Border only, background appears on focus */
+select[style="zen"],
+select.zen {
+  background-color: var(--select-zen-bg);
+  color: var(--select-zen-color);
+  border: 1px solid var(--select-zen-border);
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--select-padding-x) center;
 }
 
-/* Style 2: Filled background */
-select.style-2 {
-  background-color: var(--select-style-2-bg);
-  border: 1px solid var(--select-style-2-border);
+select[style="zen"]:focus,
+select.zen:focus {
+  background-color: var(--select-zen-focus-bg);
+  border-color: var(--select-zen-focus-border);
+}
+
+/* soft: Subtle Contrasts - Filled background, no borders */
+select[style="soft"],
+select.soft {
+  background-color: var(--select-soft-bg);
+  color: var(--select-soft-color);
+  border: none;
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--select-padding-x) center;
 }
 
-/* Style 3: Minimal style */
-select.style-3 {
-  background-color: var(--select-style-3-bg);
-  border: 1px solid var(--select-style-3-border);
+select[style="soft"]:focus,
+select.soft:focus {
+  background-color: var(--select-soft-focus-bg);
+  box-shadow: none;
+}
+
+/* solid: All In - Border + background */
+select[style="solid"],
+select.solid {
+  background-color: var(--select-solid-bg);
+  color: var(--select-solid-color);
+  border: 2px solid var(--select-solid-border);
   background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right var(--select-padding-x) center;
+}
+
+select[style="solid"]:focus,
+select.solid:focus {
+  background-color: var(--select-solid-focus-bg);
+  border-color: var(--select-solid-focus-border);
 }
 
 /* Disabled state */

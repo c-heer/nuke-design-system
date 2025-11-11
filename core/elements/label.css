@@ -14,26 +14,30 @@ label {
   cursor: pointer;
 }
 
-/* Style 1: Standard label */
-label.style-1 {
-  font-weight: var(--label-style-1-font-weight);
-  color: var(--label-style-1-color);
+/* zen: Minimal / Japanese - Lightweight, subtle */
+label[style="zen"],
+label.zen {
+  font-weight: var(--label-zen-font-weight);
+  color: var(--label-zen-color);
+  font-size: var(--label-zen-font-size);
 }
 
-/* Style 2: Bold label */
-label.style-2 {
-  font-weight: var(--label-style-2-font-weight);
-  color: var(--label-style-2-color);
-  text-transform: var(--label-style-2-transform);
+/* soft: Subtle Contrasts - Medium weight, standard color */
+label[style="soft"],
+label.soft {
+  font-weight: var(--label-soft-font-weight);
+  color: var(--label-soft-color);
+  font-size: var(--label-soft-font-size);
 }
 
-/* Style 3: Inline label (for checkboxes/radios) */
-label.style-3 {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--label-style-3-gap);
-  font-weight: var(--label-style-3-font-weight);
-  margin-bottom: 0;
+/* solid: All In - Bold, strong presence */
+label[style="solid"],
+label.solid {
+  font-weight: var(--label-solid-font-weight);
+  color: var(--label-solid-color);
+  font-size: var(--label-solid-font-size);
+  text-transform: var(--label-solid-transform);
+  letter-spacing: var(--label-solid-letter-spacing);
 }
 
 /* Disabled state - when label wraps disabled input */

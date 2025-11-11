@@ -10,20 +10,31 @@
   --toolbar-radius: var(--border-radius);       /* Corner radius */
   --toolbar-background: transparent;            /* Default background */
 
-  /* Style 1: Standard toolbar (minimal) */
-  --toolbar-style-1-background: transparent;
-  --toolbar-style-1-border: none;
-  --toolbar-style-1-padding: 0;
+  /* zen: Minimal / Japanese - No background, no border, buttons minimal */
+  --toolbar-zen-background: transparent;
+  --toolbar-zen-border: none;
+  --toolbar-zen-padding: 0;
 
-  /* Style 2: Bordered toolbar */
-  --toolbar-style-2-background: var(--background-2);
-  --toolbar-style-2-border: 1px solid var(--border-1);
-  --toolbar-style-2-padding: var(--space-1);
+  /* soft: Subtle Contrasts - Light background, no borders */
+  --toolbar-soft-background: var(--background-3);
+  --toolbar-soft-border: none;
+  --toolbar-soft-padding: var(--space-1);
 
-  /* Style 3: Sticky toolbar (sticks to top) */
-  --toolbar-style-3-background: var(--background-2);
-  --toolbar-style-3-border-bottom: 1px solid var(--border-1);
-  --toolbar-style-3-shadow: var(--shadow-1);
-  --toolbar-style-3-padding: var(--space-2);
-  --toolbar-style-3-z-index: 100;
+  /* solid: All In - Border + background + button separators */
+  --toolbar-solid-background: var(--background-2);
+  --toolbar-solid-border: 1px solid var(--border-1);
+  --toolbar-solid-padding: var(--space-1);
+
+  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
+  --toolbar-style-1-background: var(--toolbar-zen-background);
+  --toolbar-style-1-border: var(--toolbar-zen-border);
+  --toolbar-style-1-padding: var(--toolbar-zen-padding);
+
+  --toolbar-style-2-background: var(--toolbar-soft-background);
+  --toolbar-style-2-border: var(--toolbar-soft-border);
+  --toolbar-style-2-padding: var(--toolbar-soft-padding);
+
+  --toolbar-style-3-background: var(--toolbar-solid-background);
+  --toolbar-style-3-border: var(--toolbar-solid-border);
+  --toolbar-style-3-padding: var(--toolbar-solid-padding);
 }
