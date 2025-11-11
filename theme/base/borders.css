@@ -1,10 +1,10 @@
 /* ============================================
    BORDERS
-   Border radius values (rounded corners)
+   Subtle, minimal radius
    ============================================ */
 
 :root {
-  --border-radius: 6px;           /* Standard radius */
-  --border-radius-small: 4px;     /* Small radius */
-  --border-radius-large: 12px;    /* Large radius */
+  --border-radius: 4px;           /* Subtle radius */
+  --border-radius-small: 2px;     /* Minimal radius */
+  --border-radius-large: 8px;     /* Medium radius */
 }

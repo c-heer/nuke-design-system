@@ -1,25 +1,25 @@
 /* ============================================
    COLORS
-   Theme color tokens - light/dark themes
+   Theme color tokens - Subtle, minimal palette
    ============================================ */
 
 :root {
-  /* Primary colors */
-  --color-1: hsl(210, 100%, 50%);     /* Primary brand color */
-  --color-2: hsl(280, 70%, 55%);      /* Secondary color */
-  --color-3: hsl(160, 70%, 45%);      /* Tertiary/accent color */
+  /* Primary colors - More subtle, less saturated */
+  --color-1: hsl(210, 60%, 60%);      /* Softer blue */
+  --color-2: hsl(280, 40%, 65%);      /* Muted purple */
+  --color-3: hsl(160, 45%, 55%);      /* Calmer green */
   --on-color: hsl(0, 0%, 100%);       /* Text on colored backgrounds */
 
-  /* Backgrounds */
-  --background-1: hsl(0, 0%, 98%);    /* Page background */
-  --background-2: hsl(0, 0%, 100%);   /* Card/section background */
-  --background-3: hsl(0, 0%, 95%);    /* Subtle/filled backgrounds */
+  /* Backgrounds - Lighter, more air */
+  --background-1: hsl(0, 0%, 99%);    /* Almost white page */
+  --background-2: hsl(0, 0%, 100%);   /* Pure white cards */
+  --background-3: hsl(0, 0%, 97%);    /* Subtle fills */
 
-  /* Text colors */
-  --on-background: hsl(0, 0%, 15%);         /* Primary text */
-  --on-background-light: hsl(0, 0%, 45%);   /* Secondary/muted text */
+  /* Text colors - Softer contrast */
+  --on-background: hsl(0, 0%, 20%);         /* Softer black */
+  --on-background-light: hsl(0, 0%, 50%);   /* Medium gray */
 
-  /* Borders */
-  --border-1: hsl(0, 0%, 88%);        /* Standard border */
-  --border-2: hsl(0, 0%, 75%);        /* Darker border */
+  /* Borders - Much lighter */
+  --border-1: hsl(0, 0%, 92%);        /* Very light border */
+  --border-2: hsl(0, 0%, 85%);        /* Light border */
 }

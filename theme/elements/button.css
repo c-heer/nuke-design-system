@@ -4,29 +4,30 @@
    ============================================ */
 
 :root {
-  /* Base button properties */
+  /* Base button properties - More subtle */
   --button-height: var(--height-2);
   --button-padding-x: var(--space-2);
   --button-font-size: var(--font-size-1);
-  --button-font-weight: var(--font-weight-medium);
+  --button-font-weight: 500;                      /* Lighter weight */
   --button-radius: var(--border-radius);
   --button-gap: var(--space-1);
   --button-transition: var(--transition-fast);
 
-  /* Style 1: Solid button */
+  /* Style 1: Solid button - Softer colors */
   --button-style-1-bg: var(--color-1);
   --button-style-1-color: var(--on-color);
-  --button-style-1-hover-bg: hsl(210, 100%, 45%);
+  --button-style-1-hover-bg: hsl(210, 60%, 55%);  /* Subtle hover */
 
-  /* Style 2: Outlined button */
+  /* Style 2: Outlined button - Lighter borders */
   --button-style-2-bg: transparent;
-  --button-style-2-color: var(--color-1);
-  --button-style-2-border: var(--color-1);
-  --button-style-2-hover-bg: var(--color-1);
-  --button-style-2-hover-color: var(--on-color);
+  --button-style-2-color: var(--on-background);    /* Gray text */
+  --button-style-2-border: var(--border-1);        /* Light border */
+  --button-style-2-hover-bg: var(--background-3);  /* Subtle fill */
+  --button-style-2-hover-color: var(--on-background);
 
-  /* Style 3: Ghost button */
+  /* Style 3: Ghost button - Very subtle */
   --button-style-3-bg: transparent;
-  --button-style-3-color: var(--color-1);
+  --button-style-3-color: var(--on-background-light);
   --button-style-3-hover-bg: var(--background-3);
+  --button-style-3-hover-color: var(--on-background);
 }
