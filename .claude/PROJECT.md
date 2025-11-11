@@ -144,8 +144,8 @@ nuke-ds/                         (repository)
 ```
 
 **Total Files:**
-- 70 CSS files (34 core + 36 theme)
-- ~6 JavaScript files (web components, when built)
+- 76 CSS files (34 core + 36 theme + 6 component styles)
+- 7 JavaScript files (6 web components + 1 all.js)
 
 ### Folder Naming Clarity
 
@@ -230,9 +230,9 @@ npm update @nuke-ds/core
 
 ## Current Implementation Status
 
-### ✅ FULLY IMPLEMENTED (v1.0 Ready)
+### ✅ FULLY IMPLEMENTED (v1.0 RC - Release Candidate!)
 
-**28 Native Elements with 70 CSS Files:**
+**28 Native Elements + 6 Web Components (76 CSS Files + 7 JS Files):**
 
 **Form Controls (12):**
 - ✅ button - Solid/outlined/ghost
@@ -284,21 +284,50 @@ npm update @nuke-ds/core
 - ✅ helpers/scroll-lock.css - Body scroll prevention + iOS fix
 - ✅ text/typography.css - Basic text elements (h1-h6, p, lists, etc.)
 
+**Web Components (6 Fully Implemented!):**
+- ✅ `<nuke-card>` - Content containers with header/content/actions structure
+  - 3 variants: standard, elevated, bordered
+  - Enforces consistent card structure
+
+- ✅ `<nuke-toolbar>` - Horizontal action button groups
+  - 3 variants: standard, bordered, sticky
+  - Flexbox layout for button grouping
+
+- ✅ `<nuke-badge>` - Inline labels, tags, and counters
+  - 3 variants: solid, subtle, outlined
+  - Semantic coloring support
+
+- ✅ `<nuke-tabs>` - Tab interface with full keyboard navigation
+  - 3 variants: underline, pills, boxed
+  - Arrow keys, Home/End navigation
+  - ARIA roles for accessibility
+
+- ✅ `<nuke-toast>` - Notification messages
+  - 3 variants: info, success, warning
+  - Auto-dismiss with configurable timeout
+  - Stacking behavior for multiple toasts
+  - Slide animations
+
+- ✅ `<nuke-sidebar>` - Collapsible navigation panel
+  - 3 variants: standard, bordered, minimal
+  - Slide-in animation
+  - Overlay backdrop
+  - Close on overlay click
+
 **Demo:**
-- ✅ index.html - Comprehensive demo of all 28 elements
-- ✅ demo-2025.html - Web component proof of concept (card, toolbar, badge)
+- ✅ index.html - Comprehensive demo of all 28 elements + 6 web components
+- ✅ Professional hero with gradient
+- ✅ Side-by-side variant comparison for all components
+- ✅ Fixed toast functionality with helper
+- ✅ Subtle, minimal aesthetic (recent redesign)
 
-### 🚧 NEXT: Web Components (In Progress)
+### 🎯 FUTURE COMPONENTS (Post v1.0)
 
-**Priority components for prototyping:**
-- [ ] `<nuke-card>` - Content containers with enforced structure
-- [ ] `<nuke-toolbar>` - Action button groups
-- [ ] `<nuke-badge>` - Inline labels/tags
-- [ ] `<nuke-tabs>` - Tab interface
-
-**Later:**
-- [ ] `<nuke-sidebar>` - Navigation panels
-- [ ] `<nuke-tooltip>` - Positioned tooltips
+**Potential additions:**
+- [ ] `<nuke-tooltip>` - Positioned tooltips with popover API
+- [ ] `<nuke-dropdown>` - Dropdown menus (beyond native select)
+- [ ] `<nuke-modal>` - Enhanced dialog with backdrop
+- [ ] `<nuke-accordion>` - Multi-item accordion (beyond details)
 
 ### 🎯 FUTURE ENHANCEMENTS (Post v1.0)
 
@@ -535,21 +564,29 @@ button.style-1:hover {
 
 ## Project Status
 
-**Current State:** v0.9 (Ready for web components)
+**Current State:** v1.0 RC (Release Candidate - Ready for Distribution!)
 
 **What's Working:**
 - ✅ 28 fully implemented native elements
-- ✅ 70 CSS files (34 core + 36 theme)
+- ✅ 6 fully implemented web components
+- ✅ 76 CSS files (34 core + 36 theme + 6 component styles)
+- ✅ 7 JavaScript files (6 web components + 1 all.js)
 - ✅ Complete core/theme separation
-- ✅ Comprehensive demo (index.html)
-- ✅ Clear folder structure (base/text/elements)
-- ✅ Production-ready CSS
+- ✅ Universal style="1/2/3" pattern across everything
+- ✅ Comprehensive demo (index.html) with all variants
+- ✅ Keyboard navigation (tabs with arrow keys)
+- ✅ Auto-dismiss toasts with stacking
+- ✅ Collapsible sidebar with overlay
+- ✅ Professional, minimal aesthetic (recent redesign)
+- ✅ Clear folder structure (base/text/elements/components)
+- ✅ Production-ready CSS + JavaScript
 - ✅ Real-world architecture proven
 
 **Next Steps:**
-- [ ] Build web components (card, toolbar, badge, tabs)
-- [ ] npm package configuration
+- [ ] npm package configuration (@nuke-ds/core, @nuke-ds/components)
 - [ ] README.md documentation
-- [ ] Use in real projects
+- [ ] Browser compatibility testing
+- [ ] Accessibility audit
+- [ ] Use in real projects for validation
 
-**Timeline:** Web components can be built incrementally as needed. Core CSS is ready to use today.
+**Timeline:** Ready for v1.0 release after distribution setup and documentation.
