@@ -1,58 +1,38 @@
-/* ============================================
-   TOAST COMPONENT VARIABLES
-   Design tokens for <nuke-toast>
-   ============================================ */
-
 :root {
-  /* Base toast properties */
-  --toast-min-width: 300px;
-  --toast-max-width: 500px;
-  --toast-padding: var(--space-2);
-  --toast-radius: var(--border-radius);
-  --toast-shadow: var(--shadow-2);
-  --toast-font-size: var(--font-size-2);
-  --toast-z-index: 1000;
-
-  /* Toast container positioning */
-  --toast-container-position-top: calc(var(--height-3) + var(--space-2));
-  --toast-container-position-right: var(--space-2);
-  --toast-container-gap: var(--space-1);
-
-  /* Close button */
-  --toast-close-size: calc(var(--height-1) * 0.8);
-  --toast-close-color: currentColor;
-
-  /* zen: Minimal / Japanese - Thin border, no shadow */
-  --toast-zen-background: var(--background-2);
-  --toast-zen-color: var(--on-background);
-  --toast-zen-border: 1px solid var(--border-2);
-  --toast-zen-shadow: none;
-
-  /* soft: Subtle Contrasts - Subtle shadow, background-driven */
-  --toast-soft-background: var(--background-2);
-  --toast-soft-color: var(--on-background);
-  --toast-soft-border: none;
-  --toast-soft-shadow: var(--shadow-2);
-
-  /* solid: All In - Border + shadow + strong presence */
-  --toast-solid-background: var(--background-2);
-  --toast-solid-color: var(--on-background);
-  --toast-solid-border: 2px solid var(--border-1);
-  --toast-solid-shadow: var(--shadow-3);
-
-  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
-  --toast-style-1-background: var(--toast-zen-background);
-  --toast-style-1-color: var(--toast-zen-color);
-  --toast-style-1-border: var(--toast-zen-border);
-  --toast-style-1-shadow: var(--toast-zen-shadow);
-
-  --toast-style-2-background: var(--toast-soft-background);
-  --toast-style-2-color: var(--toast-soft-color);
-  --toast-style-2-border: var(--toast-soft-border);
-  --toast-style-2-shadow: var(--toast-soft-shadow);
-
-  --toast-style-3-background: var(--toast-solid-background);
-  --toast-style-3-color: var(--toast-solid-color);
-  --toast-style-3-border: var(--toast-solid-border);
-  --toast-style-3-shadow: var(--toast-solid-shadow);
+--toast-min-width: 300px;
+--toast-max-width: 500px;
+--toast-padding: var(--space-2);
+--toast-radius: var(--border-radius);
+--toast-shadow: var(--shadow-2);
+--toast-font-size: var(--font-size-2);
+--toast-z-index: 1000;
+--toast-container-position-top: calc(var(--height-3) + var(--space-2));
+--toast-container-position-right: var(--space-2);
+--toast-container-gap: var(--space-1);
+--toast-close-size: calc(var(--height-1) * 0.8);
+--toast-close-color: currentColor;
+--toast-1-background: var(--background-2);
+--toast-1-color: var(--on-background);
+--toast-1-border: 1px solid var(--border-2);
+--toast-1-shadow: none;
+--toast-2-background: var(--background-2);
+--toast-2-color: var(--on-background);
+--toast-2-border: none;
+--toast-2-shadow: var(--shadow-2);
+--toast-3-background: var(--background-2);
+--toast-3-color: var(--on-background);
+--toast-3-border: 2px solid var(--border-1);
+--toast-3-shadow: var(--shadow-3);
+--toast-style-1-background: var(--toast-1-background);
+--toast-style-1-color: var(--toast-1-color);
+--toast-style-1-border: var(--toast-1-border);
+--toast-style-1-shadow: var(--toast-1-shadow);
+--toast-style-2-background: var(--toast-2-background);
+--toast-style-2-color: var(--toast-2-color);
+--toast-style-2-border: var(--toast-2-border);
+--toast-style-2-shadow: var(--toast-2-shadow);
+--toast-style-3-background: var(--toast-3-background);
+--toast-style-3-color: var(--toast-3-color);
+--toast-style-3-border: var(--toast-3-border);
+--toast-style-3-shadow: var(--toast-3-shadow);
 }

@@ -1,9 +1,3 @@
-/* ============================================
-   SIDEBAR COMPONENT
-   Collapsible side navigation panel
-   ============================================ */
-
-/* Base sidebar styles */
 nuke-sidebar {
   position: fixed;
   top: 0;
@@ -16,28 +10,20 @@ nuke-sidebar {
   transition: var(--sidebar-transition);
   z-index: var(--sidebar-z-index);
 }
-
-/* Position: left (default) */
 nuke-sidebar[position="left"] {
   left: 0;
   transform: translateX(-100%);
 }
-
 nuke-sidebar[position="left"][open] {
   transform: translateX(0);
 }
-
-/* Position: right */
 nuke-sidebar[position="right"] {
   right: 0;
   transform: translateX(100%);
 }
-
 nuke-sidebar[position="right"][open] {
   transform: translateX(0);
 }
-
-/* Overlay backdrop */
 .nuke-sidebar-overlay {
   position: fixed;
   top: 0;
@@ -50,110 +36,58 @@ nuke-sidebar[position="right"][open] {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-
 .nuke-sidebar-overlay.show {
   opacity: 1;
   pointer-events: auto;
 }
-
-/* ============================================
-   SIDEBAR VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
-   ============================================ */
-
-/* zen: Minimal / Japanese - Border on closing edge only */
-nuke-sidebar[style="zen"],
-nuke-sidebar.zen,
-nuke-sidebar[style="1"] {
-  background: var(--sidebar-zen-background);
-  box-shadow: var(--sidebar-zen-shadow);
+nuke-sidebar:is(.style-1, [style="1"]) {
+  background: var(--sidebar-1-background);
+  box-shadow: var(--sidebar-1-shadow);
 }
-
-nuke-sidebar[style="zen"][position="left"],
-nuke-sidebar.zen[position="left"],
-nuke-sidebar[style="1"][position="left"] {
-  border-left: var(--sidebar-zen-border-left);
-  border-right: var(--sidebar-zen-border-right);
+nuke-sidebar:is(.style-1, [style="1"])[position="left"] {
+  border-left: var(--sidebar-1-border-left);
+  border-right: var(--sidebar-1-border-right);
 }
-
-nuke-sidebar[style="zen"][position="right"],
-nuke-sidebar.zen[position="right"],
-nuke-sidebar[style="1"][position="right"] {
+nuke-sidebar:is(.style-1, [style="1"])[position="right"] {
   border-right: none;
-  border-left: var(--sidebar-zen-border-right);
+  border-left: var(--sidebar-1-border-right);
 }
-
-/* soft: Subtle Contrasts - No borders, shadow only */
-nuke-sidebar[style="soft"],
-nuke-sidebar.soft,
-nuke-sidebar[style="2"] {
-  background: var(--sidebar-soft-background);
-  box-shadow: var(--sidebar-soft-shadow);
+nuke-sidebar:is(.style-2, [style="2"]) {
+  background: var(--sidebar-2-background);
+  box-shadow: var(--sidebar-2-shadow);
 }
-
-nuke-sidebar[style="soft"][position="left"],
-nuke-sidebar.soft[position="left"],
-nuke-sidebar[style="2"][position="left"] {
-  border-left: var(--sidebar-soft-border-left);
-  border-right: var(--sidebar-soft-border-right);
+nuke-sidebar:is(.style-2, [style="2"])[position="left"] {
+  border-left: var(--sidebar-2-border-left);
+  border-right: var(--sidebar-2-border-right);
 }
-
-nuke-sidebar[style="soft"][position="right"],
-nuke-sidebar.soft[position="right"],
-nuke-sidebar[style="2"][position="right"] {
+nuke-sidebar:is(.style-2, [style="2"])[position="right"] {
   border-right: none;
-  border-left: var(--sidebar-soft-border-left);
+  border-left: var(--sidebar-2-border-left);
 }
-
-/* solid: All In - Border on closing edge + shadow */
-nuke-sidebar[style="solid"],
-nuke-sidebar.solid,
-nuke-sidebar[style="3"] {
-  background: var(--sidebar-solid-background);
-  box-shadow: var(--sidebar-solid-shadow);
+nuke-sidebar:is(.style-3, [style="3"]) {
+  background: var(--sidebar-3-background);
+  box-shadow: var(--sidebar-3-shadow);
 }
-
-nuke-sidebar[style="solid"][position="left"],
-nuke-sidebar.solid[position="left"],
-nuke-sidebar[style="3"][position="left"] {
-  border-left: var(--sidebar-solid-border-left);
-  border-right: var(--sidebar-solid-border-right);
+nuke-sidebar:is(.style-3, [style="3"])[position="left"] {
+  border-left: var(--sidebar-3-border-left);
+  border-right: var(--sidebar-3-border-right);
 }
-
-nuke-sidebar[style="solid"][position="right"],
-nuke-sidebar.solid[position="right"],
-nuke-sidebar[style="3"][position="right"] {
+nuke-sidebar:is(.style-3, [style="3"])[position="right"] {
   border-right: none;
-  border-left: var(--sidebar-solid-border-right);
+  border-left: var(--sidebar-3-border-right);
 }
-
-/* ============================================
-   RESPONSIVE BEHAVIOR
-   ============================================ */
-
-/* On mobile, solid becomes overlay */
 @media (max-width: 768px) {
-  nuke-sidebar[style="solid"],
-  nuke-sidebar.solid,
-  nuke-sidebar[style="3"] {
+  nuke-sidebar:is(.style-3, [style="3"]) {
     position: fixed;
     transform: translateX(-100%);
   }
-
-  nuke-sidebar[style="solid"][open],
-  nuke-sidebar.solid[open],
-  nuke-sidebar[style="3"][open] {
+  nuke-sidebar:is(.style-3, [style="3"])[open] {
     transform: translateX(0);
   }
-
-  nuke-sidebar[style="solid"][position="right"],
-  nuke-sidebar.solid[position="right"],
-  nuke-sidebar[style="3"][position="right"] {
+  nuke-sidebar:is(.style-3, [style="3"])[position="right"] {
     transform: translateX(100%);
   }
-
-  nuke-sidebar[style="solid"][position="right"][open],
-  nuke-sidebar.solid[position="right"][open],
-  nuke-sidebar[style="3"][position="right"][open] {
+  nuke-sidebar:is(.style-3, [style="3"])[position="right"][open] {
     transform: translateX(0);
   }
 }

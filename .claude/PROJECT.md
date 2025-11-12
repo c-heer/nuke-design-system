@@ -29,27 +29,22 @@ A pure CSS element-first styling system with **22 fully implemented native eleme
 <!-- Just write HTML. It works. -->
 <button>Click me</button>
 
-<!-- Need a variant? Use style="zen/soft/solid" attribute or .zen/soft/solid class -->
-<button style="zen">Zen</button>
-<button style="soft">Soft</button>
-<button style="solid">Solid</button>
+<!-- Need a variant? Use style="1/2/3" attribute or .style-1/2/3 class -->
+<button style="1">Style 1</button>
+<button style="2">Style 2</button>
+<button style="3">Style 3</button>
 
 <!-- Also works with classes -->
-<button class="zen">Zen</button>
-<button class="soft">Soft</button>
-<button class="solid">Solid</button>
-
-<!-- Backward compatible with style="1/2/3" -->
-<button style="1">Style 1 (maps to zen)</button>
-<button style="2">Style 2 (maps to soft)</button>
-<button style="3">Style 3 (maps to solid)</button>
+<button class="style-1">Style 1</button>
+<button class="style-2">Style 2</button>
+<button class="style-3">Style 3</button>
 ```
 
 ### The Holy Grail: Universal Style Pattern = Three Complete Design Systems
 
-**✅ COMPLETED: `style="zen/soft/solid"` are three complete, cohesive design philosophies implemented across ALL elements!**
+**✅ COMPLETED: `style="1/2/3"` are three complete, cohesive design philosophies implemented across ALL elements!**
 
-#### zen (style="zen" or style="1"): Minimal / Japanese
+#### Style 1: Minimal / Japanese
 **Philosophy:** Lean, understated, zen-like simplicity
 - Text inputs: Bottom border only (underline style)
 - Checkboxes/radios: 1px border, no background fill
@@ -57,7 +52,7 @@ A pure CSS element-first styling system with **22 fully implemented native eleme
 - Overall: Maximum whitespace, minimal visual weight
 - **Think:** Japanese design, brutalism, text-heavy interfaces
 
-#### soft (style="soft" or style="2"): Subtle Contrasts
+#### Style 2: Subtle Contrasts
 **Philosophy:** Modern, clean, background-driven
 - NO borders at all across any elements
 - Visual guidance through background colors/contrasts only
@@ -65,7 +60,7 @@ A pure CSS element-first styling system with **22 fully implemented native eleme
 - Overall: Backgrounds create structure, not borders
 - **Think:** iOS, modern web apps, soft aesthetics
 
-#### solid (style="solid" or style="3"): All In
+#### Style 3: All In
 **Philosophy:** Traditional, clear, defined
 - Borders AND backgrounds working together
 - The "standard" everyone expects
@@ -75,23 +70,22 @@ A pure CSS element-first styling system with **22 fully implemented native eleme
 
 ### Why This Is Genius
 
-**Semantic naming with full backward compatibility:**
-- `<button style="zen">` = minimal button (also works with `style="1"`)
-- `<input style="zen">` = minimal input (also works with `style="1"`)
-- `<checkbox style="zen">` = minimal checkbox (also works with `style="1"`)
+**Numbered style system:**
+- `<button style="1">` = minimal button
+- `<input style="1">` = minimal input
+- `<checkbox style="1">` = minimal checkbox
 - **All elements follow the SAME design philosophy!**
 
 **Both attribute and class syntax supported:**
-- `style="zen"` attribute syntax (primary)
-- `.zen` class syntax (also works)
-- `style="1"` backward compatible (maps to zen)
+- `style="1/2/3"` attribute syntax (primary)
+- `.style-1/.style-2/.style-3` class syntax (also works)
 
 **Ship three complete aesthetic systems:**
 - Users pick one philosophy and use it everywhere
-- Or mix (zen for forms, solid for buttons)
-- Semantic names make intent clear
+- Or mix (Style 1 for forms, Style 3 for buttons)
+- Numbered system is clear and simple
 
-**No naming fatigue. Cohesive design language. Semantic and backward compatible.**
+**No naming fatigue. Cohesive design language. Simple and effective.**
 
 ## 🔒 LOCKED ARCHITECTURE DECISIONS
 
@@ -240,7 +234,7 @@ npm install @nuke-ds/core
 <script type="module" src="node_modules/@nuke-ds/components/core.js"></script>
 
 <!-- Now you can use -->
-<nuke-card style="zen">
+<nuke-card style="1">
   <nuke-card-header>Title</nuke-card-header>
   <nuke-card-content>Content</nuke-card-content>
 </nuke-card>
@@ -263,7 +257,7 @@ npm update @nuke-ds/core
 ### ✅ FULLY IMPLEMENTED (v1.0 READY!)
 
 **21 Native Elements + 6 Web Components (66 CSS Files + 7 JS Files):**
-**✅ All refactored with zen/soft/solid semantic naming!**
+**✅ All implemented with numbered style system (1/2/3)!**
 
 **Form Controls (9):**
 - ✅ button - Solid/outlined/ghost
@@ -307,32 +301,32 @@ npm update @nuke-ds/core
 - ✅ helpers/scroll-lock.css - Body scroll prevention + iOS fix
 - ✅ text/typography.css - Basic text elements (h1-h6, p, lists, etc.)
 
-**Web Components (6 Fully Implemented with zen/soft/solid!):**
+**Web Components (6 Fully Implemented with numbered styles!):**
 - ✅ `<nuke-card>` - Content containers with header/content/actions structure
-  - 3 variants: zen, soft, solid (backward compatible with style="1/2/3")
+  - 3 variants: style="1/2/3"
   - Enforces consistent card structure
 
 - ✅ `<nuke-toolbar>` - Horizontal action button groups
-  - 3 variants: zen, soft, solid (backward compatible with style="1/2/3")
+  - 3 variants: style="1/2/3"
   - Flexbox layout for button grouping
 
 - ✅ `<nuke-badge>` - Inline labels, tags, and counters
-  - 3 variants: zen, soft, solid (backward compatible with style="1/2/3")
+  - 3 variants: style="1/2/3"
   - Semantic coloring support
 
 - ✅ `<nuke-tabs>` - Tab interface with full keyboard navigation
-  - 3 variants: zen, soft, solid (backward compatible with style="1/2/3")
+  - 3 variants: style="1/2/3"
   - Arrow keys, Home/End navigation
   - ARIA roles for accessibility
 
 - ✅ `<nuke-toast>` - Notification messages
-  - 3 variants: zen, soft, solid (backward compatible with style="1/2/3")
+  - 3 variants: style="1/2/3"
   - Auto-dismiss with configurable timeout
   - Stacking behavior for multiple toasts
   - Slide animations
 
 - ✅ `<nuke-sidebar>` - Collapsible navigation panel
-  - 3 variants: zen, soft, solid (backward compatible with style="1/2/3")
+  - 3 variants: style="1/2/3"
   - Slide-in animation
   - Overlay backdrop
   - Close on overlay click
@@ -340,10 +334,10 @@ npm update @nuke-ds/core
 **Demo:**
 - ✅ index.html - Comprehensive demo of all 28 elements + 6 web components
 - ✅ Professional hero with gradient
-- ✅ Side-by-side variant comparison for all components (zen/soft/solid)
+- ✅ Side-by-side variant comparison for all components (Style 1/2/3)
 - ✅ Fixed toast functionality with helper
 - ✅ Subtle, minimal aesthetic (recent redesign)
-- ✅ Semantic naming with backward compatibility (style="1/2/3" still works)
+- ✅ Numbered style system (style="1/2/3")
 
 ### 🎯 FUTURE COMPONENTS (Post v1.0)
 
@@ -434,21 +428,21 @@ Element-specific variables in `theme/elements/{element}.css`:
   --button-radius: var(--border-radius);
   --button-transition: var(--transition-fast);
 
-  /* zen: Minimal */
-  --button-zen-bg: transparent;
-  --button-zen-color: var(--color-1);
-  --button-zen-hover-bg: var(--background-3);
+  /* Style 1: Minimal */
+  --button-1-bg: transparent;
+  --button-1-color: var(--color-1);
+  --button-1-hover-bg: var(--background-3);
 
-  /* soft: Background-driven */
-  --button-soft-bg: var(--background-3);
-  --button-soft-color: var(--color-1);
-  --button-soft-hover-bg: var(--color-1);
-  --button-soft-hover-color: var(--on-color);
+  /* Style 2: Background-driven */
+  --button-2-bg: var(--background-3);
+  --button-2-color: var(--color-1);
+  --button-2-hover-bg: var(--color-1);
+  --button-2-hover-color: var(--on-color);
 
-  /* solid: All In */
-  --button-solid-bg: var(--color-1);
-  --button-solid-color: var(--on-color);
-  --button-solid-hover-bg: hsl(210, 100%, 45%);
+  /* Style 3: All In */
+  --button-3-bg: var(--color-1);
+  --button-3-color: var(--on-color);
+  --button-3-hover-bg: hsl(210, 100%, 45%);
 }
 ```
 
@@ -465,22 +459,16 @@ button {
   transition: all var(--button-transition);
 }
 
-/* zen variant (attribute and class syntax) */
-button[style*="zen"],
-button.zen {
-  background: var(--button-zen-bg);
-  color: var(--button-zen-color);
+/* Style 1 variant (attribute and class syntax) */
+button[style*="1"],
+button.style-1 {
+  background: var(--button-1-bg);
+  color: var(--button-1-color);
 }
 
-button[style*="zen"]:hover,
-button.zen:hover {
-  background: var(--button-zen-hover-bg);
-}
-
-/* Backward compatible with style="1" */
-button[style*="1"] {
-  background: var(--button-zen-bg);
-  color: var(--button-zen-color);
+button[style*="1"]:hover,
+button.style-1:hover {
+  background: var(--button-1-hover-bg);
 }
 ```
 
@@ -489,18 +477,17 @@ button[style*="1"] {
 **Variables:**
 - Foundation: `--{category}-{number}` → `--color-1`, `--space-2`
 - Element base: `--{element}-{property}` → `--button-height`, `--input-radius`
-- Element variant: `--{element}-{variant}-{property}` → `--button-zen-bg`, `--button-soft-color`
-- Element state: `--{element}-{variant}-{state}-{property}` → `--button-zen-hover-bg`
+- Element variant: `--{element}-{style}-{property}` → `--button-1-bg`, `--button-2-color`
+- Element state: `--{element}-{style}-{state}-{property}` → `--button-1-hover-bg`
 
 **Classes & Attributes:**
-- Style variants: `style="zen/soft/solid"` (primary) or `.zen/.soft/.solid` classes
-- Backward compatible: `style="1/2/3"` (maps to zen/soft/solid)
+- Style variants: `style="1/2/3"` (primary) or `.style-1/.style-2/.style-3` classes
 - Universal across all elements
 
 **Custom Elements:**
 - Component: `<nuke-{name}>` → `<nuke-card>`, `<nuke-toolbar>`
 - Children: `<nuke-{name}-{part}>` → `<nuke-card-header>`, `<nuke-card-content>`
-- Attributes: `style="zen/soft/solid"` (same universal pattern, also accepts 1/2/3)
+- Attributes: `style="1/2/3"` (same universal pattern)
 
 **Files:**
 - Element files: `{element}.css` → `button.css`, `input.css`, `checkbox.css`
@@ -545,8 +532,7 @@ button[style*="1"] {
 
 **What makes Nuke unique:**
 - **Element-first architecture** - Native HTML works out of the box
-- **Semantic style pattern** - `style="zen/soft/solid"` everywhere (three complete design philosophies)
-- **Backward compatible** - `style="1/2/3"` still works
+- **Numbered style system** - `style="1/2/3"` everywhere (three complete design philosophies)
 - **Hybrid approach** - Pure CSS for native, web components for complex
 - **Core/Theme separation** - Update-safe customization
 - **One file per element** - Clear ownership, easy navigation
@@ -559,8 +545,8 @@ button[style*="1"] {
 
 - [x] Element works with no classes (base styling)
 - [x] Uses variables, never defines them
-- [x] zen/soft/solid variants implemented (with backward compatible 1/2/3)
-- [x] Both attribute selectors `[style*="zen"]` and class selectors `.zen`
+- [x] Style 1/2/3 variants implemented
+- [x] Both attribute selectors `[style*="1"]` and class selectors `.style-1`
 - [x] Supports all relevant states (:hover, :focus, :disabled, :checked, etc.)
 - [x] Accessible (focus outlines, proper contrast)
 - [x] Works across modern browsers
@@ -577,7 +563,7 @@ button[style*="1"] {
 - [x] Minimal JavaScript (just registration + structure)
 - [x] No Shadow DOM (keep CSS simple and customizable)
 - [x] Style via external CSS (theme/components/card.css)
-- [x] Same `style="zen/soft/solid"` attribute pattern (backward compatible with 1/2/3)
+- [x] Same `style="1/2/3"` attribute pattern
 - [x] Accessibility baked in (ARIA roles, keyboard nav)
 - [x] Framework independent (vanilla JS)
 
@@ -594,7 +580,7 @@ button[style*="1"] {
 
 > "I don't want utility classes like Tailwind. I want my HTML elements to just work, with optional modifiers when I need variants."
 
-> "The holy grail: `style="zen/soft/solid"` pattern everywhere. Semantic naming with backward compatibility. Three complete design philosophies - zen is minimal, soft is background-driven, solid is all-in. Same pattern across ALL elements."
+> "The holy grail: `style="1/2/3"` pattern everywhere. Numbered system that's simple and clear. Three complete design philosophies - Style 1 is minimal, Style 2 is background-driven, Style 3 is all-in. Same pattern across ALL elements."
 
 > "One element = one file. Want to fix buttons? Open `button.css`. Clear ownership, easy to maintain."
 
@@ -606,7 +592,7 @@ button[style*="1"] {
 
 ## Project Status
 
-**Current State:** v1.0 READY (zen/soft/solid refactor COMPLETE!)
+**Current State:** v1.0 READY (numbered style system COMPLETE!)
 
 **What's Working:**
 - ✅ 22 fully implemented native elements
@@ -614,9 +600,8 @@ button[style*="1"] {
 - ✅ 68 CSS files (33 core + 35 theme)
 - ✅ 7 JavaScript files (6 web components + 1 core.js)
 - ✅ Complete core/theme separation
-- ✅ **zen/soft/solid semantic naming across ALL elements**
-- ✅ **Backward compatible with style="1/2/3"**
-- ✅ **Both attribute (`style="zen"`) and class (`.zen`) syntax**
+- ✅ **Numbered style system (1/2/3) across ALL elements**
+- ✅ **Both attribute (`style="1"`) and class (`.style-1`) syntax**
 - ✅ Comprehensive demo (index.html) with all variants
 - ✅ Keyboard navigation (tabs with arrow keys)
 - ✅ Auto-dismiss toasts with stacking

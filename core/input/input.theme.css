@@ -1,35 +1,19 @@
-/* ============================================
-   INPUT VARIABLES
-   Customize text input appearance
-   ============================================ */
-
 :root {
-  /* Base input properties */
-  --input-height: var(--height-2);
-  --input-padding-x: var(--space-2);
-  --input-font-size: var(--font-size-2);
-  --input-radius: var(--border-radius);
-  --input-transition: var(--transition-fast);
-
-  /* Base colors */
-  --input-color: var(--on-background);
-  --input-placeholder: var(--on-background-light);
-
-  /* Focus state */
-  --input-focus-border: var(--on-background);
-
-  /* zen: Minimal / Japanese - Bottom border only */
-  --input-zen-bg: transparent;
-  --input-zen-border: transparent;
-  --input-zen-border-bottom: var(--border-2);
-  --input-zen-focus-border-bottom: var(--on-background);
-
-  /* soft: Subtle Contrasts - Background only, no borders */
-  --input-soft-bg: var(--background-3);
-  --input-soft-focus-bg: var(--border-1);
-
-  /* solid: All In - Full border + background */
-  --input-solid-bg: var(--background-3);
-  --input-solid-border: var(--border-1);
-  --input-solid-focus-border: var(--on-background);
+--input-height: var(--height-2);
+--input-padding-x: var(--space-2);
+--input-font-size: var(--font-size-2);
+--input-radius: var(--border-radius);
+--input-transition: var(--transition-fast);
+--input-color: var(--on-background);
+--input-placeholder: var(--on-background-light);
+--input-focus-border: var(--on-background);
+--input-1-bg: transparent;
+--input-1-border: transparent;
+--input-1-border-bottom: var(--border-2);
+--input-1-focus-border-bottom: var(--on-background);
+--input-2-bg: var(--background-3);
+--input-2-focus-bg: var(--border-1);
+--input-3-bg: var(--background-3);
+--input-3-border: var(--border-1);
+--input-3-focus-border: var(--on-background);
 }

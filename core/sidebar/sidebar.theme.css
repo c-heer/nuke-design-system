@@ -1,50 +1,32 @@
-/* ============================================
-   SIDEBAR COMPONENT VARIABLES
-   Design tokens for <nuke-sidebar>
-   ============================================ */
-
 :root {
-  /* Base sidebar properties */
-  --sidebar-width: 280px;
-  --sidebar-background: var(--background-2);
-  --sidebar-color: var(--on-background);
-  --sidebar-padding: var(--space-2);
-  --sidebar-shadow: var(--shadow-2);
-  --sidebar-transition: transform var(--transition-medium);
-  --sidebar-z-index: 900;
-
-  /* Overlay */
-  --sidebar-overlay-background: rgba(0, 0, 0, 0.5);
-  --sidebar-overlay-z-index: 899;
-
-  /* zen: Minimal / Japanese - Background-1, 1px border on closing edge, no shadow */
-  --sidebar-zen-background: var(--background-1);
-  --sidebar-zen-border-left: none;
-  --sidebar-zen-border-right: 1px solid var(--border-1);
-  --sidebar-zen-shadow: none;
-
-  /* soft: Subtle Contrasts - White background, no border, medium shadow */
-  --sidebar-soft-background: var(--background-2);
-  --sidebar-soft-border-left: none;
-  --sidebar-soft-border-right: none;
-  --sidebar-soft-shadow: var(--shadow-2);
-
-  /* solid: All In - White background, 2px border on closing edge, large shadow */
-  --sidebar-solid-background: var(--background-2);
-  --sidebar-solid-border-left: none;
-  --sidebar-solid-border-right: 2px solid var(--border-1);
-  --sidebar-solid-shadow: var(--shadow-3);
-
-  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
-  --sidebar-style-1-background: var(--sidebar-zen-background);
-  --sidebar-style-1-border: var(--sidebar-zen-border);
-  --sidebar-style-1-shadow: var(--sidebar-zen-shadow);
-
-  --sidebar-style-2-background: var(--sidebar-soft-background);
-  --sidebar-style-2-border: var(--sidebar-soft-border);
-  --sidebar-style-2-shadow: var(--sidebar-soft-shadow);
-
-  --sidebar-style-3-background: var(--sidebar-solid-background);
-  --sidebar-style-3-border: var(--sidebar-solid-border);
-  --sidebar-style-3-shadow: var(--sidebar-solid-shadow);
+--sidebar-width: 280px;
+--sidebar-background: var(--background-2);
+--sidebar-color: var(--on-background);
+--sidebar-padding: var(--space-2);
+--sidebar-shadow: var(--shadow-2);
+--sidebar-transition: transform var(--transition-medium);
+--sidebar-z-index: 900;
+--sidebar-overlay-background: rgba(0, 0, 0, 0.5);
+--sidebar-overlay-z-index: 899;
+--sidebar-1-background: var(--background-1);
+--sidebar-1-border-left: none;
+--sidebar-1-border-right: 1px solid var(--border-1);
+--sidebar-1-shadow: none;
+--sidebar-2-background: var(--background-2);
+--sidebar-2-border-left: none;
+--sidebar-2-border-right: none;
+--sidebar-2-shadow: var(--shadow-2);
+--sidebar-3-background: var(--background-2);
+--sidebar-3-border-left: none;
+--sidebar-3-border-right: 2px solid var(--border-1);
+--sidebar-3-shadow: var(--shadow-3);
+--sidebar-style-1-background: var(--sidebar-1-background);
+--sidebar-style-1-border: var(--sidebar-1-border);
+--sidebar-style-1-shadow: var(--sidebar-1-shadow);
+--sidebar-style-2-background: var(--sidebar-2-background);
+--sidebar-style-2-border: var(--sidebar-2-border);
+--sidebar-style-2-shadow: var(--sidebar-2-shadow);
+--sidebar-style-3-background: var(--sidebar-3-background);
+--sidebar-style-3-border: var(--sidebar-3-border);
+--sidebar-style-3-shadow: var(--sidebar-3-shadow);
 }

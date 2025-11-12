@@ -1,10 +1,3 @@
-/* ============================================
-   DETAILS - Accordion/disclosure element
-   Pure logic, NO variables defined here
-   Variables come from theme/details.css
-   ============================================ */
-
-/* Base details styling (works without classes!) */
 details {
   border: 1px solid var(--details-border);
   border-radius: var(--details-radius);
@@ -13,8 +6,6 @@ details {
   margin-bottom: var(--details-margin-bottom);
   transition: background-color var(--details-transition), border-color var(--details-transition);
 }
-
-/* Summary (the clickable header) */
 summary {
   cursor: pointer;
   font-weight: var(--details-summary-font-weight);
@@ -26,13 +17,9 @@ summary {
   transition: background-color var(--details-transition), color var(--details-transition);
   user-select: none;
 }
-
-/* Hide default marker */
 summary::-webkit-details-marker {
   display: none;
 }
-
-/* Custom arrow using pseudo-element */
 summary::before {
   content: '';
   display: inline-block;
@@ -45,86 +32,58 @@ summary::before {
   transform: rotate(-90deg);
   transition: transform var(--details-transition);
 }
-
 details[open] summary::before {
   transform: rotate(0deg);
 }
-
 summary:hover {
   background: var(--details-summary-hover-bg);
 }
-
 summary:focus-visible {
   outline: 2px solid var(--color-1);
   outline-offset: 2px;
 }
-
-/* Content area */
 details > *:not(summary) {
   margin-top: var(--details-content-margin-top);
 }
-
-/* zen: Minimal / Japanese - Simple disclosure, no background */
-details.zen,
-details[style="zen"] {
-  border: 1px solid var(--details-zen-border);
+details:is(.style-1, [style="1"]) {
+  border: 1px solid var(--details-1-border);
   border-radius: 0;
-  background: var(--details-zen-bg);
-  padding: var(--details-zen-padding);
+  background: var(--details-1-bg);
+  padding: var(--details-1-padding);
 }
-
-details.zen[open],
-details[style="zen"][open] {
-  border-bottom: 1px solid var(--details-zen-open-border-bottom);
+details:is(.style-1, [style="1"])[open] {
+  border-bottom: 1px solid var(--details-1-open-border-bottom);
 }
-
-details.zen summary,
-details[style="zen"] summary {
+details:is(.style-1, [style="1"]) summary {
   padding: 0;
   margin: 0;
 }
-
-details.zen summary:hover,
-details[style="zen"] summary:hover {
-  background: var(--details-zen-summary-hover-bg);
-  color: var(--details-zen-summary-hover-color);
+details:is(.style-1, [style="1"]) summary:hover {
+  background: var(--details-1-summary-hover-bg);
+  color: var(--details-1-summary-hover-color);
 }
-
-/* soft: Subtle Contrasts - Background change on expand, no border */
-details.soft,
-details[style="soft"] {
-  border: 1px solid var(--details-soft-border);
-  border-radius: var(--details-soft-radius);
-  background: var(--details-soft-bg);
-  padding: var(--details-soft-padding);
+details:is(.style-2, [style="2"]) {
+  border: 1px solid var(--details-2-border);
+  border-radius: var(--details-2-radius);
+  background: var(--details-2-bg);
+  padding: var(--details-2-padding);
 }
-
-details.soft[open],
-details[style="soft"][open] {
-  background: var(--details-soft-open-bg);
+details:is(.style-2, [style="2"])[open] {
+  background: var(--details-2-open-bg);
 }
-
-details.soft summary:hover,
-details[style="soft"] summary:hover {
-  background: var(--details-soft-summary-hover-bg);
+details:is(.style-2, [style="2"]) summary:hover {
+  background: var(--details-2-summary-hover-bg);
 }
-
-/* solid: All In - Border + background on expand */
-details.solid,
-details[style="solid"] {
-  border: var(--details-solid-border-width) solid var(--details-solid-border);
-  border-radius: var(--details-solid-radius);
-  background: var(--details-solid-bg);
-  padding: var(--details-solid-padding);
+details:is(.style-3, [style="3"]) {
+  border: var(--details-3-border-width) solid var(--details-3-border);
+  border-radius: var(--details-3-radius);
+  background: var(--details-3-bg);
+  padding: var(--details-3-padding);
 }
-
-details.solid[open],
-details[style="solid"][open] {
-  background: var(--details-solid-open-bg);
-  border-color: var(--details-solid-open-border);
+details:is(.style-3, [style="3"])[open] {
+  background: var(--details-3-open-bg);
+  border-color: var(--details-3-open-border);
 }
-
-details.solid summary:hover,
-details[style="solid"] summary:hover {
-  background: var(--details-solid-summary-hover-bg);
+details:is(.style-3, [style="3"]) summary:hover {
+  background: var(--details-3-summary-hover-bg);
 }

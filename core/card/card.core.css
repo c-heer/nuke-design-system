@@ -1,9 +1,3 @@
-/* ============================================
-   CARD COMPONENT
-   Content container with enforced structure
-   ============================================ */
-
-/* Base card styles */
 nuke-card {
   display: flex;
   flex-direction: column;
@@ -13,8 +7,6 @@ nuke-card {
   color: var(--card-color);
   overflow: hidden;
 }
-
-/* Card header */
 nuke-card-header {
   display: block;
   padding: var(--card-header-padding);
@@ -23,15 +15,11 @@ nuke-card-header {
   color: var(--card-header-color);
   border-bottom: 1px solid var(--card-header-border-color);
 }
-
-/* Card content */
 nuke-card-content {
   display: block;
   flex: 1;
   padding: var(--card-content-padding);
 }
-
-/* Card actions */
 nuke-card-actions {
   display: flex;
   gap: var(--card-actions-gap);
@@ -39,53 +27,27 @@ nuke-card-actions {
   border-top: 1px solid var(--card-actions-border-color);
   justify-content: flex-end;
 }
-
-/* ============================================
-   CARD VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
-   ============================================ */
-
-/* zen: Minimal / Japanese */
-nuke-card[style="zen"],
-nuke-card.zen,
-nuke-card[style="1"] {
-  background: var(--card-zen-background);
-  border: var(--card-zen-border);
-  box-shadow: var(--card-zen-shadow);
+nuke-card:is(.style-1, [style="1"]) {
+  background: var(--card-1-background);
+  border: var(--card-1-border);
+  box-shadow: var(--card-1-shadow);
 }
-
-/* soft: Subtle Contrasts */
-nuke-card[style="soft"],
-nuke-card.soft,
-nuke-card[style="2"] {
-  background: var(--card-soft-background);
-  border: var(--card-soft-border);
-  box-shadow: var(--card-soft-shadow);
+nuke-card:is(.style-2, [style="2"]) {
+  background: var(--card-2-background);
+  border: var(--card-2-border);
+  box-shadow: var(--card-2-shadow);
 }
-
-/* solid: All In */
-nuke-card[style="solid"],
-nuke-card.solid,
-nuke-card[style="3"] {
-  background: var(--card-solid-background);
-  border: var(--card-solid-border);
-  box-shadow: var(--card-solid-shadow);
+nuke-card:is(.style-3, [style="3"]) {
+  background: var(--card-3-background);
+  border: var(--card-3-border);
+  box-shadow: var(--card-3-shadow);
 }
-
-/* ============================================
-   OPTIONAL FEATURES
-   ============================================ */
-
-/* Card without header (no top border on content) */
 nuke-card:not(:has(nuke-card-header)) nuke-card-content {
   border-top: none;
 }
-
-/* Card without actions (no bottom border on content) */
 nuke-card:not(:has(nuke-card-actions)) nuke-card-content {
   border-bottom: none;
 }
-
-/* If card only has content (no header/actions) */
 nuke-card:not(:has(nuke-card-header)):not(:has(nuke-card-actions)) nuke-card-content {
   padding: var(--card-padding);
 }

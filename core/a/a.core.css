@@ -1,72 +1,46 @@
-/* ============================================
-   A - Link element
-   Pure logic, NO variables defined here
-   Variables come from theme/a.css
-   ============================================ */
-
-/* Link reset */
 a {
   color: inherit;
   text-decoration: none;
 }
-
-/* Base link styling (works without classes!) */
 a {
   color: var(--link-color);
   text-decoration: var(--link-decoration);
   cursor: pointer;
   transition: color var(--link-transition), text-decoration var(--link-transition);
 }
-
 a:hover {
   color: var(--link-hover-color);
   text-decoration: var(--link-hover-decoration);
 }
-
 a:focus-visible {
   outline: 2px solid var(--link-focus-color);
   outline-offset: 2px;
   border-radius: 2px;
 }
-
-/* zen: Minimal / Japanese - Underline on hover only */
-a.zen,
-a[style="zen"] {
-  color: var(--link-zen-color);
-  text-decoration: var(--link-zen-decoration);
+a:is(.style-1, [style="1"]) {
+  color: var(--link-1-color);
+  text-decoration: var(--link-1-decoration);
   text-underline-offset: 3px;
 }
-
-a.zen:hover,
-a[style="zen"]:hover {
-  color: var(--link-zen-hover-color);
-  text-decoration: var(--link-zen-hover-decoration);
+a:is(.style-1, [style="1"]):hover {
+  color: var(--link-1-hover-color);
+  text-decoration: var(--link-1-hover-decoration);
 }
-
-/* soft: Subtle Contrasts - Color change only, no underline */
-a.soft,
-a[style="soft"] {
-  color: var(--link-soft-color);
-  text-decoration: var(--link-soft-decoration);
+a:is(.style-2, [style="2"]) {
+  color: var(--link-2-color);
+  text-decoration: var(--link-2-decoration);
 }
-
-a.soft:hover,
-a[style="soft"]:hover {
-  color: var(--link-soft-hover-color);
-  text-decoration: var(--link-soft-hover-decoration);
+a:is(.style-2, [style="2"]):hover {
+  color: var(--link-2-hover-color);
+  text-decoration: var(--link-2-hover-decoration);
 }
-
-/* solid: All In - Underline always visible */
-a.solid,
-a[style="solid"] {
-  color: var(--link-solid-color);
-  text-decoration: var(--link-solid-decoration);
-  text-decoration-thickness: var(--link-solid-decoration-thickness);
+a:is(.style-3, [style="3"]) {
+  color: var(--link-3-color);
+  text-decoration: var(--link-3-decoration);
+  text-decoration-thickness: var(--link-3-decoration-thickness);
   text-underline-offset: 3px;
 }
-
-a.solid:hover,
-a[style="solid"]:hover {
-  color: var(--link-solid-hover-color);
-  text-decoration: var(--link-solid-hover-decoration);
+a:is(.style-3, [style="3"]):hover {
+  color: var(--link-3-hover-color);
+  text-decoration: var(--link-3-hover-decoration);
 }

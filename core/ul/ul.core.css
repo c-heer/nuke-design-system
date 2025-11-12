@@ -1,46 +1,28 @@
-/* UL - Unordered lists with variants */
-
-/* Base styling handled by base/typography.css */
-
-/* zen: Minimal bullets, no extra spacing */
-ul[style="zen"],
-ul.zen {
-  list-style-type: var(--ul-zen-list-style);
-  padding-left: var(--ul-zen-padding-left);
+ul:is(.style-1, [style="1"]) {
+  list-style-type: var(--ul-1-list-style);
+  padding-left: var(--ul-1-padding-left);
 }
-
-ul[style="zen"] li,
-ul.zen li {
-  margin-bottom: var(--ul-zen-item-margin);
+ul:is(.style-1, [style="1"]) li {
+  margin-bottom: var(--ul-1-item-margin);
 }
-
-/* soft: Background highlights on items, no borders */
-ul[style="soft"],
-ul.soft {
-  list-style: var(--ul-soft-list-style);
-  padding-left: var(--ul-soft-padding-left);
+ul:is(.style-2, [style="2"]) {
+  list-style: var(--ul-2-list-style);
+  padding-left: var(--ul-2-padding-left);
 }
-
-ul[style="soft"] li,
-ul.soft li {
-  background: var(--ul-soft-item-bg);
-  padding: var(--ul-soft-item-padding);
-  margin-bottom: var(--ul-soft-item-margin);
-  border-radius: var(--ul-soft-item-radius);
+ul:is(.style-2, [style="2"]) li {
+  background: var(--ul-2-item-bg);
+  padding: var(--ul-2-item-padding);
+  margin-bottom: var(--ul-2-item-margin);
+  border-radius: var(--ul-2-item-radius);
 }
-
-/* solid: Borders + backgrounds, strong definition */
-ul[style="solid"],
-ul.solid {
-  list-style: var(--ul-solid-list-style);
-  padding-left: var(--ul-solid-padding-left);
+ul:is(.style-3, [style="3"]) {
+  list-style: var(--ul-3-list-style);
+  padding-left: var(--ul-3-padding-left);
 }
-
-ul[style="solid"] li,
-ul.solid li {
-  background: var(--ul-solid-item-bg);
-  border: var(--ul-solid-item-border);
-  padding: var(--ul-solid-item-padding);
-  margin-bottom: var(--ul-solid-item-margin);
-  border-radius: var(--ul-solid-item-radius);
+ul:is(.style-3, [style="3"]) li {
+  background: var(--ul-3-item-bg);
+  border: var(--ul-3-item-border);
+  padding: var(--ul-3-item-padding);
+  margin-bottom: var(--ul-3-item-margin);
+  border-radius: var(--ul-3-item-radius);
 }

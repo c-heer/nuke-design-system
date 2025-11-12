@@ -1,55 +1,33 @@
-/* ============================================
-   CARD COMPONENT VARIABLES
-   Design tokens for <nuke-card>
-   ============================================ */
-
 :root {
-  /* Base card properties */
-  --card-padding: var(--space-2);               /* Inner spacing */
-  --card-radius: var(--border-radius);          /* Corner radius */
-  --card-background: var(--background-2);       /* Card background */
-  --card-color: var(--on-background);           /* Text color */
-
-  /* Card header */
-  --card-header-padding: var(--space-2);
-  --card-header-font-size: var(--font-size-4);
-  --card-header-font-weight: 600;
-  --card-header-color: var(--on-background);
-  --card-header-border-color: var(--border-1);
-
-  /* Card content */
-  --card-content-padding: var(--space-2);
-
-  /* Card actions */
-  --card-actions-padding: var(--space-2);
-  --card-actions-gap: var(--space-1);           /* Gap between buttons */
-  --card-actions-border-color: var(--border-1);
-
-  /* zen: Minimal / Japanese - Transparent background, 1px light border, no shadow */
-  --card-zen-background: transparent;
-  --card-zen-border: 1px solid var(--border-1);
-  --card-zen-shadow: none;
-
-  /* soft: Subtle Contrasts - White background, 1px subtle border, small shadow */
-  --card-soft-background: var(--background-2);
-  --card-soft-border: 1px solid var(--border-1);
-  --card-soft-shadow: var(--shadow-1);
-
-  /* solid: All In - White background, 2px border, larger shadow */
-  --card-solid-background: var(--background-2);
-  --card-solid-border: 2px solid var(--border-1);
-  --card-solid-shadow: var(--shadow-2);
-
-  /* Backward compatibility: style-1/2/3 map to zen/soft/solid */
-  --card-style-1-background: var(--card-zen-background);
-  --card-style-1-border: var(--card-zen-border);
-  --card-style-1-shadow: var(--card-zen-shadow);
-
-  --card-style-2-background: var(--card-soft-background);
-  --card-style-2-border: var(--card-soft-border);
-  --card-style-2-shadow: var(--card-soft-shadow);
-
-  --card-style-3-background: var(--card-solid-background);
-  --card-style-3-border: var(--card-solid-border);
-  --card-style-3-shadow: var(--card-solid-shadow);
+--card-padding: var(--space-2);
+--card-radius: var(--border-radius);
+--card-background: var(--background-2);
+--card-color: var(--on-background);
+--card-header-padding: var(--space-2);
+--card-header-font-size: var(--font-size-4);
+--card-header-font-weight: 600;
+--card-header-color: var(--on-background);
+--card-header-border-color: var(--border-1);
+--card-content-padding: var(--space-2);
+--card-actions-padding: var(--space-2);
+--card-actions-gap: var(--space-1);
+--card-actions-border-color: var(--border-1);
+--card-1-background: transparent;
+--card-1-border: 1px solid var(--border-1);
+--card-1-shadow: none;
+--card-2-background: var(--background-2);
+--card-2-border: 1px solid var(--border-1);
+--card-2-shadow: var(--shadow-1);
+--card-3-background: var(--background-2);
+--card-3-border: 2px solid var(--border-1);
+--card-3-shadow: var(--shadow-2);
+--card-style-1-background: var(--card-1-background);
+--card-style-1-border: var(--card-1-border);
+--card-style-1-shadow: var(--card-1-shadow);
+--card-style-2-background: var(--card-2-background);
+--card-style-2-border: var(--card-2-border);
+--card-style-2-shadow: var(--card-2-shadow);
+--card-style-3-background: var(--card-3-background);
+--card-style-3-border: var(--card-3-border);
+--card-style-3-shadow: var(--card-3-shadow);
 }

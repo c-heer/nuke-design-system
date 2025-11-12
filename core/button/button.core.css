@@ -1,10 +1,3 @@
-/* ============================================
-   BUTTON - Native HTML element styling
-   Pure logic, NO variables defined here
-   Variables come from theme/button.css
-   ============================================ */
-
-/* Button reset - works on all button elements */
 button,
 input[type="button"],
 input[type="submit"],
@@ -20,8 +13,6 @@ input[type="reset"] {
   user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-
-/* Base button styling (works without classes!) */
 button,
 input[type="button"],
 input[type="submit"],
@@ -44,93 +35,37 @@ input[type="reset"] {
   text-decoration: none;
   line-height: 1;
 }
-
-/* zen: Minimal / Japanese - Border only, no background at rest */
-button[style="zen"],
-button.zen,
-input[type="button"][style="zen"],
-input[type="button"].zen,
-input[type="submit"][style="zen"],
-input[type="submit"].zen,
-input[type="reset"][style="zen"],
-input[type="reset"].zen {
-  background: var(--button-zen-bg);
-  color: var(--button-zen-color);
-  border: 1px solid var(--button-zen-border);
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-1, [style="1"]) {
+  background: var(--button-1-bg);
+  color: var(--button-1-color);
+  border: 1px solid var(--button-1-border);
 }
-
-button[style="zen"]:hover,
-button[style="zen"]:focus,
-button.zen:hover,
-button.zen:focus,
-input[type="button"][style="zen"]:hover,
-input[type="button"].zen:hover,
-input[type="submit"][style="zen"]:hover,
-input[type="submit"].zen:hover,
-input[type="reset"][style="zen"]:hover,
-input[type="reset"].zen:hover {
-  background: var(--button-zen-hover-bg);
-  color: var(--button-zen-hover-color);
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-1, [style="1"]):hover,
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-1, [style="1"]):focus {
+  background: var(--button-1-hover-bg);
+  color: var(--button-1-hover-color);
 }
-
-/* soft: Subtle Contrasts - Filled background, no borders */
-button[style="soft"],
-button.soft,
-input[type="button"][style="soft"],
-input[type="button"].soft,
-input[type="submit"][style="soft"],
-input[type="submit"].soft,
-input[type="reset"][style="soft"],
-input[type="reset"].soft {
-  background: var(--button-soft-bg);
-  color: var(--button-soft-color);
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-2, [style="2"]) {
+  background: var(--button-2-bg);
+  color: var(--button-2-color);
   border: none;
 }
-
-button[style="soft"]:hover,
-button[style="soft"]:focus,
-button.soft:hover,
-button.soft:focus,
-input[type="button"][style="soft"]:hover,
-input[type="button"].soft:hover,
-input[type="submit"][style="soft"]:hover,
-input[type="submit"].soft:hover,
-input[type="reset"][style="soft"]:hover,
-input[type="reset"].soft:hover {
-  background: var(--button-soft-hover-bg);
-  color: var(--button-soft-hover-color);
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-2, [style="2"]):hover,
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-2, [style="2"]):focus {
+  background: var(--button-2-hover-bg);
+  color: var(--button-2-hover-color);
 }
-
-/* solid: All In - Border + background */
-button[style="solid"],
-button.solid,
-input[type="button"][style="solid"],
-input[type="button"].solid,
-input[type="submit"][style="solid"],
-input[type="submit"].solid,
-input[type="reset"][style="solid"],
-input[type="reset"].solid {
-  background: var(--button-solid-bg);
-  color: var(--button-solid-color);
-  border: 2px solid var(--button-solid-border);
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-3, [style="3"]) {
+  background: var(--button-3-bg);
+  color: var(--button-3-color);
+  border: 2px solid var(--button-3-border);
 }
-
-button[style="solid"]:hover,
-button[style="solid"]:focus,
-button.solid:hover,
-button.solid:focus,
-input[type="button"][style="solid"]:hover,
-input[type="button"].solid:hover,
-input[type="submit"][style="solid"]:hover,
-input[type="submit"].solid:hover,
-input[type="reset"][style="solid"]:hover,
-input[type="reset"].solid:hover {
-  background: var(--button-solid-hover-bg);
-  color: var(--button-solid-hover-color);
-  border-color: var(--button-solid-hover-border);
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-3, [style="3"]):hover,
+:is(button, input[type="button"], input[type="submit"], input[type="reset"]):is(.style-3, [style="3"]):focus {
+  background: var(--button-3-hover-bg);
+  color: var(--button-3-hover-color);
+  border-color: var(--button-3-hover-border);
 }
-
-/* Focus visible for keyboard navigation */
 button:focus-visible,
 input[type="button"]:focus-visible,
 input[type="submit"]:focus-visible,
@@ -138,8 +73,6 @@ input[type="reset"]:focus-visible {
   outline: 2px solid var(--color-1);
   outline-offset: 2px;
 }
-
-/* Disabled state */
 button:disabled,
 button[disabled],
 input[type="button"]:disabled,

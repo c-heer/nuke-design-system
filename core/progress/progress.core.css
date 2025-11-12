@@ -1,10 +1,3 @@
-/* ============================================
-   PROGRESS - Progress bar element
-   Pure logic, NO variables defined here
-   Variables come from theme/progress.css
-   ============================================ */
-
-/* Base progress styling */
 progress {
   appearance: none;
   width: 100%;
@@ -14,89 +7,57 @@ progress {
   background: var(--progress-bg);
   overflow: hidden;
 }
-
-/* Progress bar (filled portion) - Chrome/Safari */
 progress::-webkit-progress-bar {
   background: var(--progress-bg);
   border-radius: var(--progress-radius);
 }
-
 progress::-webkit-progress-value {
   background: var(--progress-fill);
   border-radius: var(--progress-radius);
   transition: width var(--progress-transition);
 }
-
-/* Progress bar - Firefox */
 progress::-moz-progress-bar {
   background: var(--progress-fill);
   border-radius: var(--progress-radius);
   transition: width var(--progress-transition);
 }
-
-/* zen: Minimal / Japanese - Thin bar, subtle */
-progress[style="zen"],
-progress.zen {
-  height: var(--progress-zen-height);
-  background: var(--progress-zen-bg);
+progress:is(.style-1, [style="1"]) {
+  height: var(--progress-1-height);
+  background: var(--progress-1-bg);
 }
-
-progress[style="zen"]::-webkit-progress-bar,
-progress.zen::-webkit-progress-bar {
-  background: var(--progress-zen-bg);
+progress:is(.style-1, [style="1"])::-webkit-progress-bar {
+  background: var(--progress-1-bg);
 }
-
-progress[style="zen"]::-webkit-progress-value,
-progress.zen::-webkit-progress-value {
-  background: var(--progress-zen-fill);
+progress:is(.style-1, [style="1"])::-webkit-progress-value {
+  background: var(--progress-1-fill);
 }
-
-progress[style="zen"]::-moz-progress-bar,
-progress.zen::-moz-progress-bar {
-  background: var(--progress-zen-fill);
+progress:is(.style-1, [style="1"])::-moz-progress-bar {
+  background: var(--progress-1-fill);
 }
-
-/* soft: Subtle Contrasts - Medium bar, soft background */
-progress[style="soft"],
-progress.soft {
-  height: var(--progress-soft-height);
-  background: var(--progress-soft-bg);
+progress:is(.style-2, [style="2"]) {
+  height: var(--progress-2-height);
+  background: var(--progress-2-bg);
 }
-
-progress[style="soft"]::-webkit-progress-bar,
-progress.soft::-webkit-progress-bar {
-  background: var(--progress-soft-bg);
+progress:is(.style-2, [style="2"])::-webkit-progress-bar {
+  background: var(--progress-2-bg);
 }
-
-progress[style="soft"]::-webkit-progress-value,
-progress.soft::-webkit-progress-value {
-  background: var(--progress-soft-fill);
+progress:is(.style-2, [style="2"])::-webkit-progress-value {
+  background: var(--progress-2-fill);
 }
-
-progress[style="soft"]::-moz-progress-bar,
-progress.soft::-moz-progress-bar {
-  background: var(--progress-soft-fill);
+progress:is(.style-2, [style="2"])::-moz-progress-bar {
+  background: var(--progress-2-fill);
 }
-
-/* solid: All In - Thick bar with border */
-progress[style="solid"],
-progress.solid {
-  height: var(--progress-solid-height);
-  background: var(--progress-solid-bg);
-  border: 1px solid var(--progress-solid-border);
+progress:is(.style-3, [style="3"]) {
+  height: var(--progress-3-height);
+  background: var(--progress-3-bg);
+  border: 1px solid var(--progress-3-border);
 }
-
-progress[style="solid"]::-webkit-progress-bar,
-progress.solid::-webkit-progress-bar {
-  background: var(--progress-solid-bg);
+progress:is(.style-3, [style="3"])::-webkit-progress-bar {
+  background: var(--progress-3-bg);
 }
-
-progress[style="solid"]::-webkit-progress-value,
-progress.solid::-webkit-progress-value {
-  background: var(--progress-solid-fill);
+progress:is(.style-3, [style="3"])::-webkit-progress-value {
+  background: var(--progress-3-fill);
 }
-
-progress[style="solid"]::-moz-progress-bar,
-progress.solid::-moz-progress-bar {
-  background: var(--progress-solid-fill);
+progress:is(.style-3, [style="3"])::-moz-progress-bar {
+  background: var(--progress-3-fill);
 }

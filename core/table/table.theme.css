@@ -1,38 +1,22 @@
-/* ============================================
-   TABLE VARIABLES
-   Customize data table appearance
-   ============================================ */
-
 :root {
-  /* Base table properties */
-  --table-bg: var(--background-2);
-  --table-border: var(--border-1);
-  --table-radius: var(--border-radius);
-  --table-color: var(--on-background);
-  --table-font-size: var(--font-size-2);
-  --table-cell-padding: var(--space-2);
-  --table-transition: var(--transition-fast);
-
-  /* Table header */
-  --table-head-bg: var(--background-3);
-  --table-head-color: var(--on-background);
-  --table-head-font-weight: var(--font-weight-bold);
-
-  /* Row hover */
-  --table-row-hover-bg: var(--background-3);
-
-  /* zen: Minimal / Japanese - Border-bottom on rows only */
-  --table-zen-border: none;
-  --table-zen-row-border: 1px solid var(--border-1);
-  --table-zen-head-border: 2px solid var(--border-1);
-
-  /* soft: Subtle Contrasts - Alternating row backgrounds, no borders */
-  --table-soft-border: none;
-  --table-soft-stripe-bg: var(--background-3);
-  --table-soft-hover-bg: var(--background-4);
-
-  /* solid: All In - Full grid with borders on all cells */
-  --table-solid-border: 1px solid var(--border-1);
-  --table-solid-cell-border: 1px solid var(--border-1);
-  --table-solid-head-bg: var(--background-3);
+--table-bg: var(--background-2);
+--table-border: var(--border-1);
+--table-radius: var(--border-radius);
+--table-color: var(--on-background);
+--table-font-size: var(--font-size-2);
+--table-cell-padding: var(--space-2);
+--table-transition: var(--transition-fast);
+--table-head-bg: var(--background-3);
+--table-head-color: var(--on-background);
+--table-head-font-weight: var(--font-weight-bold);
+--table-row-hover-bg: var(--background-3);
+--table-1-border: none;
+--table-1-row-border: 1px solid var(--border-1);
+--table-1-head-border: 2px solid var(--border-1);
+--table-2-border: none;
+--table-2-stripe-bg: var(--background-3);
+--table-2-hover-bg: var(--background-4);
+--table-3-border: 1px solid var(--border-1);
+--table-3-cell-border: 1px solid var(--border-1);
+--table-3-head-bg: var(--background-3);
 }

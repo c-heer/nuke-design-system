@@ -1,10 +1,3 @@
-/* ============================================
-   RANGE - Slider input element
-   Pure logic, NO variables defined here
-   Variables come from theme/range.css
-   ============================================ */
-
-/* Base range styling */
 input[type="range"] {
   appearance: none;
   width: 100%;
@@ -12,23 +5,18 @@ input[type="range"] {
   background: transparent;
   cursor: pointer;
 }
-
-/* Track (the line) */
 input[type="range"]::-webkit-slider-runnable-track {
   width: 100%;
   height: var(--range-track-height);
   background: var(--range-track-bg);
   border-radius: var(--range-track-radius);
 }
-
 input[type="range"]::-moz-range-track {
   width: 100%;
   height: var(--range-track-height);
   background: var(--range-track-bg);
   border-radius: var(--range-track-radius);
 }
-
-/* Thumb (the draggable handle) */
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: var(--range-thumb-size);
@@ -40,7 +28,6 @@ input[type="range"]::-webkit-slider-thumb {
   margin-top: calc((var(--range-track-height) - var(--range-thumb-size)) / 2);
   transition: background var(--range-transition), transform var(--range-transition);
 }
-
 input[type="range"]::-moz-range-thumb {
   appearance: none;
   width: var(--range-thumb-size);
@@ -51,117 +38,83 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   transition: background var(--range-transition), transform var(--range-transition);
 }
-
-/* Hover state */
 input[type="range"]:hover::-webkit-slider-thumb {
   transform: scale(1.1);
 }
-
 input[type="range"]:hover::-moz-range-thumb {
   transform: scale(1.1);
 }
-
-/* Focus state */
 input[type="range"]:focus {
   outline: none;
 }
-
 input[type="range"]:focus::-webkit-slider-thumb {
   box-shadow: 0 0 0 3px hsla(210, 100%, 50%, 0.2);
 }
-
 input[type="range"]:focus::-moz-range-thumb {
   box-shadow: 0 0 0 3px hsla(210, 100%, 50%, 0.2);
 }
-
-/* zen: Minimal / Japanese - Thin track, small thumb */
-input[type="range"][style="zen"]::-webkit-slider-runnable-track,
-input[type="range"].zen::-webkit-slider-runnable-track {
-  height: var(--range-zen-track-height);
-  background: var(--range-zen-track-bg);
+input[type="range"]:is(.style-1, [style="1"])::-webkit-slider-runnable-track {
+  height: var(--range-1-track-height);
+  background: var(--range-1-track-bg);
 }
-
-input[type="range"][style="zen"]::-moz-range-track,
-input[type="range"].zen::-moz-range-track {
-  height: var(--range-zen-track-height);
-  background: var(--range-zen-track-bg);
+input[type="range"]:is(.style-1, [style="1"])::-moz-range-track {
+  height: var(--range-1-track-height);
+  background: var(--range-1-track-bg);
 }
-
-input[type="range"][style="zen"]::-webkit-slider-thumb,
-input[type="range"].zen::-webkit-slider-thumb {
-  width: var(--range-zen-thumb-size);
-  height: var(--range-zen-thumb-size);
-  background: var(--range-zen-thumb-bg);
-  border: 1px solid var(--range-zen-thumb-border);
-  margin-top: calc((var(--range-zen-track-height) - var(--range-zen-thumb-size)) / 2);
+input[type="range"]:is(.style-1, [style="1"])::-webkit-slider-thumb {
+  width: var(--range-1-thumb-size);
+  height: var(--range-1-thumb-size);
+  background: var(--range-1-thumb-bg);
+  border: 1px solid var(--range-1-thumb-border);
+  margin-top: calc((var(--range-1-track-height) - var(--range-1-thumb-size)) / 2);
 }
-
-input[type="range"][style="zen"]::-moz-range-thumb,
-input[type="range"].zen::-moz-range-thumb {
-  width: var(--range-zen-thumb-size);
-  height: var(--range-zen-thumb-size);
-  background: var(--range-zen-thumb-bg);
-  border: 1px solid var(--range-zen-thumb-border);
+input[type="range"]:is(.style-1, [style="1"])::-moz-range-thumb {
+  width: var(--range-1-thumb-size);
+  height: var(--range-1-thumb-size);
+  background: var(--range-1-thumb-bg);
+  border: 1px solid var(--range-1-thumb-border);
 }
-
-/* soft: Subtle Contrasts - Medium track, no thumb border */
-input[type="range"][style="soft"]::-webkit-slider-runnable-track,
-input[type="range"].soft::-webkit-slider-runnable-track {
-  height: var(--range-soft-track-height);
-  background: var(--range-soft-track-bg);
+input[type="range"]:is(.style-2, [style="2"])::-webkit-slider-runnable-track {
+  height: var(--range-2-track-height);
+  background: var(--range-2-track-bg);
 }
-
-input[type="range"][style="soft"]::-moz-range-track,
-input[type="range"].soft::-moz-range-track {
-  height: var(--range-soft-track-height);
-  background: var(--range-soft-track-bg);
+input[type="range"]:is(.style-2, [style="2"])::-moz-range-track {
+  height: var(--range-2-track-height);
+  background: var(--range-2-track-bg);
 }
-
-input[type="range"][style="soft"]::-webkit-slider-thumb,
-input[type="range"].soft::-webkit-slider-thumb {
-  width: var(--range-soft-thumb-size);
-  height: var(--range-soft-thumb-size);
-  background: var(--range-soft-thumb-bg);
+input[type="range"]:is(.style-2, [style="2"])::-webkit-slider-thumb {
+  width: var(--range-2-thumb-size);
+  height: var(--range-2-thumb-size);
+  background: var(--range-2-thumb-bg);
   border: none;
-  margin-top: calc((var(--range-soft-track-height) - var(--range-soft-thumb-size)) / 2);
+  margin-top: calc((var(--range-2-track-height) - var(--range-2-thumb-size)) / 2);
 }
-
-input[type="range"][style="soft"]::-moz-range-thumb,
-input[type="range"].soft::-moz-range-thumb {
-  width: var(--range-soft-thumb-size);
-  height: var(--range-soft-thumb-size);
-  background: var(--range-soft-thumb-bg);
+input[type="range"]:is(.style-2, [style="2"])::-moz-range-thumb {
+  width: var(--range-2-thumb-size);
+  height: var(--range-2-thumb-size);
+  background: var(--range-2-thumb-bg);
   border: none;
 }
-
-/* solid: All In - Thick track with border, large thumb */
-input[type="range"][style="solid"]::-webkit-slider-runnable-track,
-input[type="range"].solid::-webkit-slider-runnable-track {
-  height: var(--range-solid-track-height);
-  background: var(--range-solid-track-bg);
-  border: 1px solid var(--range-solid-track-border);
+input[type="range"]:is(.style-3, [style="3"])::-webkit-slider-runnable-track {
+  height: var(--range-3-track-height);
+  background: var(--range-3-track-bg);
+  border: 1px solid var(--range-3-track-border);
 }
-
-input[type="range"][style="solid"]::-moz-range-track,
-input[type="range"].solid::-moz-range-track {
-  height: var(--range-solid-track-height);
-  background: var(--range-solid-track-bg);
-  border: 1px solid var(--range-solid-track-border);
+input[type="range"]:is(.style-3, [style="3"])::-moz-range-track {
+  height: var(--range-3-track-height);
+  background: var(--range-3-track-bg);
+  border: 1px solid var(--range-3-track-border);
 }
-
-input[type="range"][style="solid"]::-webkit-slider-thumb,
-input[type="range"].solid::-webkit-slider-thumb {
-  width: var(--range-solid-thumb-size);
-  height: var(--range-solid-thumb-size);
-  background: var(--range-solid-thumb-bg);
-  border: 2px solid var(--range-solid-thumb-border);
-  margin-top: calc((var(--range-solid-track-height) - var(--range-solid-thumb-size)) / 2);
+input[type="range"]:is(.style-3, [style="3"])::-webkit-slider-thumb {
+  width: var(--range-3-thumb-size);
+  height: var(--range-3-thumb-size);
+  background: var(--range-3-thumb-bg);
+  border: 2px solid var(--range-3-thumb-border);
+  margin-top: calc((var(--range-3-track-height) - var(--range-3-thumb-size)) / 2);
 }
-
-input[type="range"][style="solid"]::-moz-range-thumb,
-input[type="range"].solid::-moz-range-thumb {
-  width: var(--range-solid-thumb-size);
-  height: var(--range-solid-thumb-size);
-  background: var(--range-solid-thumb-bg);
-  border: 2px solid var(--range-solid-thumb-border);
+input[type="range"]:is(.style-3, [style="3"])::-moz-range-thumb {
+  width: var(--range-3-thumb-size);
+  height: var(--range-3-thumb-size);
+  background: var(--range-3-thumb-bg);
+  border: 2px solid var(--range-3-thumb-border);
 }

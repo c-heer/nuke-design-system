@@ -1,37 +1,21 @@
-/* ============================================
-   LINK (A) VARIABLES
-   Customize link appearance
-   ============================================ */
-
 :root {
-  /* Base link properties */
-  --link-color: var(--on-background);
-  --link-decoration: none;
-  --link-transition: var(--transition-fast);
-
-  /* Hover state */
-  --link-hover-color: var(--color-1);
-  --link-hover-decoration: underline;
-
-  /* Focus state */
-  --link-focus-color: var(--color-1);
-
-  /* zen: Minimal / Japanese - Underline on hover only */
-  --link-zen-color: var(--on-background);
-  --link-zen-decoration: none;
-  --link-zen-hover-color: var(--color-1);
-  --link-zen-hover-decoration: underline;
-
-  /* soft: Subtle Contrasts - Color change only, no underline */
-  --link-soft-color: var(--on-background);
-  --link-soft-decoration: none;
-  --link-soft-hover-color: var(--color-1);
-  --link-soft-hover-decoration: none;
-
-  /* solid: All In - Underline always visible */
-  --link-solid-color: var(--on-background);
-  --link-solid-decoration: underline;
-  --link-solid-decoration-thickness: 0.05em;
-  --link-solid-hover-color: var(--color-1);
-  --link-solid-hover-decoration: underline;
+--link-color: var(--on-background);
+--link-decoration: none;
+--link-transition: var(--transition-fast);
+--link-hover-color: var(--color-1);
+--link-hover-decoration: underline;
+--link-focus-color: var(--color-1);
+--link-1-color: var(--on-background);
+--link-1-decoration: none;
+--link-1-hover-color: var(--color-1);
+--link-1-hover-decoration: underline;
+--link-2-color: var(--on-background);
+--link-2-decoration: none;
+--link-2-hover-color: var(--color-1);
+--link-2-hover-decoration: none;
+--link-3-color: var(--on-background);
+--link-3-decoration: underline;
+--link-3-decoration-thickness: 0.05em;
+--link-3-hover-color: var(--color-1);
+--link-3-hover-decoration: underline;
 }

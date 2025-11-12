@@ -1,44 +1,28 @@
-/* ============================================
-   RADIO VARIABLES
-   Customize radio button appearance
-   ============================================ */
-
 :root {
-  /* Base radio properties */
-  --radio-size: var(--height-1);
-  --radio-transition: var(--transition-fast);
-
-  /* Base colors */
-  --radio-bg: var(--background-2);
-  --radio-border: var(--border-1);
-  --radio-checked-bg: var(--background-2);
-  --radio-checked-border: var(--on-background);
-  --radio-dot: var(--on-background);
-
-  /* Focus state */
-  --radio-focus-ring: var(--border-2);
-
-  /* zen: Minimal / Japanese - Border only, minimal dot */
-  --radio-zen-bg: transparent;
-  --radio-zen-border: var(--border-2);
-  --radio-zen-checked-bg: transparent;
-  --radio-zen-checked-border: var(--on-background);
-  --radio-zen-dot: var(--on-background);
-  --radio-zen-dot-size: calc(var(--height-1) / 5);
-
-  /* soft: Subtle Contrasts - Filled background, no border, medium dot */
-  --radio-soft-bg: var(--background-3);
-  --radio-soft-border: transparent;
-  --radio-soft-checked-bg: var(--background-3);
-  --radio-soft-checked-border: transparent;
-  --radio-soft-dot: var(--on-background);
-  --radio-soft-dot-size: calc(var(--height-1) / 3);
-
-  /* solid: All In - Border + background, large dot */
-  --radio-solid-bg: var(--background-2);
-  --radio-solid-border: var(--border-1);
-  --radio-solid-checked-bg: var(--background-2);
-  --radio-solid-checked-border: var(--on-background);
-  --radio-solid-dot: var(--on-background);
-  --radio-solid-dot-size: calc(var(--height-1) / 3);
+--radio-size: var(--height-1);
+--radio-transition: var(--transition-fast);
+--radio-bg: var(--background-2);
+--radio-border: var(--border-1);
+--radio-checked-bg: var(--background-2);
+--radio-checked-border: var(--on-background);
+--radio-dot: var(--on-background);
+--radio-focus-ring: var(--border-2);
+--radio-1-bg: transparent;
+--radio-1-border: var(--border-2);
+--radio-1-checked-bg: transparent;
+--radio-1-checked-border: var(--on-background);
+--radio-1-dot: var(--on-background);
+--radio-1-dot-size: calc(var(--height-1) / 5);
+--radio-2-bg: var(--background-3);
+--radio-2-border: transparent;
+--radio-2-checked-bg: var(--background-3);
+--radio-2-checked-border: transparent;
+--radio-2-dot: var(--on-background);
+--radio-2-dot-size: calc(var(--height-1) / 3);
+--radio-3-bg: var(--background-2);
+--radio-3-border: var(--border-1);
+--radio-3-checked-bg: var(--background-2);
+--radio-3-checked-border: var(--on-background);
+--radio-3-dot: var(--on-background);
+--radio-3-dot-size: calc(var(--height-1) / 3);
 }

@@ -1,29 +1,18 @@
-/* Img - Image styling helpers */
-
 img {
   max-width: var(--img-max-width);
   height: var(--img-height);
   display: var(--img-display);
 }
-
-/* zen: Minimal treatment, optional thin border */
-img[style="zen"],
-img.zen {
-  border: var(--img-zen-border);
-  border-radius: var(--img-zen-radius);
+img:is(.style-1, [style="1"]) {
+  border: var(--img-1-border);
+  border-radius: var(--img-1-radius);
 }
-
-/* soft: Subtle shadow, no border */
-img[style="soft"],
-img.soft {
-  box-shadow: var(--img-soft-shadow);
-  border-radius: var(--img-soft-radius);
+img:is(.style-2, [style="2"]) {
+  box-shadow: var(--img-2-shadow);
+  border-radius: var(--img-2-radius);
 }
-
-/* solid: Border + shadow for strong presence */
-img[style="solid"],
-img.solid {
-  border: var(--img-solid-border);
-  box-shadow: var(--img-solid-shadow);
-  border-radius: var(--img-solid-radius);
+img:is(.style-3, [style="3"]) {
+  border: var(--img-3-border);
+  box-shadow: var(--img-3-shadow);
+  border-radius: var(--img-3-radius);
 }

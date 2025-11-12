@@ -1,9 +1,3 @@
-/* ============================================
-   TOOLBAR COMPONENT
-   Action button groups for layouts
-   ============================================ */
-
-/* Base toolbar styles */
 nuke-toolbar {
   display: flex;
   align-items: center;
@@ -13,44 +7,22 @@ nuke-toolbar {
   border-radius: var(--toolbar-radius);
   flex-wrap: wrap;
 }
-
-/* ============================================
-   TOOLBAR VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
-   ============================================ */
-
-/* zen: Minimal / Japanese */
-nuke-toolbar[style="zen"],
-nuke-toolbar.zen,
-nuke-toolbar[style="1"] {
-  background: var(--toolbar-zen-background);
-  border: var(--toolbar-zen-border);
-  border-bottom: var(--toolbar-zen-border-bottom);
-  padding: var(--toolbar-zen-padding);
+nuke-toolbar:is(.style-1, [style="1"]) {
+  background: var(--toolbar-1-background);
+  border: var(--toolbar-1-border);
+  border-bottom: var(--toolbar-1-border-bottom);
+  padding: var(--toolbar-1-padding);
 }
-
-/* soft: Subtle Contrasts */
-nuke-toolbar[style="soft"],
-nuke-toolbar.soft,
-nuke-toolbar[style="2"] {
-  background: var(--toolbar-soft-background);
-  border: var(--toolbar-soft-border);
-  padding: var(--toolbar-soft-padding);
+nuke-toolbar:is(.style-2, [style="2"]) {
+  background: var(--toolbar-2-background);
+  border: var(--toolbar-2-border);
+  padding: var(--toolbar-2-padding);
 }
-
-/* solid: All In */
-nuke-toolbar[style="solid"],
-nuke-toolbar.solid,
-nuke-toolbar[style="3"] {
-  background: var(--toolbar-solid-background);
-  border: var(--toolbar-solid-border);
-  padding: var(--toolbar-solid-padding);
+nuke-toolbar:is(.style-3, [style="3"]) {
+  background: var(--toolbar-3-background);
+  border: var(--toolbar-3-border);
+  padding: var(--toolbar-3-padding);
 }
-
-/* ============================================
-   TOOLBAR CONTENT SPACING
-   ============================================ */
-
-/* Add margin between button groups (when using multiple toolbars or separators) */
 nuke-toolbar + nuke-toolbar {
   margin-top: var(--space-2);
 }

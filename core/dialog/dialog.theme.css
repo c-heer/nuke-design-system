@@ -1,49 +1,33 @@
-/* ============================================
-   DIALOG VARIABLES
-   Customize modal dialog appearance
-   ============================================ */
-
 :root {
-  /* Base dialog properties */
-  --dialog-max-width: 500px;
-  --dialog-max-height: 80vh;
-  --dialog-padding: var(--space-3);
-  --dialog-bg: var(--background-2);
-  --dialog-border: var(--border-1);
-  --dialog-radius: var(--border-radius);
-  --dialog-shadow: var(--shadow-3);
-  --dialog-color: var(--on-background);
-
-  /* Backdrop (overlay) */
-  --dialog-backdrop-bg: rgba(0, 0, 0, 0.5);
-  --dialog-backdrop-filter: blur(4px);
-
-  /* Animation */
-  --dialog-animation-duration: var(--transition-fast);
-
-  /* zen: Minimal / Japanese - Thin border, no shadow */
-  --dialog-zen-max-width: 500px;
-  --dialog-zen-padding: var(--space-3);
-  --dialog-zen-bg: var(--background-2);
-  --dialog-zen-border: var(--border-1);
-  --dialog-zen-border-width: 1px;
-  --dialog-zen-radius: var(--border-radius);
-  --dialog-zen-shadow: none;
-
-  /* soft: Subtle Contrasts - Subtle shadow for depth, no border */
-  --dialog-soft-max-width: 500px;
-  --dialog-soft-padding: var(--space-3);
-  --dialog-soft-bg: var(--background-2);
-  --dialog-soft-border: transparent;
-  --dialog-soft-radius: var(--border-radius);
-  --dialog-soft-shadow: var(--shadow-2);
-
-  /* solid: All In - Border + shadow for strong definition */
-  --dialog-solid-max-width: 500px;
-  --dialog-solid-padding: var(--space-3);
-  --dialog-solid-bg: var(--background-2);
-  --dialog-solid-border: var(--border-1);
-  --dialog-solid-border-width: 2px;
-  --dialog-solid-radius: var(--border-radius);
-  --dialog-solid-shadow: var(--shadow-3);
+--dialog-max-width: 500px;
+--dialog-max-height: 80vh;
+--dialog-padding: var(--space-3);
+--dialog-bg: var(--background-2);
+--dialog-border: var(--border-1);
+--dialog-radius: var(--border-radius);
+--dialog-shadow: var(--shadow-3);
+--dialog-color: var(--on-background);
+--dialog-backdrop-bg: rgba(0, 0, 0, 0.5);
+--dialog-backdrop-filter: blur(4px);
+--dialog-animation-duration: var(--transition-fast);
+--dialog-1-max-width: 500px;
+--dialog-1-padding: var(--space-3);
+--dialog-1-bg: var(--background-2);
+--dialog-1-border: var(--border-1);
+--dialog-1-border-width: 1px;
+--dialog-1-radius: var(--border-radius);
+--dialog-1-shadow: none;
+--dialog-2-max-width: 500px;
+--dialog-2-padding: var(--space-3);
+--dialog-2-bg: var(--background-2);
+--dialog-2-border: transparent;
+--dialog-2-radius: var(--border-radius);
+--dialog-2-shadow: var(--shadow-2);
+--dialog-3-max-width: 500px;
+--dialog-3-padding: var(--space-3);
+--dialog-3-bg: var(--background-2);
+--dialog-3-border: var(--border-1);
+--dialog-3-border-width: 2px;
+--dialog-3-radius: var(--border-radius);
+--dialog-3-shadow: var(--shadow-3);
 }

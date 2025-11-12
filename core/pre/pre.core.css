@@ -1,5 +1,3 @@
-/* Pre - Preformatted code blocks */
-
 pre {
   margin: 0 0 var(--pre-margin-bottom) 0;
   padding: var(--pre-padding);
@@ -11,7 +9,6 @@ pre {
   border-radius: var(--pre-radius);
   overflow-x: auto;
 }
-
 pre code {
   padding: 0;
   background: none;
@@ -19,27 +16,18 @@ pre code {
   border-radius: 0;
   color: inherit;
 }
-
-/* zen: Clean background, simple border */
-pre[style="zen"],
-pre.zen {
-  background: var(--pre-zen-bg);
-  color: var(--pre-zen-color);
-  border: var(--pre-zen-border);
+pre:is(.style-1, [style="1"]) {
+  background: var(--pre-1-bg);
+  color: var(--pre-1-color);
+  border: var(--pre-1-border);
 }
-
-/* soft: Soft background, no border */
-pre[style="soft"],
-pre.soft {
-  background: var(--pre-soft-bg);
-  color: var(--pre-soft-color);
-  border: var(--pre-soft-border);
+pre:is(.style-2, [style="2"]) {
+  background: var(--pre-2-bg);
+  color: var(--pre-2-color);
+  border: var(--pre-2-border);
 }
-
-/* solid: Full border + background */
-pre[style="solid"],
-pre.solid {
-  background: var(--pre-solid-bg);
-  color: var(--pre-solid-color);
-  border: var(--pre-solid-border);
+pre:is(.style-3, [style="3"]) {
+  background: var(--pre-3-bg);
+  color: var(--pre-3-color);
+  border: var(--pre-3-border);
 }

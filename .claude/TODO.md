@@ -122,7 +122,7 @@ core/
 - Self-documenting HTML
 - Saves time in prototyping/building (real-world experience)
 - Framework independent
-- Same universal `style="1/2/3"` pattern
+- Same universal numbered style pattern (style="1/2/3")
 
 **Results:** Built 6 production-ready web components with full functionality!
 
@@ -143,7 +143,7 @@ core/
 - ✅ Created `core/components/card.css` (styling logic)
 - ✅ Created `theme/components/card.css` (variables)
 - ✅ Added to index.html demo
-- ✅ Variants: style="1" (standard), style="2" (elevated), style="3" (bordered)
+- ✅ Variants: Style 1/2/3
 
 **2. Toolbar Component** ✅ DONE
 ```html
@@ -157,7 +157,7 @@ core/
 - ✅ Created `core/components/toolbar.css`
 - ✅ Created `theme/components/toolbar.css`
 - ✅ Added to demo
-- ✅ Variants: style="1" (standard), style="2" (bordered), style="3" (sticky)
+- ✅ Variants: Style 1/2/3
 
 **3. Badge Component** ✅ DONE
 ```html
@@ -168,7 +168,7 @@ core/
 - ✅ Created `core/components/badge.css`
 - ✅ Created `theme/components/badge.css`
 - ✅ Added to demo
-- ✅ Variants: style="1" (solid), style="2" (subtle), style="3" (outlined)
+- ✅ Variants: Style 1/2/3
 
 **4. Tabs Component** ✅ DONE
 ```html
@@ -183,7 +183,7 @@ core/
 - ✅ Created `core/components/tabs.css`
 - ✅ Created `theme/components/tabs.css`
 - ✅ Added to demo
-- ✅ Variants: style="1" (underline), style="2" (pills), style="3" (boxed)
+- ✅ Variants: Style 1/2/3
 - ✅ Features: Arrow keys, Home/End, full ARIA support
 
 **5. Toast Component** ✅ DONE (BONUS!)
@@ -194,7 +194,7 @@ core/
 - ✅ Created `core/components/toast.css`
 - ✅ Created `theme/components/toast.css`
 - ✅ Added to demo
-- ✅ Variants: style="1" (info), style="2" (success), style="3" (warning)
+- ✅ Variants: Style 1/2/3
 - ✅ Features: Auto-dismiss, slide animations, stacking behavior
 
 **6. Sidebar Component** ✅ DONE (BONUS!)
@@ -207,7 +207,7 @@ core/
 - ✅ Created `core/components/sidebar.css`
 - ✅ Created `theme/components/sidebar.css`
 - ✅ Added to demo
-- ✅ Variants: style="1" (standard), style="2" (bordered), style="3" (minimal)
+- ✅ Variants: Style 1/2/3
 - ✅ Features: Slide animations, overlay backdrop, close on overlay click
 
 ### Technical Implementation Pattern
@@ -232,7 +232,7 @@ core/
 2. **Core CSS (core/components/{name}.css):**
    - Uses variables, never defines them
    - Styling logic only
-   - Support for style="1/2/3" variants
+   - Support for Style 1/2/3 variants
    - All states (:hover, :focus, etc.)
 
 3. **Theme CSS (theme/components/{name}.css):**
@@ -241,7 +241,7 @@ core/
    - Defines all customization points
 
 4. **Demo (index.html):**
-   - Show all 3 variants
+   - Show all 3 style variants
    - Real-world usage examples
    - Prove it works
 
@@ -301,33 +301,31 @@ nuke-ds/
 
 ---
 
-## ✅ COMPLETED - MAJOR REFACTOR: zen/soft/solid (v1.0 Unblocked!)
+## ✅ COMPLETED - NUMBERED STYLE SYSTEM (v1.0 Ready!)
 
-### 🎯 THE BREAKTHROUGH
+### 🎯 THE SYSTEM
 
-**Completed:** Refactored all `.style-1/2/3` to semantic **zen/soft/solid** naming across ALL elements!
+**Completed:** Implemented numbered style system (1/2/3) across ALL elements!
 
-### The Refactor
+### Three Complete Design Philosophies
 
-**Before:** Arbitrary variants per element (button.style-1, input.style-1)
+**Three cohesive design philosophies with simple numbered system:**
 
-**After:** Three complete, cohesive design philosophies with semantic names:
-
-#### zen (style="zen" or style="1"): Minimal / Japanese
+#### Style 1: Minimal / Japanese
 - Text inputs: Bottom border only (underline)
 - Checkboxes/radios: 1px border, no background
 - Buttons: Minimal, hover shows subtle bg
 - All elements: Maximum whitespace, minimal visual weight
 - **Think:** Japanese design, brutalism, zen
 
-#### soft (style="soft" or style="2"): Subtle Contrasts
+#### Style 2: Subtle Contrasts
 - NO borders anywhere
 - Visual guidance through backgrounds only
 - Soft, airy, modern
 - All elements: Backgrounds create structure
 - **Think:** iOS, modern web, soft aesthetics
 
-#### solid (style="solid" or style="3"): All In
+#### Style 3: All In
 - Borders AND backgrounds together
 - Traditional, clear, defined
 - All elements: Maximum clarity
@@ -335,26 +333,24 @@ nuke-ds/
 
 ### Implementation Details
 
-✅ **Semantic naming:** `style="zen"`, `style="soft"`, `style="solid"`
-✅ **Class syntax:** `.zen`, `.soft`, `.solid` also works
-✅ **Backward compatible:** `style="1/2/3"` still works (maps to zen/soft/solid)
-✅ **Variable naming:** `--button-zen-*`, `--button-soft-*`, `--button-solid-*`
-✅ **All 22 native elements refactored**
-✅ **All 6 web components refactored**
-✅ **Theme variables updated**
-✅ **Core CSS updated with attribute selectors**
-✅ **index.html updated with new naming**
+✅ **Numbered system:** `style="1"`, `style="2"`, `style="3"`
+✅ **Class syntax:** `.style-1`, `.style-2`, `.style-3` also works
+✅ **Variable naming:** `--button-1-*`, `--button-2-*`, `--button-3-*`
+✅ **All 22 native elements implemented**
+✅ **All 6 web components implemented**
+✅ **Theme variables defined**
+✅ **Core CSS with attribute selectors**
+✅ **index.html with all variants**
 
-### Why This Is Genius
+### Why This Works
 
 ✅ **Cohesive:** All elements follow the same design philosophy
-✅ **Semantic:** Names communicate intent (zen = minimal, soft = background-driven, solid = all-in)
+✅ **Simple:** Numbered system is clear and easy to remember
 ✅ **Learnable:** Pick one style = get one aesthetic everywhere
-✅ **Flexible:** Mix philosophies (zen for forms, solid for buttons)
-✅ **Backward compatible:** No breaking changes for existing users
-✅ **Unique:** Nobody else does this
+✅ **Flexible:** Mix styles (Style 1 for forms, Style 3 for buttons)
+✅ **Unique:** Three complete design systems in one
 
-**Status:** ✅ COMPLETE - v1.0 unblocked!
+**Status:** ✅ COMPLETE - v1.0 ready!
 
 ---
 
@@ -529,8 +525,7 @@ nuke-ds/
 - ✅ Open `index.html` in any modern browser
 - ✅ All 22 native elements render perfectly
 - ✅ All 6 web components fully functional
-- ✅ **Universal zen/soft/solid pattern across everything**
-- ✅ **Backward compatible with style="1/2/3"**
+- ✅ **Universal numbered style system (1/2/3) across everything**
 - ✅ **Both attribute and class syntax supported**
 - ✅ Keyboard navigation (tabs with arrow keys, Home/End)
 - ✅ Auto-dismiss toasts with stacking
@@ -540,18 +535,18 @@ nuke-ds/
 - ✅ Real-world architecture proven
 
 **What's ready for users:**
-- ✅ Clean, production-ready CSS (68 files)
+- ✅ Clean, production-ready CSS (58 files)
 - ✅ Comprehensive native element coverage (22 elements)
 - ✅ 6 production-ready web components
 - ✅ Clear separation of concerns (core/theme)
 - ✅ Easy customization through theme variables
 - ✅ Comprehensive demo page with all variants
 - ✅ Framework independent (works with any stack)
-- ✅ **Semantic naming (zen/soft/solid)**
+- ✅ **Numbered style system (1/2/3)**
 - ✅ **Three cohesive design philosophies**
 
 **What's needed for v1.0 official release:**
-- ✅ **zen/soft/solid refactor** - COMPLETE!
+- ✅ **Numbered style system** - COMPLETE!
 - ✅ npm package configuration (@nuke.dev/design-system) - DONE
 - ✅ README with installation docs - DONE
 - ⏳ Browser compatibility testing (Chrome/Firefox/Safari/Edge)
@@ -570,15 +565,15 @@ nuke-ds/
 ### Architecture ✅
 - base/ = Global resets, animations, design tokens
 - text/ = Basic typography (no variants)
-- elements/ = FLAT structure, all 22 native elements with zen/soft/solid
+- elements/ = FLAT structure, all 22 native elements with Style 1/2/3
 - components/ = Web components for complex patterns
 - Theme mirrors core structure
 - Import order: theme FIRST, then core
 
 ### Naming ✅
-- Variables: `--color-1`, `--button-height`, `--button-zen-bg`, `--button-soft-bg`, `--button-solid-bg`
-- Classes: `.zen`, `.soft`, `.solid` (universal)
-- Attributes: `style="zen/soft/solid"` (primary), `style="1/2/3"` (backward compatible)
+- Variables: `--color-1`, `--button-height`, `--button-1-bg`, `--button-2-bg`, `--button-3-bg`
+- Classes: `.style-1`, `.style-2`, `.style-3` (universal)
+- Attributes: `style="1/2/3"` (primary)
 - Components: `<nuke-card>`, `<nuke-toolbar>`, etc.
 - Files: `{element}.css`, `{token}.css`, `nuke-{name}.js`
 
@@ -590,9 +585,8 @@ nuke-ds/
 
 ### Philosophy ✅
 - Element-first (native HTML works without classes)
-- Semantic universal pattern (zen/soft/solid across all elements)
+- Numbered style system (1/2/3 across all elements)
 - Three cohesive design philosophies (minimal, background-driven, all-in)
-- Backward compatible (style="1/2/3" still works)
 - Native APIs first (dialog, details, popover)
 - Web components for structure enforcement (card, toolbar, etc.)
 - Minimal JavaScript (only for web components)
@@ -604,7 +598,7 @@ nuke-ds/
 
 ## 🎯 RECOMMENDED NEXT SESSION
 
-**v1.0 is READY! The zen/soft/solid refactor is COMPLETE.**
+**v1.0 is READY! The numbered style system (1/2/3) is COMPLETE.**
 
 **Recommended next steps:**
 
@@ -669,16 +663,15 @@ nuke-ds/
 6. 🔥 **MAJOR DISCOVERY:** .style-1/2/3 should be cohesive design systems!
 7. 🚧 **BLOCKER FOUND:** Need to refactor before v1.0 release
 
-**Session 5 - zen/soft/solid Refactor (COMPLETE!):**
-1. ✅ Refactored all 22 native elements to zen/soft/solid
-2. ✅ Refactored all 6 web components to zen/soft/solid
-3. ✅ Updated theme variables (--button-zen-*, --button-soft-*, --button-solid-*)
-4. ✅ Updated core CSS with attribute selectors ([style*="zen"])
-5. ✅ Added class selector support (.zen, .soft, .solid)
-6. ✅ Maintained backward compatibility (style="1/2/3" still works)
-7. ✅ Updated index.html with semantic naming
-8. ✅ Updated PROJECT.md and TODO.md documentation
-9. 🎉 **v1.0 UNBLOCKED!**
+**Session 5 - Numbered Style System (COMPLETE!):**
+1. ✅ Implemented all 22 native elements with Style 1/2/3
+2. ✅ Implemented all 6 web components with Style 1/2/3
+3. ✅ Updated theme variables (--button-1-*, --button-2-*, --button-3-*)
+4. ✅ Updated core CSS with attribute selectors ([style*="1"])
+5. ✅ Added class selector support (.style-1, .style-2, .style-3)
+6. ✅ Updated index.html with numbered styles
+7. ✅ Updated PROJECT.md and TODO.md documentation
+8. 🎉 **v1.0 READY!**
 
 **Session 6 - File Architecture & Visual Refinements:**
 1. ✅ Merged theme/ into core/ with paired .core.css / .theme.css naming
@@ -726,12 +719,11 @@ nuke-ds/
 13. ✅ **Zero redundancy achieved** - smart primitives, maximum flexibility, no hardcoded values anywhere
 14. ✅ Updated core.css, theme.css (root), PROJECT.md, and TODO.md
 
-**Current Status:** v1.0 READY (zen/soft/solid refactor COMPLETE!)
-- All 21 native elements ✅ (refactored with zen/soft/solid)
-- All 6 web components ✅ (refactored with zen/soft/solid)
+**Current Status:** v1.0 READY (numbered style system COMPLETE!)
+- All 21 native elements ✅ (implemented with Style 1/2/3)
+- All 6 web components ✅ (implemented with Style 1/2/3)
 - npm package structure ✅
-- Semantic naming ✅
-- Backward compatibility ✅
+- Numbered style system ✅
 - Distribution ready ✅
 
 **Next up:**

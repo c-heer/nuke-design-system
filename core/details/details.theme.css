@@ -1,49 +1,33 @@
-/* ============================================
-   DETAILS VARIABLES
-   Customize accordion/disclosure appearance
-   ============================================ */
-
 :root {
-  /* Base details properties */
-  --details-border: var(--border-1);
-  --details-radius: var(--border-radius);
-  --details-bg: var(--background-2);
-  --details-padding: var(--space-2);
-  --details-margin-bottom: var(--space-2);
-  --details-transition: var(--transition-fast);
-
-  /* Summary (header) */
-  --details-summary-font-weight: var(--font-weight-medium);
-  --details-summary-color: var(--on-background);
-  --details-summary-padding: var(--space-2);
-  --details-summary-hover-bg: var(--background-3);
-
-  /* Content */
-  --details-content-margin-top: var(--space-2);
-
-  /* zen: Minimal / Japanese - Simple disclosure, no background */
-  --details-zen-border: transparent;
-  --details-zen-bg: transparent;
-  --details-zen-padding: var(--space-2) 0;
-  --details-zen-summary-hover-bg: transparent;
-  --details-zen-summary-hover-color: var(--color-1);
-  --details-zen-open-border-bottom: var(--border-1);
-
-  /* soft: Subtle Contrasts - Background change on expand, no border */
-  --details-soft-border: transparent;
-  --details-soft-bg: transparent;
-  --details-soft-padding: var(--space-2);
-  --details-soft-radius: var(--border-radius);
-  --details-soft-summary-hover-bg: var(--background-2);
-  --details-soft-open-bg: var(--background-2);
-
-  /* solid: All In - Border + background on expand */
-  --details-solid-border: var(--border-1);
-  --details-solid-border-width: 1px;
-  --details-solid-bg: transparent;
-  --details-solid-padding: var(--space-2);
-  --details-solid-radius: var(--border-radius);
-  --details-solid-summary-hover-bg: var(--background-2);
-  --details-solid-open-bg: var(--background-2);
-  --details-solid-open-border: var(--border-1);
+--details-border: var(--border-1);
+--details-radius: var(--border-radius);
+--details-bg: var(--background-2);
+--details-padding: var(--space-2);
+--details-margin-bottom: var(--space-2);
+--details-transition: var(--transition-fast);
+--details-summary-font-weight: var(--font-weight-medium);
+--details-summary-color: var(--on-background);
+--details-summary-padding: var(--space-2);
+--details-summary-hover-bg: var(--background-3);
+--details-content-margin-top: var(--space-2);
+--details-1-border: transparent;
+--details-1-bg: transparent;
+--details-1-padding: var(--space-2) 0;
+--details-1-summary-hover-bg: transparent;
+--details-1-summary-hover-color: var(--color-1);
+--details-1-open-border-bottom: var(--border-1);
+--details-2-border: transparent;
+--details-2-bg: transparent;
+--details-2-padding: var(--space-2);
+--details-2-radius: var(--border-radius);
+--details-2-summary-hover-bg: var(--background-2);
+--details-2-open-bg: var(--background-2);
+--details-3-border: var(--border-1);
+--details-3-border-width: 1px;
+--details-3-bg: transparent;
+--details-3-padding: var(--space-2);
+--details-3-radius: var(--border-radius);
+--details-3-summary-hover-bg: var(--background-2);
+--details-3-open-bg: var(--background-2);
+--details-3-open-border: var(--border-1);
 }

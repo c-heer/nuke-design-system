@@ -1,9 +1,3 @@
-/* ============================================
-   TOAST COMPONENT
-   Notification messages with auto-dismiss
-   ============================================ */
-
-/* Toast container - holds all toasts */
 .nuke-toast-container {
   position: fixed;
   top: var(--toast-container-position-top);
@@ -16,8 +10,6 @@
   z-index: var(--toast-z-index);
   pointer-events: none;
 }
-
-/* Base toast styles */
 nuke-toast {
   display: flex;
   align-items: center;
@@ -32,25 +24,17 @@ nuke-toast {
   transform: translateX(100%);
   transition: all 0.3s ease;
 }
-
-/* Show animation */
 nuke-toast.show {
   opacity: 1;
   transform: translateX(0);
 }
-
-/* Hide animation */
 nuke-toast.hide {
   opacity: 0;
   transform: translateX(100%);
 }
-
-/* Toast message */
 .toast-message {
   flex: 1;
 }
-
-/* Close button */
 .toast-close {
   width: var(--toast-close-size);
   height: var(--toast-close-size);
@@ -66,41 +50,24 @@ nuke-toast.hide {
   flex-shrink: 0;
   transition: opacity 0.2s ease;
 }
-
 .toast-close:hover {
   opacity: 1;
 }
-
-/* ============================================
-   TOAST VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
-   ============================================ */
-
-/* zen: Minimal / Japanese */
-nuke-toast[style="zen"],
-nuke-toast.zen,
-nuke-toast[style="1"] {
-  background: var(--toast-zen-background);
-  color: var(--toast-zen-color);
-  border: var(--toast-zen-border);
-  box-shadow: var(--toast-zen-shadow);
+nuke-toast:is(.style-1, [style="1"]) {
+  background: var(--toast-1-background);
+  color: var(--toast-1-color);
+  border: var(--toast-1-border);
+  box-shadow: var(--toast-1-shadow);
 }
-
-/* soft: Subtle Contrasts */
-nuke-toast[style="soft"],
-nuke-toast.soft,
-nuke-toast[style="2"] {
-  background: var(--toast-soft-background);
-  color: var(--toast-soft-color);
-  border: var(--toast-soft-border);
-  box-shadow: var(--toast-soft-shadow);
+nuke-toast:is(.style-2, [style="2"]) {
+  background: var(--toast-2-background);
+  color: var(--toast-2-color);
+  border: var(--toast-2-border);
+  box-shadow: var(--toast-2-shadow);
 }
-
-/* solid: All In */
-nuke-toast[style="solid"],
-nuke-toast.solid,
-nuke-toast[style="3"] {
-  background: var(--toast-solid-background);
-  color: var(--toast-solid-color);
-  border: var(--toast-solid-border);
-  box-shadow: var(--toast-solid-shadow);
+nuke-toast:is(.style-3, [style="3"]) {
+  background: var(--toast-3-background);
+  color: var(--toast-3-color);
+  border: var(--toast-3-border);
+  box-shadow: var(--toast-3-shadow);
 }

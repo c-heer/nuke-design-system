@@ -1,67 +1,45 @@
-/* OL - Ordered lists with variants */
-
-/* Base styling handled by base/typography.css */
-
-/* zen: Minimal numbers, no extra spacing */
-ol[style="zen"],
-ol.zen {
-  list-style-type: var(--ol-zen-list-style);
-  padding-left: var(--ol-zen-padding-left);
+ol:is(.style-1, [style="1"]) {
+  list-style-type: var(--ol-1-list-style);
+  padding-left: var(--ol-1-padding-left);
 }
-
-ol[style="zen"] li,
-ol.zen li {
-  margin-bottom: var(--ol-zen-item-margin);
+ol:is(.style-1, [style="1"]) li {
+  margin-bottom: var(--ol-1-item-margin);
 }
-
-/* soft: Background highlights on items, no borders */
-ol[style="soft"],
-ol.soft {
-  list-style: var(--ol-soft-list-style);
-  padding-left: var(--ol-soft-padding-left);
+ol:is(.style-2, [style="2"]) {
+  list-style: var(--ol-2-list-style);
+  padding-left: var(--ol-2-padding-left);
   counter-reset: soft-counter;
 }
-
-ol[style="soft"] li,
-ol.soft li {
-  background: var(--ol-soft-item-bg);
-  padding: var(--ol-soft-item-padding);
-  margin-bottom: var(--ol-soft-item-margin);
-  border-radius: var(--ol-soft-item-radius);
-  padding-left: var(--ol-soft-number-padding-left);
+ol:is(.style-2, [style="2"]) li {
+  background: var(--ol-2-item-bg);
+  padding: var(--ol-2-item-padding);
+  margin-bottom: var(--ol-2-item-margin);
+  border-radius: var(--ol-2-item-radius);
+  padding-left: var(--ol-2-number-padding-left);
   position: relative;
   counter-increment: soft-counter;
 }
-
-ol[style="soft"] li::before,
-ol.soft li::before {
+ol:is(.style-2, [style="2"]) li::before {
   content: counter(soft-counter) ".";
   position: absolute;
   left: var(--space-2);
 }
-
-/* solid: Borders + backgrounds, strong definition */
-ol[style="solid"],
-ol.solid {
-  list-style: var(--ol-solid-list-style);
-  padding-left: var(--ol-solid-padding-left);
+ol:is(.style-3, [style="3"]) {
+  list-style: var(--ol-3-list-style);
+  padding-left: var(--ol-3-padding-left);
   counter-reset: solid-counter;
 }
-
-ol[style="solid"] li,
-ol.solid li {
-  background: var(--ol-solid-item-bg);
-  border: var(--ol-solid-item-border);
-  padding: var(--ol-solid-item-padding);
-  margin-bottom: var(--ol-solid-item-margin);
-  border-radius: var(--ol-solid-item-radius);
-  padding-left: var(--ol-solid-number-padding-left);
+ol:is(.style-3, [style="3"]) li {
+  background: var(--ol-3-item-bg);
+  border: var(--ol-3-item-border);
+  padding: var(--ol-3-item-padding);
+  margin-bottom: var(--ol-3-item-margin);
+  border-radius: var(--ol-3-item-radius);
+  padding-left: var(--ol-3-number-padding-left);
   position: relative;
   counter-increment: solid-counter;
 }
-
-ol[style="solid"] li::before,
-ol.solid li::before {
+ol:is(.style-3, [style="3"]) li::before {
   content: counter(solid-counter) ".";
   position: absolute;
   left: var(--space-2);
