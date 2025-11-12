@@ -1,0 +1,40 @@
+/* ============================================
+   SELECT VARIABLES
+   Customize dropdown appearance
+   ============================================ */
+
+:root {
+  /* Base select properties */
+  --select-height: var(--height-2);
+  --select-padding-x: var(--space-2);
+  --select-font-size: var(--font-size-2);
+  --select-radius: var(--border-radius);
+  --select-transition: var(--transition-fast);
+
+  /* Base colors */
+  --select-bg: var(--background-2);
+  --select-color: var(--on-background);
+  --select-border: var(--border-1);
+
+  /* Focus state */
+  --select-focus-border: var(--on-background);
+
+  /* zen: Minimal / Japanese - Transparent background, border only, background on hover/focus */
+  --select-zen-bg: transparent;
+  --select-zen-color: var(--on-background);
+  --select-zen-border: var(--border-2);
+  --select-zen-focus-bg: var(--background-2);
+  --select-zen-focus-border: var(--on-background);
+
+  /* soft: Subtle Contrasts - Filled background, no borders */
+  --select-soft-bg: var(--background-3);
+  --select-soft-color: var(--on-background);
+  --select-soft-focus-bg: var(--border-1);
+
+  /* solid: All In - Border + background */
+  --select-solid-bg: var(--background-3);
+  --select-solid-color: var(--on-background);
+  --select-solid-border: var(--border-1);
+  --select-solid-focus-bg: var(--background-3);
+  --select-solid-focus-border: var(--on-background);
+}

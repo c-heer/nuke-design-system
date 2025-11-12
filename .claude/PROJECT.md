@@ -2,7 +2,7 @@
 
 ## What is This?
 
-A pure CSS element-first styling system with **28 fully implemented native elements**:
+A pure CSS element-first styling system with **22 fully implemented native elements**:
 - **No build tools** - Just CSS files
 - **Framework independent** - Works with any project (HTML, React, Vue, Angular, etc.)
 - **Element-first** - Native HTML elements work out of the box
@@ -14,7 +14,7 @@ A pure CSS element-first styling system with **28 fully implemented native eleme
 
 **CSS + Minimal JavaScript (for web components)**
 
-- Pure CSS for native elements (28 elements)
+- Pure CSS for native elements (22 elements)
 - Vanilla JavaScript for custom elements (card, toolbar, etc.)
 - No build process
 - No preprocessors (Sass, Less, etc.)
@@ -102,84 +102,61 @@ A pure CSS element-first styling system with **28 fully implemented native eleme
 - If variables live in one giant file, navigation is painful
 - Need: separate concerns, easy navigation, update-safe
 
-**The Solution: Dual Structure**
+**The Solution: Paired File Structure**
 
 ```
 nuke-ds/                         (repository)
-├── core/                        (pure logic, NO variables)
-│   ├── base/                    (browser resets & animations)
-│   │   ├── reset.css
-│   │   ├── scrollbars.css
-│   │   └── animations.css
-│   ├── text/                    (basic text, no variants)
-│   │   └── typography.css       (h1-h6, p, blockquote, lists, strong, em, small)
-│   ├── elements/                (28 native HTML elements - FLAT)
-│   │   ├── button.css
-│   │   ├── input.css
-│   │   ├── select.css
-│   │   ├── textarea.css
-│   │   ├── checkbox.css
-│   │   ├── radio.css
-│   │   ├── label.css
-│   │   ├── fieldset.css
-│   │   ├── progress.css
-│   │   ├── meter.css
-│   │   ├── range.css
-│   │   ├── form.css
-│   │   ├── a.css
-│   │   ├── dialog.css
-│   │   ├── details.css
-│   │   ├── nav.css
-│   │   ├── table.css
-│   │   ├── ul.css
-│   │   ├── ol.css
-│   │   ├── hr.css
-│   │   ├── code.css
-│   │   ├── pre.css
-│   │   ├── img.css
-│   │   ├── main.css
-│   │   ├── header.css
-│   │   ├── footer.css
-│   │   └── section.css
-│   ├── components/              (web components CSS - FUTURE)
-│   │   ├── card.css
-│   │   ├── toolbar.css
-│   │   ├── badge.css
-│   │   └── tabs.css
+├── core/                        (all CSS - logic + variables paired together)
+│   ├── base/
+│   │   ├── reset.core.css           (logic only - no theme pair)
+│   │   ├── scrollbars.core.css      (logic only - no theme pair)
+│   │   ├── animations.core.css      (logic only - no theme pair)
+│   │   ├── colors.theme.css         (variables only)
+│   │   ├── spacing.theme.css        (variables only)
+│   │   ├── sizing.theme.css         (variables only)
+│   │   ├── transitions.theme.css    (variables only)
+│   │   ├── shadows.theme.css        (variables only)
+│   │   ├── borders.theme.css        (variables only)
+│   │   └── typography.theme.css     (variables only)
+│   ├── text/
+│   │   └── typography.core.css      (logic only - no theme pair)
+│   ├── elements/                    (22 elements × 2 files each)
+│   │   ├── button.core.css          (logic)
+│   │   ├── button.theme.css         (variables)
+│   │   ├── input.core.css
+│   │   ├── input.theme.css
+│   │   └── ... (44 files total - 22 paired)
+│   ├── components/                  (6 components × 2 files each)
+│   │   ├── card.core.css
+│   │   ├── card.theme.css
+│   │   ├── toolbar.core.css
+│   │   ├── toolbar.theme.css
+│   │   └── ... (12 files total - 6 paired)
 │   ├── helpers/
-│   │   └── scroll-lock.css
-│   └── all.css
+│   │   └── scroll-lock.core.css     (logic only - no theme pair)
+│   ├── core.css                     (imports all *.core.css)
+│   └── theme.css                    (imports all *.theme.css)
 │
-├── theme/                       (design tokens, ALL variables)
-│   ├── base/                    (global design tokens)
-│   │   ├── colors.css           (--color-1/2/3, backgrounds, borders)
-│   │   ├── spacing.css          (--space-1/2/3/4)
-│   │   ├── sizing.css           (--height-1/2/3 for form elements)
-│   │   ├── transitions.css      (--transition-fast/medium/slow)
-│   │   ├── shadows.css          (--shadow-1/2/3)
-│   │   ├── borders.css          (--border-radius-small/medium/large)
-│   │   └── typography.css       (font sizes, weights, line heights)
-│   ├── elements/                (variables for 28 native elements)
-│   │   ├── button.css           (--button-* variables)
-│   │   ├── input.css
-│   │   └── ... (28 files)
-│   ├── components/              (variables for web components - FUTURE)
-│   │   ├── card.css
-│   │   ├── toolbar.css
-│   │   └── badge.css
-│   └── all.css
-│
-└── components/                  (web component registration - FUTURE)
-    ├── nuke-card.js            (~10 lines, registers <nuke-card>)
+└── components/                      (web component registration)
+    ├── nuke-card.js
     ├── nuke-toolbar.js
     ├── nuke-badge.js
     ├── nuke-tabs.js
-    └── all.js                   (imports all components)
+    ├── nuke-toast.js
+    ├── nuke-sidebar.js
+    └── core.js
 ```
 
 **Total Files:**
-- 76 CSS files (34 core + 36 theme + 6 component styles)
-- 7 JavaScript files (6 web components + 1 all.js)
+- 68 CSS files (34 .core.css + 34 .theme.css) - paired in same folders
+- 7 JavaScript files (6 web components + 1 core.js)
+
+**Why This Is Brilliant:**
+- ✅ See paired files together (button.core.css + button.theme.css)
+- ✅ No folder jumping during development
+- ✅ Easy to verify completeness (every .core.css should have matching .theme.css)
+- ✅ Postinstall extracts *.theme.css → user's nuke-theme/ folder
+- ✅ Clear separation still maintained through naming
 
 ### Folder Naming Clarity
 
@@ -193,9 +170,31 @@ nuke-ds/                         (repository)
 
 ### Distribution Model
 
-**npm packages:**
-- `@nuke-ds/core` - CSS for native elements
-- `@nuke-ds/components` - Web components (optional)
+**npm package:** `@nuke.dev/design-system`
+
+**Postinstall script:**
+- Extracts all `*.theme.css` files
+- Copies to user's chosen location (default: `./nuke-theme/`)
+- Removes `.theme` suffix (e.g., `button.theme.css` → `button.css`)
+- Preserves folder structure (base/, elements/, components/)
+
+**User imports:**
+```css
+/* Import extracted theme (customizable) */
+@import './nuke-theme/all.css';
+
+/* Import core logic from node_modules */
+@import '@nuke.dev/design-system/core/core.css';
+```
+
+**Or use directly from node_modules:**
+```css
+/* Import theme from node_modules */
+@import '@nuke.dev/design-system/core/theme.css';
+
+/* Import core logic */
+@import '@nuke.dev/design-system/core/core.css';
+```
 
 **When installed:**
 ```
@@ -205,7 +204,7 @@ node_modules/
     │   ├── elements/button.css
     │   └── all.css
     └── components/              (web components - optional)
-        └── all.js
+        └── core.js
 
 project-root/
 └── nuke-theme/                  (copied via postinstall - customize this!)
@@ -241,7 +240,7 @@ npm install @nuke-ds/core
 
 **3. Optional: Import web components (if needed):**
 ```html
-<script type="module" src="node_modules/@nuke-ds/components/all.js"></script>
+<script type="module" src="node_modules/@nuke-ds/components/core.js"></script>
 
 <!-- Now you can use -->
 <nuke-card style="zen">
@@ -266,10 +265,10 @@ npm update @nuke-ds/core
 
 ### ✅ FULLY IMPLEMENTED (v1.0 READY!)
 
-**28 Native Elements + 6 Web Components (76 CSS Files + 7 JS Files):**
+**22 Native Elements + 6 Web Components (68 CSS Files + 7 JS Files):**
 **✅ All refactored with zen/soft/solid semantic naming!**
 
-**Form Controls (12):**
+**Form Controls (10):**
 - ✅ button - Solid/outlined/ghost
 - ✅ input - Border/filled/underline
 - ✅ select - Custom dropdown
@@ -277,11 +276,9 @@ npm update @nuke-ds/core
 - ✅ checkbox - Square/rounded/circle
 - ✅ radio - Standard/filled/small dot
 - ✅ label - Bold/uppercase/colored
-- ✅ fieldset - Base/bordered/filled
 - ✅ progress - Solid/striped/rounded
 - ✅ meter - Semantic coloring
 - ✅ range - Slider with variants
-- ✅ form - Layout wrapper (standard/card/compact)
 
 **Navigation (2):**
 - ✅ a - Links with hover states
@@ -306,11 +303,6 @@ npm update @nuke-ds/core
 **Media (1):**
 - ✅ img - Images (rounded/circle/bordered)
 
-**Structural/Semantic (4):**
-- ✅ main - Main content wrapper (full-width/centered/narrow)
-- ✅ header - Page header for nav/logo (standard/toolbar/sticky)
-- ✅ footer - Page footer (standard/minimal/sticky)
-- ✅ section - Content grouping (standard/card/bordered)
 
 **Foundation:**
 - ✅ base/reset.css - CSS reset
@@ -394,21 +386,27 @@ Organized into focused files for easy navigation:
 
 **base/colors.css:**
 ```css
---color-1: hsl(210, 100%, 50%);     /* Primary blue */
---color-2: hsl(280, 70%, 55%);      /* Secondary purple */
---color-3: hsl(160, 70%, 45%);      /* Accent green */
+/* Primary color - ONLY for links and optional accents */
+--color-1: hsl(25, 85%, 55%);       /* Crispy orange (light theme) */
+--color-2: hsl(280, 40%, 65%);      /* Muted purple */
+--color-3: hsl(160, 45%, 55%);      /* Calmer green */
 --on-color: hsl(0, 0%, 100%);       /* Text on colors */
 
---background-1: hsl(0, 0%, 98%);    /* Page background */
---background-2: hsl(0, 0%, 100%);   /* Card background */
---background-3: hsl(0, 0%, 95%);    /* Input/code background */
+/* Backgrounds - Neutral hierarchy */
+--background-1: hsl(0, 0%, 99%);    /* Almost white page */
+--background-2: hsl(0, 0%, 100%);   /* Pure white cards/elements */
+--background-3: hsl(0, 0%, 97%);    /* Subtle fills */
 
---on-background: hsl(0, 0%, 15%);
---on-background-light: hsl(0, 0%, 45%);
+/* Text - Softer contrast */
+--on-background: hsl(0, 0%, 20%);         /* Softer black */
+--on-background-light: hsl(0, 0%, 50%);   /* Medium gray */
 
---border-1: hsl(0, 0%, 88%);
---border-2: hsl(0, 0%, 75%);
+/* Borders - Subtle but visible */
+--border-1: hsl(0, 0%, 88%);        /* Light border */
+--border-2: hsl(0, 0%, 75%);        /* Medium border */
 ```
+
+**CRITICAL:** Primary colors (--color-1/2/3) are NOT used as backgrounds on UI elements. All buttons, checkboxes, radios, range sliders, progress bars, and badges use NEUTRAL colors (backgrounds, borders, on-background). Primary colors are available for links and optional custom accents only.
 
 **base/spacing.css:**
 ```css
@@ -615,10 +613,10 @@ button[style*="1"] {
 **Current State:** v1.0 READY (zen/soft/solid refactor COMPLETE!)
 
 **What's Working:**
-- ✅ 28 fully implemented native elements
+- ✅ 22 fully implemented native elements
 - ✅ 6 fully implemented web components
-- ✅ 76 CSS files (34 core + 36 theme + 6 component styles)
-- ✅ 7 JavaScript files (6 web components + 1 all.js)
+- ✅ 68 CSS files (33 core + 35 theme)
+- ✅ 7 JavaScript files (6 web components + 1 core.js)
 - ✅ Complete core/theme separation
 - ✅ **zen/soft/solid semantic naming across ALL elements**
 - ✅ **Backward compatible with style="1/2/3"**

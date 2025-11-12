@@ -1,0 +1,36 @@
+/* ============================================
+   CHECKBOX VARIABLES
+   Customize checkbox appearance
+   ============================================ */
+
+:root {
+  /* Base checkbox properties */
+  --checkbox-size: 20px;
+  --checkbox-radius: var(--border-radius-small);
+  --checkbox-transition: var(--transition-fast);
+
+  /* Base colors */
+  --checkbox-checkmark: var(--on-background);
+
+  /* Focus state */
+  --checkbox-focus-ring: var(--border-2);
+
+  /* zen: Minimal / Japanese - 1px border, no background fill */
+  --checkbox-zen-bg: transparent;
+  --checkbox-zen-border: var(--border-2);
+  --checkbox-zen-checked-bg: transparent;
+  --checkbox-zen-checked-border: var(--on-background);
+  --checkbox-zen-checkmark: var(--on-background);
+
+  /* soft: Subtle Contrasts - Soft background, no border */
+  --checkbox-soft-bg: var(--background-3);
+  --checkbox-soft-checked-bg: var(--on-background);
+  --checkbox-soft-checkmark: var(--background-1);
+
+  /* solid: All In - Border + background when checked */
+  --checkbox-solid-bg: var(--background-2);
+  --checkbox-solid-border: var(--border-1);
+  --checkbox-solid-checked-bg: var(--on-background);
+  --checkbox-solid-checked-border: var(--on-background);
+  --checkbox-solid-checkmark: var(--background-1);
+}

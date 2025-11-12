@@ -3,770 +3,731 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nuke Design System - Complete Showcase</title>
-
-  <!-- Import Nuke -->
+  <title>Nuke Design System</title>
   <link rel="stylesheet" href="style.css">
-
   <style>
-    /* Professional layout */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      background: var(--background-1);
       margin: 0;
       padding: 0;
     }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: var(--space-4) var(--space-2);
-      background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
-      color: var(--on-color);
-      margin-bottom: var(--space-4);
-      position: relative;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--color-3), var(--color-1), var(--color-2));
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin: 0 0 var(--space-2) 0;
-      font-weight: 700;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin: 0;
-      opacity: 0.95;
-    }
-
-    /* Theme toggle button */
-    #theme-toggle {
-      position: fixed;
-      top: var(--space-2);
-      right: var(--space-2);
-      z-index: 1001;
-      cursor: pointer;
-    }
-
-    /* Demo container - wraps all section wrappers */
-    .demo-container {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Section wrapper - ensures alignment across columns */
-    .section-wrapper {
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--background-2);
+      border-bottom: 1px solid var(--border-1);
+      padding: 0 var(--space-3);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border-1); /* Creates visual separators */
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: var(--space-3);
+      height: var(--height-3);
     }
 
-    .section {
-      background: var(--background-1);
-      padding: var(--space-3);
-      min-width: 0; /* Prevent grid blowout */
-      min-height: 100%; /* Ensures all sections same height */
-    }
-
-    /* Header section styling */
-    .header-section .section {
-      padding: var(--space-4) var(--space-3);
-    }
-
-    .header-section h1 {
-      font-size: 3rem;
-      margin: 0 0 var(--space-1) 0;
-      font-weight: 700;
-    }
-
-    .philosophy-description {
-      color: var(--on-background-light);
-      margin: 0;
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    /* Section headers */
-    .section h2 {
-      font-size: 1.5rem;
-      margin: 0 0 var(--space-2) 0;
-      font-weight: 600;
-    }
-
-    /* Element spacing within categories */
-    .element-group {
-      display: grid;
-      gap: var(--space-2);
-      margin-bottom: var(--space-2);
-    }
-
-    .element-group > * {
-      margin: 0;
-    }
-
-    /* Element item with label */
-    .element-item {
+    .logo-wrap {
       display: flex;
-      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .logo {
+      display: flex;
+      align-items: flex-end;
       gap: var(--space-1);
     }
 
-    .element-label {
-      font-size: 0.75rem;
-      font-family: 'Courier New', monospace;
-      color: var(--on-background-light);
-      font-weight: 500;
+    .logo-nuke {
+      font-size: var(--font-size-5);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      font-style: italic;
+      line-height: 1;
+      margin: 0;
     }
 
-    /* HR dividers */
-    hr {
-      margin: var(--space-3) 0;
+    .logo-subtitle {
+      font-size: calc(var(--font-size-5) * 0.5);
+      font-weight: 400;
+      text-transform: lowercase;
+      line-height: 1;
+      margin: 0;
+      padding-bottom: 0.15em;
     }
 
-    /* Table styling */
-    table {
-      width: 100%;
+    .theme-toggle {
+      font-size: var(--font-size-1);
+      font-weight: 900;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      color: var(--on-background);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
     }
 
-    /* Code blocks */
-    .section pre {
-      overflow-x: auto;
+    /* Collection section */
+    .collection {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-1);
+      margin-bottom: 1px;
     }
 
-    /* Spacing utilities */
-    .mt-2 { margin-top: var(--space-2); }
-    .mb-2 { margin-bottom: var(--space-2); }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .section-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .header-section h1 {
-        font-size: 2.5rem;
-      }
+    .collection-header {
+      grid-column: 1 / -1;
+      background: var(--background-2);
+      padding: var(--space-3) var(--space-3);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: var(--font-size-3);
+      letter-spacing: -0.05em;
+      font-style: italic;
+      border-bottom: 2px solid var(--border-1);
+      height: var(--height-2);
+      display: flex;
+      align-items: center;
     }
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-
-      .header-section h1 {
-        font-size: 2rem;
-      }
-
-      .section h2 {
-        font-size: 1.25rem;
-      }
+    .column {
+      background: var(--background-1);
     }
 
-    /* Dark theme adjustments */
-    .dark-theme .hero {
-      background: linear-gradient(135deg, hsl(210, 70%, 45%) 0%, hsl(280, 50%, 50%) 100%);
+    .column-header {
+      position: sticky;
+      top: var(--height-3);
+      background: var(--background-1);
+      padding: var(--space-2);
+      border-bottom: 2px solid var(--border-1);
+      font-weight: 700;
+      font-size: var(--font-size-3);
+      text-align: center;
+      z-index: 10;
+    }
+
+    .element {
+      padding: var(--space-3);
+      border-bottom: 1px solid var(--border-1);
+      background: var(--background-2);
+    }
+
+    .element:last-child {
+      border-bottom: none;
+    }
+
+    .element-name {
+      display: inline-block;
+      font-family: var(--code-font-family);
+      font-size: var(--font-size-1);
+      color: var(--on-background);
+      margin-bottom: var(--space-2);
+      background: var(--background-3);
+      padding: 0.25em 0.5em;
+      border-radius: var(--border-radius);
     }
   </style>
 </head>
 <body>
-
-  <!-- Theme Toggle Button -->
-  <button id="theme-toggle" style="zen">🌙 Dark</button>
-
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Nuke Design System</h1>
-    <p>Three design philosophies in one framework</p>
+  <div class="header">
+    <div class="logo-wrap">
+      <div class="logo">
+        <div class="logo-nuke">NUKE</div>
+        <div class="logo-subtitle">design system</div>
+      </div>
+    </div>
+    <button class="theme-toggle" onclick="document.documentElement.classList.toggle('dark-theme')">
+      Light / Dark
+    </button>
   </div>
 
-  <!-- Demo Container with Section Wrappers -->
-  <div class="demo-container">
+  <!-- FORM CONTROLS -->
+  <div class="collection">
+    <div class="collection-header">Form Controls</div>
 
-    <!-- ==================== HEADER SECTION ==================== -->
-    <div class="section-wrapper header-section">
-      <div class="section">
-        <h1>zen</h1>
-        <p class="philosophy-description">Minimal / Japanese - Lean, understated, maximum whitespace</p>
+    <div class="column">
+      <div class="column-header">zen</div>
+
+      <div class="element">
+        <div class="element-name">&lt;button&gt;</div>
+        <button style="zen">Button</button>
       </div>
-      <div class="section">
-        <h1>soft</h1>
-        <p class="philosophy-description">Subtle Contrasts - Modern, background-driven, no hard edges</p>
+
+      <div class="element">
+        <div class="element-name">&lt;input&gt;</div>
+        <input type="text" style="zen" placeholder="Text input">
       </div>
-      <div class="section">
-        <h1>solid</h1>
-        <p class="philosophy-description">All In - Traditional, clear boundaries, maximum definition</p>
+
+      <div class="element">
+        <div class="element-name">&lt;select&gt;</div>
+        <select style="zen">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;textarea&gt;</div>
+        <textarea style="zen" rows="2" placeholder="Textarea"></textarea>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;checkbox&gt;</div>
+        <label><input type="checkbox" style="zen" checked> Checkbox</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;radio&gt;</div>
+        <label><input type="radio" name="zen-r" style="zen" checked> Radio</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;label&gt;</div>
+        <label style="zen">Label</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;range&gt;</div>
+        <input type="range" style="zen" value="50">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;progress&gt;</div>
+        <progress style="zen" value="60" max="100"></progress>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;meter&gt;</div>
+        <meter style="zen" value="70" min="0" max="100"></meter>
       </div>
     </div>
 
-    <!-- ==================== FORMS SECTION ==================== -->
-    <div class="section-wrapper">
-      <div class="section">
-        <h2>Forms</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt;</span>
-            <button style="zen">Button</button>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input&gt;</span>
-            <input type="text" style="zen" placeholder="Text input">
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;select&gt;</span>
-            <select style="zen">
-              <option>Select option</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;textarea&gt;</span>
-            <textarea style="zen" placeholder="Textarea..." rows="3"></textarea>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="checkbox"&gt;</span>
-            <label><input type="checkbox" style="zen" checked> Checkbox</label>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="radio"&gt;</span>
-            <label><input type="radio" name="zen-radio" style="zen" checked> Radio</label>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;progress&gt;</span>
-            <progress value="70" max="100" style="zen"></progress>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="range"&gt;</span>
-            <input type="range" style="zen" value="50">
-          </div>
-        </div>
+    <div class="column">
+      <div class="column-header">soft</div>
+
+      <div class="element">
+        <div class="element-name">&lt;button&gt;</div>
+        <button style="soft">Button</button>
       </div>
-      <div class="section">
-        <h2>Forms</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt;</span>
-            <button style="soft">Button</button>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input&gt;</span>
-            <input type="text" style="soft" placeholder="Text input">
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;select&gt;</span>
-            <select style="soft">
-              <option>Select option</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;textarea&gt;</span>
-            <textarea style="soft" placeholder="Textarea..." rows="3"></textarea>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="checkbox"&gt;</span>
-            <label><input type="checkbox" style="soft" checked> Checkbox</label>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="radio"&gt;</span>
-            <label><input type="radio" name="soft-radio" style="soft" checked> Radio</label>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;progress&gt;</span>
-            <progress value="60" max="100" style="soft"></progress>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="range"&gt;</span>
-            <input type="range" style="soft" value="50">
-          </div>
-        </div>
+
+      <div class="element">
+        <div class="element-name">&lt;input&gt;</div>
+        <input type="text" style="soft" placeholder="Text input">
       </div>
-      <div class="section">
-        <h2>Forms</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt;</span>
-            <button style="solid">Button</button>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input&gt;</span>
-            <input type="text" style="solid" placeholder="Text input">
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;select&gt;</span>
-            <select style="solid">
-              <option>Select option</option>
-              <option>Option 2</option>
-              <option>Option 3</option>
-            </select>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;textarea&gt;</span>
-            <textarea style="solid" placeholder="Textarea..." rows="3"></textarea>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="checkbox"&gt;</span>
-            <label><input type="checkbox" style="solid" checked> Checkbox</label>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="radio"&gt;</span>
-            <label><input type="radio" name="solid-radio" style="solid" checked> Radio</label>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;progress&gt;</span>
-            <progress value="80" max="100" style="solid"></progress>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;input type="range"&gt;</span>
-            <input type="range" style="solid" value="50">
-          </div>
-        </div>
+
+      <div class="element">
+        <div class="element-name">&lt;select&gt;</div>
+        <select style="soft">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;textarea&gt;</div>
+        <textarea style="soft" rows="2" placeholder="Textarea"></textarea>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;checkbox&gt;</div>
+        <label><input type="checkbox" style="soft" checked> Checkbox</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;radio&gt;</div>
+        <label><input type="radio" name="soft-r" style="soft" checked> Radio</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;label&gt;</div>
+        <label style="soft">Label</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;range&gt;</div>
+        <input type="range" style="soft" value="50">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;progress&gt;</div>
+        <progress style="soft" value="60" max="100"></progress>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;meter&gt;</div>
+        <meter style="soft" value="70" min="0" max="100"></meter>
       </div>
     </div>
 
-    <!-- ==================== INTERACTIVE SECTION ==================== -->
-    <div class="section-wrapper">
-      <div class="section">
-        <h2>Interactive</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;a&gt;</span>
-            <a href="#" style="zen">Link example</a>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;details&gt;</span>
-            <details style="zen">
-              <summary>Details summary</summary>
-              <p>Hidden content revealed on click</p>
-            </details>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt; Sidebar</span>
-            <button style="zen" onclick="document.querySelector('#demo-sidebar-zen').toggle()">Open Sidebar</button>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt; Toast</span>
-            <button style="zen" onclick="window.showToast('Zen toast notification', 'zen')">Show Toast</button>
-          </div>
-        </div>
+    <div class="column">
+      <div class="column-header">solid</div>
+
+      <div class="element">
+        <div class="element-name">&lt;button&gt;</div>
+        <button style="solid">Button</button>
       </div>
-      <div class="section">
-        <h2>Interactive</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;a&gt;</span>
-            <a href="#" style="soft">Link example</a>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;details&gt;</span>
-            <details style="soft">
-              <summary>Details summary</summary>
-              <p>Hidden content revealed on click</p>
-            </details>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt; Sidebar</span>
-            <button style="soft" onclick="document.querySelector('#demo-sidebar-soft').toggle()">Open Sidebar</button>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt; Toast</span>
-            <button style="soft" onclick="window.showToast('Soft toast notification', 'soft')">Show Toast</button>
-          </div>
-        </div>
+
+      <div class="element">
+        <div class="element-name">&lt;input&gt;</div>
+        <input type="text" style="solid" placeholder="Text input">
       </div>
-      <div class="section">
-        <h2>Interactive</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;a&gt;</span>
-            <a href="#" style="solid">Link example</a>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;details&gt;</span>
-            <details style="solid">
-              <summary>Details summary</summary>
-              <p>Hidden content revealed on click</p>
-            </details>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt; Sidebar</span>
-            <button style="solid" onclick="document.querySelector('#demo-sidebar-solid').toggle()">Open Sidebar</button>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;button&gt; Toast</span>
-            <button style="solid" onclick="window.showToast('Solid toast notification', 'solid')">Show Toast</button>
-          </div>
-        </div>
+
+      <div class="element">
+        <div class="element-name">&lt;select&gt;</div>
+        <select style="solid">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;textarea&gt;</div>
+        <textarea style="solid" rows="2" placeholder="Textarea"></textarea>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;checkbox&gt;</div>
+        <label><input type="checkbox" style="solid" checked> Checkbox</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;radio&gt;</div>
+        <label><input type="radio" name="solid-r" style="solid" checked> Radio</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;label&gt;</div>
+        <label style="solid">Label</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;range&gt;</div>
+        <input type="range" style="solid" value="50">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;progress&gt;</div>
+        <progress style="solid" value="60" max="100"></progress>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;meter&gt;</div>
+        <meter style="solid" value="70" min="0" max="100"></meter>
       </div>
     </div>
-
-    <!-- ==================== CONTENT SECTION ==================== -->
-    <div class="section-wrapper">
-      <div class="section">
-        <h2>Content</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;table&gt;</span>
-            <table style="zen">
-              <thead>
-                <tr>
-                  <th>Column 1</th>
-                  <th>Column 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Data 1</td>
-                  <td>Data 2</td>
-                </tr>
-                <tr>
-                  <td>Data 3</td>
-                  <td>Data 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;ul&gt;</span>
-            <ul style="zen">
-              <li>List item 1</li>
-              <li>List item 2</li>
-              <li>List item 3</li>
-            </ul>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;code&gt;</span>
-            <code style="zen">code.example()</code>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;pre&gt;</span>
-            <pre style="zen"><code>function example() {
-  return "zen";
-}</code></pre>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <h2>Content</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;table&gt;</span>
-            <table style="soft">
-              <thead>
-                <tr>
-                  <th>Column 1</th>
-                  <th>Column 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Data 1</td>
-                  <td>Data 2</td>
-                </tr>
-                <tr>
-                  <td>Data 3</td>
-                  <td>Data 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;ul&gt;</span>
-            <ul style="soft">
-              <li>List item 1</li>
-              <li>List item 2</li>
-              <li>List item 3</li>
-            </ul>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;code&gt;</span>
-            <code style="soft">code.example()</code>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;pre&gt;</span>
-            <pre style="soft"><code>function example() {
-  return "soft";
-}</code></pre>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <h2>Content</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;table&gt;</span>
-            <table style="solid">
-              <thead>
-                <tr>
-                  <th>Column 1</th>
-                  <th>Column 2</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Data 1</td>
-                  <td>Data 2</td>
-                </tr>
-                <tr>
-                  <td>Data 3</td>
-                  <td>Data 4</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;ul&gt;</span>
-            <ul style="solid">
-              <li>List item 1</li>
-              <li>List item 2</li>
-              <li>List item 3</li>
-            </ul>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;code&gt;</span>
-            <code style="solid">code.example()</code>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;pre&gt;</span>
-            <pre style="solid"><code>function example() {
-  return "solid";
-}</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== COMPONENTS SECTION ==================== -->
-    <div class="section-wrapper">
-      <div class="section">
-        <h2>Components</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-card&gt;</span>
-            <nuke-card style="zen">
-              <nuke-card-header>Card Header</nuke-card-header>
-              <nuke-card-content>Card content with minimal styling</nuke-card-content>
-            </nuke-card>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-toolbar&gt;</span>
-            <nuke-toolbar style="zen">
-              <button style="zen">Tool 1</button>
-              <button style="zen">Tool 2</button>
-            </nuke-toolbar>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-badge&gt;</span>
-            <div>
-              <nuke-badge style="zen">Badge</nuke-badge>
-              <nuke-badge style="zen">Label</nuke-badge>
-            </div>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-tabs&gt;</span>
-            <nuke-tabs style="zen">
-              <nuke-tab>Tab 1</nuke-tab>
-              <nuke-tab>Tab 2</nuke-tab>
-              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
-            </nuke-tabs>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <h2>Components</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-card&gt;</span>
-            <nuke-card style="soft">
-              <nuke-card-header>Card Header</nuke-card-header>
-              <nuke-card-content>Card content with gentle shadows</nuke-card-content>
-            </nuke-card>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-toolbar&gt;</span>
-            <nuke-toolbar style="soft">
-              <button style="soft">Tool 1</button>
-              <button style="soft">Tool 2</button>
-            </nuke-toolbar>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-badge&gt;</span>
-            <div>
-              <nuke-badge style="soft">Badge</nuke-badge>
-              <nuke-badge style="soft">Label</nuke-badge>
-            </div>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-tabs&gt;</span>
-            <nuke-tabs style="soft">
-              <nuke-tab>Tab 1</nuke-tab>
-              <nuke-tab>Tab 2</nuke-tab>
-              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
-            </nuke-tabs>
-          </div>
-        </div>
-      </div>
-      <div class="section">
-        <h2>Components</h2>
-        <div class="element-group">
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-card&gt;</span>
-            <nuke-card style="solid">
-              <nuke-card-header>Card Header</nuke-card-header>
-              <nuke-card-content>Card content with bold borders</nuke-card-content>
-            </nuke-card>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-toolbar&gt;</span>
-            <nuke-toolbar style="solid">
-              <button style="solid">Tool 1</button>
-              <button style="solid">Tool 2</button>
-            </nuke-toolbar>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-badge&gt;</span>
-            <div>
-              <nuke-badge style="solid">Badge</nuke-badge>
-              <nuke-badge style="solid">Label</nuke-badge>
-            </div>
-          </div>
-          <div class="element-item">
-            <span class="element-label">&lt;nuke-tabs&gt;</span>
-            <nuke-tabs style="solid">
-              <nuke-tab>Tab 1</nuke-tab>
-              <nuke-tab>Tab 2</nuke-tab>
-              <nuke-tab-panel>Panel 1 content</nuke-tab-panel>
-              <nuke-tab-panel>Panel 2 content</nuke-tab-panel>
-            </nuke-tabs>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- Demo Sidebars -->
-  <nuke-sidebar id="demo-sidebar-zen" class="zen" position="left">
-    <h3>zen Sidebar</h3>
-    <p>Minimal border, no shadow. Background-1 (subtle gray) to avoid see-through.</p>
-    <nav>
-      <ul>
-        <li><a href="#philosophies">Design Philosophies</a></li>
-        <li><a href="#tokens">Design Tokens</a></li>
-        <li><a href="#elements">Native Elements</a></li>
-      </ul>
-    </nav>
-    <button style="zen" class="mt-2" onclick="document.querySelector('#demo-sidebar-zen').close()">Close</button>
-  </nuke-sidebar>
+  <!-- NAVIGATION -->
+  <div class="collection">
+    <div class="collection-header">Navigation</div>
 
-  <nuke-sidebar id="demo-sidebar-soft" class="soft" position="right">
-    <h3>soft Sidebar</h3>
-    <p>No border, shadow only. Clean white background.</p>
-    <div class="mt-2">
-      <nuke-badge style="soft">Card</nuke-badge>
-      <nuke-badge style="soft">Toolbar</nuke-badge>
-      <nuke-badge style="soft">Badge</nuke-badge>
-      <nuke-badge style="soft">Tabs</nuke-badge>
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;a&gt;</div>
+        <a href="#" style="zen">Link</a>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nav&gt;</div>
+        <nav style="zen"><a href="#" style="zen">Home</a> <a href="#" style="zen">About</a></nav>
+      </div>
     </div>
-    <button style="soft" class="mt-2" onclick="document.querySelector('#demo-sidebar-soft').close()">Close</button>
-  </nuke-sidebar>
 
-  <nuke-sidebar id="demo-sidebar-solid" class="solid" position="left">
-    <h3>solid Sidebar</h3>
-    <p>Thick border + large shadow. Maximum definition.</p>
-    <nav>
-      <ul>
-        <li><a href="#components">Web Components</a></li>
-        <li><a href="#elements">Native Elements</a></li>
-        <li><a href="#philosophies">Philosophies</a></li>
-      </ul>
-    </nav>
-    <button style="solid" class="mt-2" onclick="document.querySelector('#demo-sidebar-solid').close()">Close</button>
-  </nuke-sidebar>
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;a&gt;</div>
+        <a href="#" style="soft">Link</a>
+      </div>
 
-  <!-- Import web components FIRST -->
-  <script type="module" src="components/all.js"></script>
+      <div class="element">
+        <div class="element-name">&lt;nav&gt;</div>
+        <nav style="soft"><a href="#" style="soft">Home</a> <a href="#" style="soft">About</a></nav>
+      </div>
+    </div>
 
-  <!-- Toast helper function -->
-  <script type="module">
-    // Import the toast component directly
-    import './components/nuke-toast.js';
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;a&gt;</div>
+        <a href="#" style="solid">Link</a>
+      </div>
 
-    // Wait for custom element to be defined, then expose globally
-    customElements.whenDefined('nuke-toast').then(() => {
-      window.showToast = function(message, style) {
-        const toast = document.createElement('nuke-toast');
+      <div class="element">
+        <div class="element-name">&lt;nav&gt;</div>
+        <nav style="solid"><a href="#" style="solid">Home</a> <a href="#" style="solid">About</a></nav>
+      </div>
+    </div>
+  </div>
 
-        // Create message span
-        const messageSpan = document.createElement('span');
-        messageSpan.textContent = message;
-        messageSpan.className = 'toast-message';
-        toast.appendChild(messageSpan);
+  <!-- INTERACTIVE -->
+  <div class="collection">
+    <div class="collection-header">Interactive</div>
 
-        // Add style class
-        if (style) {
-          toast.classList.add(style);
-        }
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;dialog&gt;</div>
+        <button onclick="document.getElementById('d1').showModal()" style="zen">Open</button>
+        <dialog id="d1" style="zen"><p>Dialog</p><button style="zen" onclick="this.parentElement.close()">Close</button></dialog>
+      </div>
 
-        // Set duration
-        toast.setAttribute('duration', '3000');
+      <div class="element">
+        <div class="element-name">&lt;details&gt;</div>
+        <details style="zen">
+          <summary>Details</summary>
+          <p>Content</p>
+        </details>
+      </div>
+    </div>
 
-        // Get or create container
-        let container = document.querySelector('.nuke-toast-container');
-        if (!container) {
-          container = document.createElement('div');
-          container.className = 'nuke-toast-container';
-          document.body.appendChild(container);
-        }
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;dialog&gt;</div>
+        <button onclick="document.getElementById('d2').showModal()" style="soft">Open</button>
+        <dialog id="d2" style="soft"><p>Dialog</p><button style="soft" onclick="this.parentElement.close()">Close</button></dialog>
+      </div>
 
-        container.appendChild(toast);
-      };
-    });
-  </script>
+      <div class="element">
+        <div class="element-name">&lt;details&gt;</div>
+        <details style="soft">
+          <summary>Details</summary>
+          <p>Content</p>
+        </details>
+      </div>
+    </div>
 
-  <!-- Theme toggle functionality -->
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;dialog&gt;</div>
+        <button onclick="document.getElementById('d3').showModal()" style="solid">Open</button>
+        <dialog id="d3" style="solid"><p>Dialog</p><button style="solid" onclick="this.parentElement.close()">Close</button></dialog>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;details&gt;</div>
+        <details style="solid">
+          <summary>Details</summary>
+          <p>Content</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="collection">
+    <div class="collection-header">Content</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;table&gt;</div>
+        <table style="zen">
+          <thead><tr><th>Name</th><th>Val</th></tr></thead>
+          <tbody><tr><td>Item</td><td>100</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;table&gt;</div>
+        <table style="soft">
+          <thead><tr><th>Name</th><th>Val</th></tr></thead>
+          <tbody><tr><td>Item</td><td>100</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;table&gt;</div>
+        <table style="solid">
+          <thead><tr><th>Name</th><th>Val</th></tr></thead>
+          <tbody><tr><td>Item</td><td>100</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LISTS -->
+  <div class="collection">
+    <div class="collection-header">Lists</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;ul&gt;</div>
+        <ul style="zen"><li>Item 1</li><li>Item 2</li></ul>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;ol&gt;</div>
+        <ol style="zen"><li>Item 1</li><li>Item 2</li></ol>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;ul&gt;</div>
+        <ul style="soft"><li>Item 1</li><li>Item 2</li></ul>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;ol&gt;</div>
+        <ol style="soft"><li>Item 1</li><li>Item 2</li></ol>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;ul&gt;</div>
+        <ul style="solid"><li>Item 1</li><li>Item 2</li></ul>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;ol&gt;</div>
+        <ol style="solid"><li>Item 1</li><li>Item 2</li></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEXT / CODE -->
+  <div class="collection">
+    <div class="collection-header">Text / Code</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;hr&gt;</div>
+        <hr style="zen">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;code&gt;</div>
+        <code style="zen">const x = 42;</code>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;pre&gt;</div>
+        <pre style="zen">code block</pre>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;hr&gt;</div>
+        <hr style="soft">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;code&gt;</div>
+        <code style="soft">const x = 42;</code>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;pre&gt;</div>
+        <pre style="soft">code block</pre>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;hr&gt;</div>
+        <hr style="solid">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;code&gt;</div>
+        <code style="solid">const x = 42;</code>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;pre&gt;</div>
+        <pre style="solid">code block</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDIA -->
+  <div class="collection">
+    <div class="collection-header">Media</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;img&gt;</div>
+        <img src="https://via.placeholder.com/80x60" style="zen" alt="Image">
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;img&gt;</div>
+        <img src="https://via.placeholder.com/80x60" style="soft" alt="Image">
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;img&gt;</div>
+        <img src="https://via.placeholder.com/80x60" style="solid" alt="Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+  <div class="collection">
+    <div class="collection-header">Components</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;nuke-badge&gt;</div>
+        <nuke-badge style="zen">Badge</nuke-badge>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-card&gt;</div>
+        <nuke-card style="zen">
+          <nuke-card-header>Card</nuke-card-header>
+          <nuke-card-content>Content</nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toolbar&gt;</div>
+        <nuke-toolbar style="zen">
+          <button style="zen">New</button>
+          <button style="zen">Edit</button>
+        </nuke-toolbar>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-tabs&gt;</div>
+        <nuke-tabs style="zen">
+          <nuke-tab>Tab 1</nuke-tab>
+          <nuke-tab>Tab 2</nuke-tab>
+          <nuke-tab-panel>Content 1</nuke-tab-panel>
+          <nuke-tab-panel>Content 2</nuke-tab-panel>
+        </nuke-tabs>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toast&gt;</div>
+        <button style="zen" onclick="showToast('zen')">Show Toast</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-sidebar&gt;</div>
+        <button style="zen" onclick="showSidebar('zen')">Show Sidebar</button>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;nuke-badge&gt;</div>
+        <nuke-badge style="soft">Badge</nuke-badge>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-card&gt;</div>
+        <nuke-card style="soft">
+          <nuke-card-header>Card</nuke-card-header>
+          <nuke-card-content>Content</nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toolbar&gt;</div>
+        <nuke-toolbar style="soft">
+          <button style="soft">New</button>
+          <button style="soft">Edit</button>
+        </nuke-toolbar>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-tabs&gt;</div>
+        <nuke-tabs style="soft">
+          <nuke-tab>Tab 1</nuke-tab>
+          <nuke-tab>Tab 2</nuke-tab>
+          <nuke-tab-panel>Content 1</nuke-tab-panel>
+          <nuke-tab-panel>Content 2</nuke-tab-panel>
+        </nuke-tabs>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toast&gt;</div>
+        <button style="soft" onclick="showToast('soft')">Show Toast</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-sidebar&gt;</div>
+        <button style="soft" onclick="showSidebar('soft')">Show Sidebar</button>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;nuke-badge&gt;</div>
+        <nuke-badge style="solid">Badge</nuke-badge>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-card&gt;</div>
+        <nuke-card style="solid">
+          <nuke-card-header>Card</nuke-card-header>
+          <nuke-card-content>Content</nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toolbar&gt;</div>
+        <nuke-toolbar style="solid">
+          <button style="solid">New</button>
+          <button style="solid">Edit</button>
+        </nuke-toolbar>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-tabs&gt;</div>
+        <nuke-tabs style="solid">
+          <nuke-tab>Tab 1</nuke-tab>
+          <nuke-tab>Tab 2</nuke-tab>
+          <nuke-tab-panel>Content 1</nuke-tab-panel>
+          <nuke-tab-panel>Content 2</nuke-tab-panel>
+        </nuke-tabs>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toast&gt;</div>
+        <button style="solid" onclick="showToast('solid')">Show Toast</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-sidebar&gt;</div>
+        <button style="solid" onclick="showSidebar('solid')">Show Sidebar</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="core/core.js"></script>
   <script>
-    const themeToggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      html.classList.add('dark-theme');
-      themeToggle.textContent = '☀️ Light';
+    function showToast(variant) {
+      const toast = document.createElement('nuke-toast');
+      toast.setAttribute('style', variant);
+      toast.textContent = `Toast (${variant})`;
+      document.body.appendChild(toast);
     }
 
-    themeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark-theme');
+    function showSidebar(variant) {
+      const sidebar = document.createElement('nuke-sidebar');
+      sidebar.setAttribute('style', variant);
+      sidebar.innerHTML = `<h3>Sidebar</h3><p>Content</p><button style="${variant}" onclick="this.closest('nuke-sidebar').close()">Close</button>`;
+      document.body.appendChild(sidebar);
 
-      if (html.classList.contains('dark-theme')) {
-        themeToggle.textContent = '☀️ Light';
-        localStorage.setItem('theme', 'dark');
-      } else {
-        themeToggle.textContent = '🌙 Dark';
-        localStorage.setItem('theme', 'light');
-      }
-    });
+      // Wait for connectedCallback to run
+      setTimeout(() => {
+        sidebar.open();
+      }, 0);
+    }
   </script>
 </body>
 </html>
-
-    /* Dark theme hero adjustment */
-    .dark-theme .hero {
-      background: linear-gradient(135deg, hsl(210, 70%, 45%) 0%, hsl(280, 50%, 50%) 100%);
-    }

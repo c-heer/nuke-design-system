@@ -1,0 +1,44 @@
+/* ============================================
+   RADIO VARIABLES
+   Customize radio button appearance
+   ============================================ */
+
+:root {
+  /* Base radio properties */
+  --radio-size: 20px;
+  --radio-transition: var(--transition-fast);
+
+  /* Base colors */
+  --radio-bg: var(--background-2);
+  --radio-border: var(--border-1);
+  --radio-checked-bg: var(--background-2);
+  --radio-checked-border: var(--on-background);
+  --radio-dot: var(--on-background);
+
+  /* Focus state */
+  --radio-focus-ring: var(--border-2);
+
+  /* zen: Minimal / Japanese - Border only, minimal dot */
+  --radio-zen-bg: transparent;
+  --radio-zen-border: var(--border-2);
+  --radio-zen-checked-bg: transparent;
+  --radio-zen-checked-border: var(--on-background);
+  --radio-zen-dot: var(--on-background);
+  --radio-zen-dot-size: 6px;
+
+  /* soft: Subtle Contrasts - Filled background, no border, medium dot */
+  --radio-soft-bg: var(--background-3);
+  --radio-soft-border: transparent;
+  --radio-soft-checked-bg: var(--background-3);
+  --radio-soft-checked-border: transparent;
+  --radio-soft-dot: var(--on-background);
+  --radio-soft-dot-size: 10px;
+
+  /* solid: All In - Border + background, large dot */
+  --radio-solid-bg: var(--background-2);
+  --radio-solid-border: var(--border-1);
+  --radio-solid-checked-bg: var(--background-2);
+  --radio-solid-checked-border: var(--on-background);
+  --radio-solid-dot: var(--on-background);
+  --radio-solid-dot-size: 10px;
+}

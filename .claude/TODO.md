@@ -10,61 +10,46 @@
 - Documentation updated
 
 ### Clean Architecture ✅ DONE
-**Final folder structure (crystal clear naming):**
+**Final folder structure (paired file system):**
 
 ```
 core/
-├── base/                    ← Browser resets & animations
-│   ├── reset.css
-│   ├── scrollbars.css
-│   └── animations.css
-├── text/                    ← Basic text (no variants)
-│   └── typography.css       (h1-h6, p, blockquote, lists, strong, em, small)
+├── base/
+│   ├── reset.core.css           (logic only)
+│   ├── scrollbars.core.css      (logic only)
+│   ├── animations.core.css      (logic only)
+│   ├── colors.theme.css         (variables)
+│   ├── spacing.theme.css        (variables)
+│   ├── sizing.theme.css         (variables)
+│   ├── transitions.theme.css    (variables)
+│   ├── shadows.theme.css        (variables)
+│   ├── borders.theme.css        (variables)
+│   └── typography.theme.css     (variables)
+├── text/
+│   └── typography.core.css      (logic only)
+├── elements/                    (22 elements × 2 files = 44 files)
+│   ├── button.core.css
+│   ├── button.theme.css
+│   ├── input.core.css
+│   ├── input.theme.css
+│   └── ... (all 22 elements paired)
+├── components/                  (6 components × 2 files = 12 files)
+│   ├── card.core.css
+│   ├── card.theme.css
+│   └── ... (all 6 components paired)
 ├── helpers/
-│   └── scroll-lock.css
-└── elements/                ← FLAT - All 28 native elements with .style-1/2/3
-    ├── button.css
-    ├── input.css
-    ├── select.css
-    ├── textarea.css
-    ├── checkbox.css
-    ├── radio.css
-    ├── label.css
-    ├── fieldset.css
-    ├── progress.css
-    ├── meter.css
-    ├── range.css
-    ├── form.css
-    ├── a.css
-    ├── dialog.css
-    ├── details.css
-    ├── nav.css
-    ├── table.css
-    ├── ul.css
-    ├── ol.css
-    ├── hr.css
-    ├── code.css
-    ├── pre.css
-    ├── img.css
-    ├── main.css
-    ├── header.css
-    ├── footer.css
-    └── section.css
-
-theme/
-├── base/                    ← Global design tokens
-│   ├── colors.css
-│   ├── spacing.css
-│   ├── sizing.css
-│   ├── transitions.css
-│   ├── shadows.css
-│   ├── borders.css
-│   └── typography.css
-└── elements/                ← FLAT - Mirrors core/elements/
-    └── (28 element variable files)
+│   └── scroll-lock.core.css     (logic only)
+├── core.css                     (imports all *.core.css)
+└── theme.css                    (imports all *.theme.css)
 ```
 
-**Total: 70 CSS files (34 core + 36 theme)**
+**Total: 68 CSS files (34 .core.css + 34 .theme.css)**
+
+**Why This Rocks:**
+- ✅ No folder jumping - paired files side-by-side
+- ✅ Easy completeness check - every element has .core + .theme
+- ✅ Clear naming - .core.css = logic, .theme.css = variables
+- ✅ Postinstall extracts *.theme.css → nuke-theme/ folder
 
 **Folder naming rationale:**
 - `base/` = Global primitives (not vague "foundation")
@@ -72,7 +57,7 @@ theme/
 - `elements/` = Native HTML (not vague "ui")
 - `components/` = Web components (future)
 
-### 28 Production-Ready Native Elements ✅ DONE
+### 22 Production-Ready Native Elements ✅ DONE
 
 **Deleted niche/unused elements:**
 - ❌ abbr, kbd, mark, menu (too niche)
@@ -80,10 +65,12 @@ theme/
 - ❌ figure (nobody uses it)
 - ❌ video, audio (edge cases)
 - ❌ article, aside (semantic abuse - not for cards/sidebars)
+- ❌ fieldset, form (too project-specific)
+- ❌ main, header, footer, section (too project-specific - use nuke-templates instead)
 
-**Current native elements (28 total):**
+**Current native elements (22 total):**
 
-**Form Controls (12):**
+**Form Controls (10):**
 - ✅ button - Solid/outlined/ghost
 - ✅ input - Border/filled/underline
 - ✅ select - Custom dropdown
@@ -91,11 +78,9 @@ theme/
 - ✅ checkbox - Square/rounded/circle
 - ✅ radio - Standard/filled/small dot
 - ✅ label - Bold/uppercase/colored
-- ✅ fieldset - Base/bordered/filled
 - ✅ progress - Solid/striped/rounded
 - ✅ meter - Semantic coloring
 - ✅ range - Slider with variants
-- ✅ form - Layout wrapper (standard/card/compact)
 
 **Navigation (2):**
 - ✅ a - Links with hover states
@@ -120,14 +105,8 @@ theme/
 **Media (1):**
 - ✅ img - Images (rounded/circle/bordered)
 
-**Structural/Semantic (4):**
-- ✅ main - Main content wrapper (full-width/centered/narrow)
-- ✅ header - Page header for nav/logo (standard/toolbar/sticky)
-- ✅ footer - Page footer (standard/minimal/sticky)
-- ✅ section - Content grouping (standard/card/bordered)
-
 ### Demos ✅ DONE
-- ✅ index.html - Comprehensive demo of all 28 native elements
+- ✅ index.html - Comprehensive demo of all 22 native elements
 - ✅ demo-2025.html - Web component proof of concept (nuke-card, nuke-toolbar, nuke-badge)
 - ✅ All emoji icons removed (professional appearance)
 - ✅ Semantic HTML correctness enforced
@@ -273,7 +252,7 @@ nuke-ds/
 ├── core/
 │   ├── base/
 │   ├── text/
-│   ├── elements/          (28 native elements) ✅
+│   ├── elements/          (22 native elements) ✅
 │   ├── components/        ✅ COMPLETE (6 web component styles)
 │   │   ├── card.css
 │   │   ├── toolbar.css
@@ -303,12 +282,12 @@ nuke-ds/
     ├── nuke-tabs.js
     ├── nuke-toast.js
     ├── nuke-sidebar.js
-    └── all.js             (imports all components)
+    └── core.js             (imports all components)
 ```
 
 **Total Files:**
-- 76 CSS files (34 core + 36 theme + 6 components)
-- 7 JavaScript files (6 components + 1 all.js)
+- 68 CSS files (33 core + 35 theme)
+- 7 JavaScript files (6 components + 1 core.js)
 
 **Import pattern for users:**
 ```html
@@ -317,7 +296,7 @@ nuke-ds/
 <link rel="stylesheet" href="@nuke-ds/core/all.css">
 
 <!-- Web components (optional) -->
-<script type="module" src="@nuke-ds/components/all.js"></script>
+<script type="module" src="@nuke-ds/components/core.js"></script>
 ```
 
 ---
@@ -360,7 +339,7 @@ nuke-ds/
 ✅ **Class syntax:** `.zen`, `.soft`, `.solid` also works
 ✅ **Backward compatible:** `style="1/2/3"` still works (maps to zen/soft/solid)
 ✅ **Variable naming:** `--button-zen-*`, `--button-soft-*`, `--button-solid-*`
-✅ **All 28 native elements refactored**
+✅ **All 22 native elements refactored**
 ✅ **All 6 web components refactored**
 ✅ **Theme variables updated**
 ✅ **Core CSS updated with attribute selectors**
@@ -436,7 +415,7 @@ nuke-ds/
 - [ ] Create `package.json`
   - Name: @nuke-ds/components
   - Version: 1.0.0
-  - Entry point: all.js
+  - Entry point: core.js
   - Files: nuke-card.js, nuke-toolbar.js, etc.
   - Peer dependency: @nuke-ds/core
 - [ ] Test locally with `npm link`
@@ -548,7 +527,7 @@ nuke-ds/
 
 **What works RIGHT NOW (v1.0 READY!):**
 - ✅ Open `index.html` in any modern browser
-- ✅ All 28 native elements render perfectly
+- ✅ All 22 native elements render perfectly
 - ✅ All 6 web components fully functional
 - ✅ **Universal zen/soft/solid pattern across everything**
 - ✅ **Backward compatible with style="1/2/3"**
@@ -561,8 +540,8 @@ nuke-ds/
 - ✅ Real-world architecture proven
 
 **What's ready for users:**
-- ✅ Clean, production-ready CSS (76 files)
-- ✅ Comprehensive native element coverage (28 elements)
+- ✅ Clean, production-ready CSS (68 files)
+- ✅ Comprehensive native element coverage (22 elements)
 - ✅ 6 production-ready web components
 - ✅ Clear separation of concerns (core/theme)
 - ✅ Easy customization through theme variables
@@ -591,7 +570,7 @@ nuke-ds/
 ### Architecture ✅
 - base/ = Global resets, animations, design tokens
 - text/ = Basic typography (no variants)
-- elements/ = FLAT structure, all 28 native elements with .style-1/2/3
+- elements/ = FLAT structure, all 22 native elements with zen/soft/solid
 - components/ = Web components for complex patterns
 - Theme mirrors core structure
 - Import order: theme FIRST, then core
@@ -691,7 +670,7 @@ nuke-ds/
 7. 🚧 **BLOCKER FOUND:** Need to refactor before v1.0 release
 
 **Session 5 - zen/soft/solid Refactor (COMPLETE!):**
-1. ✅ Refactored all 28 native elements to zen/soft/solid
+1. ✅ Refactored all 22 native elements to zen/soft/solid
 2. ✅ Refactored all 6 web components to zen/soft/solid
 3. ✅ Updated theme variables (--button-zen-*, --button-soft-*, --button-solid-*)
 4. ✅ Updated core CSS with attribute selectors ([style*="zen"])
@@ -701,8 +680,26 @@ nuke-ds/
 8. ✅ Updated PROJECT.md and TODO.md documentation
 9. 🎉 **v1.0 UNBLOCKED!**
 
+**Session 6 - File Architecture & Visual Refinements:**
+1. ✅ Merged theme/ into core/ with paired .core.css / .theme.css naming
+2. ✅ Organized into Angular-style component folders (button/, input/, card/, etc.)
+3. ✅ Created _base/ folder for foundation files (always at top)
+4. ✅ Moved JS files into component folders with .core.js naming
+5. ✅ Deleted empty theme/ folder completely
+6. ✅ Fixed all import paths in core.css, theme.css, core.js, index.html
+7. ✅ Created sticky NUKE-style header with light/dark toggle
+8. ✅ Changed primary color from blue to crispy orange (hsl(25, 85%, 55%))
+9. ✅ Fixed toast positioning (below sticky header)
+10. ✅ Fixed sidebar positioning and zen/soft/solid support
+11. ✅ **CRITICAL FIX:** Removed --color-1 from ALL UI elements (buttons, checkboxes, radios, range, progress, badges)
+12. ✅ All form controls now use neutral colors (backgrounds, borders, on-background)
+13. ✅ Primary color (orange) only used for links and as optional accent
+14. ✅ Improved background depth hierarchy (background-1/2/3)
+15. ✅ Wrapped element names in badges for better visibility
+16. ✅ Collection headers use NUKE typography (bold, italic, negative spacing)
+
 **Current Status:** v1.0 READY (zen/soft/solid refactor COMPLETE!)
-- All 28 native elements ✅ (refactored with zen/soft/solid)
+- All 22 native elements ✅ (refactored with zen/soft/solid)
 - All 6 web components ✅ (refactored with zen/soft/solid)
 - npm package structure ✅
 - Semantic naming ✅

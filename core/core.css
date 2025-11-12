@@ -1,0 +1,54 @@
+/* ============================================
+   NUKE DESIGN SYSTEM - Core
+   Pure logic, NO variables defined
+   Variables come from theme.css
+   ============================================
+
+   Import this file AFTER importing theme:
+
+   @import '@nuke-ds/core/theme.css';
+   @import '@nuke-ds/core/core.css';
+
+   Or import individual modules:
+   @import '@nuke-ds/core/base/reset.core.css';
+   @import '@nuke-ds/core/elements/button.core.css';
+
+   ============================================ */
+
+/* Base - Browser resets, animations, utilities, text */
+@import './_base/reset.core.css';
+@import './_base/scrollbars.core.css';
+@import './_base/animations.core.css';
+@import './_base/scroll-lock.core.css';
+@import './_base/typography.core.css';
+
+/* Elements - Native HTML elements with zen/soft/solid variants */
+@import './a/a.core.css';
+@import './button/button.core.css';
+@import './checkbox/checkbox.core.css';
+@import './code/code.core.css';
+@import './details/details.core.css';
+@import './dialog/dialog.core.css';
+@import './hr/hr.core.css';
+@import './img/img.core.css';
+@import './input/input.core.css';
+@import './label/label.core.css';
+@import './meter/meter.core.css';
+@import './nav/nav.core.css';
+@import './ol/ol.core.css';
+@import './pre/pre.core.css';
+@import './progress/progress.core.css';
+@import './radio/radio.core.css';
+@import './range/range.core.css';
+@import './select/select.core.css';
+@import './table/table.core.css';
+@import './textarea/textarea.core.css';
+@import './ul/ul.core.css';
+
+/* Components - Web components with zen/soft/solid variants */
+@import './badge/badge.core.css';
+@import './card/card.core.css';
+@import './sidebar/sidebar.core.css';
+@import './tabs/tabs.core.css';
+@import './toast/toast.core.css';
+@import './toolbar/toolbar.core.css';

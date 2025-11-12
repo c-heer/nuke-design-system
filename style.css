@@ -3,11 +3,11 @@
    Import Stark UI theme + core, then add your custom styles
    ============================================ */
 
-/* Import Stark UI Theme (design tokens) FIRST */
-@import 'theme/all.css';
+/* Import Nuke Design System Theme (design tokens) FIRST */
+@import 'core/theme.css';
 
-/* Then import Stark UI Core (logic) */
-@import 'core/all.css';
+/* Then import Nuke Design System Core (logic) */
+@import 'core/core.css';
 
 /* ============================================
    YOUR CUSTOM STYLES BELOW

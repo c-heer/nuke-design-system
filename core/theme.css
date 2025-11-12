@@ -1,0 +1,56 @@
+/* ============================================
+   NUKE DESIGN SYSTEM - Theme
+   Design tokens for customization
+
+   CUSTOMIZE THESE FILES to match your brand/design
+
+   Import this BEFORE core:
+   @import '@nuke-ds/core/theme.css';
+   @import '@nuke-ds/core/core.css';
+
+   Or import individual theme files:
+   @import '@nuke-ds/core/base/colors.theme.css';
+   @import '@nuke-ds/core/base/typography.theme.css';
+   @import '@nuke-ds/core/elements/button.theme.css';
+
+   ============================================ */
+
+/* Base - Global design tokens */
+@import './_base/colors.theme.css';         /* Theme colors (light & dark with .dark-theme class) */
+@import './_base/spacing.theme.css';        /* Space tokens (margin, padding, gaps) */
+@import './_base/sizing.theme.css';         /* Size tokens (heights for form elements) */
+@import './_base/transitions.theme.css';    /* Motion/animation timing */
+@import './_base/shadows.theme.css';        /* Depth/elevation */
+@import './_base/borders.theme.css';        /* Border radius values */
+@import './_base/typography.theme.css';     /* Font sizes, line heights, weights, text elements */
+
+/* Element variables - Native HTML elements */
+@import './a/a.theme.css';
+@import './button/button.theme.css';
+@import './checkbox/checkbox.theme.css';
+@import './code/code.theme.css';
+@import './details/details.theme.css';
+@import './dialog/dialog.theme.css';
+@import './hr/hr.theme.css';
+@import './img/img.theme.css';
+@import './input/input.theme.css';
+@import './label/label.theme.css';
+@import './meter/meter.theme.css';
+@import './nav/nav.theme.css';
+@import './ol/ol.theme.css';
+@import './pre/pre.theme.css';
+@import './progress/progress.theme.css';
+@import './radio/radio.theme.css';
+@import './range/range.theme.css';
+@import './select/select.theme.css';
+@import './table/table.theme.css';
+@import './textarea/textarea.theme.css';
+@import './ul/ul.theme.css';
+
+/* Component variables - Web components */
+@import './badge/badge.theme.css';
+@import './card/card.theme.css';
+@import './sidebar/sidebar.theme.css';
+@import './tabs/tabs.theme.css';
+@import './toast/toast.theme.css';
+@import './toolbar/toolbar.theme.css';

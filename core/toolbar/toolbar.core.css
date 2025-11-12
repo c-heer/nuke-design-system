@@ -1,0 +1,56 @@
+/* ============================================
+   TOOLBAR COMPONENT
+   Action button groups for layouts
+   ============================================ */
+
+/* Base toolbar styles */
+nuke-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  padding: var(--toolbar-padding);
+  background: var(--toolbar-background);
+  border-radius: var(--toolbar-radius);
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   TOOLBAR VARIANTS - style="zen|soft|solid" + backward compat (1|2|3)
+   ============================================ */
+
+/* zen: Minimal / Japanese */
+nuke-toolbar[style="zen"],
+nuke-toolbar.zen,
+nuke-toolbar[style="1"] {
+  background: var(--toolbar-zen-background);
+  border: var(--toolbar-zen-border);
+  border-bottom: var(--toolbar-zen-border-bottom);
+  padding: var(--toolbar-zen-padding);
+}
+
+/* soft: Subtle Contrasts */
+nuke-toolbar[style="soft"],
+nuke-toolbar.soft,
+nuke-toolbar[style="2"] {
+  background: var(--toolbar-soft-background);
+  border: var(--toolbar-soft-border);
+  padding: var(--toolbar-soft-padding);
+}
+
+/* solid: All In */
+nuke-toolbar[style="solid"],
+nuke-toolbar.solid,
+nuke-toolbar[style="3"] {
+  background: var(--toolbar-solid-background);
+  border: var(--toolbar-solid-border);
+  padding: var(--toolbar-solid-padding);
+}
+
+/* ============================================
+   TOOLBAR CONTENT SPACING
+   ============================================ */
+
+/* Add margin between button groups (when using multiple toolbars or separators) */
+nuke-toolbar + nuke-toolbar {
+  margin-top: var(--space-2);
+}

@@ -21,7 +21,7 @@ Ship zen, soft, or solid. Or all three. Your choice.
 
 **Most design systems give you variants.** Nuke gives you **three complete, cohesive design philosophies.**
 
-Pick one style attribute. Get a full design language across all 28 elements and 6 components.
+Pick one style attribute. Get a full design language across all 22 elements and 6 components.
 
 ### zen - Minimal / Japanese Aesthetic
 
@@ -102,7 +102,7 @@ Not arbitrary variants. **Cohesive design systems.**
 
 - **3 complete design systems** - zen, soft, solid (not just variants)
 - **Element-first** - Native HTML works without classes
-- **28 styled elements** - Buttons, forms, tables, navigation, and more
+- **22 styled elements** - Buttons, forms, tables, navigation, and more
 - **6 web components** - Card, toolbar, badge, tabs, toast, sidebar
 - **Fully customizable** - CSS variables for everything
 - **No build tools** - Just CSS files (+ optional JS for web components)
@@ -126,24 +126,24 @@ The postinstall script will ask where you want your theme folder (recommended: `
 ### 1. Import CSS (in this order)
 
 ```css
-/* Import your theme FIRST (customizable variables) */
-@import './nuke-theme/all.css';
+/* Import theme FIRST (customizable variables) */
+@import '@nuke.dev/design-system/core/theme.css';
 
 /* Then import system logic */
-@import '@nuke.dev/design-system/core/all.css';
+@import '@nuke.dev/design-system/core/core.css';
 ```
 
 ### 2. Optional: Import Web Components
 
 ```html
 <!-- In your HTML -->
-<script type="module" src="node_modules/@nuke.dev/design-system/components/all.js"></script>
+<script type="module" src="node_modules/@nuke.dev/design-system/components/core.js"></script>
 ```
 
 Or in your JavaScript:
 
 ```javascript
-import '@nuke.dev/design-system/components/all.js';
+import '@nuke.dev/design-system/components/core.js';
 ```
 
 ### 3. Use It!
@@ -242,7 +242,7 @@ import '@nuke.dev/design-system/components/all.js';
 
 ## Available Elements
 
-### Form Controls (12)
+### Form Controls (10)
 - `button` - zen/soft/solid buttons
 - `input` - Text, email, password, etc. (zen: underline, soft: filled, solid: bordered)
 - `select` - Custom dropdown
@@ -250,11 +250,9 @@ import '@nuke.dev/design-system/components/all.js';
 - `checkbox` - zen/soft/solid checkboxes
 - `radio` - zen/soft/solid radio buttons
 - `label` - Bold/uppercase/colored
-- `fieldset` - Base/bordered/filled
 - `progress` - Solid/striped/rounded
 - `meter` - Semantic coloring
 - `range` - Slider with variants
-- `form` - Layout wrapper
 
 ### Navigation (2)
 - `a` - Links with hover states
@@ -278,12 +276,6 @@ import '@nuke.dev/design-system/components/all.js';
 
 ### Media (1)
 - `img` - Images with borders
-
-### Structural (4)
-- `main` - Main content wrapper
-- `header` - Page header
-- `footer` - Page footer
-- `section` - Content grouping
 
 ---
 
@@ -509,7 +501,7 @@ npx @nuke.dev/design-system setup
 
 ### React
 ```jsx
-import '@nuke.dev/design-system/components/all.js';
+import '@nuke.dev/design-system/components/core.js';
 
 function App() {
   return (
@@ -535,7 +527,7 @@ function App() {
 </template>
 
 <script setup>
-import '@nuke.dev/design-system/components/all.js';
+import '@nuke.dev/design-system/components/core.js';
 </script>
 ```
 
@@ -551,7 +543,7 @@ export const appConfig = {
 
 ```typescript
 // main.ts
-import '@nuke.dev/design-system/components/all.js';
+import '@nuke.dev/design-system/components/core.js';
 ```
 
 ```html

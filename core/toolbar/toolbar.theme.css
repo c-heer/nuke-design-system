@@ -1,0 +1,28 @@
+/* ============================================
+   TOOLBAR COMPONENT VARIABLES
+   Design tokens for <nuke-toolbar>
+   ============================================ */
+
+:root {
+  /* Base toolbar properties */
+  --toolbar-gap: var(--space-1);                /* Gap between buttons */
+  --toolbar-padding: var(--space-1);            /* Inner padding */
+  --toolbar-radius: var(--border-radius);       /* Corner radius */
+  --toolbar-background: transparent;            /* Default background */
+
+  /* zen: Minimal / Japanese - No background, bottom border for contrast */
+  --toolbar-zen-background: transparent;
+  --toolbar-zen-border: none;
+  --toolbar-zen-border-bottom: 1px solid var(--border-1);
+  --toolbar-zen-padding: var(--space-1) 0;
+
+  /* soft: Subtle Contrasts - Light background, no borders */
+  --toolbar-soft-background: var(--background-3);
+  --toolbar-soft-border: none;
+  --toolbar-soft-padding: var(--space-1);
+
+  /* solid: All In - Border + background + button separators */
+  --toolbar-solid-background: var(--background-2);
+  --toolbar-solid-border: 1px solid var(--border-1);
+  --toolbar-solid-padding: var(--space-1);
+}
