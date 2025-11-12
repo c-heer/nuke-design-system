@@ -8,6 +8,8 @@
   position: fixed;
   top: var(--toast-container-position-top);
   right: var(--toast-container-position-right);
+  left: auto;
+  bottom: auto;
   display: flex;
   flex-direction: column;
   gap: var(--toast-container-gap);

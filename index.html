@@ -10,9 +10,16 @@
       box-sizing: border-box;
     }
 
-    body {
+    html {
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+      overflow: auto;
     }
 
     .header {
@@ -78,18 +85,18 @@
       gap: 1px;
       background: var(--border-1);
       margin-bottom: 1px;
+      align-items: start;
     }
 
     .collection-header {
       grid-column: 1 / -1;
-      background: var(--background-2);
+      background: var(--background-1);
       padding: var(--space-3) var(--space-3);
       font-weight: 900;
       text-transform: uppercase;
       font-size: var(--font-size-3);
       letter-spacing: -0.05em;
       font-style: italic;
-      border-bottom: 2px solid var(--border-1);
       height: var(--height-2);
       display: flex;
       align-items: center;
@@ -105,10 +112,13 @@
       background: var(--background-1);
       padding: var(--space-2);
       border-bottom: 2px solid var(--border-1);
-      font-weight: 700;
+      font-weight: 900;
       font-size: var(--font-size-3);
       text-align: center;
-      z-index: 10;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      font-style: italic;
+      z-index: 50;
     }
 
     .element {
@@ -200,11 +210,6 @@
         <div class="element-name">&lt;progress&gt;</div>
         <progress style="zen" value="60" max="100"></progress>
       </div>
-
-      <div class="element">
-        <div class="element-name">&lt;meter&gt;</div>
-        <meter style="zen" value="70" min="0" max="100"></meter>
-      </div>
     </div>
 
     <div class="column">
@@ -257,11 +262,6 @@
         <div class="element-name">&lt;progress&gt;</div>
         <progress style="soft" value="60" max="100"></progress>
       </div>
-
-      <div class="element">
-        <div class="element-name">&lt;meter&gt;</div>
-        <meter style="soft" value="70" min="0" max="100"></meter>
-      </div>
     </div>
 
     <div class="column">
@@ -313,11 +313,6 @@
       <div class="element">
         <div class="element-name">&lt;progress&gt;</div>
         <progress style="solid" value="60" max="100"></progress>
-      </div>
-
-      <div class="element">
-        <div class="element-name">&lt;meter&gt;</div>
-        <meter style="solid" value="70" min="0" max="100"></meter>
       </div>
     </div>
   </div>
@@ -555,21 +550,21 @@
     <div class="column">
       <div class="element">
         <div class="element-name">&lt;img&gt;</div>
-        <img src="https://via.placeholder.com/80x60" style="zen" alt="Image">
+        <img src="https://placekitten.com/200/150" style="zen" alt="Kitten">
       </div>
     </div>
 
     <div class="column">
       <div class="element">
         <div class="element-name">&lt;img&gt;</div>
-        <img src="https://via.placeholder.com/80x60" style="soft" alt="Image">
+        <img src="https://placekitten.com/200/150" style="soft" alt="Kitten">
       </div>
     </div>
 
     <div class="column">
       <div class="element">
         <div class="element-name">&lt;img&gt;</div>
-        <img src="https://via.placeholder.com/80x60" style="solid" alt="Image">
+        <img src="https://placekitten.com/200/150" style="solid" alt="Kitten">
       </div>
     </div>
   </div>

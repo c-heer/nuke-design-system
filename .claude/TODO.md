@@ -27,12 +27,12 @@ core/
 │   └── typography.theme.css     (variables)
 ├── text/
 │   └── typography.core.css      (logic only)
-├── elements/                    (22 elements × 2 files = 44 files)
+├── elements/                    (21 elements × 2 files = 42 files)
 │   ├── button.core.css
 │   ├── button.theme.css
 │   ├── input.core.css
 │   ├── input.theme.css
-│   └── ... (all 22 elements paired)
+│   └── ... (all 21 elements paired)
 ├── components/                  (6 components × 2 files = 12 files)
 │   ├── card.core.css
 │   ├── card.theme.css
@@ -43,7 +43,7 @@ core/
 └── theme.css                    (imports all *.theme.css)
 ```
 
-**Total: 68 CSS files (34 .core.css + 34 .theme.css)**
+**Total: 66 CSS files (33 .core.css + 33 .theme.css)**
 
 **Why This Rocks:**
 - ✅ No folder jumping - paired files side-by-side
@@ -57,7 +57,7 @@ core/
 - `elements/` = Native HTML (not vague "ui")
 - `components/` = Web components (future)
 
-### 22 Production-Ready Native Elements ✅ DONE
+### 21 Production-Ready Native Elements ✅ DONE
 
 **Deleted niche/unused elements:**
 - ❌ abbr, kbd, mark, menu (too niche)
@@ -67,10 +67,11 @@ core/
 - ❌ article, aside (semantic abuse - not for cards/sidebars)
 - ❌ fieldset, form (too project-specific)
 - ❌ main, header, footer, section (too project-specific - use nuke-templates instead)
+- ❌ meter (removed - too niche, rarely used)
 
-**Current native elements (22 total):**
+**Current native elements (21 total):**
 
-**Form Controls (10):**
+**Form Controls (9):**
 - ✅ button - Solid/outlined/ghost
 - ✅ input - Border/filled/underline
 - ✅ select - Custom dropdown
@@ -79,7 +80,6 @@ core/
 - ✅ radio - Standard/filled/small dot
 - ✅ label - Bold/uppercase/colored
 - ✅ progress - Solid/striped/rounded
-- ✅ meter - Semantic coloring
 - ✅ range - Slider with variants
 
 **Navigation (2):**
@@ -698,8 +698,18 @@ nuke-ds/
 15. ✅ Wrapped element names in badges for better visibility
 16. ✅ Collection headers use NUKE typography (bold, italic, negative spacing)
 
+**Session 7 - Polish & Refinements:**
+1. ✅ Removed meter element completely (deleted files, updated imports)
+2. ✅ Added kitten images to media section (placekitten.com)
+3. ✅ Updated section header styling (removed border, changed to background-1)
+4. ✅ Fixed toast positioning (explicit left/bottom auto)
+5. ✅ Fixed sticky column headers (align-items: start on grid)
+6. ✅ Enhanced column header typography (NUKE style)
+7. ✅ Increased background contrast (background-1: 96%, background-3: 94%)
+8. ✅ Updated link colors (default: on-background, hover: color-1)
+
 **Current Status:** v1.0 READY (zen/soft/solid refactor COMPLETE!)
-- All 22 native elements ✅ (refactored with zen/soft/solid)
+- All 21 native elements ✅ (refactored with zen/soft/solid)
 - All 6 web components ✅ (refactored with zen/soft/solid)
 - npm package structure ✅
 - Semantic naming ✅

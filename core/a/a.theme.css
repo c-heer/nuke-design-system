@@ -5,33 +5,33 @@
 
 :root {
   /* Base link properties */
-  --link-color: var(--color-1);
+  --link-color: var(--on-background);
   --link-decoration: none;
   --link-transition: var(--transition-fast);
 
   /* Hover state */
-  --link-hover-color: hsl(210, 100%, 40%);
+  --link-hover-color: var(--color-1);
   --link-hover-decoration: underline;
 
   /* Focus state */
   --link-focus-color: var(--color-1);
 
   /* zen: Minimal / Japanese - Underline on hover only */
-  --link-zen-color: var(--color-1);
+  --link-zen-color: var(--on-background);
   --link-zen-decoration: none;
-  --link-zen-hover-color: hsl(210, 100%, 40%);
+  --link-zen-hover-color: var(--color-1);
   --link-zen-hover-decoration: underline;
 
   /* soft: Subtle Contrasts - Color change only, no underline */
-  --link-soft-color: var(--color-1);
+  --link-soft-color: var(--on-background);
   --link-soft-decoration: none;
-  --link-soft-hover-color: hsl(210, 100%, 40%);
+  --link-soft-hover-color: var(--color-1);
   --link-soft-hover-decoration: none;
 
   /* solid: All In - Underline always visible */
-  --link-solid-color: var(--color-1);
+  --link-solid-color: var(--on-background);
   --link-solid-decoration: underline;
   --link-solid-decoration-thickness: 1px;
-  --link-solid-hover-color: hsl(210, 100%, 40%);
+  --link-solid-hover-color: var(--color-1);
   --link-solid-hover-decoration: underline;
 }

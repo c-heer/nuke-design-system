@@ -12,10 +12,10 @@
   --color-3: hsl(160, 45%, 55%);      /* Calmer green */
   --on-color: hsl(0, 0%, 100%);       /* Text on colored backgrounds */
 
-  /* Backgrounds - Lighter, more air */
-  --background-1: hsl(0, 0%, 99%);    /* Almost white page */
+  /* Backgrounds - More contrast */
+  --background-1: hsl(0, 0%, 96%);    /* Light gray page */
   --background-2: hsl(0, 0%, 100%);   /* Pure white cards */
-  --background-3: hsl(0, 0%, 97%);    /* Subtle fills */
+  --background-3: hsl(0, 0%, 94%);    /* Subtle fills */
 
   /* Text colors - Softer contrast */
   --on-background: hsl(0, 0%, 20%);         /* Softer black */
