@@ -12,7 +12,7 @@
 
   /* Card header */
   --card-header-padding: var(--space-2);
-  --card-header-font-size: 1.25rem;             /* ~20px */
+  --card-header-font-size: var(--font-size-4);
   --card-header-font-weight: 600;
   --card-header-color: var(--on-background);
   --card-header-border-color: var(--border-1);

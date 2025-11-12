@@ -10,7 +10,7 @@
   --sidebar-color: var(--on-background);
   --sidebar-padding: var(--space-2);
   --sidebar-shadow: var(--shadow-2);
-  --sidebar-transition: transform 0.3s ease;
+  --sidebar-transition: transform var(--transition-medium);
   --sidebar-z-index: 900;
 
   /* Overlay */

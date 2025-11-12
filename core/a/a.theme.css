@@ -31,7 +31,7 @@
   /* solid: All In - Underline always visible */
   --link-solid-color: var(--on-background);
   --link-solid-decoration: underline;
-  --link-solid-decoration-thickness: 1px;
+  --link-solid-decoration-thickness: 0.05em;
   --link-solid-hover-color: var(--color-1);
   --link-solid-hover-decoration: underline;
 }

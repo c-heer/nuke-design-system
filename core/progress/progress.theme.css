@@ -5,24 +5,24 @@
 
 :root {
   /* Base progress properties */
-  --progress-height: 12px;
+  --progress-height: calc(var(--height-1) / 2.5);
   --progress-radius: var(--border-radius);
   --progress-bg: var(--background-3);
   --progress-fill: var(--on-background);
   --progress-transition: var(--transition-fast);
 
   /* zen: Minimal / Japanese - Thin bar, subtle colors */
-  --progress-zen-height: 4px;
+  --progress-zen-height: calc(var(--height-1) / 7.5);
   --progress-zen-bg: var(--background-3);
   --progress-zen-fill: var(--on-background);
 
   /* soft: Subtle Contrasts - Medium bar, soft background */
-  --progress-soft-height: 8px;
+  --progress-soft-height: calc(var(--height-1) / 3.75);
   --progress-soft-bg: var(--background-3);
   --progress-soft-fill: var(--on-background);
 
   /* solid: All In - Thick bar, strong presence */
-  --progress-solid-height: 12px;
+  --progress-solid-height: calc(var(--height-1) / 2.5);
   --progress-solid-bg: var(--background-3);
   --progress-solid-fill: var(--on-background);
   --progress-solid-border: var(--border-1);

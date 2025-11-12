@@ -15,12 +15,10 @@
 
    ============================================ */
 
-/* Base - Browser resets, animations, utilities, text */
+/* Base - Browser resets, animations, utilities */
 @import './_base/reset.core.css';
-@import './_base/scrollbars.core.css';
 @import './_base/animations.core.css';
-@import './_base/scroll-lock.core.css';
-@import './_base/typography.core.css';
+@import './_base/helpers.core.css';
 
 /* Elements - Native HTML elements with zen/soft/solid variants */
 @import './a/a.core.css';

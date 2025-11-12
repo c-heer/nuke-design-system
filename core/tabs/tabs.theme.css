@@ -11,11 +11,11 @@
   /* Tab button */
   --tab-padding-x: var(--space-2);
   --tab-padding-y: var(--space-1);
-  --tab-font-size: 1rem;
-  --tab-font-weight: 500;
+  --tab-font-size: var(--font-size-2);
+  --tab-font-weight: var(--font-weight-medium);
   --tab-color: var(--on-background-light);
   --tab-color-active: var(--on-background);
-  --tab-transition: all 0.2s ease;
+  --tab-transition: all var(--transition-fast);
 
   /* Tab panel */
   --tab-panel-padding: var(--space-2);
@@ -30,7 +30,7 @@
   --tabs-soft-background: transparent;
   --tab-soft-background: transparent;
   --tab-soft-background-active: var(--background-3);
-  --tab-soft-background-hover: hsla(0, 0%, 0%, 0.03);
+  --tab-soft-background-hover: var(--background-3);
   --tab-soft-color-active: var(--on-background);
   --tab-soft-radius: var(--border-radius);
   --tab-panel-soft-background: var(--background-2);

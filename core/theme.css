@@ -15,14 +15,8 @@
 
    ============================================ */
 
-/* Base - Global design tokens */
-@import './_base/colors.theme.css';         /* Theme colors (light & dark with .dark-theme class) */
-@import './_base/spacing.theme.css';        /* Space tokens (margin, padding, gaps) */
-@import './_base/sizing.theme.css';         /* Size tokens (heights for form elements) */
-@import './_base/transitions.theme.css';    /* Motion/animation timing */
-@import './_base/shadows.theme.css';        /* Depth/elevation */
-@import './_base/borders.theme.css';        /* Border radius values */
-@import './_base/typography.theme.css';     /* Font sizes, line heights, weights, text elements */
+/* Base - Theme (tokens, scrollbars, typography) */
+@import './_base/theme.css';
 
 /* Element variables - Native HTML elements */
 @import './a/a.theme.css';

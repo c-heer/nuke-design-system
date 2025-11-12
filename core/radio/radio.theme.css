@@ -5,7 +5,7 @@
 
 :root {
   /* Base radio properties */
-  --radio-size: 20px;
+  --radio-size: var(--height-1);
   --radio-transition: var(--transition-fast);
 
   /* Base colors */
@@ -24,7 +24,7 @@
   --radio-zen-checked-bg: transparent;
   --radio-zen-checked-border: var(--on-background);
   --radio-zen-dot: var(--on-background);
-  --radio-zen-dot-size: 6px;
+  --radio-zen-dot-size: calc(var(--height-1) / 5);
 
   /* soft: Subtle Contrasts - Filled background, no border, medium dot */
   --radio-soft-bg: var(--background-3);
@@ -32,7 +32,7 @@
   --radio-soft-checked-bg: var(--background-3);
   --radio-soft-checked-border: transparent;
   --radio-soft-dot: var(--on-background);
-  --radio-soft-dot-size: 10px;
+  --radio-soft-dot-size: calc(var(--height-1) / 3);
 
   /* solid: All In - Border + background, large dot */
   --radio-solid-bg: var(--background-2);
@@ -40,5 +40,5 @@
   --radio-solid-checked-bg: var(--background-2);
   --radio-solid-checked-border: var(--on-background);
   --radio-solid-dot: var(--on-background);
-  --radio-solid-dot-size: 10px;
+  --radio-solid-dot-size: calc(var(--height-1) / 3);
 }

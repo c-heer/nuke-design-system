@@ -7,7 +7,7 @@
   /* Base badge properties */
   --badge-padding-x: var(--space-1);            /* Horizontal padding */
   --badge-padding-y: calc(var(--space-1) / 2);  /* Vertical padding (smaller) */
-  --badge-font-size: 0.75rem;                   /* 12px - small text */
+  --badge-font-size: var(--font-size-2);
   --badge-font-weight: 600;                     /* Semi-bold */
   --badge-radius: var(--border-radius-small);   /* Rounded corners */
   --badge-line-height: 1;                       /* Tight line height */

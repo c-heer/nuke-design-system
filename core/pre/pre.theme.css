@@ -7,8 +7,8 @@
   --pre-border: var(--border-1);
   --pre-radius: var(--border-radius);
   --pre-font-family: var(--code-font-family);
-  --pre-font-size: 0.875rem;
-  --pre-line-height: 1.6;
+  --pre-font-size: var(--font-size-1);
+  --pre-line-height: var(--line-height-2);
 
   /* zen: Clean background, simple border */
   --pre-zen-bg: var(--background-3);

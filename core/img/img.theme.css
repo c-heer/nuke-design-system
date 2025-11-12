@@ -9,11 +9,11 @@
   --img-zen-radius: var(--border-radius-small);
 
   /* soft: Subtle shadow, no border */
-  --img-soft-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --img-soft-shadow: var(--shadow-2);
   --img-soft-radius: var(--border-radius);
 
   /* solid: Border + shadow for strong presence */
   --img-solid-border: 2px solid var(--border-1);
-  --img-solid-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --img-solid-shadow: var(--shadow-3);
   --img-solid-radius: var(--border-radius);
 }

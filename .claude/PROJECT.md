@@ -107,19 +107,11 @@ A pure CSS element-first styling system with **22 fully implemented native eleme
 ```
 nuke-ds/                         (repository)
 ├── core/                        (all CSS - logic + variables paired together)
-│   ├── base/
-│   │   ├── reset.core.css           (logic only - no theme pair)
-│   │   ├── scrollbars.core.css      (logic only - no theme pair)
-│   │   ├── animations.core.css      (logic only - no theme pair)
-│   │   ├── colors.theme.css         (variables only)
-│   │   ├── spacing.theme.css        (variables only)
-│   │   ├── sizing.theme.css         (variables only)
-│   │   ├── transitions.theme.css    (variables only)
-│   │   ├── shadows.theme.css        (variables only)
-│   │   ├── borders.theme.css        (variables only)
-│   │   └── typography.theme.css     (variables only)
-│   ├── text/
-│   │   └── typography.core.css      (logic only - no theme pair)
+│   ├── _base/
+│   │   ├── reset.core.css           (browser resets)
+│   │   ├── animations.core.css      (@keyframes definitions)
+│   │   ├── helpers.core.css         (utility classes: .no-scroll)
+│   │   └── theme.css                (all theme: tokens, scrollbars, typography variables + styles)
 │   ├── elements/                    (22 elements × 2 files each)
 │   │   ├── button.core.css          (logic)
 │   │   ├── button.theme.css         (variables)
@@ -148,8 +140,13 @@ nuke-ds/                         (repository)
 ```
 
 **Total Files:**
-- 68 CSS files (34 .core.css + 34 .theme.css) - paired in same folders
+- 58 CSS files (25 .core.css + 33 .theme.css) - paired in same folders
 - 7 JavaScript files (6 web components + 1 core.js)
+
+**Note:**
+- All base theme consolidated into single `_base/theme.css` (primitives only, zero redundancy)
+- Was 7 separate files, now 1 unified theme file
+- All 16 component theme files use ONLY core primitives (no hardcoded values)
 
 **Why This Is Brilliant:**
 - ✅ See paired files together (button.core.css + button.theme.css)

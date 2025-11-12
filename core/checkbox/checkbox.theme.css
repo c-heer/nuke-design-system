@@ -5,7 +5,7 @@
 
 :root {
   /* Base checkbox properties */
-  --checkbox-size: 20px;
+  --checkbox-size: var(--height-1);
   --checkbox-radius: var(--border-radius-small);
   --checkbox-transition: var(--transition-fast);
 

@@ -708,6 +708,24 @@ nuke-ds/
 7. ✅ Increased background contrast (background-1: 96%, background-3: 94%)
 8. ✅ Updated link colors (default: on-background, hover: color-1)
 
+**Session 8 - Base Theme Consolidation & Zero Redundancy:**
+1. ✅ Created consolidated `_base/theme.css` - ONE minimal theme file with ONLY primitives
+2. ✅ Merged 7 files into 1: tokens, scrollbars, typography
+3. ✅ Separated `:root` (core tokens: spacing, sizing, fonts, transitions) from `.light-theme/.dark-theme` (colors only)
+4. ✅ **ONLY primitive tokens:** colors, backgrounds, borders, spacing, sizing, shadows, transitions, font-size-1/2/3/4, line-heights, font-weights
+5. ✅ **Removed ALL redundant variables:** No more --h1-font-size, --p-margin-bottom, --code-padding, --pre-bg, --hr-margin (use primitives directly!)
+6. ✅ **Minimal typography:** Only h1-h4 (no h5/h6), p, ul/ol, li, strong, em, small using primitives directly
+7. ✅ **Eliminated ALL hardcoded values** across 16 component theme files:
+   - tabs, sidebar, code, pre, card, toast, img, dialog
+   - radio, checkbox, progress, hr, range, badge, label, a
+8. ✅ All components now use ONLY core primitives (no px/rem/em hardcoded values)
+9. ✅ Renamed `scroll-lock.core.css` → `helpers.core.css`
+10. ✅ Deleted old files: tokens.theme.css, typography.theme.css, typography.core.css, scrollbars.core.css
+11. ✅ Final `_base/` structure: reset.core.css, animations.core.css, helpers.core.css, theme.css (4 files total!)
+12. ✅ Reduced from 68 CSS files to 58 CSS files
+13. ✅ **Zero redundancy achieved** - smart primitives, maximum flexibility, no hardcoded values anywhere
+14. ✅ Updated core.css, theme.css (root), PROJECT.md, and TODO.md
+
 **Current Status:** v1.0 READY (zen/soft/solid refactor COMPLETE!)
 - All 21 native elements ✅ (refactored with zen/soft/solid)
 - All 6 web components ✅ (refactored with zen/soft/solid)

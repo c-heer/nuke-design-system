@@ -10,7 +10,7 @@
   --toast-padding: var(--space-2);
   --toast-radius: var(--border-radius);
   --toast-shadow: var(--shadow-2);
-  --toast-font-size: 0.875rem;
+  --toast-font-size: var(--font-size-2);
   --toast-z-index: 1000;
 
   /* Toast container positioning */
@@ -19,7 +19,7 @@
   --toast-container-gap: var(--space-1);
 
   /* Close button */
-  --toast-close-size: 24px;
+  --toast-close-size: calc(var(--height-1) * 0.8);
   --toast-close-color: currentColor;
 
   /* zen: Minimal / Japanese - Thin border, no shadow */

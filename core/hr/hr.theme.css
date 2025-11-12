@@ -8,7 +8,7 @@
   --hr-zen-opacity: 0.3;
 
   /* soft: Gradient or soft background bar */
-  --hr-soft-height: 2px;
+  --hr-soft-height: calc(var(--space-1) / 2);
   --hr-soft-bg: linear-gradient(to right, transparent, var(--border-1), transparent);
   --hr-soft-opacity: 1;
 

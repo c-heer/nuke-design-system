@@ -1,3 +1,8 @@
+/* ============================================
+   HELPERS
+   Utility classes for common use cases
+   ============================================ */
+
 /* Prevent body scroll (useful for modals, mobile menus) */
 body.no-scroll {
   overflow: hidden;

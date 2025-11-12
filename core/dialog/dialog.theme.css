@@ -19,7 +19,7 @@
   --dialog-backdrop-filter: blur(4px);
 
   /* Animation */
-  --dialog-animation-duration: 0.2s;
+  --dialog-animation-duration: var(--transition-fast);
 
   /* zen: Minimal / Japanese - Thin border, no shadow */
   --dialog-zen-max-width: 500px;
