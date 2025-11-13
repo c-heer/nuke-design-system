@@ -4,11 +4,11 @@ import { customElement, property } from 'lit/decorators.js';
 /**
  * Nuke Tabs Component
  * Tab interface with keyboard navigation
- * Usage: <nuke-tabs style="1|2|3">
+ * Usage: <nuke-tabs nuke-style="1|2|3">
  */
 @customElement('nuke-tabs')
 export class NukeTabs extends LitElement {
-  @property({ type: String, reflect: true }) variant = '1';
+  @property({ type: String, reflect: true, attribute: 'nuke-style' }) nukeStyle = '1';
 
   createRenderRoot() {
     return this;

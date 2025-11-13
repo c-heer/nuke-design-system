@@ -2,25 +2,14 @@
    NUKE DESIGN SYSTEM - Core
    Pure logic, NO variables defined
    Variables come from index.theme.css
-   ============================================
-
-   Import this file AFTER importing theme:
-
-   @import '@nuke-ds/core/index.theme.css';
-   @import '@nuke-ds/core/core.css';
-
-   Or import individual modules:
-   @import '@nuke-ds/core/base/reset.core.css';
-   @import '@nuke-ds/core/elements/button.core.css';
-
-   ============================================ */
+============================================ */
 
 /* Base - Browser resets, animations, utilities */
 @import './reset.css';
 @import './animations.css';
 @import './helpers.css';
 
-/* Elements - Native HTML elements with zen/soft/solid variants */
+/* Elements - Native HTML elements */
 @import './a/a.core.css';
 @import './button/button.core.css';
 @import './checkbox/checkbox.core.css';
@@ -42,7 +31,7 @@
 @import './textarea/textarea.core.css';
 @import './ul/ul.core.css';
 
-/* Components - Web components with zen/soft/solid variants */
+/* Components - Web components */
 @import './badge/badge.core.css';
 @import './card/card.core.css';
 @import './sidebar/sidebar.core.css';

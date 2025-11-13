@@ -4,11 +4,11 @@ import { customElement, property } from 'lit/decorators.js';
 /**
  * Nuke Sidebar Component
  * Collapsible side navigation panel
- * Usage: <nuke-sidebar style="1|2|3" position="left|right">
+ * Usage: <nuke-sidebar nuke-style="1|2|3" position="left|right">
  */
 @customElement('nuke-sidebar')
 export class NukeSidebar extends LitElement {
-  @property({ type: String, reflect: true }) variant = '1';
+  @property({ type: String, reflect: true, attribute: 'nuke-style' }) nukeStyle = '1';
   @property({ type: String, reflect: true }) position = 'left';
   @property({ type: Boolean, reflect: true }) isOpen = false;
 
@@ -25,7 +25,7 @@ export class NukeSidebar extends LitElement {
     this.setAttribute('aria-label', 'Sidebar navigation');
 
     // Create overlay for style 1 (overlay mode)
-    if (this.variant === '1') {
+    if (this.nukeStyle === '1') {
       this.createOverlay();
     }
 

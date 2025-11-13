@@ -4,12 +4,12 @@ import { customElement, property } from 'lit/decorators.js';
 /**
  * Nuke Toast Component
  * Notification messages with auto-dismiss
- * Usage: <nuke-toast style="1|2|3" duration="3000">Message</nuke-toast>
- * Or programmatically: NukeToast.show('Message', {style: '1', duration: 3000})
+ * Usage: <nuke-toast nuke-style="1|2|3" duration="3000">Message</nuke-toast>
+ * Or programmatically: NukeToast.show('Message', {nukeStyle: '1', duration: 3000})
  */
 @customElement('nuke-toast')
 export class NukeToast extends LitElement {
-  @property({ type: String, reflect: true }) variant = '1';
+  @property({ type: String, reflect: true, attribute: 'nuke-style' }) nukeStyle = '1';
   @property({ type: Number }) duration = 0;
 
   private dismissTimer: number | null = null;
@@ -59,11 +59,11 @@ export class NukeToast extends LitElement {
   }
 
   // Static helper for programmatic toast creation
-  static show(message: string, options: { variant?: string; duration?: number } = {}) {
+  static show(message: string, options: { nukeStyle?: string; duration?: number } = {}) {
     const toast = document.createElement('nuke-toast');
 
-    if (options.variant) {
-      toast.setAttribute('variant', options.variant);
+    if (options.nukeStyle) {
+      toast.setAttribute('nuke-style', options.nukeStyle);
     }
 
     if (options.duration !== undefined) {

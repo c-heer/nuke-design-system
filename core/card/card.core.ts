@@ -4,11 +4,11 @@ import { customElement, property } from 'lit/decorators.js';
 /**
  * Nuke Card Component
  * A content container with enforced structure
- * Usage: <nuke-card style="1|2|3">
+ * Usage: <nuke-card nuke-style="1|2|3">
  */
 @customElement('nuke-card')
 export class NukeCard extends LitElement {
-  @property({ type: String, reflect: true }) variant = '1';
+  @property({ type: String, reflect: true, attribute: 'nuke-style' }) nukeStyle = '1';
 
   createRenderRoot() {
     return this;

@@ -4,11 +4,11 @@ import { customElement, property } from 'lit/decorators.js';
 /**
  * Nuke Toolbar Component
  * Action button groups for layouts
- * Usage: <nuke-toolbar style="1|2|3">
+ * Usage: <nuke-toolbar nuke-style="1|2|3">
  */
 @customElement('nuke-toolbar')
 export class NukeToolbar extends LitElement {
-  @property({ type: String, reflect: true }) variant = '1';
+  @property({ type: String, reflect: true, attribute: 'nuke-style' }) nukeStyle = '1';
 
   createRenderRoot() {
     return this;
