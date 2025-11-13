@@ -1,8 +1,6 @@
 ---
-const title = "Nuke Design System - Astro Test";
-// Import as Vite module for HMR
+const title = "NUKE Design System";
 import '@nuke/style.css';
-import Header from '../components/Header.astro';
 ---
 
 <!DOCTYPE html>
@@ -12,98 +10,535 @@ import Header from '../components/Header.astro';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <style>
-    @font-face {
-      font-family: 'Railway';
-      src: url('/fonts/raleway.ttf') format('truetype-variations');
-      font-weight: 100 900; /* Declares the range of weights available */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      background: var(--background-1);
+      color: var(--on-background);
+      font-family: var(--family-1);
+    }
+
+    /* Header */
+    header {
+      background: var(--background-1);
+      border-bottom: 1px solid var(--border-1);
+      padding: var(--space-3) var(--space-4);
+    }
+
+    body[nuke-style="1"] header {
+      background: var(--background-1) !important;
+    }
+
+    .header-wrapper {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .header-brand {
+      display: grid;
+      gap: var(--space-1);
+    }
+
+    .brand-main {
+      font-family: var(--family-2);
+      font-style: italic;
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: var(--on-background);
+      line-height: 1;
+    }
+
+    .brand-sub {
+      font-family: var(--family-1);
+      font-weight: 400;
+      font-size: var(--font-size-2);
+      color: var(--on-background);
+      letter-spacing: 0.05em;
+    }
+
+    .theme-toggle {
+      font-size: var(--font-size-2);
+      color: var(--on-background-light);
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: 0.1em;
+    }
+
+    /* Main Dashboard */
+    main {
+      background: var(--background-2);
+      padding: var(--space-4);
+      display: grid;
+      gap: var(--space-4);
+      grid-template-columns: 280px 1fr;
+    }
+
+    body[nuke-style="1"] main {
+      background: var(--background-2) !important;
+    }
+
+    /* Sidebar */
+    aside {
+      display: grid;
+      gap: var(--space-3);
+      align-content: start;
+    }
+
+    /* Dashboard Content */
+    .dashboard-content {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-3);
+    }
+
+    .stats-card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: var(--space-1);
+    }
+
+    .stats-card p {
+      font-size: var(--font-size-2);
+      color: var(--on-background-light);
+      margin-bottom: var(--space-1);
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3);
+    }
+
+    .form-field {
+      display: grid;
+      gap: var(--space-1);
+    }
+
+    .form-field label {
+      font-size: var(--font-size-2);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    nuke-tab-panel.button-showcase {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-2);
+    }
+
+    nuke-tab-panel.input-showcase {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    nuke-tab-panel.control-showcase {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .activity-list {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .activity-item strong {
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+
+    .activity-item p {
+      font-size: var(--font-size-2);
+      color: var(--on-background-light);
+      margin: 0;
+    }
+
+    .progress-list {
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    .progress-item p {
+      font-size: var(--font-size-2);
+      margin: 0 0 var(--space-1) 0;
+    }
+
+    .nav-links {
+      display: grid;
+      gap: var(--space-1);
+    }
+
+    .nav-links a {
+      display: block;
+    }
+
+    .quick-actions {
+      padding: var(--space-2) 0;
+      display: grid;
+      gap: var(--space-2);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--background-4);
+      border-top: 1px solid var(--border-1);
+      padding: var(--space-4);
+    }
+
+    body[nuke-style="1"] footer {
+      background: var(--background-4) !important;
+    }
+
+    .footer-wrapper {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .footer-brand {
+      font-family: var(--family-1);
+      font-weight: 600;
+      font-size: var(--font-size-2);
+      color: var(--on-background-light);
+      letter-spacing: 0.05em;
+    }
+
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: var(--space-3);
+      font-size: var(--font-size-2);
+    }
+
+    @media (max-width: 1200px) {
+      main {
+        grid-template-columns: 240px 1fr;
+        gap: var(--space-3);
+      }
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        grid-template-columns: 1fr;
+        padding: var(--space-3);
+      }
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+      }
+      .footer-links {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header {
+        padding: var(--space-2) var(--space-3);
+      }
+      .header-wrapper {
+        grid-template-columns: 1fr;
+        gap: var(--space-2);
+      }
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      .button-showcase {
+        grid-template-columns: 1fr;
+      }
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
-<body style="padding: 2rem; background: var(--background-1); color: var(--on-background);">
-  <h1>🧪 Cascade Inheritance Test</h1>
-
-  <!-- TEST 1: Body with nuke-style="1" -->
-  <section nuke-style="1" style="padding: 2rem; margin-bottom: 2rem; background: var(--background-2); border: 3px solid red;">
-    <h2 style="color: red;">🔴 BODY LEVEL: nuke-style="1"</h2>
-    <p><strong>Expected:</strong> All buttons/inputs/badges below should be STYLE 1</p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <button>Button (should be style 1)</button>
-      <input type="text" placeholder="Input (should be style 1)" />
-      <select><option>Select (should be style 1)</option></select>
-      <nuke-badge>Badge (should be style 1)</nuke-badge>
-    </div>
-  </section>
-
-  <!-- TEST 2: Nested override to style 2 -->
-  <section nuke-style="1" style="padding: 2rem; margin-bottom: 2rem; background: var(--background-2); border: 3px solid red;">
-    <h2 style="color: red;">🔴 BODY LEVEL: nuke-style="1"</h2>
-    <button>Button OUTSIDE wrapper (should be style 1)</button>
-
-    <div nuke-style="2" style="padding: 2rem; margin: 1rem 0; background: var(--background-3); border: 3px solid blue;">
-      <h3 style="color: blue;">🔵 WRAPPER LEVEL: nuke-style="2"</h3>
-      <p><strong>Expected:</strong> All buttons/inputs inside this blue box should be STYLE 2</p>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-        <button>Button (should be style 2)</button>
-        <input type="text" placeholder="Input (should be style 2)" />
-        <select><option>Select (should be style 2)</option></select>
-        <nuke-badge>Badge (should be style 2)</nuke-badge>
+<body nuke-style="1">
+  <!-- Header -->
+  <header>
+    <div class="header-wrapper">
+      <div class="header-brand">
+        <div class="brand-main">NUKE</div>
+        <div class="brand-sub">Design System</div>
       </div>
+      <div></div>
+      <div class="theme-toggle">LIGHT • DARK</div>
     </div>
+  </header>
 
-    <button>Button OUTSIDE wrapper (should be style 1 again)</button>
-  </section>
+  <!-- Main Dashboard -->
+  <main>
+    <!-- Sidebar -->
+    <aside>
+      <nuke-card>
+        <nuke-card-header>Navigation</nuke-card-header>
+        <nuke-card-content>
+          <nav class="nav-links">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#components">Components</a>
+            <a href="#forms">Forms</a>
+            <a href="#tables">Tables</a>
+            <a href="#settings">Settings</a>
+          </nav>
+        </nuke-card-content>
+      </nuke-card>
 
-  <!-- TEST 3: Deep nesting with style 3 -->
-  <section nuke-style="1" style="padding: 2rem; margin-bottom: 2rem; background: var(--background-2); border: 3px solid red;">
-    <h2 style="color: red;">🔴 LEVEL 1: nuke-style="1"</h2>
-    <button>Level 1 Button (style 1)</button>
-
-    <div nuke-style="2" style="padding: 1.5rem; margin: 1rem 0; background: var(--background-3); border: 3px solid blue;">
-      <h3 style="color: blue;">🔵 LEVEL 2: nuke-style="2"</h3>
-      <button>Level 2 Button (style 2)</button>
-
-      <div nuke-style="3" style="padding: 1.5rem; margin: 1rem 0; background: var(--background-4); border: 3px solid green;">
-        <h4 style="color: green;">🟢 LEVEL 3: nuke-style="3"</h4>
-        <p><strong>Expected:</strong> All elements here should be STYLE 3</p>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-          <button>Level 3 Button (style 3)</button>
-          <input type="text" placeholder="Input (style 3)" />
-          <nuke-badge>Badge (style 3)</nuke-badge>
+      <details>
+        <summary>Quick Actions</summary>
+        <div class="quick-actions">
+          <button>New Project</button>
+          <button>Import Data</button>
+          <button>Export Report</button>
         </div>
+      </details>
+    </aside>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-content">
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <nuke-card>
+          <nuke-card-content class="stats-card">
+            <h3>1,284</h3>
+            <p>Total Users</p>
+            <nuke-badge>+12%</nuke-badge>
+          </nuke-card-content>
+        </nuke-card>
+
+        <nuke-card>
+          <nuke-card-content class="stats-card">
+            <h3>3,847</h3>
+            <p>Active Sessions</p>
+            <nuke-badge>+24%</nuke-badge>
+          </nuke-card-content>
+        </nuke-card>
+
+        <nuke-card>
+          <nuke-card-content class="stats-card">
+            <h3>98.2%</h3>
+            <p>Uptime</p>
+            <nuke-badge>Stable</nuke-badge>
+          </nuke-card-content>
+        </nuke-card>
+
+        <nuke-card>
+          <nuke-card-content class="stats-card">
+            <h3>42ms</h3>
+            <p>Avg Response</p>
+            <nuke-badge>Fast</nuke-badge>
+          </nuke-card-content>
+        </nuke-card>
       </div>
 
-      <button>Back to Level 2 Button (style 2)</button>
-    </div>
+      <!-- Tabs Component Showcase -->
+      <nuke-card>
+        <nuke-card-header>Component Showcase</nuke-card-header>
+        <nuke-card-content>
+          <nuke-tabs role="tablist">
+            <nuke-tab role="tab" aria-selected="true" aria-controls="panel-1">Buttons</nuke-tab>
+            <nuke-tab role="tab" aria-selected="false" aria-controls="panel-2">Inputs</nuke-tab>
+            <nuke-tab role="tab" aria-selected="false" aria-controls="panel-3">Controls</nuke-tab>
+          </nuke-tabs>
 
-    <button>Back to Level 1 Button (style 1)</button>
-  </section>
+          <nuke-tab-panel role="tabpanel" id="panel-1" class="button-showcase">
+            <button nuke-style="1">Style 1</button>
+            <button nuke-style="2">Style 2</button>
+            <button nuke-style="3">Style 3</button>
+          </nuke-tab-panel>
 
-  <!-- TEST 4: Individual element override -->
-  <section nuke-style="1" style="padding: 2rem; margin-bottom: 2rem; background: var(--background-2); border: 3px solid red;">
-    <h2 style="color: red;">🔴 BODY: nuke-style="1"</h2>
-    <p><strong>Test:</strong> Individual element override with nuke-style attribute</p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-      <button>Normal (style 1)</button>
-      <button nuke-style="2">Override to style 2</button>
-      <button nuke-style="3">Override to style 3</button>
-      <button>Normal (style 1)</button>
-    </div>
-  </section>
+          <nuke-tab-panel role="tabpanel" id="panel-2" aria-hidden="true" class="input-showcase">
+            <input type="text" placeholder="Text input" />
+            <select><option>Select option</option></select>
+            <textarea placeholder="Textarea"></textarea>
+          </nuke-tab-panel>
 
-  <!-- VISUAL REFERENCE -->
-  <section style="padding: 2rem; margin-bottom: 2rem; background: var(--background-2); border: 3px solid black;">
-    <h2>📊 Visual Reference (no nuke-style)</h2>
-    <p><strong>Compare these three styles side by side:</strong></p>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-      <button nuke-style="1">Style 1 Button</button>
-      <button nuke-style="2">Style 2 Button</button>
-      <button nuke-style="3">Style 3 Button</button>
+          <nuke-tab-panel role="tabpanel" id="panel-3" aria-hidden="true" class="control-showcase">
+            <label><input type="checkbox" /> Checkbox option</label>
+            <label><input type="radio" name="demo" /> Radio option 1</label>
+            <label><input type="radio" name="demo" /> Radio option 2</label>
+            <input type="range" />
+          </nuke-tab-panel>
+        </nuke-card-content>
+      </nuke-card>
+
+      <!-- Content Grid -->
+      <div class="content-grid">
+        <!-- Form Example -->
+        <nuke-card>
+          <nuke-card-header>User Profile</nuke-card-header>
+          <nuke-card-content>
+            <div class="form-grid">
+              <div class="form-field">
+                <label>First Name</label>
+                <input type="text" placeholder="John" />
+              </div>
+              <div class="form-field">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" />
+              </div>
+              <div class="form-field full-width">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@example.com" />
+              </div>
+              <div class="form-field full-width">
+                <label>Role</label>
+                <select>
+                  <option>Administrator</option>
+                  <option>Developer</option>
+                  <option>Designer</option>
+                </select>
+              </div>
+            </div>
+          </nuke-card-content>
+          <nuke-card-actions>
+            <button nuke-style="1">Cancel</button>
+            <button nuke-style="3">Save Changes</button>
+          </nuke-card-actions>
+        </nuke-card>
+
+        <!-- Activity Feed -->
+        <nuke-card>
+          <nuke-card-header>Recent Activity</nuke-card-header>
+          <nuke-card-content>
+            <div class="activity-list">
+              <div class="activity-item">
+                <strong>User Login</strong>
+                <p>2 minutes ago</p>
+              </div>
+              <div class="activity-item">
+                <strong>File Upload</strong>
+                <p>1 hour ago</p>
+              </div>
+              <div class="activity-item">
+                <strong>System Update</strong>
+                <p>3 hours ago</p>
+              </div>
+              <div class="activity-item">
+                <strong>Database Backup</strong>
+                <p>5 hours ago</p>
+              </div>
+            </div>
+          </nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <!-- Data Table -->
+      <nuke-card>
+        <nuke-card-header>Recent Transactions</nuke-card-header>
+        <nuke-card-content>
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#1284</td>
+                <td>Website Redesign</td>
+                <td>$4,200</td>
+                <td><nuke-badge>Complete</nuke-badge></td>
+                <td>2024-01-15</td>
+              </tr>
+              <tr>
+                <td>#1283</td>
+                <td>API Integration</td>
+                <td>$2,800</td>
+                <td><nuke-badge>In Progress</nuke-badge></td>
+                <td>2024-01-14</td>
+              </tr>
+              <tr>
+                <td>#1282</td>
+                <td>Database Migration</td>
+                <td>$3,500</td>
+                <td><nuke-badge>Complete</nuke-badge></td>
+                <td>2024-01-13</td>
+              </tr>
+            </tbody>
+          </table>
+        </nuke-card-content>
+      </nuke-card>
+
+      <!-- Progress Indicators -->
+      <nuke-card>
+        <nuke-card-header>Project Progress</nuke-card-header>
+        <nuke-card-content>
+          <div class="progress-list">
+            <div class="progress-item">
+              <p>Frontend Development</p>
+              <progress value="75" max="100"></progress>
+            </div>
+            <div class="progress-item">
+              <p>Backend API</p>
+              <progress value="60" max="100"></progress>
+            </div>
+            <div class="progress-item">
+              <p>Testing & QA</p>
+              <progress value="40" max="100"></progress>
+            </div>
+            <div class="progress-item">
+              <p>Documentation</p>
+              <progress value="85" max="100"></progress>
+            </div>
+          </div>
+        </nuke-card-content>
+      </nuke-card>
     </div>
-    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-      <input nuke-style="1" type="text" placeholder="Style 1 Input" />
-      <input nuke-style="2" type="text" placeholder="Style 2 Input" />
-      <input nuke-style="3" type="text" placeholder="Style 3 Input" />
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-wrapper">
+      <div class="footer-brand">
+        NUKE DESIGN SYSTEM • ENTERPRISE EDITION • 2024
+      </div>
+      <nav class="footer-links">
+        <a href="#docs">Documentation</a>
+        <a href="#support">Support</a>
+        <a href="#license">License</a>
+        <a href="#github">GitHub</a>
+      </nav>
     </div>
-  </section>
+  </footer>
+
+  <script>
+    // Simple tab switching
+    document.querySelectorAll('nuke-tab').forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('nuke-tab').forEach(t => t.setAttribute('aria-selected', 'false'));
+        document.querySelectorAll('nuke-tab-panel').forEach(p => p.setAttribute('aria-hidden', 'true'));
+
+        tab.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('nuke-tab-panel')[index].setAttribute('aria-hidden', 'false');
+      });
+    });
+  </script>
 </body>
 </html>
