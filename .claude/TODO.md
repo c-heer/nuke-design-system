@@ -25,12 +25,12 @@
 ### 1. Critical Rename: `style` → `theme` Everywhere
 **Why:** More semantic, matches system philosophy (three themes, not styles)
 
-**Current:** `style="1/2/3"` in HTML, CSS selectors use `[style="1"]`
+**Current:** `nuke-style="1/2/3"` in HTML, CSS selectors use `[nuke-style="1"]`
 **Target:** `theme="1/2/3"` in HTML, CSS selectors use `[theme="1"]`
 
 **Scope:**
-- [ ] Rename all CSS selectors: `[style="1"]` → `[theme="1"]` in all `.core.css` files
-- [ ] Rename all CSS selectors: `.style-1` → `.theme-1` in all `.core.css` files
+- [ ] Rename all CSS selectors: `[nuke-style="1"]` → `[theme="1"]` in all `.core.css` files
+- [ ] Rename all CSS selectors: `.nuke-style-1` → `.theme-1` in all `.core.css` files
 - [ ] Update `docs/index.html` demo: `style="1"` → `theme="1"`
 - [ ] Update comments/documentation in CSS files
 - [ ] Update PROJECT.md references

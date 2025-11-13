@@ -8,6 +8,7 @@ const title = "Nuke Design System - Astro Test";
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
+  <!-- Theme CSS (includes core.css automatically) -->
   <link rel="stylesheet" href="/nuke-theme/theme.css">
 </head>
 <body>
@@ -17,8 +18,8 @@ const title = "Nuke Design System - Astro Test";
   <h2>Button Test (Your Design System):</h2>
   <div style="display: flex; gap: 1rem; padding: 1rem;">
     <button>Default Button</button>
-    <button style="2">Style 2 Button</button>
-    <button style="3">Style 3 Button</button>
+    <button nuke-style="2">Style 2 Button</button>
+    <button nuke-style="3">Style 3 Button</button>
   </div>
 
   <h2>Next steps:</h2>

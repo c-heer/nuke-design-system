@@ -1,25 +1,25 @@
-ul:is(.style-1, [style="1"]) {
+ul:is(.nuke-style-1, [nuke-style="1"]) {
   list-style-type: var(--ul-1-list-style);
   padding-left: var(--ul-1-padding-left);
 }
-ul:is(.style-1, [style="1"]) li {
+ul:is(.nuke-style-1, [nuke-style="1"]) li {
   margin-bottom: var(--ul-1-item-margin);
 }
-ul:is(.style-2, [style="2"]) {
+ul:is(.nuke-style-2, [nuke-style="2"]) {
   list-style: var(--ul-2-list-style);
   padding-left: var(--ul-2-padding-left);
 }
-ul:is(.style-2, [style="2"]) li {
+ul:is(.nuke-style-2, [nuke-style="2"]) li {
   background: var(--ul-2-item-bg);
   padding: var(--ul-2-item-padding);
   margin-bottom: var(--ul-2-item-margin);
   border-radius: var(--ul-2-item-radius);
 }
-ul:is(.style-3, [style="3"]) {
+ul:is(.nuke-style-3, [nuke-style="3"]) {
   list-style: var(--ul-3-list-style);
   padding-left: var(--ul-3-padding-left);
 }
-ul:is(.style-3, [style="3"]) li {
+ul:is(.nuke-style-3, [nuke-style="3"]) li {
   background: var(--ul-3-item-bg);
   border: var(--ul-3-item-border);
   padding: var(--ul-3-item-padding);

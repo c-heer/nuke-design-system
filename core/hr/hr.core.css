@@ -2,16 +2,16 @@ hr {
   margin: var(--hr-margin);
   border: none;
 }
-hr:is(.style-1, [style="1"]) {
+hr:is(.nuke-style-1, [nuke-style="1"]) {
   border-top: var(--hr-1-border-width) solid var(--hr-border-color);
   opacity: var(--hr-1-opacity);
 }
-hr:is(.style-2, [style="2"]) {
+hr:is(.nuke-style-2, [nuke-style="2"]) {
   height: var(--hr-2-height);
   background: var(--hr-2-bg);
   opacity: var(--hr-2-opacity);
 }
-hr:is(.style-3, [style="3"]) {
+hr:is(.nuke-style-3, [nuke-style="3"]) {
   border-top: var(--hr-3-border-width) solid var(--hr-border-color);
   background: var(--hr-3-bg);
   height: var(--hr-3-height);

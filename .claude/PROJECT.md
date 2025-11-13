@@ -5,7 +5,7 @@
 **An element-first design system with the killer feature no one else has: fully extractable, editable theme files.**
 
 - **Native HTML elements work out of the box** - `<button>`, `<input>`, `<select>` - no classes needed
-- **Three complete design philosophies** - `style="1/2/3"` gives you minimal, subtle, or all-in aesthetics
+- **Three complete design philosophies** - `nuke-style="1/2/3"` gives you minimal, subtle, or all-in aesthetics
 - **Extracted theme folder** - Get ALL theme files in your project, edit freely, updates never overwrite
 - **Framework independent** - Works with vanilla HTML, React, Vue, Angular, Svelte, etc.
 - **Lit-powered web components** - TypeScript-based, lightweight, accessible
@@ -59,9 +59,9 @@ Ship three complete aesthetic systems. Users pick one or mix them.
 
 ```html
 <!-- Same element, three philosophies -->
-<button style="1">Minimal</button>
-<button style="2">Subtle</button>
-<button style="3">All In</button>
+<button nuke-style="1">Minimal</button>
+<button nuke-style="2">Subtle</button>
+<button nuke-style="3">All In</button>
 ```
 
 ### 3. Native-First with Optional Enhancement
@@ -295,7 +295,7 @@ The extracted `theme.css` has this at the top:
 **Each has:**
 - `element.core.css` (styling logic)
 - `element.theme.css` (design tokens)
-- 3 style variants (style="1/2/3")
+- 3 style variants (nuke-style="1/2/3")
 
 ### 6 Web Components (Lit + TypeScript)
 **Complex interactions, keyboard navigation, accessibility:**
@@ -412,7 +412,7 @@ createRenderRoot() {
 
 ### vs Tailwind
 - ❌ Tailwind: `.p-4 .bg-blue-500 .flex` everywhere
-- ✅ Nuke: Elements work without classes, optional `style="1/2/3"`
+- ✅ Nuke: Elements work without classes, optional `nuke-style="1/2/3"`
 
 ### vs Bootstrap / Material UI
 - ❌ Bootstrap: `.btn-primary`, `.form-control`, framework-locked
@@ -428,7 +428,7 @@ createRenderRoot() {
 
 ### The Unique Combination:
 1. Native elements styled by default
-2. Three complete design philosophies (style="1/2/3")
+2. Three complete design philosophies (nuke-style="1/2/3")
 3. Extracted, fully-editable theme folder
 4. Lit web components for complex interactions
 5. Framework-agnostic
@@ -447,8 +447,8 @@ createRenderRoot() {
 // ✅ Use 'variant' property internally
 @property({ type: String, reflect: true }) variant = '1';
 
-// HTML still uses style="1" (attribute reflects to property)
-<nuke-badge style="1">Badge</nuke-badge>
+// HTML still uses nuke-style="1" (attribute reflects to property)
+<nuke-badge nuke-style="1">Badge</nuke-badge>
 ```
 
 ### Why "core.css" not "index.css"?

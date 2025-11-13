@@ -45,45 +45,45 @@ summary:focus-visible {
 details > *:not(summary) {
   margin-top: var(--details-content-margin-top);
 }
-details:is(.style-1, [style="1"]) {
+details:is(.nuke-style-1, [nuke-style="1"]) {
   border: 1px solid var(--details-1-border);
   border-radius: 0;
   background: var(--details-1-bg);
   padding: var(--details-1-padding);
 }
-details:is(.style-1, [style="1"])[open] {
+details:is(.nuke-style-1, [nuke-style="1"])[open] {
   border-bottom: 1px solid var(--details-1-open-border-bottom);
 }
-details:is(.style-1, [style="1"]) summary {
+details:is(.nuke-style-1, [nuke-style="1"]) summary {
   padding: 0;
   margin: 0;
 }
-details:is(.style-1, [style="1"]) summary:hover {
+details:is(.nuke-style-1, [nuke-style="1"]) summary:hover {
   background: var(--details-1-summary-hover-bg);
   color: var(--details-1-summary-hover-color);
 }
-details:is(.style-2, [style="2"]) {
+details:is(.nuke-style-2, [nuke-style="2"]) {
   border: 1px solid var(--details-2-border);
   border-radius: var(--details-2-radius);
   background: var(--details-2-bg);
   padding: var(--details-2-padding);
 }
-details:is(.style-2, [style="2"])[open] {
+details:is(.nuke-style-2, [nuke-style="2"])[open] {
   background: var(--details-2-open-bg);
 }
-details:is(.style-2, [style="2"]) summary:hover {
+details:is(.nuke-style-2, [nuke-style="2"]) summary:hover {
   background: var(--details-2-summary-hover-bg);
 }
-details:is(.style-3, [style="3"]) {
+details:is(.nuke-style-3, [nuke-style="3"]) {
   border: var(--details-3-border-width) solid var(--details-3-border);
   border-radius: var(--details-3-radius);
   background: var(--details-3-bg);
   padding: var(--details-3-padding);
 }
-details:is(.style-3, [style="3"])[open] {
+details:is(.nuke-style-3, [nuke-style="3"])[open] {
   background: var(--details-3-open-bg);
   border-color: var(--details-3-open-border);
 }
-details:is(.style-3, [style="3"]) summary:hover {
+details:is(.nuke-style-3, [nuke-style="3"]) summary:hover {
   background: var(--details-3-summary-hover-bg);
 }

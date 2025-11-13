@@ -29,11 +29,20 @@ function resolveImports(filePath, baseDir = path.dirname(filePath), processed = 
   const content = fs.readFileSync(absolutePath, 'utf-8');
   const lines = content.split('\n');
   let result = [];
+  let inMultiLineComment = false;
 
   for (const line of lines) {
+    // Track multi-line comment state
+    if (line.includes('/*')) inMultiLineComment = true;
+    if (line.includes('*/')) {
+      inMultiLineComment = false;
+      result.push(line);
+      continue;
+    }
+
     const importMatch = line.match(/@import\s+['"](.+?)['"]/);
 
-    if (importMatch) {
+    if (importMatch && !inMultiLineComment) {
       const importPath = importMatch[1];
       const resolvedPath = path.resolve(path.dirname(absolutePath), importPath);
 

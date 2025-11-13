@@ -27,17 +27,17 @@ nuke-card-actions {
   border-top: 1px solid var(--card-actions-border-color);
   justify-content: flex-end;
 }
-nuke-card:is(.style-1, [style="1"]) {
+nuke-card:is(.nuke-style-1, [nuke-style="1"]) {
   background: var(--card-1-background);
   border: var(--card-1-border);
   box-shadow: var(--card-1-shadow);
 }
-nuke-card:is(.style-2, [style="2"]) {
+nuke-card:is(.nuke-style-2, [nuke-style="2"]) {
   background: var(--card-2-background);
   border: var(--card-2-border);
   box-shadow: var(--card-2-shadow);
 }
-nuke-card:is(.style-3, [style="3"]) {
+nuke-card:is(.nuke-style-3, [nuke-style="3"]) {
   background: var(--card-3-background);
   border: var(--card-3-border);
   box-shadow: var(--card-3-shadow);

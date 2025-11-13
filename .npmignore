@@ -4,6 +4,7 @@
 .claude/
 .idea/
 .vscode/
+.dev-scripts/
 
 # Demo files (not needed in npm package)
 index.html

@@ -40,54 +40,54 @@ nuke-sidebar[position="right"][open] {
   opacity: 1;
   pointer-events: auto;
 }
-nuke-sidebar:is(.style-1, [style="1"]) {
+nuke-sidebar:is(.nuke-style-1, [nuke-style="1"]) {
   background: var(--sidebar-1-background);
   box-shadow: var(--sidebar-1-shadow);
 }
-nuke-sidebar:is(.style-1, [style="1"])[position="left"] {
+nuke-sidebar:is(.nuke-style-1, [nuke-style="1"])[position="left"] {
   border-left: var(--sidebar-1-border-left);
   border-right: var(--sidebar-1-border-right);
 }
-nuke-sidebar:is(.style-1, [style="1"])[position="right"] {
+nuke-sidebar:is(.nuke-style-1, [nuke-style="1"])[position="right"] {
   border-right: none;
   border-left: var(--sidebar-1-border-right);
 }
-nuke-sidebar:is(.style-2, [style="2"]) {
+nuke-sidebar:is(.nuke-style-2, [nuke-style="2"]) {
   background: var(--sidebar-2-background);
   box-shadow: var(--sidebar-2-shadow);
 }
-nuke-sidebar:is(.style-2, [style="2"])[position="left"] {
+nuke-sidebar:is(.nuke-style-2, [nuke-style="2"])[position="left"] {
   border-left: var(--sidebar-2-border-left);
   border-right: var(--sidebar-2-border-right);
 }
-nuke-sidebar:is(.style-2, [style="2"])[position="right"] {
+nuke-sidebar:is(.nuke-style-2, [nuke-style="2"])[position="right"] {
   border-right: none;
   border-left: var(--sidebar-2-border-left);
 }
-nuke-sidebar:is(.style-3, [style="3"]) {
+nuke-sidebar:is(.nuke-style-3, [nuke-style="3"]) {
   background: var(--sidebar-3-background);
   box-shadow: var(--sidebar-3-shadow);
 }
-nuke-sidebar:is(.style-3, [style="3"])[position="left"] {
+nuke-sidebar:is(.nuke-style-3, [nuke-style="3"])[position="left"] {
   border-left: var(--sidebar-3-border-left);
   border-right: var(--sidebar-3-border-right);
 }
-nuke-sidebar:is(.style-3, [style="3"])[position="right"] {
+nuke-sidebar:is(.nuke-style-3, [nuke-style="3"])[position="right"] {
   border-right: none;
   border-left: var(--sidebar-3-border-right);
 }
 @media (max-width: 768px) {
-  nuke-sidebar:is(.style-3, [style="3"]) {
+  nuke-sidebar:is(.nuke-style-3, [nuke-style="3"]) {
     position: fixed;
     transform: translateX(-100%);
   }
-  nuke-sidebar:is(.style-3, [style="3"])[open] {
+  nuke-sidebar:is(.nuke-style-3, [nuke-style="3"])[open] {
     transform: translateX(0);
   }
-  nuke-sidebar:is(.style-3, [style="3"])[position="right"] {
+  nuke-sidebar:is(.nuke-style-3, [nuke-style="3"])[position="right"] {
     transform: translateX(100%);
   }
-  nuke-sidebar:is(.style-3, [style="3"])[position="right"][open] {
+  nuke-sidebar:is(.nuke-style-3, [nuke-style="3"])[position="right"][open] {
     transform: translateX(0);
   }
 }

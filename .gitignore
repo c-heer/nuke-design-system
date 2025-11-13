@@ -23,6 +23,9 @@ Thumbs.db
 node_modules/
 bun.lock
 
+# Dev scripts
+.dev-scripts/
+
 # Astro
 docs/.astro/
 docs/dist/

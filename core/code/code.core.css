@@ -6,17 +6,17 @@ code {
   font-size: var(--code-font-size);
   border-radius: var(--code-radius);
 }
-code:is(.style-1, [style="1"]) {
+code:is(.nuke-style-1, [nuke-style="1"]) {
   background: var(--code-1-bg);
   color: var(--code-1-color);
   border: var(--code-1-border);
 }
-code:is(.style-2, [style="2"]) {
+code:is(.nuke-style-2, [nuke-style="2"]) {
   background: var(--code-2-bg);
   color: var(--code-2-color);
   border: var(--code-2-border);
 }
-code:is(.style-3, [style="3"]) {
+code:is(.nuke-style-3, [nuke-style="3"]) {
   background: var(--code-3-bg);
   color: var(--code-3-color);
   border: var(--code-3-border);

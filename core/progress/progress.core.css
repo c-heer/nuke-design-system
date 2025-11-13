@@ -21,43 +21,43 @@ progress::-moz-progress-bar {
   border-radius: var(--progress-radius);
   transition: width var(--progress-transition);
 }
-progress:is(.style-1, [style="1"]) {
+progress:is(.nuke-style-1, [nuke-style="1"]) {
   height: var(--progress-1-height);
   background: var(--progress-1-bg);
 }
-progress:is(.style-1, [style="1"])::-webkit-progress-bar {
+progress:is(.nuke-style-1, [nuke-style="1"])::-webkit-progress-bar {
   background: var(--progress-1-bg);
 }
-progress:is(.style-1, [style="1"])::-webkit-progress-value {
+progress:is(.nuke-style-1, [nuke-style="1"])::-webkit-progress-value {
   background: var(--progress-1-fill);
 }
-progress:is(.style-1, [style="1"])::-moz-progress-bar {
+progress:is(.nuke-style-1, [nuke-style="1"])::-moz-progress-bar {
   background: var(--progress-1-fill);
 }
-progress:is(.style-2, [style="2"]) {
+progress:is(.nuke-style-2, [nuke-style="2"]) {
   height: var(--progress-2-height);
   background: var(--progress-2-bg);
 }
-progress:is(.style-2, [style="2"])::-webkit-progress-bar {
+progress:is(.nuke-style-2, [nuke-style="2"])::-webkit-progress-bar {
   background: var(--progress-2-bg);
 }
-progress:is(.style-2, [style="2"])::-webkit-progress-value {
+progress:is(.nuke-style-2, [nuke-style="2"])::-webkit-progress-value {
   background: var(--progress-2-fill);
 }
-progress:is(.style-2, [style="2"])::-moz-progress-bar {
+progress:is(.nuke-style-2, [nuke-style="2"])::-moz-progress-bar {
   background: var(--progress-2-fill);
 }
-progress:is(.style-3, [style="3"]) {
+progress:is(.nuke-style-3, [nuke-style="3"]) {
   height: var(--progress-3-height);
   background: var(--progress-3-bg);
   border: 1px solid var(--progress-3-border);
 }
-progress:is(.style-3, [style="3"])::-webkit-progress-bar {
+progress:is(.nuke-style-3, [nuke-style="3"])::-webkit-progress-bar {
   background: var(--progress-3-bg);
 }
-progress:is(.style-3, [style="3"])::-webkit-progress-value {
+progress:is(.nuke-style-3, [nuke-style="3"])::-webkit-progress-value {
   background: var(--progress-3-fill);
 }
-progress:is(.style-3, [style="3"])::-moz-progress-bar {
+progress:is(.nuke-style-3, [nuke-style="3"])::-moz-progress-bar {
   background: var(--progress-3-fill);
 }
