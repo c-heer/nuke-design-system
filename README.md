@@ -117,33 +117,39 @@ Not arbitrary variants. **Cohesive design systems.**
 npm install @nuke.dev/design-system
 ```
 
-The postinstall script will ask where you want your theme folder (recommended: `./nuke-theme/`).
+The postinstall script extracts a `nuke-theme/` folder to your project root with all customizable theme files.
 
 ---
 
 ## Quick Start
 
-### 1. Import CSS (in this order)
+### 1. Import CSS
+
+```html
+<!-- Single import - includes everything -->
+<link rel="stylesheet" href="./nuke-theme/theme.css">
+```
+
+Or in your CSS:
 
 ```css
-/* Import theme FIRST (customizable variables) */
-@import '@nuke.dev/design-system/core/theme.css';
-
-/* Then import system logic */
-@import '@nuke.dev/design-system/core/core.css';
+@import './nuke-theme/theme.css';
 ```
+
+**What this imports:**
+- Core styling logic (bundled, minified)
+- All theme variables (flat structure, easy to customize)
 
 ### 2. Optional: Import Web Components
 
 ```html
-<!-- In your HTML -->
-<script type="module" src="node_modules/@nuke.dev/design-system/components/core.js"></script>
+<script type="module" src="./node_modules/@nuke.dev/design-system/dist/core.js"></script>
 ```
 
 Or in your JavaScript:
 
 ```javascript
-import '@nuke.dev/design-system/components/core.js';
+import '@nuke.dev/design-system/dist/core.js';
 ```
 
 ### 3. Use It!
@@ -583,6 +589,90 @@ Nuke gives you three complete, cohesive design philosophies:
 **Same attribute name everywhere. Complete visual coherence per philosophy.**
 
 This is unique. Nobody else ships three complete design systems in one framework.
+
+---
+
+## Development
+
+### Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/c-heer/nuke-design-system
+cd nuke-design-system
+
+# Start Docker container
+docker-compose up -d
+
+# Enter container
+docker-compose exec bun bash
+
+# Install dependencies
+bun install
+```
+
+### Build
+
+```bash
+# Build library (outputs to dist/)
+bun run build
+
+# What gets built:
+# - dist/core.css      - Bundled styles (all @imports resolved)
+# - dist/core.js       - Bundled web components
+# - dist/types/        - TypeScript definitions
+# - dist/nuke-theme/   - Extracted theme files (flat structure)
+```
+
+### Documentation Site
+
+```bash
+# Start Astro dev server
+bun run docs:dev
+
+# Visit http://localhost:4321
+# Live component examples and documentation
+```
+
+### File Structure
+
+```
+nuke-design-system/
+├── core/                   # Source files
+│   ├── button/
+│   │   ├── button.core.css    # Styling logic
+│   │   ├── button.theme.css   # Design tokens
+│   │   └── button.docs.html   # Documentation (optional)
+│   └── badge/
+│       ├── badge.core.css
+│       ├── badge.core.ts      # Web component (Lit)
+│       └── badge.theme.css
+│
+├── dist/                   # Build output (published to npm)
+│   ├── core.css           # Bundled (all imports resolved)
+│   ├── core.js            # Bundled web components
+│   ├── types/             # TypeScript definitions
+│   └── nuke-theme/        # Extracted theme (flat)
+│       ├── theme.css          # Entry point
+│       ├── foundation.theme.css
+│       ├── button.theme.css
+│       └── ...
+│
+├── docs/                   # Astro documentation site
+│   ├── src/pages/
+│   └── public/             # Symlinks to dist/
+│
+└── scripts/
+    ├── bundle-core-css.js  # Bundles CSS
+    └── build-theme.js      # Extracts theme
+```
+
+### Tech Stack
+
+- **Build:** Bun + TypeScript
+- **Components:** Lit (web components)
+- **Docs:** Astro (static site generator)
+- **Container:** Docker (with Bun image)
 
 ---
 
