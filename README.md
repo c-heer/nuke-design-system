@@ -205,7 +205,7 @@ All design tokens are CSS variables in your `nuke-theme/` folder:
 
 ### Colors
 ```css
-/* nuke-theme/foundation.theme.css */
+/* nuke-theme/foundation.style.css */
 :root {
   --color-1: hsl(25, 85%, 55%);     /* Primary */
   --color-2: hsl(280, 40%, 65%);    /* Secondary */
@@ -234,7 +234,7 @@ All design tokens are CSS variables in your `nuke-theme/` folder:
 
 ### Component Variables
 ```css
-/* nuke-theme/button.theme.css */
+/* nuke-theme/button.style.css */
 :root {
   --button-height: var(--height-2);
   --button-padding-x: var(--space-2);

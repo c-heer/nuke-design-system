@@ -183,7 +183,7 @@ button {
   color: var(--button-color);
 }
 
-/* button.theme.css - Defines variables users can edit */
+/* button.style.css - Defines variables users can edit */
 :root {
   --button-height: 36px;
   --button-bg: var(--background-2);

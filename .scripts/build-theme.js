@@ -2,7 +2,7 @@
 
 /**
  * Build dist/nuke-theme/ from core/
- * Flattens all .theme.css files and creates theme.css entry point
+ * Extracts .theme.css files and creates style.css entry point
  */
 
 import fs from 'fs';
@@ -69,27 +69,25 @@ for (const { fullPath, name } of themeFiles) {
 
   fs.copyFileSync(fullPath, destPath);
 
-  // Track for imports (skip if it's the main theme.css)
-  if (name !== 'theme.css') {
-    componentImports.push(importPath);
-  }
+  // Track for imports
+  componentImports.push(importPath);
 
   console.log(`  ✓ ${isInComponents ? 'components/' : ''}${name}`);
 }
 
-// Copy and process core/theme.css
-const coreThemePath = path.join(CORE_DIR, 'theme.css');
-if (fs.existsSync(coreThemePath)) {
-  const coreThemeContent = fs.readFileSync(coreThemePath, 'utf-8');
+// Copy and process core/style.css to create main entry point
+const coreStylePath = path.join(CORE_DIR, 'style.css');
+if (fs.existsSync(coreStylePath)) {
+  const coreStyleContent = fs.readFileSync(coreStylePath, 'utf-8');
 
-  // Remove @import lines - we'll add our own
-  const lines = coreThemeContent.split('\n');
-  const withoutImports = lines.filter(line => !line.trim().startsWith('@import')).join('\n');
+  // Remove the @import 'nuke-theme/core.css' line - we'll use relative path
+  const lines = coreStyleContent.split('\n');
+  const withoutImport = lines.filter(line => !line.trim().startsWith('@import')).join('\n');
 
-  // Build final theme.css
-  const themeContent = `/* ============================================
-   NUKE DESIGN SYSTEM - Theme
-   Extracted theme files - EDIT FREELY
+  // Build final style.css (main entry point)
+  const styleContent = `/* ============================================
+   NUKE DESIGN SYSTEM - Main Entry Point
+   Import this file in your HTML
    ============================================ */
 
 /* Import core styling logic */
@@ -98,13 +96,14 @@ if (fs.existsSync(coreThemePath)) {
 /* Component theme imports */
 ${componentImports.sort().map(imp => `@import '${imp}';`).join('\n')}
 
-${withoutImports}
+/* Design tokens and variables */
+${withoutImport}
 `;
 
-  fs.writeFileSync(path.join(THEME_DIR, 'theme.css'), themeContent);
-  console.log(`  ✓ theme.css (entry point with design tokens)`);
+  fs.writeFileSync(path.join(THEME_DIR, 'style.css'), styleContent);
+  console.log(`  ✓ style.css (main entry point)`);
 } else {
-  console.error('Error: core/theme.css not found!');
+  console.error('Error: core/style.css not found!');
 }
 
 console.log(`\n✅ dist/nuke-theme/ built successfully!`);

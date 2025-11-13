@@ -1,7 +1,7 @@
 /* ============================================
    NUKE DESIGN SYSTEM - Core
    Pure logic, NO variables defined
-   Variables come from index.theme.css
+   Variables come from index.style.css
 ============================================ */
 
 /* Base - Browser resets, animations, utilities */
@@ -9,7 +9,7 @@
 @import './animations.css';
 @import './helpers.css';
 
-/* Components */
+/* Components core */
 @import './components/a/a.core.css';
 @import './components/button/button.core.css';
 @import './components/checkbox/checkbox.core.css';
@@ -36,3 +36,174 @@
 @import './components/tabs/tabs.core.css';
 @import './components/toast/toast.core.css';
 @import './components/toolbar/toolbar.core.css';
+
+/* Components theme */
+@import './components/a/a.theme.css';
+@import './components/badge/badge.theme.css';
+@import './components/button/button.theme.css';
+@import './components/card/card.theme.css';
+@import './components/checkbox/checkbox.theme.css';
+@import './components/code/code.theme.css';
+@import './components/details/details.theme.css';
+@import './components/dialog/dialog.theme.css';
+@import './components/hr/hr.theme.css';
+@import './components/img/img.theme.css';
+@import './components/input/input.theme.css';
+@import './components/label/label.theme.css';
+@import './components/nav/nav.theme.css';
+@import './components/ol/ol.theme.css';
+@import './components/pre/pre.theme.css';
+@import './components/progress/progress.theme.css';
+@import './components/radio/radio.theme.css';
+@import './components/range/range.theme.css';
+@import './components/select/select.theme.css';
+@import './components/sidebar/sidebar.theme.css';
+@import './components/table/table.theme.css';
+@import './components/tabs/tabs.theme.css';
+@import './components/textarea/textarea.theme.css';
+@import './components/toast/toast.theme.css';
+@import './components/toolbar/toolbar.theme.css';
+@import './components/ul/ul.theme.css';
+
+/* Reset default browser styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html {
+  height: 100%;
+  background: var(--background-1);
+}
+body {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--background-1);
+  font-family: var(--family-1);
+  color: var(--on-background);
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+#root, #__next {
+  isolation: isolate;
+}
+ul, ol {
+  margin: 0;
+  padding: 0 0 0 1rem;
+}
+
+/*Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeIn {
+  opacity: 0;
+  will-change: transform;
+  animation: fadeIn var(--animation-fast);
+}
+@keyframes dropInRight {
+  from {
+    opacity: 0;
+    transform: translateX(.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.dropInRight {
+  opacity: 0;
+  will-change: transform;
+  animation: dropInRight var(--animation-fast);
+}
+@keyframes dropInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.dropInLeft {
+  opacity: 0;
+  will-change: transform;
+  animation: dropInLeft var(--animation-fast);
+}
+@keyframes dropInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dropInTop {
+  opacity: 0;
+  will-change: transform;
+  animation: dropInTop var(--animation-fast);
+}
+@keyframes dropInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.dropInBottom {
+  opacity: 0;
+  will-change: transform;
+  animation: dropInBottom var(--animation-fast);
+}
+.motion-off *,
+.motion-off *::before,
+.motion-off *::after {
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  .fadeIn,
+  .dropInRight,
+  .dropInLeft,
+  .dropInTop,
+  .dropInBottom,
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Scroll lock */
+body.no-scroll {
+  overflow: hidden;
+}
+@media (max-width: 991px) {
+  body.no-scroll {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+  html.no-scroll {
+    overflow: hidden;
+  }
+}

@@ -46,8 +46,8 @@ function resolveImports(filePath, baseDir = path.dirname(filePath), processed = 
       const importPath = importMatch[1];
       const resolvedPath = path.resolve(path.dirname(absolutePath), importPath);
 
-      // Skip .theme.css files (they go to nuke-theme/)
-      if (!importPath.includes('.theme.css')) {
+      // Skip .style.css files (they go to nuke-theme/)
+      if (!importPath.includes('.style.css')) {
         result.push(`\n/* Imported from: ${path.relative(CORE_DIR, resolvedPath)} */`);
         result.push(resolveImports(resolvedPath, path.dirname(resolvedPath), processed));
       }
