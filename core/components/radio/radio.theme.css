@@ -2,9 +2,9 @@
   /* core */
   --radio-size: var(--height-1);
   --radio-transition: var(--transition-fast);
-  --radio-bg: var(--background-2);
+  --radio-bg: var(--background-4);
   --radio-border: var(--border-color-1);
-  --radio-checked-bg: var(--background-2);
+  --radio-checked-bg: var(--background-4);
   --radio-checked-border: var(--on-background);
   --radio-dot: var(--on-background);
   --radio-focus-ring: var(--border-color-2);

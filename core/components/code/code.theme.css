@@ -3,7 +3,7 @@
   --code-padding: calc(var(--space-1) / 3) var(--space-1);
   --code-bg: var(--background-3);
   --code-color: var(--on-background);
-  --code-font-family: 'Monaco', 'Courier New', monospace;
+  --code-font-family: var(--family-mono);
   --code-font-size: var(--font-size-1);
   --code-radius: var(--border-radius-small);
 

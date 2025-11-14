@@ -1,8 +1,8 @@
 :root {
   /* core */
-  --ul-margin: 0 0 var(--list-margin-bottom) 0;
-  --ul-padding-left: var(--list-padding-left);
-  --ul-item-margin: var(--list-item-margin-bottom);
+  --ul-margin: 0 0 var(--space-2) 0;
+  --ul-padding-left: var(--space-3);
+  --ul-item-margin: var(--space-1);
 
   /* style 1 */
   --ul-1-list-style: disc;

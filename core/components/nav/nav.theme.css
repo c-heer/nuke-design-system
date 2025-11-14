@@ -9,7 +9,7 @@
   /* style 1 */
   --nav-1-bg: transparent;
   --nav-1-gap: var(--space-3);
-  --nav-1-link-separator: hsl(var(--neutral-base), 20%);
+  --nav-1-link-separator: var(--border-color-1);
   --nav-1-link-hover-color: var(--color-1);
 
   /* style 2 */

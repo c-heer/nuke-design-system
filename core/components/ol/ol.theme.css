@@ -1,8 +1,8 @@
 :root {
   /* core */
-  --ol-margin: 0 0 var(--list-margin-bottom) 0;
-  --ol-padding-left: var(--list-padding-left);
-  --ol-item-margin: var(--list-item-margin-bottom);
+  --ol-margin: 0 0 var(--space-2) 0;
+  --ol-padding-left: var(--space-3);
+  --ol-item-margin: var(--space-1);
 
   /* style 1 */
   --ol-1-list-style: decimal;

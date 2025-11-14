@@ -6,7 +6,7 @@
   --textarea-radius: var(--border-radius);
   --textarea-transition: var(--transition-fast);
   --textarea-line-height: var(--line-height-2);
-  --textarea-bg: var(--background-2);
+  --textarea-bg: var(--background-4);
   --textarea-color: var(--on-background);
   --textarea-border: var(--border-color-1);
   --textarea-placeholder: var(--on-background-light);
