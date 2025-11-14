@@ -345,6 +345,57 @@ bun run docs:dev
 # Visit http://localhost:4321
 ```
 
+### HMR Setup (Hot Module Reload in Docker)
+
+**IMPORTANT:** For HMR to work when editing `core/` files, you need to run BOTH:
+
+**Terminal 1:**
+```bash
+bun run build:watch
+```
+This watches `core/` and auto-rebuilds `dist/` on changes.
+
+**Terminal 2:**
+```bash
+bun run docs:dev
+```
+This runs Astro dev server with HMR.
+
+**Critical Astro Config for Docker HMR:**
+The `docs/astro.config.mjs` needs these settings for HMR to work through symlinks in Docker:
+
+```javascript
+export default defineConfig({
+  server: {
+    host: true,      // REQUIRED: Expose server in Docker
+    port: 4321
+  },
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,   // REQUIRED: Docker file watching
+        interval: 100       // Poll every 100ms
+      },
+      hmr: {
+        clientPort: 4321    // REQUIRED: HMR WebSocket port for Docker
+      }
+    }
+  }
+});
+```
+
+**Why this works:**
+- `build:watch` detects changes to `core/` files and rebuilds `dist/`
+- `docs/public/nuke-theme` is symlinked to `../../dist/nuke-theme`
+- Astro's polling + correct HMR config detects the symlinked file changes
+- Browser auto-reloads with new styles!
+
+**If HMR breaks:**
+1. Check both terminals are running (`build:watch` + `docs:dev`)
+2. Verify symlinks: `ls -la docs/public/`
+3. Ensure `server.host: true` and `hmr.clientPort: 4321` in config
+4. Restart Astro dev server
+
 ### Build Scripts (package.json)
 ```json
 {

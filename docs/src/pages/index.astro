@@ -1,6 +1,5 @@
 ---
 const title = "NUKE Design System";
-import '@nuke/style.css';
 ---
 
 <!DOCTYPE html>
@@ -9,536 +8,724 @@ import '@nuke/style.css';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <link rel="stylesheet" href="/nuke-theme/style.css">
+  <script type="module" src="/core.js"></script>
+  <style is:inline>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      min-height: 100vh;
-      display: grid;
-      grid-template-rows: auto 1fr auto;
-      background: var(--background-1);
-      color: var(--on-background);
-      font-family: var(--family-1);
-    }
-
-    /* Header */
-    header {
-      background: var(--background-1);
-      border-bottom: 1px solid var(--border-1);
-      padding: var(--space-3) var(--space-4);
-    }
-
-    body[nuke-style="1"] header {
-      background: var(--background-1) !important;
-    }
-
-    .header-wrapper {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: var(--space-4);
-    }
-
-    .header-brand {
-      display: grid;
-      gap: var(--space-1);
-    }
-
-    .brand-main {
-      font-family: var(--family-2);
-      font-style: italic;
-      font-weight: 900;
-      font-size: 2.5rem;
-      color: var(--on-background);
-      line-height: 1;
-    }
-
-    .brand-sub {
-      font-family: var(--family-1);
-      font-weight: 400;
-      font-size: var(--font-size-2);
-      color: var(--on-background);
-      letter-spacing: 0.05em;
-    }
-
-    .theme-toggle {
-      font-size: var(--font-size-2);
-      color: var(--on-background-light);
-      cursor: pointer;
-      user-select: none;
-      letter-spacing: 0.1em;
-    }
-
-    /* Main Dashboard */
-    main {
-      background: var(--background-2);
-      padding: var(--space-4);
-      display: grid;
-      gap: var(--space-4);
-      grid-template-columns: 280px 1fr;
-    }
-
-    body[nuke-style="1"] main {
-      background: var(--background-2) !important;
-    }
-
-    /* Sidebar */
-    aside {
-      display: grid;
-      gap: var(--space-3);
-      align-content: start;
-    }
-
-    /* Dashboard Content */
-    .dashboard-content {
-      display: grid;
-      gap: var(--space-4);
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: var(--space-3);
-    }
-
-    .stats-card h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: var(--space-1);
-    }
-
-    .stats-card p {
-      font-size: var(--font-size-2);
-      color: var(--on-background-light);
-      margin-bottom: var(--space-1);
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: var(--space-4);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-3);
-    }
-
-    .form-field {
-      display: grid;
-      gap: var(--space-1);
-    }
-
-    .form-field label {
-      font-size: var(--font-size-2);
-      font-weight: var(--font-weight-medium);
-    }
-
-    .full-width {
-      grid-column: 1 / -1;
-    }
-
-    nuke-tab-panel.button-showcase {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: var(--space-2);
-    }
-
-    nuke-tab-panel.input-showcase {
-      display: grid;
-      gap: var(--space-2);
-    }
-
-    nuke-tab-panel.control-showcase {
-      display: grid;
-      gap: var(--space-2);
-    }
-
-    .activity-list {
-      display: grid;
-      gap: var(--space-2);
-    }
-
-    .activity-item strong {
       display: block;
-      margin-bottom: var(--space-1);
-    }
-
-    .activity-item p {
-      font-size: var(--font-size-2);
-      color: var(--on-background-light);
       margin: 0;
+      padding: 0;
+      overflow: auto;
     }
 
-    .progress-list {
-      display: grid;
-      gap: var(--space-2);
-    }
-
-    .progress-item p {
-      font-size: var(--font-size-2);
-      margin: 0 0 var(--space-1) 0;
-    }
-
-    .nav-links {
-      display: grid;
-      gap: var(--space-1);
-    }
-
-    .nav-links a {
-      display: block;
-    }
-
-    .quick-actions {
-      padding: var(--space-2) 0;
-      display: grid;
-      gap: var(--space-2);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--background-4);
-      border-top: 1px solid var(--border-1);
-      padding: var(--space-4);
-    }
-
-    body[nuke-style="1"] footer {
-      background: var(--background-4) !important;
-    }
-
-    .footer-wrapper {
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--background-2);
+      border-bottom: 1px solid var(--border-1);
+      padding: 0 var(--space-3);
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
-      gap: var(--space-4);
-    }
-
-    .footer-brand {
-      font-family: var(--family-1);
-      font-weight: 600;
-      font-size: var(--font-size-2);
-      color: var(--on-background-light);
-      letter-spacing: 0.05em;
-    }
-
-    .footer-links {
-      display: grid;
-      grid-template-columns: repeat(4, auto);
       gap: var(--space-3);
-      font-size: var(--font-size-2);
+      height: var(--height-3);
     }
 
-    @media (max-width: 1200px) {
-      main {
-        grid-template-columns: 240px 1fr;
-        gap: var(--space-3);
-      }
+    .logo-wrap {
+      display: flex;
+      align-items: flex-end;
     }
 
-    @media (max-width: 1024px) {
-      main {
-        grid-template-columns: 1fr;
-        padding: var(--space-3);
-      }
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .content-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-wrapper {
-        grid-template-columns: 1fr;
-        gap: var(--space-2);
-      }
-      .footer-links {
-        justify-self: start;
-      }
+    .logo {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--space-1);
     }
 
-    @media (max-width: 640px) {
-      header {
-        padding: var(--space-2) var(--space-3);
-      }
-      .header-wrapper {
-        grid-template-columns: 1fr;
-        gap: var(--space-2);
-      }
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-      .button-showcase {
-        grid-template-columns: 1fr;
-      }
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
+    .logo-nuke {
+      font-family: var(--family-2),sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
+      margin: 0;
+    }
+
+    .logo-subtitle {
+      font-size: 1rem;
+      font-weight: 400;
+      text-transform: lowercase;
+      line-height: 1;
+      margin: 0;
+      padding-bottom: 0.15em;
+    }
+
+    .theme-toggle {
+      font-size: var(--font-size-1);
+      font-weight: 900;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      color: var(--on-background);
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+    }
+
+    /* Collection section */
+    .collection {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-1);
+      margin-bottom: 1px;
+      background: var(--background-1);
+    }
+
+    .collection-header {
+      grid-column: 1 / -1;
+      background: var(--background-1);
+      padding: var(--space-3) var(--space-3);
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: var(--font-size-3);
+      letter-spacing: -0.05em;
+      font-style: italic;
+      height: var(--height-2);
+      display: flex;
+      align-items: center;
+    }
+
+    .column {
+      background: var(--background-2);
+    }
+
+    .column-header {
+      position: sticky;
+      top: var(--height-3);
+      background: var(--background-1);
+      padding: var(--space-2);
+      border-bottom: 2px solid var(--border-1);
+      font-weight: 900;
+      font-size: var(--font-size-3);
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: -0.05em;
+      font-style: italic;
+      z-index: 50;
+    }
+
+    .element {
+      padding: var(--space-3);
+      border-bottom: 1px solid var(--border-1);
+      background: var(--background-2);
+    }
+
+    .element:last-child {
+      border-bottom: none;
+    }
+
+    .element-name {
+      display: inline-block;
+      font-family: var(--code-font-family);
+      font-size: var(--font-size-1);
+      color: var(--on-background);
+      margin-bottom: var(--space-2);
+      background: var(--background-3);
+      padding: 0.25em 0.5em;
+      border-radius: var(--border-radius);
     }
   </style>
 </head>
-<body nuke-style="1">
-  <!-- Header -->
-  <header>
-    <div class="header-wrapper">
-      <div class="header-brand">
-        <div class="brand-main">NUKE</div>
-        <div class="brand-sub">Design System</div>
+<body [nuke-style]="1">
+  <div class="header">
+    <div class="logo-wrap">
+      <div class="logo">
+        <div class="logo-nuke">NUKE</div>
+        <div class="logo-subtitle">design system</div>
       </div>
-      <div></div>
-      <div class="theme-toggle">LIGHT • DARK</div>
     </div>
-  </header>
+    <button class="theme-toggle" onclick="document.documentElement.classList.toggle('dark-theme')">
+      Light / Dark
+    </button>
+  </div>
 
-  <!-- Main Dashboard -->
-  <main>
-    <!-- Sidebar -->
-    <aside>
-      <nuke-card>
-        <nuke-card-header>Navigation</nuke-card-header>
-        <nuke-card-content>
-          <nav class="nav-links">
-            <a href="#dashboard">Dashboard</a>
-            <a href="#components">Components</a>
-            <a href="#forms">Forms</a>
-            <a href="#tables">Tables</a>
-            <a href="#settings">Settings</a>
-          </nav>
-        </nuke-card-content>
-      </nuke-card>
+  <!-- FORM CONTROLS -->
+  <div class="collection">
+    <div class="collection-header">Form Controls</div>
 
-      <details>
-        <summary>Quick Actions</summary>
-        <div class="quick-actions">
-          <button>New Project</button>
-          <button>Import Data</button>
-          <button>Export Report</button>
-        </div>
-      </details>
-    </aside>
+    <div class="column">
+      <div class="column-header">Style 1</div>
 
-    <!-- Dashboard Content -->
-    <div class="dashboard-content">
-      <!-- Stats Cards -->
-      <div class="stats-grid">
-        <nuke-card>
-          <nuke-card-content class="stats-card">
-            <h3>1,284</h3>
-            <p>Total Users</p>
-            <nuke-badge>+12%</nuke-badge>
-          </nuke-card-content>
-        </nuke-card>
-
-        <nuke-card>
-          <nuke-card-content class="stats-card">
-            <h3>3,847</h3>
-            <p>Active Sessions</p>
-            <nuke-badge>+24%</nuke-badge>
-          </nuke-card-content>
-        </nuke-card>
-
-        <nuke-card>
-          <nuke-card-content class="stats-card">
-            <h3>98.2%</h3>
-            <p>Uptime</p>
-            <nuke-badge>Stable</nuke-badge>
-          </nuke-card-content>
-        </nuke-card>
-
-        <nuke-card>
-          <nuke-card-content class="stats-card">
-            <h3>42ms</h3>
-            <p>Avg Response</p>
-            <nuke-badge>Fast</nuke-badge>
-          </nuke-card-content>
-        </nuke-card>
+      <div class="element">
+        <div class="element-name">&lt;button&gt;</div>
+        <button nuke-style="1">Button</button>
       </div>
 
-      <!-- Tabs Component Showcase -->
-      <nuke-card>
-        <nuke-card-header>Component Showcase</nuke-card-header>
-        <nuke-card-content>
-          <nuke-tabs role="tablist">
-            <nuke-tab role="tab" aria-selected="true" aria-controls="panel-1">Buttons</nuke-tab>
-            <nuke-tab role="tab" aria-selected="false" aria-controls="panel-2">Inputs</nuke-tab>
-            <nuke-tab role="tab" aria-selected="false" aria-controls="panel-3">Controls</nuke-tab>
-          </nuke-tabs>
-
-          <nuke-tab-panel role="tabpanel" id="panel-1" class="button-showcase">
-            <button nuke-style="1">Style 1</button>
-            <button nuke-style="2">Style 2</button>
-            <button nuke-style="3">Style 3</button>
-          </nuke-tab-panel>
-
-          <nuke-tab-panel role="tabpanel" id="panel-2" aria-hidden="true" class="input-showcase">
-            <input type="text" placeholder="Text input" />
-            <select><option>Select option</option></select>
-            <textarea placeholder="Textarea"></textarea>
-          </nuke-tab-panel>
-
-          <nuke-tab-panel role="tabpanel" id="panel-3" aria-hidden="true" class="control-showcase">
-            <label><input type="checkbox" /> Checkbox option</label>
-            <label><input type="radio" name="demo" /> Radio option 1</label>
-            <label><input type="radio" name="demo" /> Radio option 2</label>
-            <input type="range" />
-          </nuke-tab-panel>
-        </nuke-card-content>
-      </nuke-card>
-
-      <!-- Content Grid -->
-      <div class="content-grid">
-        <!-- Form Example -->
-        <nuke-card>
-          <nuke-card-header>User Profile</nuke-card-header>
-          <nuke-card-content>
-            <div class="form-grid">
-              <div class="form-field">
-                <label>First Name</label>
-                <input type="text" placeholder="John" />
-              </div>
-              <div class="form-field">
-                <label>Last Name</label>
-                <input type="text" placeholder="Doe" />
-              </div>
-              <div class="form-field full-width">
-                <label>Email Address</label>
-                <input type="email" placeholder="john@example.com" />
-              </div>
-              <div class="form-field full-width">
-                <label>Role</label>
-                <select>
-                  <option>Administrator</option>
-                  <option>Developer</option>
-                  <option>Designer</option>
-                </select>
-              </div>
-            </div>
-          </nuke-card-content>
-          <nuke-card-actions>
-            <button nuke-style="1">Cancel</button>
-            <button nuke-style="3">Save Changes</button>
-          </nuke-card-actions>
-        </nuke-card>
-
-        <!-- Activity Feed -->
-        <nuke-card>
-          <nuke-card-header>Recent Activity</nuke-card-header>
-          <nuke-card-content>
-            <div class="activity-list">
-              <div class="activity-item">
-                <strong>User Login</strong>
-                <p>2 minutes ago</p>
-              </div>
-              <div class="activity-item">
-                <strong>File Upload</strong>
-                <p>1 hour ago</p>
-              </div>
-              <div class="activity-item">
-                <strong>System Update</strong>
-                <p>3 hours ago</p>
-              </div>
-              <div class="activity-item">
-                <strong>Database Backup</strong>
-                <p>5 hours ago</p>
-              </div>
-            </div>
-          </nuke-card-content>
-        </nuke-card>
+      <div class="element">
+        <div class="element-name">&lt;input&gt;</div>
+        <input type="text" nuke-style="1" placeholder="Text input">
       </div>
 
-      <!-- Data Table -->
-      <nuke-card>
-        <nuke-card-header>Recent Transactions</nuke-card-header>
-        <nuke-card-content>
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Description</th>
-                <th>Amount</th>
-                <th>Status</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>#1284</td>
-                <td>Website Redesign</td>
-                <td>$4,200</td>
-                <td><nuke-badge>Complete</nuke-badge></td>
-                <td>2024-01-15</td>
-              </tr>
-              <tr>
-                <td>#1283</td>
-                <td>API Integration</td>
-                <td>$2,800</td>
-                <td><nuke-badge>In Progress</nuke-badge></td>
-                <td>2024-01-14</td>
-              </tr>
-              <tr>
-                <td>#1282</td>
-                <td>Database Migration</td>
-                <td>$3,500</td>
-                <td><nuke-badge>Complete</nuke-badge></td>
-                <td>2024-01-13</td>
-              </tr>
-            </tbody>
-          </table>
-        </nuke-card-content>
-      </nuke-card>
+      <div class="element">
+        <div class="element-name">&lt;select&gt;</div>
+        <select nuke-style="1">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+      </div>
 
-      <!-- Progress Indicators -->
-      <nuke-card>
-        <nuke-card-header>Project Progress</nuke-card-header>
-        <nuke-card-content>
-          <div class="progress-list">
-            <div class="progress-item">
-              <p>Frontend Development</p>
-              <progress value="75" max="100"></progress>
-            </div>
-            <div class="progress-item">
-              <p>Backend API</p>
-              <progress value="60" max="100"></progress>
-            </div>
-            <div class="progress-item">
-              <p>Testing & QA</p>
-              <progress value="40" max="100"></progress>
-            </div>
-            <div class="progress-item">
-              <p>Documentation</p>
-              <progress value="85" max="100"></progress>
-            </div>
-          </div>
-        </nuke-card-content>
-      </nuke-card>
+      <div class="element">
+        <div class="element-name">&lt;textarea&gt;</div>
+        <textarea nuke-style="1" rows="2" placeholder="Textarea"></textarea>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;checkbox&gt;</div>
+        <label><input type="checkbox" nuke-style="1" checked> Checkbox</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;radio&gt;</div>
+        <label><input type="radio" name="1-r" nuke-style="1" checked> Radio</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;label&gt;</div>
+        <label nuke-style="1">Label</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;range&gt;</div>
+        <input type="range" nuke-style="1" value="50">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;progress&gt;</div>
+        <progress nuke-style="1" value="60" max="100"></progress>
+      </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-wrapper">
-      <div class="footer-brand">
-        NUKE DESIGN SYSTEM • ENTERPRISE EDITION • 2024
+    <div class="column">
+      <div class="column-header">Style 2</div>
+
+      <div class="element">
+        <div class="element-name">&lt;button&gt;</div>
+        <button nuke-style="2">Button</button>
       </div>
-      <nav class="footer-links">
-        <a href="#docs">Documentation</a>
-        <a href="#support">Support</a>
-        <a href="#license">License</a>
-        <a href="#github">GitHub</a>
-      </nav>
+
+      <div class="element">
+        <div class="element-name">&lt;input&gt;</div>
+        <input type="text" nuke-style="2" placeholder="Text input">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;select&gt;</div>
+        <select nuke-style="2">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;textarea&gt;</div>
+        <textarea nuke-style="2" rows="2" placeholder="Textarea"></textarea>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;checkbox&gt;</div>
+        <label><input type="checkbox" nuke-style="2" checked> Checkbox</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;radio&gt;</div>
+        <label><input type="radio" name="2-r" nuke-style="2" checked> Radio</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;label&gt;</div>
+        <label nuke-style="2">Label</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;range&gt;</div>
+        <input type="range" nuke-style="2" value="50">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;progress&gt;</div>
+        <progress nuke-style="2" value="60" max="100"></progress>
+      </div>
     </div>
-  </footer>
 
-  <script>
-    // Simple tab switching
-    document.querySelectorAll('nuke-tab').forEach((tab, index) => {
-      tab.addEventListener('click', () => {
-        document.querySelectorAll('nuke-tab').forEach(t => t.setAttribute('aria-selected', 'false'));
-        document.querySelectorAll('nuke-tab-panel').forEach(p => p.setAttribute('aria-hidden', 'true'));
+    <div class="column">
+      <div class="column-header">Style 3</div>
 
-        tab.setAttribute('aria-selected', 'true');
-        document.querySelectorAll('nuke-tab-panel')[index].setAttribute('aria-hidden', 'false');
-      });
-    });
+      <div class="element">
+        <div class="element-name">&lt;button&gt;</div>
+        <button nuke-style="3">Button</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;input&gt;</div>
+        <input type="text" nuke-style="3" placeholder="Text input">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;select&gt;</div>
+        <select nuke-style="3">
+          <option>Option 1</option>
+          <option>Option 2</option>
+        </select>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;textarea&gt;</div>
+        <textarea nuke-style="3" rows="2" placeholder="Textarea"></textarea>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;checkbox&gt;</div>
+        <label><input type="checkbox" nuke-style="3" checked> Checkbox</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;radio&gt;</div>
+        <label><input type="radio" name="3-r" nuke-style="3" checked> Radio</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;label&gt;</div>
+        <label nuke-style="3">Label</label>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;range&gt;</div>
+        <input type="range" nuke-style="3" value="50">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;progress&gt;</div>
+        <progress nuke-style="3" value="60" max="100"></progress>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <div class="collection">
+    <div class="collection-header">Navigation</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;a&gt;</div>
+        <a href="#" nuke-style="1">Link</a>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nav&gt;</div>
+        <nav nuke-style="1"><a href="#" nuke-style="1">Home</a> <a href="#" nuke-style="1">About</a></nav>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;a&gt;</div>
+        <a href="#" nuke-style="2">Link</a>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nav&gt;</div>
+        <nav nuke-style="2"><a href="#" nuke-style="2">Home</a> <a href="#" nuke-style="2">About</a></nav>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;a&gt;</div>
+        <a href="#" nuke-style="3">Link</a>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nav&gt;</div>
+        <nav nuke-style="3"><a href="#" nuke-style="3">Home</a> <a href="#" nuke-style="3">About</a></nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE -->
+  <div class="collection">
+    <div class="collection-header">Interactive</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;dialog&gt;</div>
+        <button onclick="document.getElementById('d1').showModal()" nuke-style="1">Open</button>
+        <dialog id="d1" nuke-style="1"><p>Dialog</p><button nuke-style="1" onclick="this.parentElement.close()">Close</button></dialog>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;details&gt;</div>
+        <details nuke-style="1">
+          <summary>Details</summary>
+          <p>Content</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;dialog&gt;</div>
+        <button onclick="document.getElementById('d2').showModal()" nuke-style="2">Open</button>
+        <dialog id="d2" nuke-style="2"><p>Dialog</p><button nuke-style="2" onclick="this.parentElement.close()">Close</button></dialog>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;details&gt;</div>
+        <details nuke-style="2">
+          <summary>Details</summary>
+          <p>Content</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;dialog&gt;</div>
+        <button onclick="document.getElementById('d3').showModal()" nuke-style="3">Open</button>
+        <dialog id="d3" nuke-style="3"><p>Dialog</p><button nuke-style="3" onclick="this.parentElement.close()">Close</button></dialog>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;details&gt;</div>
+        <details nuke-style="3">
+          <summary>Details</summary>
+          <p>Content</p>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="collection">
+    <div class="collection-header">Content</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;table&gt;</div>
+        <table nuke-style="1">
+          <thead><tr><th>Name</th><th>Val</th></tr></thead>
+          <tbody><tr><td>Item</td><td>100</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;table&gt;</div>
+        <table nuke-style="2">
+          <thead><tr><th>Name</th><th>Val</th></tr></thead>
+          <tbody><tr><td>Item</td><td>100</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;table&gt;</div>
+        <table nuke-style="3">
+          <thead><tr><th>Name</th><th>Val</th></tr></thead>
+          <tbody><tr><td>Item</td><td>100</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LISTS -->
+  <div class="collection">
+    <div class="collection-header">Lists</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;ul&gt;</div>
+        <ul nuke-style="1"><li>Item 1</li><li>Item 2</li></ul>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;ol&gt;</div>
+        <ol nuke-style="1"><li>Item 1</li><li>Item 2</li></ol>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;ul&gt;</div>
+        <ul nuke-style="2"><li>Item 1</li><li>Item 2</li></ul>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;ol&gt;</div>
+        <ol nuke-style="2"><li>Item 1</li><li>Item 2</li></ol>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;ul&gt;</div>
+        <ul nuke-style="3"><li>Item 1</li><li>Item 2</li></ul>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;ol&gt;</div>
+        <ol nuke-style="3"><li>Item 1</li><li>Item 2</li></ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- TEXT / CODE -->
+  <div class="collection">
+    <div class="collection-header">Text / Code</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;hr&gt;</div>
+        <hr nuke-style="1">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;code&gt;</div>
+        <code nuke-style="1">const x = 42;</code>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;pre&gt;</div>
+        <pre nuke-style="1">code block</pre>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;hr&gt;</div>
+        <hr nuke-style="2">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;code&gt;</div>
+        <code nuke-style="2">const x = 42;</code>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;pre&gt;</div>
+        <pre nuke-style="2">code block</pre>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;hr&gt;</div>
+        <hr nuke-style="3">
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;code&gt;</div>
+        <code nuke-style="3">const x = 42;</code>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;pre&gt;</div>
+        <pre nuke-style="3">code block</pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDIA -->
+  <div class="collection">
+    <div class="collection-header">Media</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;img&gt;</div>
+        <img src="https://placekitten.com/200/150" nuke-style="1" alt="Kitten">
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;img&gt;</div>
+        <img src="https://placekitten.com/200/150" nuke-style="2" alt="Kitten">
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;img&gt;</div>
+        <img src="https://placekitten.com/200/150" nuke-style="3" alt="Kitten">
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPONENTS -->
+  <div class="collection">
+    <div class="collection-header">Components</div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;nuke-badge&gt;</div>
+        <nuke-badge nuke-style="1">Badge</nuke-badge>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-card&gt;</div>
+        <nuke-card nuke-style="1">
+          <nuke-card-header>Card</nuke-card-header>
+          <nuke-card-content>Content</nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toolbar&gt;</div>
+        <nuke-toolbar nuke-style="1">
+          <button nuke-style="1">New</button>
+          <button nuke-style="1">Edit</button>
+        </nuke-toolbar>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-tabs&gt;</div>
+        <nuke-tabs nuke-style="1">
+          <nuke-tab>Tab 1</nuke-tab>
+          <nuke-tab>Tab 2</nuke-tab>
+          <nuke-tab-panel>Content 1</nuke-tab-panel>
+          <nuke-tab-panel>Content 2</nuke-tab-panel>
+        </nuke-tabs>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toast&gt;</div>
+        <button nuke-style="1" onclick="showToast('1')">Show Toast</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-sidebar&gt;</div>
+        <button nuke-style="1" onclick="showSidebar('1')">Show Sidebar</button>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;nuke-badge&gt;</div>
+        <nuke-badge nuke-style="2">Badge</nuke-badge>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-card&gt;</div>
+        <nuke-card nuke-style="2">
+          <nuke-card-header>Card</nuke-card-header>
+          <nuke-card-content>Content</nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toolbar&gt;</div>
+        <nuke-toolbar nuke-style="2">
+          <button nuke-style="2">New</button>
+          <button nuke-style="2">Edit</button>
+        </nuke-toolbar>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-tabs&gt;</div>
+        <nuke-tabs nuke-style="2">
+          <nuke-tab>Tab 1</nuke-tab>
+          <nuke-tab>Tab 2</nuke-tab>
+          <nuke-tab-panel>Content 1</nuke-tab-panel>
+          <nuke-tab-panel>Content 2</nuke-tab-panel>
+        </nuke-tabs>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toast&gt;</div>
+        <button nuke-style="2" onclick="showToast('2')">Show Toast</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-sidebar&gt;</div>
+        <button nuke-style="2" onclick="showSidebar('2')">Show Sidebar</button>
+      </div>
+    </div>
+
+    <div class="column">
+      <div class="element">
+        <div class="element-name">&lt;nuke-badge&gt;</div>
+        <nuke-badge nuke-style="3">Badge</nuke-badge>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-card&gt;</div>
+        <nuke-card nuke-style="3">
+          <nuke-card-header>Card</nuke-card-header>
+          <nuke-card-content>Content</nuke-card-content>
+        </nuke-card>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toolbar&gt;</div>
+        <nuke-toolbar nuke-style="3">
+          <button nuke-style="3">New</button>
+          <button nuke-style="3">Edit</button>
+        </nuke-toolbar>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-tabs&gt;</div>
+        <nuke-tabs nuke-style="3">
+          <nuke-tab>Tab 1</nuke-tab>
+          <nuke-tab>Tab 2</nuke-tab>
+          <nuke-tab-panel>Content 1</nuke-tab-panel>
+          <nuke-tab-panel>Content 2</nuke-tab-panel>
+        </nuke-tabs>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-toast&gt;</div>
+        <button nuke-style="3" onclick="showToast('3')">Show Toast</button>
+      </div>
+
+      <div class="element">
+        <div class="element-name">&lt;nuke-sidebar&gt;</div>
+        <button nuke-style="3" onclick="showSidebar('3')">Show Sidebar</button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    function showToast(variant) {
+      const toast = document.createElement('nuke-toast');
+      toast.setAttribute('nuke-style', variant);
+      toast.textContent = `Toast (${variant})`;
+      document.body.appendChild(toast);
+    }
+
+    function showSidebar(variant) {
+      const sidebar = document.createElement('nuke-sidebar');
+      sidebar.setAttribute('nuke-style', variant);
+      sidebar.innerHTML = `<h3>Sidebar</h3><p>Content</p><button nuke-style="${variant}" onclick="this.closest('nuke-sidebar').close()">Close</button>`;
+      document.body.appendChild(sidebar);
+
+      // Wait for connectedCallback to run
+      setTimeout(() => {
+        sidebar.open();
+      }, 0);
+    }
   </script>
 </body>
 </html>

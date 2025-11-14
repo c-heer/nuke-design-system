@@ -3,6 +3,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   outDir: './dist',
   publicDir: './public',
+  server: {
+    host: true,
+    port: 4321
+  },
   vite: {
     resolve: {
       alias: {
@@ -11,12 +15,14 @@ export default defineConfig({
     },
     server: {
       watch: {
-        // Use polling for Docker compatibility with symlinks
-        usePolling: true
+        usePolling: true,
+        interval: 100
       },
       fs: {
-        // Allow serving files from parent directory (for dist/)
         allow: ['..']
+      },
+      hmr: {
+        clientPort: 4321
       }
     }
   }
