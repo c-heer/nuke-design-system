@@ -1,0 +1,19 @@
+{
+  "_meta": {
+    "purpose": "Project identity and purpose"
+  },
+  "name": "@nuke.dev/design-system",
+  "type": "lib",
+  "tagline": "Element-first CSS design system with web components. Universal .style-1/2/3 pattern for native HTML elements and custom components.",
+  "author": "c-heer \u003cgithub@heer.dev\u003e",
+  "problem": "Describe the problem this project solves",
+  "solution": "Describe how this project solves it",
+  "stack": {
+    "runtime": "npm",
+    "language": "typescript"
+  },
+  "folders": {
+    "core/": "3 files, 1 folders",
+    "docs/": "1 files, 4 folders"
+  }
+}

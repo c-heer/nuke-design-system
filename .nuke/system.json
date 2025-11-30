@@ -1,0 +1,238 @@
+{
+  "_meta": {
+    "purpose": "Technical architecture, stack, and file structure"
+  },
+  "structure": {
+    "root": ".",
+    "folders": [
+      "/.claude",
+      "/.claude/commands",
+      "/",
+      "/.scripts",
+      "/core/components/a",
+      "/core/components/badge",
+      "/core/components/button",
+      "/core/components/card",
+      "/core/components/checkbox",
+      "/core/components/code",
+      "/core/components/details",
+      "/core/components/dialog",
+      "/core/components/hr",
+      "/core/components/img",
+      "/core/components/input",
+      "/core/components/label",
+      "/core/components/nav",
+      "/core/components/ol",
+      "/core/components/pre",
+      "/core/components/progress",
+      "/core/components/radio",
+      "/core/components/range",
+      "/core/components/select",
+      "/core/components/sidebar",
+      "/core/components/table",
+      "/core/components/tabs",
+      "/core/components/textarea",
+      "/core/components/toast",
+      "/core/components/toolbar",
+      "/core/components/ul",
+      "/core",
+      "/docs/.astro",
+      "/docs",
+      "/docs/node_modules/.vite/deps",
+      "/docs/public/.well-known/appspecific",
+      "/docs/public/fonts",
+      "/docs/src/components",
+      "/docs/src",
+      "/docs/src/pages",
+      "/.nuke"
+    ],
+    "files": {
+      "/": [
+        ".gitignore",
+        ".npmignore",
+        "README.md",
+        "bun.lock",
+        "package.json",
+        "tsconfig.json"
+      ],
+      "/.claude": [
+        "CLAUDE.md",
+        "changelog.json",
+        "features.json",
+        "project.json",
+        "system.json",
+        "todos.json"
+      ],
+      "/.claude/commands": [
+        "add-todo.md",
+        "context.md",
+        "features.md",
+        "project.md",
+        "system.md",
+        "todos.md"
+      ],
+      "/.nuke": [
+        "project.json",
+        "system.json",
+        "tasks.json"
+      ],
+      "/.scripts": [
+        "build-theme.js",
+        "bundle-core-css.js",
+        "copy-to-docs.js",
+        "postinstall.js",
+        "watch-incremental.js",
+        "watch.js"
+      ],
+      "/core": [
+        "core.css",
+        "core.ts",
+        "style.css"
+      ],
+      "/core/components/a": [
+        "a.core.css",
+        "a.theme.css"
+      ],
+      "/core/components/badge": [
+        "badge.core.css",
+        "badge.core.ts",
+        "badge.theme.css"
+      ],
+      "/core/components/button": [
+        "button.core.css",
+        "button.theme.css"
+      ],
+      "/core/components/card": [
+        "card.core.css",
+        "card.core.ts",
+        "card.theme.css"
+      ],
+      "/core/components/checkbox": [
+        "checkbox.core.css",
+        "checkbox.theme.css"
+      ],
+      "/core/components/code": [
+        "code.core.css",
+        "code.theme.css"
+      ],
+      "/core/components/details": [
+        "details.core.css",
+        "details.theme.css"
+      ],
+      "/core/components/dialog": [
+        "dialog.core.css",
+        "dialog.theme.css"
+      ],
+      "/core/components/hr": [
+        "hr.core.css",
+        "hr.theme.css"
+      ],
+      "/core/components/img": [
+        "img.core.css",
+        "img.theme.css"
+      ],
+      "/core/components/input": [
+        "input.core.css",
+        "input.theme.css"
+      ],
+      "/core/components/label": [
+        "label.core.css",
+        "label.theme.css"
+      ],
+      "/core/components/nav": [
+        "nav.core.css",
+        "nav.theme.css"
+      ],
+      "/core/components/ol": [
+        "ol.core.css",
+        "ol.theme.css"
+      ],
+      "/core/components/pre": [
+        "pre.core.css",
+        "pre.theme.css"
+      ],
+      "/core/components/progress": [
+        "progress.core.css",
+        "progress.theme.css"
+      ],
+      "/core/components/radio": [
+        "radio.core.css",
+        "radio.theme.css"
+      ],
+      "/core/components/range": [
+        "range.core.css",
+        "range.theme.css"
+      ],
+      "/core/components/select": [
+        "select.core.css",
+        "select.theme.css"
+      ],
+      "/core/components/sidebar": [
+        "sidebar.core.css",
+        "sidebar.core.ts",
+        "sidebar.theme.css"
+      ],
+      "/core/components/table": [
+        "table.core.css",
+        "table.theme.css"
+      ],
+      "/core/components/tabs": [
+        "tabs.core.css",
+        "tabs.core.ts",
+        "tabs.theme.css"
+      ],
+      "/core/components/textarea": [
+        "textarea.core.css",
+        "textarea.theme.css"
+      ],
+      "/core/components/toast": [
+        "toast.core.css",
+        "toast.core.ts",
+        "toast.theme.css"
+      ],
+      "/core/components/toolbar": [
+        "toolbar.core.css",
+        "toolbar.core.ts",
+        "toolbar.theme.css"
+      ],
+      "/core/components/ul": [
+        "ul.core.css",
+        "ul.theme.css"
+      ],
+      "/docs": [
+        "astro.config.mjs"
+      ],
+      "/docs/.astro": [
+        "settings.json",
+        "types.d.ts"
+      ],
+      "/docs/node_modules/.vite/deps": [
+        "_metadata.json",
+        "astro___aria-query.js",
+        "astro___aria-query.js.map",
+        "astro___axobject-query.js",
+        "astro___axobject-query.js.map",
+        "astro___cssesc.js",
+        "astro___cssesc.js.map",
+        "chunk-BUSYA2B4.js",
+        "chunk-BUSYA2B4.js.map",
+        "package.json"
+      ],
+      "/docs/public/.well-known/appspecific": [
+        "com.chrome.devtools.json"
+      ],
+      "/docs/public/fonts": [
+        "raleway.ttf"
+      ],
+      "/docs/src": [
+        "env.d.ts"
+      ],
+      "/docs/src/components": [
+        "Header.astro"
+      ],
+      "/docs/src/pages": [
+        "index.astro"
+      ]
+    }
+  }
+}
