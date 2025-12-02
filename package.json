@@ -13,15 +13,15 @@
     "element-first",
     "native-elements"
   ],
-  "author": "c-heer <github@heer.dev>",
+  "author": "nuke-studios <github@heer.dev>",
   "license": "MIT",
-  "homepage": "https://github.com/c-heer/nuke-design-system#readme",
+  "homepage": "https://github.com/nuke-studios/nuke-design-system#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/c-heer/nuke-design-system.git"
+    "url": "git+https://github.com/nuke-studios/nuke-design-system.git"
   },
   "bugs": {
-    "url": "https://github.com/c-heer/nuke-design-system/issues"
+    "url": "https://github.com/nuke-studios/nuke-design-system/issues"
   },
   "main": "core/all.css",
   "module": "components/core.js",

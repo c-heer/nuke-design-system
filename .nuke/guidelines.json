@@ -1,0 +1,51 @@
+{
+  "_meta": {
+    "purpose": "AI workflow instructions"
+  },
+  "core_guidelines": [
+    {
+      "step": "Plan",
+      "description": "Design solution and present to user"
+    },
+    {
+      "step": "Approve",
+      "description": "Wait for user approval before implementing"
+    },
+    {
+      "step": "Implement",
+      "description": "Code the solution after approval"
+    },
+    {
+      "step": "Test",
+      "description": "Run tests, verify build, manual testing"
+    },
+    {
+      "step": "Document",
+      "description": "Update all relevant documentation"
+    }
+  ],
+  "workflows": {
+    "_template": {
+      "trigger": "Describe when this workflow applies",
+      "steps": [
+        "Step 1",
+        "Step 2"
+      ],
+      "checklist": [
+        "Validation item 1",
+        "Validation item 2"
+      ]
+    },
+    "on_code_change": {
+      "trigger": "When Go packages are added/removed/renamed",
+      "steps": [
+        "Update .nuke/project.json folders section",
+        "Update internal/data/system/flow.md",
+        "Update README.md if user-facing",
+        "Update scripts/audit.sh if needed",
+        "Run: go test ./...",
+        "Run: nuke start"
+      ]
+    }
+  }
+}

@@ -1,15 +1,15 @@
-# Nuke Commander - AI Instructions
+# Nuke Design System
 
-This project uses Nuke Commander for context management and task tracking.
+At the start of each session, run:
 
-## Quick Start
-
-For full project context, run:
 ```bash
-nuke context
+nuke start
 ```
 
-For available commands:
-```bash
-nuke help
-```d
+This loads full project context including:
+- Project identity and stack
+- System architecture and file structure
+- All current tasks
+- AI workflow guidelines
+
+After loading context, you'll have everything needed to assist with the project.

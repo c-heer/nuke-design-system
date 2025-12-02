@@ -342,7 +342,7 @@ import '@nuke.dev/design-system/dist/core.js';
 
 ```bash
 # Clone the repository
-git clone https://github.com/c-heer/nuke-design-system
+git clone https://github.com/nuke-studios/nuke-design-system
 cd nuke-design-system
 
 # Start Docker container
@@ -428,10 +428,10 @@ MIT
 
 ## Links
 
-- **Repository:** [github.com/c-heer/nuke-design-system](https://github.com/c-heer/nuke-design-system)
-- **Issues:** [Report a bug](https://github.com/c-heer/nuke-design-system/issues)
+- **Repository:** [github.com/nuke-studios/nuke-design-system](https://github.com/nuke-studios/nuke-design-system)
+- **Issues:** [Report a bug](https://github.com/nuke-studios/nuke-design-system/issues)
 - **npm:** [@nuke.dev/design-system](https://www.npmjs.com/package/@nuke.dev/design-system)
 
 ---
 
-**Built by [@c-heer](https://github.com/c-heer)** | Three design systems. One framework. Your choice.
+**Built by [@nuke-studios](https://github.com/nuke-studios)** | Three design systems. One framework. Your choice.

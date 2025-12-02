@@ -183,6 +183,6 @@ function showNextSteps(themePath) {
   console.log(`   ${colors.gray}Edit ${themePath}/style.css for design tokens${colors.reset}`);
   console.log(`   ${colors.gray}Edit ${themePath}/components/*.theme.css for individual components${colors.reset}`);
   console.log('');
-  console.log(`${colors.gray}Documentation: https://github.com/c-heer/nuke-design-system${colors.reset}`);
+  console.log(`${colors.gray}Documentation: https://github.com/nuke-studios/nuke-design-system${colors.reset}`);
   console.log('');
 }

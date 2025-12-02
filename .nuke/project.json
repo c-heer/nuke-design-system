@@ -2,10 +2,10 @@
   "_meta": {
     "purpose": "Project identity and purpose"
   },
-  "name": "@nuke.dev/design-system",
+  "name": "Nuke Design System",
   "type": "lib",
   "tagline": "Element-first CSS design system with web components. Universal .style-1/2/3 pattern for native HTML elements and custom components.",
-  "author": "c-heer \u003cgithub@heer.dev\u003e",
+  "author": "nuke-studios \u003cgithub@heer.dev\u003e",
   "problem": "Describe the problem this project solves",
   "solution": "Describe how this project solves it",
   "stack": {

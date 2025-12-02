@@ -6,7 +6,6 @@
     "root": ".",
     "folders": [
       "/.claude",
-      "/.claude/commands",
       "/",
       "/.scripts",
       "/core/components/a",
@@ -56,22 +55,10 @@
         "tsconfig.json"
       ],
       "/.claude": [
-        "CLAUDE.md",
-        "changelog.json",
-        "features.json",
-        "project.json",
-        "system.json",
-        "todos.json"
-      ],
-      "/.claude/commands": [
-        "add-todo.md",
-        "context.md",
-        "features.md",
-        "project.md",
-        "system.md",
-        "todos.md"
+        "CLAUDE.md"
       ],
       "/.nuke": [
+        "guidelines.json",
         "project.json",
         "system.json",
         "tasks.json"
@@ -234,5 +221,7 @@
         "index.astro"
       ]
     }
-  }
+  },
+  "last_updated": "2025-12-02T13:51:14+01:00",
+  "git_branch": "main"
 }
