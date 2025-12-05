@@ -173,7 +173,6 @@ ul, ol {
 .motion-off *::after {
   animation: none !important;
   transition: none !important;
-  opacity: 1 !important;
 }
 @media screen and (prefers-reduced-motion: reduce) {
   .fadeIn,
